@@ -68,22 +68,24 @@ class LLMStrategy(PredictionStrategy):
             content = response.choices[0].message.content.strip()
             prediction = self._parse_response(content, event_data)
 
-            # Market-anchored calibration: blend LLM prediction with market
-            # LLMs are systematically conservative; anchor to market consensus
+            # Market-anchored calibration with long-shot bias correction
+            # Phase 1 finding: market overestimates 20-50% events
             if event_data.tokens:
                 market_price = event_data.tokens[0].price
                 prediction.market_price = market_price
                 raw = prediction.probability
 
-                # Anchoring weight: how much to trust market vs LLM
-                # High confidence LLM → trust LLM more; low → trust market more
-                llm_weight = 0.4  # Base: 40% LLM, 60% market
+                # Step 1: Correct market price for long-shot bias
+                cal_market = self._calibration_correct(market_price)
+
+                # Step 2: Blend calibrated market with LLM prediction
+                llm_weight = 0.4  # Base: 40% LLM, 60% calibrated market
                 if prediction.confidence > 0.8:
                     llm_weight = 0.5
                 elif prediction.confidence < 0.4:
                     llm_weight = 0.25
 
-                blended = market_price * (1 - llm_weight) + raw * llm_weight
+                blended = cal_market * (1 - llm_weight) + raw * llm_weight
                 prediction.probability = max(0.01, min(0.99, blended))
 
             return prediction
@@ -99,6 +101,27 @@ class LLMStrategy(PredictionStrategy):
                 trajectory_7d=[market_prob] * 7,
                 market_price=market_prob,
             )
+
+    @staticmethod
+    def _calibration_correct(p: float) -> float:
+        """Long-shot bias correction from Phase 1 (177 resolved markets).
+        Market overestimates events in 20-50% range."""
+        cal_points = [
+            (0.05, 0.06), (0.15, 0.10), (0.25, 0.12),
+            (0.35, 0.38), (0.45, 0.38), (0.55, 0.50),
+            (0.65, 0.67), (0.75, 0.75), (0.85, 0.88), (0.95, 0.97),
+        ]
+        if p <= cal_points[0][0]:
+            return cal_points[0][1]
+        if p >= cal_points[-1][0]:
+            return cal_points[-1][1]
+        for i in range(len(cal_points) - 1):
+            x0, y0 = cal_points[i]
+            x1, y1 = cal_points[i + 1]
+            if x0 <= p <= x1:
+                t = (p - x0) / (x1 - x0)
+                return y0 + t * (y1 - y0)
+        return p
 
     def _get_system_prompt(self) -> str:
         return """You are an expert prediction market analyst. Your task is to analyze events and predict probabilities.

@@ -98,9 +98,54 @@ async def fetch_all_active_markets(tags=None, max_events=200):
     return all_markets
 
 
+def calibration_correct(p):
+    """Apply long-shot bias correction from Phase 1 historical analysis.
+    Based on 177 resolved Polymarket markets: market systematically
+    overestimates low-probability events (20-50% range).
+    
+    Correction map (market_price → calibrated_actual):
+      5% → 6%   (ok)
+      15% → 10% (-5%)
+      25% → 12% (-13%)  ← biggest edge
+      35% → 38% (ok)
+      45% → 38% (-7%)
+      55% → 50% (-5%)
+      65%+ → well calibrated
+    """
+    # Piecewise linear correction based on empirical calibration curve
+    # Each tuple: (market_midpoint, actual_frequency)
+    cal_points = [
+        (0.05, 0.06),
+        (0.15, 0.10),
+        (0.25, 0.12),  # Biggest bias: market says 25%, reality 12%
+        (0.35, 0.38),
+        (0.45, 0.38),  # Market says 45%, reality 38%
+        (0.55, 0.50),
+        (0.65, 0.67),
+        (0.75, 0.75),
+        (0.85, 0.88),  # Conservative: don't trust n=3 sample of 100%
+        (0.95, 0.97),
+    ]
+    
+    # Linear interpolation
+    if p <= cal_points[0][0]:
+        return cal_points[0][1]
+    if p >= cal_points[-1][0]:
+        return cal_points[-1][1]
+    
+    for i in range(len(cal_points) - 1):
+        x0, y0 = cal_points[i]
+        x1, y1 = cal_points[i + 1]
+        if x0 <= p <= x1:
+            t = (p - x0) / (x1 - x0)
+            return y0 + t * (y1 - y0)
+    
+    return p  # fallback
+
+
 def rule_predict(title, description, market_price, volume):
     """Fast rule-based prediction (no LLM call = can do 100s instantly).
-    Uses evolved strategy + real-time price context."""
+    Uses evolved strategy + real-time price context + calibration correction."""
     p = market_price
 
     # Get real-time price context
@@ -158,13 +203,17 @@ def rule_predict(title, description, market_price, volume):
         "total kills", "series:", "game 1"
     ])
     if is_sports:
-        # Slight contrarian: markets on sports slightly favor favorites
-        if market_price > 0.65:
-            p = market_price - 0.03
-        elif market_price < 0.35:
-            p = market_price + 0.03
+        # Sports: apply calibration correction (long-shot bias exists here too)
+        p = calibration_correct(market_price)
+        p = max(0.01, min(0.99, p))
+    else:
+        # Non-sports: blend our signal with calibration-corrected market
+        cal_market = calibration_correct(market_price)
+        # If we have real-time price data, trust our model more
+        if price_ctx:
+            p = 0.4 * cal_market + 0.6 * p  # More weight on our price model
         else:
-            p = market_price
+            p = 0.6 * cal_market + 0.4 * p  # More weight on calibrated market
         p = max(0.01, min(0.99, p))
 
     confidence = 0.5
