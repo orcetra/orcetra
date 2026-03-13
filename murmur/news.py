@@ -150,7 +150,7 @@ Only include the JSON, no other text."""
         try:
             client = Groq(api_key=self.groq_api_key)
             response = client.chat.completions.create(
-                model="llama-4-scout-17b-16e-instruct",
+                model="meta-llama/llama-4-scout-17b-16e-instruct",
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
                 max_tokens=1000,

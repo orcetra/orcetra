@@ -36,7 +36,7 @@ class LLMStrategy(PredictionStrategy):
 
     def __init__(self, groq_api_key: Optional[str] = None):
         self.groq_api_key = groq_api_key or os.getenv("GROQ_API_KEY")
-        self.model = "llama-4-scout-17b-16e-instruct"
+        self.model = "meta-llama/llama-4-scout-17b-16e-instruct"
 
     def predict(
         self,
@@ -242,7 +242,7 @@ class EvolvedStrategy(PredictionStrategy):
 
     def __init__(self, groq_api_key: Optional[str] = None):
         self.groq_api_key = groq_api_key or os.getenv("GROQ_API_KEY")
-        self.model = "llama-4-scout-17b-16e-instruct"
+        self.model = "meta-llama/llama-4-scout-17b-16e-instruct"
 
     def predict(
         self,

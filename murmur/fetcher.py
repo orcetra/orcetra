@@ -388,31 +388,36 @@ def fetch_price_history_sync(token_id: str, interval: str = "1d") -> list[PriceP
         asyncio.run(fetcher.close())
 
 
-def fetch_orderbook_sync(token_id: str) -> Optional[OrderBook]:
-    """Synchronous wrapper for fetch_orderbook."""
+def _run_async(coro_fn):
+    """Run an async fetcher operation synchronously, handling cleanup in same loop."""
     import asyncio
-    fetcher = PolymarketFetcher()
-    try:
-        return asyncio.run(fetcher.fetch_orderbook(token_id))
-    finally:
-        asyncio.run(fetcher.close())
+
+    async def _wrapper():
+        fetcher = PolymarketFetcher()
+        try:
+            return await coro_fn(fetcher)
+        finally:
+            if fetcher._client and not fetcher._client.is_closed:
+                await fetcher._client.aclose()
+
+    return asyncio.run(_wrapper())
+
+
+def fetch_event_sync(url_or_slug: str) -> Optional[Event]:
+    return _run_async(lambda f: f.fetch_event(url_or_slug))
+
+
+def fetch_price_history_sync(token_id: str, interval: str = "1d", days_back: int = 30) -> list[PricePoint]:
+    return _run_async(lambda f: f.fetch_price_history(token_id, interval, days_back))
+
+
+def fetch_orderbook_sync(token_id: str) -> Optional[OrderBook]:
+    return _run_async(lambda f: f.fetch_orderbook(token_id))
 
 
 def list_active_events_sync(limit: int = 50) -> list[Event]:
-    """Synchronous wrapper for list_active_events."""
-    import asyncio
-    fetcher = PolymarketFetcher()
-    try:
-        return asyncio.run(fetcher.list_active_events(limit))
-    finally:
-        asyncio.run(fetcher.close())
+    return _run_async(lambda f: f.list_active_events(limit))
 
 
 def list_resolved_events_sync(limit: int = 100) -> list[Event]:
-    """Synchronous wrapper for list_resolved_events."""
-    import asyncio
-    fetcher = PolymarketFetcher()
-    try:
-        return asyncio.run(fetcher.list_resolved_events(limit))
-    finally:
-        asyncio.run(fetcher.close())
+    return _run_async(lambda f: f.list_resolved_events(limit))
