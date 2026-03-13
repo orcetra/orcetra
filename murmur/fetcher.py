@@ -120,18 +120,30 @@ class PolymarketFetcher:
 
         return None
 
+    @staticmethod
+    def _parse_json_field(value, default=None):
+        """Parse a field that might be a JSON string or already a list."""
+        import json as _json
+        if isinstance(value, str):
+            try:
+                return _json.loads(value)
+            except (ValueError, TypeError):
+                return default or []
+        return value if value else (default or [])
+
     def _parse_event(self, data: dict) -> Event:
         """Parse event data from Gamma API response."""
         tokens = []
         markets = data.get("markets", [])
 
         for market in markets:
-            # Each market can have YES/NO tokens
-            outcomes = market.get("outcomes", ["Yes", "No"])
-            prices = market.get("outcomePrices", ["0.5", "0.5"])
+            # Each market can have YES/NO tokens — fields may be JSON strings
+            outcomes = self._parse_json_field(market.get("outcomes"), ["Yes", "No"])
+            prices = self._parse_json_field(market.get("outcomePrices"), ["0.5", "0.5"])
+            token_ids = self._parse_json_field(market.get("clobTokenIds"), ["", ""])
 
             for i, outcome in enumerate(outcomes):
-                token_id = market.get("clobTokenIds", ["", ""])[i] if market.get("clobTokenIds") else ""
+                token_id = token_ids[i] if i < len(token_ids) else ""
                 price = float(prices[i]) if i < len(prices) else 0.5
 
                 tokens.append(OutcomeToken(
@@ -170,9 +182,9 @@ class PolymarketFetcher:
     def _parse_market_as_event(self, data: dict) -> Event:
         """Parse market data as an event (single-market event)."""
         tokens = []
-        outcomes = data.get("outcomes", ["Yes", "No"])
-        prices = data.get("outcomePrices", ["0.5", "0.5"])
-        token_ids = data.get("clobTokenIds", ["", ""])
+        outcomes = self._parse_json_field(data.get("outcomes"), ["Yes", "No"])
+        prices = self._parse_json_field(data.get("outcomePrices"), ["0.5", "0.5"])
+        token_ids = self._parse_json_field(data.get("clobTokenIds"), ["", ""])
 
         for i, outcome in enumerate(outcomes):
             token_id = token_ids[i] if i < len(token_ids) else ""
