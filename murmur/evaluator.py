@@ -220,13 +220,15 @@ def evaluate_strategy_sync(
     """Synchronous wrapper for evaluate_strategy."""
     import asyncio
 
-    evaluator = StrategyEvaluator()
-    try:
-        return asyncio.run(
-            evaluator.evaluate_strategy(strategy, resolved_events, fetch_context)
-        )
-    finally:
-        asyncio.run(evaluator.close())
+    async def _run():
+        evaluator = StrategyEvaluator()
+        try:
+            return await evaluator.evaluate_strategy(strategy, resolved_events, fetch_context)
+        finally:
+            if evaluator.fetcher._client and not evaluator.fetcher._client.is_closed:
+                await evaluator.fetcher._client.aclose()
+
+    return asyncio.run(_run())
 
 
 def quick_evaluate(

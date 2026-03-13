@@ -197,33 +197,51 @@ Focus on finding alpha - where might the market be wrong?"""
 
     def _parse_response(self, content: str, event: Event) -> Prediction:
         """Parse LLM response into Prediction object."""
-        # Try to extract JSON from response
-        json_match = re.search(r'\{[\s\S]*\}', content)
-
-        if json_match:
+        # Try to find JSON block — use bracket matching for robustness
+        data = None
+        # Method 1: look for ```json ... ``` code block
+        code_match = re.search(r'```json\s*(\{[\s\S]*?\})\s*```', content)
+        if code_match:
             try:
-                data = json.loads(json_match.group())
+                data = json.loads(code_match.group(1))
+            except json.JSONDecodeError:
+                pass
 
-                probability = float(data.get("probability", 0.5))
-                probability = max(0.01, min(0.99, probability))  # Clip to valid range
+        # Method 2: find first complete JSON object via bracket counting
+        if data is None:
+            start = content.find('{')
+            if start >= 0:
+                depth = 0
+                for i, ch in enumerate(content[start:], start):
+                    if ch == '{':
+                        depth += 1
+                    elif ch == '}':
+                        depth -= 1
+                        if depth == 0:
+                            try:
+                                data = json.loads(content[start:i+1])
+                            except json.JSONDecodeError:
+                                pass
+                            break
 
-                confidence = float(data.get("confidence", 0.5))
-                confidence = max(0.0, min(1.0, confidence))
+        if data and isinstance(data, dict):
+            probability = float(data.get("probability", 0.5))
+            probability = max(0.01, min(0.99, probability))
 
-                trajectory = data.get("trajectory_7d", [])
-                if not trajectory or len(trajectory) != 7:
-                    trajectory = [probability] * 7
-                trajectory = [max(0.01, min(0.99, float(p))) for p in trajectory]
+            confidence = float(data.get("confidence", 0.5))
+            confidence = max(0.0, min(1.0, confidence))
 
-                return Prediction(
-                    probability=probability,
-                    confidence=confidence,
-                    reasoning=data.get("reasoning", "No reasoning provided"),
-                    trajectory_7d=trajectory,
-                )
+            trajectory = data.get("trajectory_7d", [])
+            if not trajectory or len(trajectory) != 7:
+                trajectory = [probability] * 7
+            trajectory = [max(0.01, min(0.99, float(p))) for p in trajectory]
 
-            except (json.JSONDecodeError, ValueError, TypeError) as e:
-                print(f"Error parsing LLM response: {e}")
+            return Prediction(
+                probability=probability,
+                confidence=confidence,
+                reasoning=data.get("reasoning", "No reasoning provided"),
+                trajectory_7d=trajectory,
+            )
 
         # Fallback
         market_prob = event.tokens[0].price if event.tokens else 0.5

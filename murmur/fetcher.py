@@ -164,6 +164,25 @@ class PolymarketFetcher:
             except (ValueError, TypeError):
                 pass
 
+        # For resolved events, compute outcome_price from first market's YES token
+        outcome = data.get("outcome")
+        outcome_price = None
+        if closed and markets:
+            first_market = markets[0]
+            fm_outcomes = self._parse_json_field(first_market.get("outcomes"), ["Yes", "No"])
+            fm_prices = self._parse_json_field(first_market.get("outcomePrices"), ["0.5", "0.5"])
+            yes_price = None
+            for i, o in enumerate(fm_outcomes):
+                if o.lower() in ("yes", "true", "1"):
+                    yes_price = float(fm_prices[i]) if i < len(fm_prices) else None
+                    break
+            if yes_price is None and len(fm_prices) >= 1:
+                yes_price = float(fm_prices[0])
+            if yes_price is not None:
+                outcome_price = 1.0 if yes_price > 0.5 else 0.0
+            if outcome is None and outcome_price is not None:
+                outcome = "Yes" if outcome_price > 0.5 else "No"
+
         return Event(
             id=data.get("id", ""),
             slug=data.get("slug", ""),
@@ -173,7 +192,8 @@ class PolymarketFetcher:
             active=data.get("active", True),
             closed=closed,
             resolved=resolved,
-            outcome=data.get("outcome"),
+            outcome=outcome,
+            outcome_price=outcome_price,
             tokens=tokens,
             volume=float(data.get("volume", 0) or 0),
             liquidity=float(data.get("liquidity", 0) or 0),
@@ -199,19 +219,21 @@ class PolymarketFetcher:
         resolved = closed
 
         # For resolved markets, determine the outcome
+        # outcome_price = YES token final price (1.0 if Yes won, ~0.0 if No won)
         outcome = None
         outcome_price = None
         if resolved and prices:
-            # The outcome with price 1.0 is the winning outcome
-            for i, p in enumerate(prices):
-                if float(p) >= 0.99:
-                    outcome = outcomes[i] if i < len(outcomes) else None
-                    outcome_price = 1.0
+            # Find YES token price
+            yes_price = None
+            for i, o in enumerate(outcomes):
+                if o.lower() in ("yes", "true", "1"):
+                    yes_price = float(prices[i])
                     break
-            if outcome is None and len(prices) >= 1:
-                # Take the first outcome's final price
-                outcome_price = float(prices[0])
-                outcome = outcomes[0] if float(prices[0]) > 0.5 else outcomes[1] if len(outcomes) > 1 else None
+            if yes_price is None and len(prices) >= 1:
+                yes_price = float(prices[0])  # fallback: first token = YES
+
+            outcome_price = 1.0 if yes_price > 0.5 else 0.0
+            outcome = "Yes" if outcome_price > 0.5 else "No"
 
         end_date = None
         if data.get("endDate"):

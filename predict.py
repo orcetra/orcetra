@@ -219,27 +219,25 @@ def list_events(active: bool = True, limit: int = 20) -> None:
     console.print(table)
 
 
-def run_backtest() -> None:
+def run_backtest(limit: int = 20) -> None:
     """Run backtest on resolved events."""
-    console.print("[bold]Running backtest on resolved events...[/bold]")
-    console.print()
+    console.print(f"[bold]Running backtest on {limit} resolved events...[/bold]")
 
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
-        console=console,
-    ) as progress:
-        task = progress.add_task("Fetching resolved events...", total=None)
-        events = list_resolved_events_sync(limit=100)
-        progress.update(task, description=f"Found {len(events)} resolved events")
+    console.print("Fetching resolved events...")
+    events = list_resolved_events_sync(limit=limit)
+    console.print(f"Found {len(events)} resolved events")
 
-        if len(events) < 5:
-            console.print(f"[red]Not enough resolved events ({len(events)}). Need at least 5.[/red]")
-            return
+    # Filter to events that have outcome_price set
+    valid = [e for e in events if e.outcome_price is not None]
+    console.print(f"  {len(valid)} with valid outcomes")
 
-        progress.update(task, description="Running backtest...")
-        strategy = get_default_strategy()
-        result = evaluate_strategy_sync(strategy, events, fetch_context=False)
+    if len(valid) < 3:
+        console.print(f"[red]Not enough valid events ({len(valid)}). Need at least 3.[/red]")
+        return
+
+    console.print("Running predictions (this may take a minute)...")
+    strategy = get_default_strategy()
+    result = evaluate_strategy_sync(strategy, valid, fetch_context=False)
 
     console.print(format_backtest_results(result))
 
