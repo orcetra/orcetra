@@ -68,9 +68,23 @@ class LLMStrategy(PredictionStrategy):
             content = response.choices[0].message.content.strip()
             prediction = self._parse_response(content, event_data)
 
-            # Add market price for reference
+            # Market-anchored calibration: blend LLM prediction with market
+            # LLMs are systematically conservative; anchor to market consensus
             if event_data.tokens:
-                prediction.market_price = event_data.tokens[0].price
+                market_price = event_data.tokens[0].price
+                prediction.market_price = market_price
+                raw = prediction.probability
+
+                # Anchoring weight: how much to trust market vs LLM
+                # High confidence LLM → trust LLM more; low → trust market more
+                llm_weight = 0.4  # Base: 40% LLM, 60% market
+                if prediction.confidence > 0.8:
+                    llm_weight = 0.5
+                elif prediction.confidence < 0.4:
+                    llm_weight = 0.25
+
+                blended = market_price * (1 - llm_weight) + raw * llm_weight
+                prediction.probability = max(0.01, min(0.99, blended))
 
             return prediction
 
@@ -162,6 +176,31 @@ Look for signals the market might be missing."""
                 "ask_depth": sum(a.size for a in orderbook.asks[:5]),
             }
 
+        # Inject real-time price context (critical for price-based markets)
+        try:
+            from .prices import get_price_context
+            price_ctx = get_price_context(event.title)
+            if price_ctx:
+                context["real_time_prices"] = price_ctx
+        except Exception:
+            pass
+
+        # Inject news signals if none provided
+        if not news_signals:
+            try:
+                from .news import search_news_sync
+                signals = search_news_sync(event.title, days_back=3)
+                for s in signals[:5]:
+                    context["news_signals"].append({
+                        "title": s.title,
+                        "source": s.source,
+                        "sentiment": s.sentiment or "neutral",
+                        "relevance": s.relevance,
+                        "snippet": s.snippet[:200] if s.snippet else "",
+                    })
+            except Exception:
+                pass
+
         return context
 
     def _build_prompt(self, context: dict) -> str:
@@ -184,6 +223,9 @@ NEWS SIGNALS:
 
 ORDER BOOK:
 {json.dumps(context['orderbook'], indent=2) if context['orderbook'] else 'Not available'}
+
+REAL-TIME MARKET DATA:
+{context.get('real_time_prices', 'Not available')}
 
 Provide your prediction in this exact JSON format:
 {{
