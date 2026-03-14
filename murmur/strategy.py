@@ -224,6 +224,17 @@ Look for signals the market might be missing."""
             except Exception:
                 pass
 
+        # Context Planner: auto-detect domain, fill knowledge gaps, inject context
+        try:
+            from .context_planner import build_context, format_for_llm
+            market_price = event.tokens[0].price if event.tokens else 0.5
+            enriched = build_context(event.title, event.description or "", market_price)
+            llm_ctx = format_for_llm(enriched)
+            if llm_ctx.strip():
+                context["context_planner"] = llm_ctx
+        except Exception:
+            pass
+
         return context
 
     def _build_prompt(self, context: dict) -> str:
@@ -249,6 +260,9 @@ ORDER BOOK:
 
 REAL-TIME MARKET DATA:
 {context.get('real_time_prices', 'Not available')}
+
+CONTEXT PLANNER ANALYSIS:
+{context.get('context_planner', 'Not available')}
 
 Provide your prediction in this exact JSON format:
 {{
