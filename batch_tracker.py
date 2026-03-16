@@ -46,7 +46,7 @@ def save_batch(data):
 async def fetch_all_active_markets(tags=None, max_events=200):
     """Fetch active markets across categories."""
     if tags is None:
-        tags = ["sports", "commodities", "economy", "golf"]
+        tags = ["sports", "commodities", "economy", "golf", "entertainment", "politics", "science", "crypto"]
 
     all_markets = []
     seen_conditions = set()

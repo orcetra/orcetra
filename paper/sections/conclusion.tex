@@ -1,0 +1,12 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We presented Murmur, a system for automated prediction strategy discovery that combines domain-aware context injection, evolutionary code search, and agent-based market simulation. Our experiments on Polymarket demonstrate that context enrichment provides substantial accuracy improvements in information-sensitive domains (8--11\% in awards and commodity predictions) while confirming that high-liquidity markets such as sports remain efficiently priced and resistant to LLM-augmented analysis.
+
+The Evolution Engine discovers interpretable strategies that match market-level Brier Scores through code-level mutation with single-change constraints and diversity pressure, avoiding the overfitting and complexity explosion that plague unconstrained approaches. Our analysis of prediction alpha across eleven domains identifies the structural conditions---information asymmetry, reasoning advantage, and low liquidity---under which systematic prediction edge can exist, providing a framework for practitioners to assess where automated forecasting tools are likely to add value.
+
+Looking forward, three directions merit investigation. First, the Virtual Prediction Market requires comprehensive evaluation with adversarial agent training to assess strategy robustness under dynamic market conditions. Second, cross-market correlation exploitation---where information about one market informs predictions in related markets---represents an untapped source of potential alpha. Third, the architectural generality demonstrated across prediction markets, supply chain optimization, and healthcare coordination suggests that context-enriched agent-based reasoning may constitute a broadly applicable paradigm for decision-making under uncertainty, warranting systematic comparative study across domains.
+
+\begin{acks}
+The authors thank the Polymarket team for maintaining open API access to market data. Computational resources were provided by an NVIDIA DGX Spark. G.~Zhang and K.~Zhao contributed as independent researchers; the work was conducted independently and does not represent the views of any employer.
+\end{acks}

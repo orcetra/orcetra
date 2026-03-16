@@ -1,0 +1,87 @@
+\section{Method}
+\label{sec:method}
+
+Murmur comprises three interconnected components: a Context Planner that enriches prediction inputs with domain-specific real-time information (\S\ref{sec:context_planner}), an LLM-based prediction engine with market-anchored calibration (\S\ref{sec:prediction}), and an Evolution Engine that discovers improved prediction strategies through code-level mutation (\S\ref{sec:evolution}). We describe each component in turn, followed by the Virtual Prediction Market that provides adversarial evaluation (\S\ref{sec:virtual_market}).
+
+\subsection{Context Planner}
+\label{sec:context_planner}
+
+The central insight motivating the Context Planner is that LLM prediction failures are predominantly \emph{information failures} rather than \emph{reasoning failures}. When an LLM predicts that crude oil has only a 35\% chance of reaching \$100 per barrel while the market prices this at 89\%, the error stems not from flawed reasoning but from the model's ignorance of current oil prices and recent supply dynamics. The Context Planner systematically closes these information gaps before the prediction query is issued.
+
+\paragraph{Domain Classification.} Each incoming event is classified into one of eleven domains: awards, economy, policy, commodities, crypto, sports, golf, technology, geopolitics, entertainment, and unknown. Classification employs keyword matching augmented with LLM-based disambiguation for ambiguous events. Each domain defines a distinct set of required context types, predictability estimates, and recommended analytical frameworks.
+
+\paragraph{Knowledge Gap Identification.} Given a classified event, the Context Planner generates a structured assessment of what the LLM is likely to \emph{not know}. This assessment is domain-specific:
+
+\begin{itemize}
+    \item \textbf{Commodities/Crypto}: Current spot price, 30-day price trend, relevant inventory or on-chain data, scheduled economic releases (FOMC decisions, CPI reports).
+    \item \textbf{Awards}: Results of precursor ceremonies (e.g., SAG, BAFTA, Golden Globes for Oscar predictions), critic consensus scores, historical correlation between precursors and final outcomes.
+    \item \textbf{Geopolitics}: Recent diplomatic communications, troop movements or sanctions, escalation/de-escalation indicators, historical analogue events.
+    \item \textbf{Economy}: Leading economic indicators, central bank communications, yield curve dynamics, labor market data.
+\end{itemize}
+
+\paragraph{Targeted Retrieval.} The Context Planner generates 2--4 search queries per event, optimized for specificity rather than breadth. For an Oscar Best Picture prediction, the system generates queries such as ``2026 SAG Awards Best Ensemble results'' and ``2026 PGA Awards Best Picture winner'' rather than generic queries like ``Oscar predictions 2026.'' Retrieved results are scored for relevance (semantic similarity to the event) and novelty (information unlikely to be in the LLM's training data), with low-scoring results filtered before injection.
+
+\paragraph{Tetlock Decomposition.} Following the methodology of superforecasters~\cite{tetlock2015superforecasting}, the Context Planner decomposes each event into component questions amenable to base-rate analysis. A prediction about whether Bitcoin will reach \$85{,}000 in March is decomposed into: (1) What is the base rate of 10\%+ monthly BTC price increases? (2) What is the current distance from target? (3) Are there catalysts (ETF flows, regulatory changes) that would deviate from base rates? Each sub-question receives independent evidence assessment before integration.
+
+\paragraph{Signal Structuring.} Retrieved context is organized into a structured \texttt{EnrichedContext} object containing: the original plan (domain, gaps, queries), retrieved signals with relevance and novelty scores, directional labels (supports\_yes, supports\_no, neutral), and optional real-time price data from CoinGecko (cryptocurrency) and Yahoo Finance (commodities, equities). This structured package replaces the raw event description in the LLM prediction prompt.
+
+\subsection{Prediction Engine}
+\label{sec:prediction}
+
+The prediction engine combines LLM-based analysis with market-anchored calibration to produce probability estimates. The architecture addresses two systematic biases observed in zero-shot LLM predictions: overconfidence on events where the LLM lacks current information, and underconfidence on events where strong base rates exist.
+
+\paragraph{Market-Anchored Calibration.} Rather than relying solely on LLM output, the final prediction blends the LLM's probability estimate with the current market price:
+\begin{equation}
+    p_{\text{final}} = w_{\text{market}} \cdot p_{\text{market}} + (1 - w_{\text{market}}) \cdot p_{\text{LLM}}
+\end{equation}
+where the market weight $w_{\text{market}}$ is adjusted based on the LLM's stated confidence level. When the LLM expresses high confidence (above 0.8), its weight increases; when confidence is low, the system defaults more heavily to market consensus. Default weights are $w_{\text{market}} = 0.6$, reflecting the empirical finding that markets are right more often than individual analysts.
+
+\paragraph{Long-Shot Bias Correction.} Empirical analysis of Polymarket data reveals systematic overpricing of low-probability events (the favorite-longshot bias). Market prices in the 20--50\% range tend to overestimate true probabilities by 2--5 percentage points. The prediction engine applies a calibration correction derived from Phase~1 historical analysis:
+\begin{equation}
+    p_{\text{calibrated}} = \begin{cases}
+        p_{\text{market}} & \text{if } p_{\text{market}} > 0.9 \text{ or } < 0.1 \\
+        p_{\text{market}} - 0.02 & \text{if } p_{\text{market}} > 0.7 \\
+        p_{\text{market}} + 0.02 & \text{if } p_{\text{market}} < 0.3 \\
+        p_{\text{market}} & \text{otherwise}
+    \end{cases}
+\end{equation}
+
+\paragraph{Position Sizing.} For events where the system identifies significant divergence between its prediction and the market price, the Kelly criterion determines optimal position size:
+\begin{equation}
+    f^* = \frac{p \cdot b - q}{b}, \quad b = \frac{1}{p_{\text{market}}} - 1
+\end{equation}
+where $p$ is our predicted probability, $q = 1 - p$, and $b$ is the implied odds. In practice, we employ half-Kelly ($f^*/2$) to reduce variance, and impose a minimum divergence threshold of 3\% before any position is recommended.
+
+\subsection{Evolution Engine}
+\label{sec:evolution}
+
+The Evolution Engine discovers improved prediction strategies through iterative code modification, inspired by recent work on LLM-driven program synthesis~\cite{romera2024mathematical}. Unlike parameter optimization, which searches a fixed-dimensional space, code evolution can introduce qualitatively new analysis patterns---such as learning to weight precursor signals differently based on market liquidity, or to apply asymmetric confidence adjustments depending on the market price regime.
+
+\paragraph{Strategy Representation.} Each prediction strategy is represented as a Python function with a fixed interface: given an event title, description, market price, and trading volume, the function returns a probability estimate, confidence score, and reasoning string. This representation is both human-readable and LLM-modifiable, enabling transparent auditing of evolved strategies.
+
+\paragraph{Mutation Procedure.} At each evolution round, the LLM receives the current best strategy code along with its performance metrics (Brier Score by domain, beat-market rate, calibration statistics) and a history of previously attempted modifications. The LLM is instructed to propose exactly one modification---a constraint we found critical for stability near local optima, as unconstrained ``improve everything'' prompts consistently produce overcomplex strategies that degrade performance. The single-change constraint focuses the search on testable hypotheses about specific aspects of the prediction logic.
+
+\paragraph{Diversity Pressure.} Without explicit diversity mechanisms, we observed that the LLM converges on a narrow set of modifications, repeatedly attempting the same failed changes. In experiments with Llama~4 Scout, the same parameter adjustment was attempted in 13 out of 20 rounds despite consistent failure. We address this with a banned modification list and idea rotation prompt that enumerates categories of possible changes (threshold adjustments, new signal sources, conditional logic, calibration corrections) and requires the LLM to attempt unexplored categories before revisiting previous ones.
+
+\paragraph{Evaluation and Selection.} Each mutated strategy is evaluated on a held-out set of resolved Polymarket events using Brier Score as the fitness function. Strategies that improve over the current best are accepted; others are rejected but their modifications are logged in the banned list. The evolution terminates when no improvement is found for five consecutive rounds or a maximum round count is reached.
+
+\paragraph{Warm Start.} Evolution begins from known effective strategies rather than random initialization. Our seed strategies include: (1) market-following (always predict the market price), (2) Tetlock-inspired (base-rate anchoring with update), and (3) contrarian (systematically adjust away from extreme market prices). This warm start ensures that evolution begins in a productive region of strategy space, avoiding the cold-start problem that plagues random initialization in code search.
+
+\subsection{Virtual Prediction Market}
+\label{sec:virtual_market}
+
+Static backtesting evaluates strategies against historical outcomes but cannot capture the dynamic interactions that arise when strategies influence market prices. The Virtual Prediction Market addresses this limitation by simulating an exchange populated with heterogeneous trading agents.
+
+\paragraph{Agent Types.} The market supports five agent archetypes, each parameterized by behavior distributions calibrated from Phase~1 historical analysis of Polymarket trading patterns:
+
+\begin{itemize}
+    \item \textbf{Noise Trader}: Places random orders uniformly distributed around the current market price, providing baseline liquidity.
+    \item \textbf{Informed Trader}: Receives private signals (generated by the Context Planner) and trades when the signal diverges from the market price by more than a threshold.
+    \item \textbf{Momentum Trader}: Follows price trends, buying when prices rise and selling when they fall, with a lookback window calibrated from observed Polymarket price autocorrelation.
+    \item \textbf{Contrarian}: Bets against consensus when market prices reach extreme values, exploiting the favorite-longshot bias.
+    \item \textbf{Market Maker}: Provides two-sided liquidity using an AMM pricing function with adjustable spread.
+\end{itemize}
+
+\paragraph{Information Flow.} The simulation models three information flow regimes: (1) \emph{simultaneous release}, where all agents receive the same information at the same time; (2) \emph{sequential diffusion}, where informed agents receive information first and it gradually propagates to other agent types; and (3) \emph{asymmetric access}, where different agent types have access to different information sources. These regimes enable evaluation of strategy robustness under varying assumptions about information distribution.
+
+\paragraph{Strategy Evaluation.} Candidate strategies are embodied as informed trader agents and evaluated on simulated P\&L, Brier Score of their implied probabilities, and survival rate (whether they maintain positive capital over a simulated trading season). Strategies that perform well in both historical backtesting and virtual market simulation are considered robust; strategies that excel in backtesting but fail in simulation may be overfitting to historical patterns.

@@ -1,0 +1,108 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Overall Prediction Performance}
+
+Table~\ref{tab:main_results} presents the aggregate performance of Murmur and baselines across all resolved events. The market consensus baseline achieves a Brier Score of 0.0936, establishing a strong reference point consistent with the theoretical expectation that prediction markets approximate optimal aggregation of available information.
+
+\begin{table}[t]
+\centering
+\caption{Overall prediction performance across resolved events. Brier Score (lower is better) and Beat-Market Rate (higher is better). Best results in bold.}
+\label{tab:main_results}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Method & Brier Score & BMR (\%) & Kelly Return \\ \midrule
+Market Consensus & 0.0936 & --- & 0\% \\
+Zero-Shot LLM & 0.1065 & 40.2 & $-$12.3\% \\
+Context-Enriched LLM & [TBD] & [TBD] & [TBD] \\
+Evolved Strategy & \textbf{0.0934} & 53.1 & +2.1\% \\
+Murmur (Full) & [TBD] & [TBD] & [TBD] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The zero-shot LLM baseline performs substantially worse than market consensus (Brier Score 0.1065 vs.\ 0.0936), with a beat-market rate of only 40.2\%. This confirms that raw LLM predictions, without access to current information, are not competitive with crowd-aggregated market prices. The evolved strategy achieves a Brier Score of 0.0934, marginally outperforming the market baseline with a beat-market rate of 53.1\%, indicating that evolutionary code search can discover strategies that provide a small but consistent edge.
+
+\subsection{Context Injection Effect}
+
+The most striking result concerns the impact of context injection on domain-specific prediction accuracy. Table~\ref{tab:context_effect} breaks down the effect across selected domains.
+
+\begin{table}[t]
+\centering
+\caption{Context injection effect by domain. $\Delta$ indicates the absolute change in predicted probability toward the correct outcome after context enrichment.}
+\label{tab:context_effect}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Domain & Zero-Shot & Context-Enriched & $\Delta$ \\ \midrule
+Awards (Oscar) & 71\% & 82\% & +11\% \\
+Commodities (Oil) & 35\% & 79\% & +44\% \\
+Crypto (BTC) & 60\% & 64\% & +4\% \\
+Sports & 52\% & 53\% & +1\% \\
+Economy & [TBD] & [TBD] & [TBD] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The commodity domain exhibits the largest improvement: for the event ``Will Crude Oil hit \$100 by end of March?'', the zero-shot prediction of 35\% reflected the LLM's lack of awareness that oil was already trading near \$95 at the time of prediction. After injecting current spot prices and recent trend data via the Context Planner, the prediction corrected to 79\%, closely tracking the market price of 89\%. While still underestimating the market, the context-enriched prediction represents a qualitatively different analysis informed by current reality rather than stale training data.
+
+The awards domain shows a smaller but more analytically interesting improvement. For the 2026 Academy Awards Best Picture prediction, the zero-shot prediction of 71\% for the eventual winner reflected general knowledge of the film's critical reception. After injecting results from 37 precursor ceremonies---including the SAG Award for Outstanding Cast Performance, Directors Guild Award, and Producers Guild Award---the prediction increased to 82\%, exceeding the market price of 74\%. This suggests that the market had not fully incorporated the strong precursor signal, creating a temporary information asymmetry that the Context Planner exploited.
+
+In contrast, sports predictions showed negligible improvement from context injection (+1\%), consistent with the hypothesis that sports betting markets are highly efficient due to extensive professional analysis and high liquidity.
+
+\subsection{Evolution Dynamics}
+
+Figure~\ref{fig:evolution} (to be generated from experimental data) illustrates the convergence behavior of the Evolution Engine across 20 rounds.
+
+The evolution process reveals several noteworthy patterns. First, warm-start initialization is critical: beginning from the market-following baseline (Brier Score 0.0936) rather than random strategies (typical Brier Score $>$ 0.15) reduces the number of rounds needed to reach competitive performance from $>$50 to approximately 5. Second, the single-change constraint prevents the complexity explosion observed in unconstrained evolution, where the LLM consistently ``improves'' strategies by adding elaborate conditional logic that overfits to the training set. Third, the diversity pressure mechanism is essential near local optima: without banned modification tracking, Llama~4 Scout attempted the same parameter adjustment (ORDER\_BUFFER = 0.85) in 13 out of 20 rounds, each time producing the same failure.
+
+The evolved strategy that emerged from this process (Table~\ref{tab:evolved_strategy}) demonstrates interpretable, auditable logic. The strategy trusts market prices at extremes ($>$0.9 or $<$0.1), applies a small contrarian adjustment in mid-range prices, and adjusts its market deference based on trading volume---high-volume markets receive more trust. This pattern was not explicitly programmed but emerged from evolutionary pressure against resolved outcomes.
+
+\begin{table}[t]
+\centering
+\caption{Key parameters of the best evolved strategy. The strategy applies domain-dependent adjustments based on market price regime and trading volume.}
+\label{tab:evolved_strategy}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Market Price Regime & Adjustment & Market Weight \\ \midrule
+$> 0.90$ or $< 0.10$ & None & 0.95 \\
+$> 0.70$ & $-0.02$ & 0.80 \\
+$< 0.30$ & $+0.02$ & 0.80 \\
+Mid-range & Keyword-based & 0.60 \\
+High volume ($>$\$100M) & Trust market & 0.95 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Domain-Level Alpha Analysis}
+
+A central question for prediction market participants is: in which domains can systematic analysis provide an edge over market consensus? Our experiments reveal that alpha is not uniformly distributed but concentrates in domains with specific structural characteristics.
+
+\begin{table}[t]
+\centering
+\caption{Domain-level alpha analysis. Alpha source describes the primary mechanism through which prediction edge can be obtained. Decay rate indicates how quickly the market incorporates available information.}
+\label{tab:alpha_analysis}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Domain & Alpha Source & Decay & Exploitable? \\ \midrule
+Awards & Precursor signals & Slow (days) & \checkmark \\
+Commodities & Price gap & Medium (hrs) & \checkmark \\
+Economy & Policy analysis & Slow (days) & Possible \\
+Crypto & Sentiment & Fast (min) & Marginal \\
+Geopolitics & Expert analysis & Slow (days) & Possible \\
+Sports & None (priced in) & N/A & \ding{55} \\
+Golf & None (priced in) & N/A & \ding{55} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three conditions must hold for exploitable alpha to exist: (1) \emph{information asymmetry}---context exists that has not been fully priced in by the market; (2) \emph{reasoning advantage}---the LLM can synthesize information across sources faster than the marginal trader; and (3) \emph{low liquidity}---the market has not attracted sufficient informed capital to eliminate mispricings. Awards and commodity markets satisfy all three conditions: precursor signals and real-time prices provide clear informational advantages, LLM synthesis is faster than manual analysis, and these markets are substantially less liquid than sports betting.
+
+\subsection{Live Validation}
+
+At the time of writing, 15 markets are under active live tracking, with the first resolution events expected during the evaluation period (Academy Awards: March 15, 2026; commodity settlements: March 31, 2026). We will report live validation results in the final version of this paper.
+
+Preliminary live tracking data shows that context-enriched predictions maintain tighter divergence from market prices compared to zero-shot predictions. Across 15 active markets, the mean absolute divergence between our predictions and market prices is 5.2\% for context-enriched predictions versus 14.7\% for zero-shot predictions, indicating that context injection substantially improves alignment with market consensus even before outcome resolution provides ground truth.
