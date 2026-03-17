@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murmur AI — Prediction Intelligence Engine</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg: #07080f;
+            --bg-card: rgba(15, 18, 35, 0.85);
+            --neon-blue: #00d4ff;
+            --neon-green: #00ff88;
+            --neon-purple: #a855f7;
+            --text: #e2e8f0;
+            --text-dim: #64748b;
+            --border: rgba(0, 212, 255, 0.15);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        /* Animated background grid */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+        }
+        
+        /* Glow orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .orb-1 { width: 500px; height: 500px; background: var(--neon-blue); top: -100px; right: -100px; }
+        .orb-2 { width: 400px; height: 400px; background: var(--neon-purple); bottom: -50px; left: -50px; }
+        .orb-3 { width: 300px; height: 300px; background: var(--neon-green); top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.05; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ===== NAV ===== */
+        nav {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .pulse {
+            width: 8px; height: 8px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(0,255,136,0); }
+        }
+        
+        /* ===== HERO ===== */
+        .hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+        }
+        .hero-tag {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--neon-blue);
+            margin-bottom: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        
+        /* ===== STATS ===== */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+        @media (max-width: 768px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0,212,255,0.1);
+            transform: translateY(-4px);
+        }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .stat-sub {
+            font-size: 0.75rem;
+            color: var(--neon-green);
+            margin-top: 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* ===== INSIGHT SECTION ===== */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .section-sub {
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+        
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+        @media (max-width: 768px) {
+            .insight-grid { grid-template-columns: 1fr; }
+        }
+        .insight-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        .insight-card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-3px);
+        }
+        .insight-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .insight-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .insight-card p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+        
+        /* ===== CTA ===== */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            color: #000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(0,212,255,0.3);
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 50px rgba(0,212,255,0.5);
+        }
+        
+        /* ===== HOW IT WORKS ===== */
+        .layers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+        @media (max-width: 768px) {
+            .layers { grid-template-columns: 1fr; }
+        }
+        .layer-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .layer-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+        }
+        .layer-1::before { background: linear-gradient(90deg, var(--neon-blue), var(--neon-green)); }
+        .layer-2::before { background: linear-gradient(90deg, var(--neon-green), var(--neon-purple)); }
+        .layer-3::before { background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue)); }
+        .layer-num {
+            font-size: 3rem;
+            font-weight: 900;
+            opacity: 0.1;
+            position: absolute;
+            top: 10px; right: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .layer-card h3 {
+            color: var(--neon-blue);
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+        .layer-card p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+        
+        /* ===== OSCAR HIGHLIGHT ===== */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(168,85,247,0.08));
+            border: 1px solid rgba(0,212,255,0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .highlight-box { flex-direction: column; text-align: center; }
+        }
+        .highlight-emoji { font-size: 4rem; }
+        .highlight-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .highlight-box p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+        .highlight-nums {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .highlight-num {
+            text-align: center;
+        }
+        .highlight-num .val {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .highlight-num .lbl {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+        .val-green { color: var(--neon-green); }
+        .val-blue { color: var(--neon-blue); }
+        .val-dim { color: var(--text-dim); text-decoration: line-through; }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate { animation: fadeUp 0.8s ease-out forwards; }
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="container">
+        <!-- Nav -->
+        <nav>
+            <div class="logo">MURMUR AI</div>
+            <div class="nav-badge">
+                <span class="pulse"></span>
+                <span id="liveCount">3,299</span> markets tracked
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-tag">PREDICTION INTELLIGENCE ENGINE</div>
+            <h1>We don't predict the future.<br>We predict where the <span class="gradient">crowd is wrong</span>.</h1>
+            <p>AI-powered calibration engine that systematically identifies and exploits pricing inefficiencies in prediction markets. Validated on 3,299 Polymarket events across sports, economy, politics, and crypto.</p>
+        </section>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card animate delay-1">
+                <div class="stat-number" id="statBeat">83.8%</div>
+                <div class="stat-label">Beat Market Rate</div>
+                <div class="stat-sub">159 verified predictions</div>
+            </div>
+            <div class="stat-card animate delay-2">
+                <div class="stat-number">3,299</div>
+                <div class="stat-label">Markets Tracked</div>
+                <div class="stat-sub">sports · economy · politics · crypto</div>
+            </div>
+            <div class="stat-card animate delay-3">
+                <div class="stat-number" style="color: var(--neon-green); -webkit-text-fill-color: unset;">0.031</div>
+                <div class="stat-label">Brier Advantage</div>
+                <div class="stat-sub">statistically significant edge</div>
+            </div>
+            <div class="stat-card animate delay-4">
+                <div class="stat-number" style="font-size: 2.2rem;">24/7</div>
+                <div class="stat-label">Auto Pipeline</div>
+                <div class="stat-sub">predict → verify → evolve</div>
+            </div>
+        </div>
+
+        <!-- Oscar Highlight -->
+        <div class="highlight-box animate">
+            <div class="highlight-emoji">🏆</div>
+            <div>
+                <h3>Oscar 2026: We saw it before the market did</h3>
+                <p>"One Battle After Another" for Best Picture — Murmur predicted 82% while the market was at 74%. The film won 6 awards.</p>
+                <div class="highlight-nums">
+                    <div class="highlight-num">
+                        <div class="val val-green">82%</div>
+                        <div class="lbl">Murmur</div>
+                    </div>
+                    <div class="highlight-num">
+                        <div class="val val-dim">74%</div>
+                        <div class="lbl">Market</div>
+                    </div>
+                    <div class="highlight-num">
+                        <div class="val val-blue">✓ Won</div>
+                        <div class="lbl">Outcome</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <h2 class="section-title">Three-Layer Intelligence</h2>
+        <p class="section-sub">Most predictions need only Layer 1. The deeper layers activate for high-value markets where alpha is largest.</p>
+        
+        <div class="layers">
+            <div class="layer-card layer-1">
+                <div class="layer-num">01</div>
+                <h3>Calibration Engine</h3>
+                <p>Corrects systematic biases in crowd pricing. Markets overestimate long-shots (behavioral economics 101). We exploit this with statistical calibration trained on historical resolution data.</p>
+            </div>
+            <div class="layer-card layer-2">
+                <div class="layer-num">02</div>
+                <h3>Real-Time Signal Fusion</h3>
+                <p>Blends live price data, volume dynamics, and domain-specific models. For commodities: current price vs. threshold distance. For sports: market efficiency detection.</p>
+            </div>
+            <div class="layer-card layer-3">
+                <div class="layer-num">03</div>
+                <h3>Context Enrichment</h3>
+                <p>LLM-powered deep analysis with news search and domain knowledge. Activated for high-value, low-liquidity markets where crowd wisdom breaks down — like Oscar categories or niche politics.</p>
+            </div>
+        </div>
+
+        <!-- Insights -->
+        <h2 class="section-title">Key Findings</h2>
+        <p class="section-sub">What we've learned from 3,299 prediction markets</p>
+        
+        <div class="insight-grid">
+            <div class="insight-card">
+                <div class="insight-icon">📊</div>
+                <h3>Long-Shot Bias Is Real</h3>
+                <p>Events priced 20-50% by the market happen less often than implied. Simple calibration correction captures most of our edge.</p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon">🏈</div>
+                <h3>Sports Are Efficient</h3>
+                <p>DraftKings and Vegas smart money already arbitrage sports markets to near-perfection. We trust the market here — knowing what NOT to predict is alpha.</p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon">🎯</div>
+                <h3>Low Liquidity = High Alpha</h3>
+                <p>Niche markets (Oscar categories, science questions, exotic politics) have the widest mispricings. Context enrichment shines here.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <a href="dashboard.html" class="cta-btn">
+                View Live Dashboard →
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>MURMUR AI · Prediction Intelligence Engine · Phase 1.5 Live Validation</p>
+            <p style="margin-top: 0.5rem; opacity: 0.5;">Confidential — For authorized recipients only</p>
+        </footer>
+    </div>
+</body>
+</html>

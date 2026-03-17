@@ -99,6 +99,13 @@ def main():
         with open(out_path, "w") as f:
             f.write(html_standalone)
         print(f"Dashboard updated: {n_checked} checks, {n_beat}/{n_checked} beat ({100*n_beat/n_checked:.1f}%)")
+
+        # Also copy to site/ for Cloudflare Pages deployment
+        site_dir = os.path.join(ROOT, "site")
+        if os.path.isdir(site_dir):
+            import shutil
+            shutil.copy2(out_path, os.path.join(site_dir, "dashboard.html"))
+            print("Copied to site/dashboard.html")
     else:
         print(f"data.json updated (no index.html template found)")
 

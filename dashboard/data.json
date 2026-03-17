@@ -1,12 +1,12 @@
 {
   "summary": {
-    "total_predictions": 3299,
+    "total_predictions": 4096,
     "resolved": 159,
-    "pending": 3140,
+    "pending": 3937,
     "beat_rate": 0.8364779874213837,
     "avg_murmur_brier": 0.18124591194968553,
     "avg_market_brier": 0.2116358490566038,
-    "last_updated": "2026-03-16T21:36:55.141435+00:00"
+    "last_updated": "2026-03-17T00:00:17.734055+00:00"
   },
   "by_tag": {
     "sports": {

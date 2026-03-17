@@ -45,4 +45,15 @@ else:
     print(f'Skipped alert: only {n} checks (need 20+)')
 " >> "$LOG" 2>&1 || true
 
+# 6. Auto-commit and push updated data (triggers Cloudflare Pages rebuild)
+echo "[6/6] Git push..." >> "$LOG"
+if git diff --quiet site/ dashboard/ results/check_log.json results/batch_predictions.json 2>/dev/null; then
+    echo "No changes to push" >> "$LOG"
+else
+    git add site/ dashboard/ results/check_log.json results/batch_predictions.json 2>/dev/null
+    git commit -m "data: auto-update $(date +%Y-%m-%d_%H:%M)" --no-verify 2>/dev/null >> "$LOG" || true
+    git push 2>/dev/null >> "$LOG" || true
+    echo "Pushed updates" >> "$LOG"
+fi
+
 echo "=== Done $(date -Iseconds) ===" >> "$LOG"
