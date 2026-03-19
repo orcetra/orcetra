@@ -29,20 +29,31 @@ python3 -c "
 import json
 with open('results/check_log.json') as f:
     checks = json.load(f)['checks']
-n = len(checks)
+
+# Exclude sports from alert (Phase 1 finding: negative EV, not a bet category)
+NO_ALERT_TAGS = {'sports'}
+bet_checks = [c for c in checks if c.get('tag') not in NO_ALERT_TAGS]
+all_n = len(checks)
+n = len(bet_checks)
+
 if n >= 20:
-    beat = sum(1 for c in checks if c['beat_market'])
+    beat = sum(1 for c in bet_checks if c['beat_market'])
     rate = beat / n
-    # Alert if rate drops below 70% (was 84%)
+
+    # Also compute overall for logging
+    all_beat = sum(1 for c in checks if c['beat_market'])
+    all_rate = all_beat / all_n if all_n else 0
+
+    # Alert if bet-category rate drops below 70%
     if rate < 0.70:
         import subprocess
-        msg = f'⚠️ Murmur alert: beat rate dropped to {rate:.1%} ({beat}/{n}). Check pipeline.'
+        msg = f'⚠️ Murmur alert: bet-category beat rate dropped to {rate:.1%} ({beat}/{n}). Overall: {all_rate:.1%} ({all_beat}/{all_n}). Check pipeline.'
         subprocess.run(['openclaw', 'system', 'event', '--text', msg, '--mode', 'now'], check=False)
-        print(f'ALERT SENT: {rate:.1%}')
+        print(f'ALERT SENT: bet={rate:.1%}, overall={all_rate:.1%}')
     else:
-        print(f'OK: beat rate {rate:.1%} ({beat}/{n})')
+        print(f'OK: bet={rate:.1%} ({beat}/{n}), overall={all_rate:.1%} ({all_beat}/{all_n})')
 else:
-    print(f'Skipped alert: only {n} checks (need 20+)')
+    print(f'Skipped alert: only {n} bet-category checks (need 20+)')
 " >> "$LOG" 2>&1 || true
 
 # 6. Auto-commit and push updated data (triggers Cloudflare Pages rebuild)
