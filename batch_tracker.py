@@ -147,9 +147,12 @@ def rule_predict(title, description, market_price, volume):
     """Fast rule-based prediction (no LLM call = can do 100s instantly).
     Uses evolved strategy + real-time price context + calibration correction."""
     p = market_price
+    reasoning_parts = []
 
     # Get real-time price context
     price_ctx = get_price_context(title)
+    
+    reasoning_parts.append(f"Market price: {market_price:.2f}")
 
     if price_ctx:
         # We have real data — extract price and compute distance to threshold
@@ -162,38 +165,55 @@ def rule_predict(title, description, market_price, volume):
             try:
                 current = float(current_match.group(1).replace(',', ''))
                 threshold = float(threshold_match.group(1).replace(',', ''))
+                ratio = current / threshold if threshold > 0 else 1.0
+                
+                reasoning_parts.append(f"Real-time data: ${current:.2f} vs ${threshold:.2f} threshold (ratio: {ratio:.3f})")
 
                 # Distance-based prediction
                 if "hit" in title.lower() or "reach" in title.lower() or "above" in title.lower():
-                    ratio = current / threshold if threshold > 0 else 1.0
                     if ratio >= 1.0:
                         p = 0.92  # Already past threshold
+                        reasoning_parts.append("Already above threshold → 0.92")
                     elif ratio >= 0.98:
                         p = 0.85  # Very close
+                        reasoning_parts.append("Very close to threshold → 0.85")
                     elif ratio >= 0.95:
                         p = 0.70
+                        reasoning_parts.append("Close to threshold → 0.70")
                     elif ratio >= 0.90:
                         p = 0.55
+                        reasoning_parts.append("Moderately close → 0.55")
                     elif ratio >= 0.80:
                         p = 0.35
+                        reasoning_parts.append("Some distance from threshold → 0.35")
                     else:
                         p = 0.15
+                        reasoning_parts.append("Far from threshold → 0.15")
                 elif "dip" in title.lower() or "below" in title.lower():
                     ratio = threshold / current if current > 0 else 1.0
                     if ratio >= 1.0:
                         p = 0.92
+                        reasoning_parts.append("Already below threshold → 0.92")
                     elif ratio >= 0.95:
                         p = 0.70
+                        reasoning_parts.append("Close to dipping below → 0.70")
                     elif ratio >= 0.90:
                         p = 0.45
+                        reasoning_parts.append("Somewhat close to dip threshold → 0.45")
                     else:
                         p = 0.20
+                        reasoning_parts.append("Far from dip threshold → 0.20")
             except (ValueError, ZeroDivisionError):
+                reasoning_parts.append("Failed to parse price data")
                 pass
 
     # Market anchor blend (40% our signal, 60% market)
+    pre_blend = p
     p = market_price * 0.55 + p * 0.45
     p = max(0.01, min(0.99, p))
+    
+    if pre_blend != market_price:
+        reasoning_parts.append(f"Blended with market: {pre_blend:.3f} → {p:.3f}")
 
     # Sports: mostly trust market (we have no edge on sports)
     title_lower = title.lower()
@@ -202,18 +222,26 @@ def rule_predict(title, description, market_price, volume):
         "nba", "premier", "la liga", "champions", "total sets",
         "total kills", "series:", "game 1"
     ])
+    
     if is_sports:
         # Sports: apply calibration correction (long-shot bias exists here too)
-        p = calibration_correct(market_price)
+        cal_corrected = calibration_correct(market_price)
+        p = cal_corrected
         p = max(0.01, min(0.99, p))
+        reasoning_parts.append(f"Sports question detected → using calibrated market only: {market_price:.3f} → {cal_corrected:.3f}")
     else:
         # Non-sports: blend our signal with calibration-corrected market
         cal_market = calibration_correct(market_price)
+        reasoning_parts.append(f"Calibration-corrected market: {cal_market:.3f}")
+        
+        pre_final = p
         # If we have real-time price data, trust our model more
         if price_ctx:
             p = 0.4 * cal_market + 0.6 * p  # More weight on our price model
+            reasoning_parts.append(f"Non-sports with price data → blend 40% cal_market + 60% model: {pre_final:.3f} → {p:.3f}")
         else:
             p = 0.6 * cal_market + 0.4 * p  # More weight on calibrated market
+            reasoning_parts.append(f"Non-sports, no price data → blend 60% cal_market + 40% model: {pre_final:.3f} → {p:.3f}")
         p = max(0.01, min(0.99, p))
 
     confidence = 0.5
@@ -222,11 +250,15 @@ def rule_predict(title, description, market_price, volume):
     if is_sports:
         confidence = 0.4  # Low confidence on sports
 
+    # Build final reasoning string
+    reasoning = ". ".join(reasoning_parts) + f". Final: {p:.3f} (confidence: {confidence})"
+
     return {
         "probability": round(p, 4),
         "confidence": round(confidence, 2),
         "has_price_data": price_ctx is not None,
         "is_sports": is_sports,
+        "reasoning": reasoning,
     }
 
 
@@ -267,6 +299,7 @@ def predict_batch():
             "confidence": result["confidence"],
             "has_price_data": result["has_price_data"],
             "is_sports": result["is_sports"],
+            "reasoning": result["reasoning"],
             "predicted_at": datetime.now(timezone.utc).isoformat(),
             "end_date": m["end_date"],
             "volume": m["volume"],

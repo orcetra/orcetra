@@ -50,16 +50,23 @@ def main():
     all_checked = []
     for c in checks:
         spread = abs(c["our_prediction"] - c["market_price"])
+        
+        # Look up the reasoning from batch_predictions.json
+        pred_key = c.get("condition_id", "")
+        pred_data = preds.get(pred_key, {})
+        reasoning = pred_data.get("reasoning", "")
+        
         all_checked.append({
             "q": c["question"],
             "tag": c.get("tag", "unknown"),
-            "murmur": round(c["our_prediction"], 4),
+            "orcetra": round(c["our_prediction"], 4),
             "market": round(c["market_price"], 4),
             "actual": c["actual"],
             "our_brier": round(c["our_brier"], 4),
             "mkt_brier": round(c["mkt_brier"], 4),
             "beat": c["beat_market"],
             "spread": round(spread, 4),
+            "reasoning": reasoning,
         })
     all_checked.sort(key=lambda x: x["spread"], reverse=True)
 
