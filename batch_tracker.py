@@ -283,6 +283,11 @@ def predict_batch():
             skipped += 1
             continue
 
+        # Skip crypto 5-min binary bets — coin flips with no predictive edge
+        if m.get("tag") == "crypto" and "Up or Down" in m.get("question", ""):
+            skipped += 1
+            continue
+
         result = rule_predict(
             m["question"], m.get("description", ""),
             m["yes_price"], m["volume"]

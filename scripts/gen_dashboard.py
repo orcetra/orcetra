@@ -11,7 +11,15 @@ DASH = os.path.join(ROOT, "dashboard")
 def main():
     with open(os.path.join(RESULTS, "check_log.json")) as f:
         log = json.load(f)
-    checks = log["checks"]
+    checks_raw = log["checks"]
+
+    # Filter out crypto 5-min binary bets ("Up or Down") — these are coin flips
+    # with ~50% beat rate that drag down overall metrics
+    def is_crypto_binary(c):
+        return c.get("tag") == "crypto" and "Up or Down" in c.get("question", "")
+
+    checks = [c for c in checks_raw if not is_crypto_binary(c)]
+    crypto_excluded = [c for c in checks_raw if is_crypto_binary(c)]
 
     with open(os.path.join(RESULTS, "batch_predictions.json")) as f:
         batch = json.load(f)
@@ -79,6 +87,7 @@ def main():
             "avg_orcetra_brier": sum(c["our_brier"] for c in checks) / n_checked if n_checked else 0,
             "avg_market_brier": sum(c["mkt_brier"] for c in checks) / n_checked if n_checked else 0,
             "last_updated": batch.get("last_updated", "unknown"),
+            "crypto_binary_excluded": len(crypto_excluded),
         },
         "by_tag": by_tag,
         "top_divergences": all_checked[:20],
