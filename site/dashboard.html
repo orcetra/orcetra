@@ -934,47 +934,51 @@
             const orcPct = (item.orcetra * 100).toFixed(1);
             const marketPct = (item.market * 100).toFixed(1);
             const spreadPct = (item.spread * 100).toFixed(1);
-            const direction = item.orcetra > item.market ? "bullish" : "bearish";
+            const direction = item.orcetra > item.market ? "↑ above market" : "↓ below market";
             const result = item.beat ? "✅ Beat Market" : "❌ Market Won";
-            const ourBrier = item.our_brier ? item.our_brier.toFixed(3) : 'N/A';
-            const mktBrier = item.mkt_brier ? item.mkt_brier.toFixed(3) : 'N/A';
-            
+            const ourBrier = item.our_brier ? item.our_brier.toFixed(4) : 'N/A';
+            const mktBrier = item.mkt_brier ? item.mkt_brier.toFixed(4) : 'N/A';
+            const brierDiff = (item.our_brier && item.mkt_brier) ? (item.mkt_brier - item.our_brier).toFixed(4) : 'N/A';
+            const actualOutcome = item.actual === 1 ? 'YES (1.0)' : 'NO (0.0)';
+
+            // If real reasoning exists in data, show it; otherwise show honest data comparison
+            if (item.reasoning) {
+                return `
+                    <div class="reasoning-step">
+                        <span class="step-num">Reasoning:</span>
+                        <span>${escapeHtml(item.reasoning)}</span>
+                    </div>
+                    <div class="reasoning-step" style="margin-top: 8px; opacity: 0.7;">
+                        <span class="step-num">Data:</span>
+                        <span>Orcetra ${orcPct}% vs Market ${marketPct}% | Actual: ${actualOutcome} | Brier: ${ourBrier} vs ${mktBrier}</span>
+                    </div>
+                `;
+            }
+
             return `
                 <div class="reasoning-step">
-                    <span class="step-num">Step 1:</span>
-                    <span>Market Price</span>
-                    <span class="step-arrow">→</span>
-                    <span>${marketPct}%</span>
+                    <span class="step-num">Prediction:</span>
+                    <span>Orcetra ${orcPct}%</span>
+                    <span class="step-arrow">vs</span>
+                    <span>Market ${marketPct}% (${direction})</span>
                 </div>
                 <div class="reasoning-step">
-                    <span class="step-num">Step 2:</span>
-                    <span>Category Analysis</span>
-                    <span class="step-arrow">→</span>
-                    <span>${item.tag} market efficiency baseline</span>
+                    <span class="step-num">Spread:</span>
+                    <span>${spreadPct}% divergence from market consensus</span>
                 </div>
                 <div class="reasoning-step">
-                    <span class="step-num">Step 3:</span>
-                    <span>Calibration</span>
-                    <span class="step-arrow">→</span>
-                    <span>60% market + 40% model blend</span>
+                    <span class="step-num">Outcome:</span>
+                    <span>${actualOutcome}</span>
                 </div>
                 <div class="reasoning-step">
-                    <span class="step-num">Step 4:</span>
-                    <span>Spread Detection</span>
-                    <span class="step-arrow">→</span>
-                    <span>spread=${spreadPct}%, direction=${direction}</span>
-                </div>
-                <div class="reasoning-step">
-                    <span class="step-num">Step 5:</span>
-                    <span>Final Prediction</span>
-                    <span class="step-arrow">→</span>
-                    <span>${orcPct}%</span>
+                    <span class="step-num">Accuracy:</span>
+                    <span>Orcetra Brier: ${ourBrier}</span>
+                    <span class="step-arrow">vs</span>
+                    <span>Market Brier: ${mktBrier} (Δ${brierDiff})</span>
                 </div>
                 <div class="reasoning-step">
                     <span class="step-num">Result:</span>
                     <span>${result}</span>
-                    <span class="step-arrow">→</span>
-                    <span>(Brier: ours=${ourBrier} vs market=${mktBrier})</span>
                 </div>
             `;
         }
