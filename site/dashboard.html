@@ -815,13 +815,16 @@
             const tbody = document.getElementById('divergence-body');
             const divergences = data.top_divergences.slice(0, 20);
 
-            tbody.innerHTML = divergences.map(item => {
+            tbody.innerHTML = divergences.map((item, index) => {
                 const rowClass = item.beat ? 'row-win' : 'row-loss';
                 const tagClass = item.tag === 'golf' ? 'tag-golf' : 'tag-sports';
                 const winner = item.beat ? '✅' : '❌';
+                const rowId = `div-row-${index}`;
+                const reasoningId = `div-reasoning-${index}`;
+                const reasoningContent = generateReasoningContent(item);
 
                 return `
-                    <tr class="${rowClass}">
+                    <tr class="${rowClass}" id="${rowId}" onclick="toggleReasoning('${reasoningId}', this)" style="cursor: pointer;">
                         <td class="question" title="${escapeHtml(item.q)}">${escapeHtml(item.q)}</td>
                         <td><span class="tag ${tagClass}">${item.tag}</span></td>
                         <td>${(item.orcetra * 100).toFixed(1)}%</td>
@@ -829,6 +832,9 @@
                         <td>${item.actual.toFixed(0)}</td>
                         <td>${(item.spread * 100).toFixed(1)}%</td>
                         <td class="win-indicator">${winner}</td>
+                    </tr>
+                    <tr class="reasoning-row" id="${reasoningId}" style="display: none;">
+                        <td colspan="7">${reasoningContent}</td>
                     </tr>
                 `;
             }).join('');
