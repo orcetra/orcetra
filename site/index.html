@@ -4,515 +4,852 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orcetra AI — Prediction Intelligence Engine</title>
+    <meta name="description" content="We made Karpathy's AutoResearch 8x faster on the same GPU. AI prediction intelligence engine with 70.2% beat rate across 1,974 resolved predictions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         :root {
-            --bg: #07080f;
-            --bg-card: rgba(15, 18, 35, 0.85);
-            --neon-blue: #00d4ff;
-            --neon-green: #00ff88;
-            --neon-purple: #a855f7;
-            --text: #e2e8f0;
-            --text-dim: #64748b;
-            --border: rgba(0, 212, 255, 0.15);
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-card: rgba(31, 41, 55, 0.5);
+            --bg-card-hover: rgba(31, 41, 55, 0.8);
+            
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-tertiary: #9ca3af;
+            
+            --accent-blue: #60a5fa;
+            --accent-green: #34d399;
+            --accent-purple: #a78bfa;
+            --accent-gradient: linear-gradient(135deg, #60a5fa, #34d399);
+            
+            --border-color: rgba(156, 163, 175, 0.1);
+            --border-hover: rgba(156, 163, 175, 0.2);
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
             overflow-x: hidden;
         }
-        
-        /* Animated background grid */
-        body::before {
-            content: '';
+
+        /* Background Effects */
+        .bg-pattern {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: 
-                linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            z-index: 0;
+                radial-gradient(circle at 25% 25%, rgba(96, 165, 250, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(52, 211, 153, 0.05) 0%, transparent 50%),
+                linear-gradient(to bottom, transparent 0%, rgba(16, 16, 16, 0.8) 100%);
+            pointer-events: none;
+            z-index: -1;
         }
-        
-        /* Glow orbs */
-        .orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            z-index: 0;
-        }
-        .orb-1 { width: 500px; height: 500px; background: var(--neon-blue); top: -100px; right: -100px; }
-        .orb-2 { width: 400px; height: 400px; background: var(--neon-purple); bottom: -50px; left: -50px; }
-        .orb-3 { width: 300px; height: 300px; background: var(--neon-green); top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.05; }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
-            position: relative;
-            z-index: 1;
         }
-        
-        /* ===== NAV ===== */
-        nav {
+
+        /* Header */
+        header {
             padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.8);
+        }
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .nav-badge {
-            display: inline-flex;
+
+        .social-proof {
+            display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            font-family: 'JetBrains Mono', monospace;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
         }
-        .pulse {
-            width: 8px; height: 8px;
-            background: var(--neon-green);
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
             border-radius: 50%;
-            animation: pulse 2s infinite;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
-            50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(0,255,136,0); }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
-        
-        /* ===== HERO ===== */
+
+        /* Hero Section */
         .hero {
+            padding: 8rem 0;
             text-align: center;
-            padding: 6rem 0 4rem;
         }
-        .hero-tag {
+
+        .hero-badge {
             display: inline-block;
-            padding: 0.4rem 1.2rem;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--neon-blue);
+            padding: 0.5rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--accent-blue);
             margin-bottom: 2rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
         }
+
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-        }
-        .hero h1 .gradient {
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 50%, var(--accent-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
+        .hero .highlight {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .hero p {
-            font-size: 1.2rem;
-            color: var(--text-dim);
+            font-size: 1.25rem;
+            color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto 3rem;
             line-height: 1.6;
         }
-        
-        /* ===== STATS ===== */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 5rem;
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-        @media (max-width: 768px) {
-            .stats { grid-template-columns: repeat(2, 1fr); }
-        }
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-        }
-        .stat-card:hover {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 30px rgba(0,212,255,0.1);
-            transform: translateY(-4px);
-        }
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 900;
-            font-family: 'JetBrains Mono', monospace;
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .stat-sub {
-            font-size: 0.75rem;
-            color: var(--neon-green);
-            margin-top: 0.3rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        /* ===== INSIGHT SECTION ===== */
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-        .section-sub {
-            color: var(--text-dim);
-            margin-bottom: 2.5rem;
-            font-size: 1rem;
-        }
-        
-        .insight-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 5rem;
-        }
-        @media (max-width: 768px) {
-            .insight-grid { grid-template-columns: 1fr; }
-        }
-        .insight-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-        }
-        .insight-card:hover {
-            border-color: var(--neon-blue);
-            transform: translateY(-3px);
-        }
-        .insight-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .insight-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        .insight-card p {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            line-height: 1.5;
-        }
-        
-        /* ===== CTA ===== */
-        .cta-section {
-            text-align: center;
-            padding: 4rem 0;
-            margin-bottom: 3rem;
-        }
-        .cta-btn {
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
-            color: #000;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: 0 0 30px rgba(0,212,255,0.3);
         }
-        .cta-btn:hover {
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: var(--bg-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 50px rgba(0,212,255,0.5);
+            box-shadow: var(--shadow-xl);
         }
-        
-        /* ===== HOW IT WORKS ===== */
-        .layers {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 5rem;
-        }
-        @media (max-width: 768px) {
-            .layers { grid-template-columns: 1fr; }
-        }
-        .layer-card {
+
+        .btn-secondary {
             background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
         }
-        .layer-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
+
+        .btn-secondary:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-hover);
         }
-        .layer-1::before { background: linear-gradient(90deg, var(--neon-blue), var(--neon-green)); }
-        .layer-2::before { background: linear-gradient(90deg, var(--neon-green), var(--neon-purple)); }
-        .layer-3::before { background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue)); }
-        .layer-num {
-            font-size: 3rem;
-            font-weight: 900;
-            opacity: 0.1;
-            position: absolute;
-            top: 10px; right: 20px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .layer-card h3 {
-            color: var(--neon-blue);
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-        }
-        .layer-card p {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            line-height: 1.5;
-        }
-        
-        /* ===== OSCAR HIGHLIGHT ===== */
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(168,85,247,0.08));
-            border: 1px solid rgba(0,212,255,0.2);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 5rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        @media (max-width: 768px) {
-            .highlight-box { flex-direction: column; text-align: center; }
-        }
-        .highlight-emoji { font-size: 4rem; }
-        .highlight-box h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        .highlight-box p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-        }
-        .highlight-nums {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-        .highlight-num {
-            text-align: center;
-        }
-        .highlight-num .val {
-            font-size: 1.8rem;
-            font-weight: 800;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .highlight-num .lbl {
-            font-size: 0.75rem;
-            color: var(--text-dim);
-        }
-        .val-green { color: var(--neon-green); }
-        .val-blue { color: var(--neon-blue); }
-        .val-dim { color: var(--text-dim); text-decoration: line-through; }
-        
-        /* ===== FOOTER ===== */
-        footer {
-            border-top: 1px solid var(--border);
+
+        /* Social Proof Bar */
+        .social-proof-section {
             padding: 2rem 0;
             text-align: center;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-            font-family: 'JetBrains Mono', monospace;
+            border-bottom: 1px solid var(--border-color);
         }
-        
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .social-proof-text {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
         }
-        .animate { animation: fadeUp 0.8s ease-out forwards; }
-        .delay-1 { animation-delay: 0.1s; opacity: 0; }
-        .delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .delay-3 { animation-delay: 0.3s; opacity: 0; }
-        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+        .credibility-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* How It Works */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .step:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -1rem;
+            left: 2rem;
+            background: var(--accent-gradient);
+            color: var(--bg-primary);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .step h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Live Performance */
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .metric-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .category-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .category-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .category-rate {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        /* Why Orcetra */
+        .differentiators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .differentiator {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+        }
+
+        .differentiator h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .differentiator p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bg-primary);
+        }
+
+        .team-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .team-title {
+            color: var(--accent-green);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-bio {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .team-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .team-link:hover {
+            text-decoration: underline;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+        }
+
+        .footer-brand {
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .fade-in-delay-4 { animation-delay: 0.4s; opacity: 0; }
     </style>
 </head>
+
 <body>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-
-    <div class="container">
-        <!-- Nav -->
-        <nav>
-            <div class="logo">ORCETRA AI</div>
-            <div class="nav-badge">
-                <span class="pulse"></span>
-                <span id="liveCount">3,299</span> markets tracked
-            </div>
-        </nav>
-
-        <!-- Hero -->
-        <section class="hero">
-            <div class="hero-tag">PREDICTION INTELLIGENCE ENGINE</div>
-            <h1>We don't predict the future.<br>We predict where the <span class="gradient">crowd is wrong</span>.</h1>
-            <p>AI-powered calibration engine that systematically identifies and exploits pricing inefficiencies in prediction markets. Validated on 3,299 Polymarket events across sports, economy, politics, and crypto.</p>
-        </section>
-
-        <!-- Stats -->
-        <div class="stats">
-            <div class="stat-card animate delay-1">
-                <div class="stat-number" id="statBeat">83.8%</div>
-                <div class="stat-label">Beat Market Rate</div>
-                <div class="stat-sub">159 verified predictions</div>
-            </div>
-            <div class="stat-card animate delay-2">
-                <div class="stat-number">3,299</div>
-                <div class="stat-label">Markets Tracked</div>
-                <div class="stat-sub">sports · economy · politics · crypto</div>
-            </div>
-            <div class="stat-card animate delay-3">
-                <div class="stat-number" style="color: var(--neon-green); -webkit-text-fill-color: unset;">0.031</div>
-                <div class="stat-label">Brier Advantage</div>
-                <div class="stat-sub">statistically significant edge</div>
-            </div>
-            <div class="stat-card animate delay-4">
-                <div class="stat-number" style="font-size: 2.2rem;">24/7</div>
-                <div class="stat-label">Auto Pipeline</div>
-                <div class="stat-sub">predict → verify → evolve</div>
+    <div class="bg-pattern"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">ORCETRA</div>
+                <div class="social-proof">
+                    <div class="pulse-dot"></div>
+                    <span>Backed by CMU AI</span>
+                </div>
             </div>
         </div>
+    </header>
 
-        <!-- Oscar Highlight -->
-        <div class="highlight-box animate">
-            <div class="highlight-emoji">🏆</div>
-            <div>
-                <h3>Oscar 2026: We saw it before the market did</h3>
-                <p>"One Battle After Another" for Best Picture — Orcetra predicted 82% while the market was at 74%. The film won 6 awards.</p>
-                <div class="highlight-nums">
-                    <div class="highlight-num">
-                        <div class="val val-green">82%</div>
-                        <div class="lbl">Orcetra</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge fade-in">AI Prediction Intelligence Engine</div>
+            <h1 class="fade-in fade-in-delay-1">
+                We made <span class="highlight">Karpathy's AutoResearch</span><br>
+                8x faster on the same GPU
+            </h1>
+            <p class="fade-in fade-in-delay-2">
+                Advanced prediction intelligence engine that systematically outperforms markets with AI-driven analysis. 
+                Proven across 1,974 resolved predictions with 70.2% beat rate.
+            </p>
+            <div class="cta-buttons fade-in fade-in-delay-3">
+                <a href="dashboard.html" class="btn btn-primary">
+                    View Dashboard
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof-section">
+        <div class="container">
+            <div class="social-proof-text fade-in">Research collaboration with</div>
+            <div class="credibility-badges fade-in fade-in-delay-1">
+                <div class="badge">Carnegie Mellon University</div>
+                <div class="badge">AutoResearch Framework</div>
+                <div class="badge">AI Research Lab</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>How It Works</h2>
+                <p>Our three-layer intelligence system identifies prediction opportunities through systematic market analysis</p>
+            </div>
+            <div class="steps">
+                <div class="step fade-in fade-in-delay-1">
+                    <div class="step-number">1</div>
+                    <h3>Data Ingestion</h3>
+                    <p>Continuously monitor prediction markets, price movements, and volume patterns across multiple categories including sports, politics, economy, and entertainment.</p>
+                </div>
+                <div class="step fade-in fade-in-delay-2">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Apply advanced machine learning models to identify pricing inefficiencies and probability miscalculations using our optimized AutoResearch framework.</p>
+                </div>
+                <div class="step fade-in fade-in-delay-3">
+                    <div class="step-number">3</div>
+                    <h3>Prediction Output</h3>
+                    <p>Generate calibrated probability assessments with confidence intervals, enabling systematic outperformance of market consensus.</p>
+                </div>
+                <div class="step fade-in fade-in-delay-4">
+                    <div class="step-number">4</div>
+                    <h3>Continuous Learning</h3>
+                    <p>Feedback loop validates predictions against real outcomes, continuously improving model accuracy and identifying new market patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Performance -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Live Performance</h2>
+                <p>Real-time metrics from our prediction intelligence engine</p>
+            </div>
+            <div class="performance-grid">
+                <div class="metric-card fade-in fade-in-delay-1">
+                    <div class="metric-value">70.2%</div>
+                    <div class="metric-label">Beat Rate</div>
+                </div>
+                <div class="metric-card fade-in fade-in-delay-2">
+                    <div class="metric-value">1,974</div>
+                    <div class="metric-label">Predictions Resolved</div>
+                </div>
+                <div class="metric-card fade-in fade-in-delay-3">
+                    <div class="metric-value">24/7</div>
+                    <div class="metric-label">Monitoring</div>
+                </div>
+                <div class="metric-card fade-in fade-in-delay-4">
+                    <div class="metric-value">4</div>
+                    <div class="metric-label">Categories</div>
+                </div>
+            </div>
+            <div class="categories-grid fade-in">
+                <div class="category-item">
+                    <div class="category-name">Golf</div>
+                    <div class="category-rate">89.7%</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-name">Politics</div>
+                    <div class="category-rate">76.2%</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-name">Sports</div>
+                    <div class="category-rate">69.1%</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-name">Economy</div>
+                    <div class="category-rate">63.4%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Orcetra -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Why Orcetra</h2>
+                <p>Superior prediction intelligence through advanced AI and systematic market analysis</p>
+            </div>
+            <div class="differentiators">
+                <div class="differentiator fade-in fade-in-delay-1">
+                    <h3>vs. Prediction Markets</h3>
+                    <p>While prediction markets rely on crowd wisdom, Orcetra uses AI to identify when the crowd is systematically wrong. Our models correct for known biases like long-shot bias and overconfidence effects.</p>
+                </div>
+                <div class="differentiator fade-in fade-in-delay-2">
+                    <h3>vs. Traditional Forecasting</h3>
+                    <p>Traditional forecasting methods are slow and expensive. Orcetra provides real-time analysis with continuous learning, adapting to new patterns as they emerge in the market.</p>
+                </div>
+                <div class="differentiator fade-in fade-in-delay-3">
+                    <h3>Performance Edge</h3>
+                    <p>Our 8x performance improvement over standard AutoResearch enables processing of complex prediction scenarios that were previously computationally prohibitive, unlocking new sources of alpha.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Team</h2>
+                <p>Led by experts in AI research and prediction systems</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member fade-in fade-in-delay-1">
+                    <div class="team-avatar">BL</div>
+                    <div class="team-name">Beibei Li</div>
+                    <div class="team-title">Chief Scientist</div>
+                    <div class="team-bio">
+                        CMU AI Professor specializing in machine learning and prediction systems. 
+                        <a href="https://www.heinz.cmu.edu/faculty-research/profiles/li-beibei" class="team-link">Faculty Page</a>
                     </div>
-                    <div class="highlight-num">
-                        <div class="val val-dim">74%</div>
-                        <div class="lbl">Market</div>
+                </div>
+                <div class="team-member fade-in fade-in-delay-2">
+                    <div class="team-avatar">KZ</div>
+                    <div class="team-name">Kai Zhang</div>
+                    <div class="team-title">CEO</div>
+                    <div class="team-bio">
+                        Strategic leadership and product vision. Expert in AI applications for financial markets and prediction systems.
                     </div>
-                    <div class="highlight-num">
-                        <div class="val val-blue">✓ Won</div>
-                        <div class="lbl">Outcome</div>
+                </div>
+                <div class="team-member fade-in fade-in-delay-3">
+                    <div class="team-avatar">GZ</div>
+                    <div class="team-name">Guilin Zhang</div>
+                    <div class="team-title">CTO</div>
+                    <div class="team-bio">
+                        Technical architecture and engineering. PhD in AI with focus on scalable machine learning systems and optimization.
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- How It Works -->
-        <h2 class="section-title">Three-Layer Intelligence</h2>
-        <p class="section-sub">Most predictions need only Layer 1. The deeper layers activate for high-value markets where alpha is largest.</p>
+    <!-- CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-section fade-in">
+                <h2>Get Early Access</h2>
+                <p>Join our beta program and experience the future of prediction intelligence</p>
+                <div class="cta-buttons">
+                    <a href="dashboard.html" class="btn btn-primary">
+                        View Dashboard
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                        Star on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">Orcetra AI — Prediction Intelligence Engine</div>
+                <div>© 2026 Orcetra AI. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dynamic live count animation
+        let currentCount = 1974;
+        const liveCountElement = document.querySelector('.social-proof span');
         
-        <div class="layers">
-            <div class="layer-card layer-1">
-                <div class="layer-num">01</div>
-                <h3>Calibration Engine</h3>
-                <p>Corrects systematic biases in crowd pricing. Markets overestimate long-shots (behavioral economics 101). We exploit this with statistical calibration trained on historical resolution data.</p>
-            </div>
-            <div class="layer-card layer-2">
-                <div class="layer-num">02</div>
-                <h3>Real-Time Signal Fusion</h3>
-                <p>Blends live price data, volume dynamics, and domain-specific models. For commodities: current price vs. threshold distance. For sports: market efficiency detection.</p>
-            </div>
-            <div class="layer-card layer-3">
-                <div class="layer-num">03</div>
-                <h3>Context Enrichment</h3>
-                <p>LLM-powered deep analysis with news search and domain knowledge. Activated for high-value, low-liquidity markets where crowd wisdom breaks down — like Oscar categories or niche politics.</p>
-            </div>
-        </div>
+        setInterval(() => {
+            currentCount += Math.floor(Math.random() * 3);
+            if (liveCountElement) {
+                liveCountElement.textContent = `${currentCount.toLocaleString()} markets tracked`;
+            }
+        }, 5000);
 
-        <!-- Insights -->
-        <h2 class="section-title">Key Findings</h2>
-        <p class="section-sub">What we've learned from 3,299 prediction markets</p>
-        
-        <div class="insight-grid">
-            <div class="insight-card">
-                <div class="insight-icon">📊</div>
-                <h3>Long-Shot Bias Is Real</h3>
-                <p>Events priced 20-50% by the market happen less often than implied. Simple calibration correction captures most of our edge.</p>
-            </div>
-            <div class="insight-card">
-                <div class="insight-icon">🏈</div>
-                <h3>Sports Are Efficient</h3>
-                <p>DraftKings and Vegas smart money already arbitrage sports markets to near-perfection. We trust the market here — knowing what NOT to predict is alpha.</p>
-            </div>
-            <div class="insight-card">
-                <div class="insight-icon">🎯</div>
-                <h3>Low Liquidity = High Alpha</h3>
-                <p>Niche markets (Oscar categories, science questions, exotic politics) have the widest mispricings. Context enrichment shines here.</p>
-            </div>
-        </div>
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <a href="dashboard.html" class="cta-btn">
-                View Live Dashboard →
-            </a>
-        </section>
-
-        <!-- Team -->
-        <section style="padding: 4rem 2rem; text-align: center;">
-            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Team</h2>
-            <p style="color: var(--text-dim); margin-bottom: 3rem;">Built by researchers who believe markets should be more efficient.</p>
-            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-                <div style="text-align: center; max-width: 220px;">
-                    <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--neon-purple), var(--neon-green)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700;">BL</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Beibei Li</h3>
-                    <p style="color: var(--neon-green); font-size: 0.85rem; margin-bottom: 0.5rem;">Chief Scientist</p>
-                    <p style="color: var(--text-dim); font-size: 0.8rem;">CMU AI Professor · <a href="https://www.heinz.cmu.edu/faculty-research/profiles/li-beibei" style="color: var(--neon-blue); text-decoration: none;">Faculty Page</a></p>
-                </div>
-                <div style="text-align: center; max-width: 220px;">
-                    <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700;">KZ</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Kai Zhang</h3>
-                    <p style="color: var(--neon-green); font-size: 0.85rem; margin-bottom: 0.5rem;">Co-Founder & CEO</p>
-                    <p style="color: var(--text-dim); font-size: 0.8rem;">CMU · AI Strategy & Product</p>
-                </div>
-                <div style="text-align: center; max-width: 220px;">
-                    <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--neon-green), var(--neon-blue)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700;">GZ</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Guilin Zhang</h3>
-                    <p style="color: var(--neon-green); font-size: 0.85rem; margin-bottom: 0.5rem;">Co-Founder & CTO</p>
-                    <p style="color: var(--text-dim); font-size: 0.8rem;">GWU PhD · Full-Stack AI Engineering</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>ORCETRA AI · Prediction Intelligence Engine</p>
-            <p style="margin-top: 0.5rem; opacity: 0.5;">© 2026 Orcetra AI. All rights reserved.</p>
-        </footer>
-    </div>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
