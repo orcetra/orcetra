@@ -1,20 +1,20 @@
 {
   "summary": {
-    "total_predictions": 16931,
-    "resolved": 2201,
-    "pending": 14730,
-    "beat_rate": 0.6660608814175375,
-    "avg_murmur_brier": 0.22336724216265336,
-    "avg_market_brier": 0.2332809177646524,
-    "last_updated": "2026-03-22T18:00:11.139927+00:00"
+    "total_predictions": 17244,
+    "resolved": 2340,
+    "pending": 14904,
+    "beat_rate": 0.6730769230769231,
+    "avg_murmur_brier": 0.2221241452991453,
+    "avg_market_brier": 0.23268666666666668,
+    "last_updated": "2026-03-22T21:28:11.034748+00:00"
   },
   "by_tag": {
     "sports": {
-      "total": 1636,
-      "beat": 1115,
-      "rate": 0.6815403422982885,
-      "avg_our_brier": 0.22541375305623473,
-      "avg_mkt_brier": 0.2363861858190709
+      "total": 1750,
+      "beat": 1209,
+      "rate": 0.6908571428571428,
+      "avg_our_brier": 0.22336177142857144,
+      "avg_mkt_brier": 0.23521199999999998
     },
     "golf": {
       "total": 97,
@@ -31,11 +31,11 @@
       "avg_mkt_brier": 0.19610731707317072
     },
     "politics": {
-      "total": 75,
-      "beat": 59,
-      "rate": 0.7866666666666666,
-      "avg_our_brier": 0.146172,
-      "avg_mkt_brier": 0.15273066666666668
+      "total": 80,
+      "beat": 61,
+      "rate": 0.7625,
+      "avg_our_brier": 0.15239875,
+      "avg_mkt_brier": 0.15752625
     },
     "commodities": {
       "total": 6,
@@ -45,11 +45,11 @@
       "avg_mkt_brier": 0.23556666666666667
     },
     "crypto": {
-      "total": 346,
-      "beat": 177,
-      "rate": 0.5115606936416185,
-      "avg_our_brier": 0.25022456647398844,
-      "avg_mkt_brier": 0.24992774566473988
+      "total": 366,
+      "beat": 190,
+      "rate": 0.5191256830601093,
+      "avg_our_brier": 0.24967677595628415,
+      "avg_mkt_brier": 0.24991803278688524
     }
   },
   "top_divergences": [
@@ -91,6 +91,18 @@
     },
     {
       "q": "Murray State Racers vs. Nevada Wolf Pack",
+      "tag": "sports",
+      "orcetra": 0.119,
+      "market": 0.245,
+      "actual": 0.0,
+      "our_brier": 0.0142,
+      "mkt_brier": 0.06,
+      "beat": true,
+      "spread": 0.126,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Beat Roshan?",
       "tag": "sports",
       "orcetra": 0.119,
       "market": 0.245,
@@ -280,18 +292,6 @@
       "beat": true,
       "spread": 0.11,
       "reasoning": ""
-    },
-    {
-      "q": "Game 1: Both Teams Destroy Barracks?",
-      "tag": "sports",
-      "orcetra": 0.115,
-      "market": 0.225,
-      "actual": 0.0,
-      "our_brier": 0.0132,
-      "mkt_brier": 0.0506,
-      "beat": true,
-      "spread": 0.11,
-      "reasoning": ""
     }
   ],
   "all_checked": [
@@ -333,6 +333,18 @@
     },
     {
       "q": "Murray State Racers vs. Nevada Wolf Pack",
+      "tag": "sports",
+      "orcetra": 0.119,
+      "market": 0.245,
+      "actual": 0.0,
+      "our_brier": 0.0142,
+      "mkt_brier": 0.06,
+      "beat": true,
+      "spread": 0.126,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Beat Roshan?",
       "tag": "sports",
       "orcetra": 0.119,
       "market": 0.245,
@@ -568,6 +580,18 @@
       "our_brier": 0.7832,
       "mkt_brier": 0.6006,
       "beat": false,
+      "spread": 0.11,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.115,
+      "market": 0.225,
+      "actual": 0.0,
+      "our_brier": 0.0132,
+      "mkt_brier": 0.0506,
+      "beat": true,
       "spread": 0.11,
       "reasoning": ""
     },
@@ -1016,6 +1040,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.108,
+      "market": 0.19,
+      "actual": 0.0,
+      "our_brier": 0.0117,
+      "mkt_brier": 0.0361,
+      "beat": true,
+      "spread": 0.082,
+      "reasoning": ""
+    },
+    {
       "q": "Game 1: Both Teams Beat Roshan?",
       "tag": "sports",
       "orcetra": 0.107,
@@ -1064,6 +1100,18 @@
       "reasoning": ""
     },
     {
+      "q": "Exact Score: Philadelphia Union 3 - 0 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.172,
+      "market": 0.25,
+      "actual": 0.0,
+      "our_brier": 0.0296,
+      "mkt_brier": 0.0625,
+      "beat": true,
+      "spread": 0.078,
+      "reasoning": ""
+    },
+    {
       "q": "Will Powell say \"Distortion\" during March press conference?",
       "tag": "economy",
       "orcetra": 0.1694,
@@ -1090,6 +1138,18 @@
     {
       "q": "Will Elon Musk post 40-64 tweets from March 19 to March 21, 2026?",
       "tag": "politics",
+      "orcetra": 0.1694,
+      "market": 0.245,
+      "actual": 0.0,
+      "our_brier": 0.0287,
+      "mkt_brier": 0.06,
+      "beat": true,
+      "spread": 0.0756,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Beat Roshan?",
+      "tag": "sports",
       "orcetra": 0.1694,
       "market": 0.245,
       "actual": 0.0,
@@ -1220,6 +1280,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.211,
+      "market": 0.285,
+      "actual": 0.0,
+      "our_brier": 0.0445,
+      "mkt_brier": 0.0812,
+      "beat": true,
+      "spread": 0.074,
+      "reasoning": ""
+    },
+    {
       "q": "Will India\u2019s Unemployment Rate decrease in February?",
       "tag": "economy",
       "orcetra": 0.1818,
@@ -1252,6 +1324,18 @@
       "our_brier": 0.6695,
       "mkt_brier": 0.555,
       "beat": false,
+      "spread": 0.0732,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 1 - 1 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.1818,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0331,
+      "mkt_brier": 0.065,
+      "beat": true,
       "spread": 0.0732,
       "reasoning": ""
     },
@@ -1600,6 +1684,18 @@
       "our_brier": 0.6535,
       "mkt_brier": 0.5476,
       "beat": false,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 2 - 0 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.1916,
+      "market": 0.26,
+      "actual": 0.0,
+      "our_brier": 0.0367,
+      "mkt_brier": 0.0676,
+      "beat": true,
       "spread": 0.0684,
       "reasoning": ""
     },
@@ -2060,6 +2156,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.159,
+      "market": 0.225,
+      "actual": 0.0,
+      "our_brier": 0.0253,
+      "mkt_brier": 0.0506,
+      "beat": true,
+      "spread": 0.066,
+      "reasoning": ""
+    },
+    {
       "q": "Will Brian Harman finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.41,
@@ -2252,6 +2360,18 @@
       "reasoning": ""
     },
     {
+      "q": "Texas Longhorns vs. Gonzaga Bulldogs: O/U 149.5",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.445,
+      "actual": 0.0,
+      "our_brier": 0.1444,
+      "mkt_brier": 0.198,
+      "beat": true,
+      "spread": 0.065,
+      "reasoning": ""
+    },
+    {
       "q": "Cecchinato vs. Gea: Match O/U 22.5",
       "tag": "sports",
       "orcetra": 0.416,
@@ -2397,6 +2517,18 @@
     },
     {
       "q": "Miami Open: Roberto Bautista Agut vs Karen Khachanov",
+      "tag": "sports",
+      "orcetra": 0.2014,
+      "market": 0.265,
+      "actual": 0.0,
+      "our_brier": 0.0406,
+      "mkt_brier": 0.0702,
+      "beat": true,
+      "spread": 0.0636,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 2 - 3 Chicago Fire FC?",
       "tag": "sports",
       "orcetra": 0.2014,
       "market": 0.265,
@@ -2673,6 +2805,30 @@
     },
     {
       "q": "Terence Atmane vs. Arthur Rinderknech: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.428,
+      "market": 0.49,
+      "actual": 0.0,
+      "our_brier": 0.1832,
+      "mkt_brier": 0.2401,
+      "beat": true,
+      "spread": 0.062,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.428,
+      "market": 0.49,
+      "actual": 0.0,
+      "our_brier": 0.1832,
+      "mkt_brier": 0.2401,
+      "beat": true,
+      "spread": 0.062,
+      "reasoning": ""
+    },
+    {
+      "q": "Game Handicap: Astini+5 (-1.5) vs Zero Tenacity (+1.5)",
       "tag": "sports",
       "orcetra": 0.428,
       "market": 0.49,
@@ -3057,6 +3213,42 @@
     },
     {
       "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Texas Longhorns vs. Gonzaga Bulldogs: O/U 147.5",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 3: Odd/Even Total Kills?",
       "tag": "sports",
       "orcetra": 0.434,
       "market": 0.495,
@@ -6368,6 +6560,90 @@
       "reasoning": ""
     },
     {
+      "q": "OGC Nice vs. Paris Saint-Germain FC: Draw at halftime?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Sporting Kansas City vs. Colorado Rapids SC: Draw at halftime?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Newcastle United FC vs. Sunderland AFC: Draw at halftime?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
       "q": "Jubb vs. Mrva: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.446,
@@ -7676,6 +7952,114 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Set 1 Winner: Damm vs Zverev",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Damm vs. Zverev: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Damm vs. Zverev: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Damm vs. Zverev: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Martin Damm vs. Alexander Zverev: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Damm vs. Zverev: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Damm vs. Zverev: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Damm vs. Zverev: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
       "q": "Game 2: Any Player Rampage?",
       "tag": "sports",
       "orcetra": 0.1512,
@@ -8415,6 +8799,18 @@
       "actual": 0.0,
       "our_brier": 0.2043,
       "mkt_brier": 0.2601,
+      "beat": true,
+      "spread": 0.058,
+      "reasoning": ""
+    },
+    {
+      "q": "TCU Horned Frogs vs. Duke Blue Devils",
+      "tag": "sports",
+      "orcetra": 0.102,
+      "market": 0.16,
+      "actual": 0.0,
+      "our_brier": 0.0104,
+      "mkt_brier": 0.0256,
       "beat": true,
       "spread": 0.058,
       "reasoning": ""
@@ -9212,6 +9608,18 @@
       "reasoning": ""
     },
     {
+      "q": "Dota 2: Astini+5 vs Zero Tenacity - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": ""
+    },
+    {
       "q": "Will Rasmus Hojgaard finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -9484,6 +9892,18 @@
       "our_brier": 0.1444,
       "mkt_brier": 0.1892,
       "beat": true,
+      "spread": 0.055,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.435,
+      "actual": 1.0,
+      "our_brier": 0.3844,
+      "mkt_brier": 0.3192,
+      "beat": false,
       "spread": 0.055,
       "reasoning": ""
     },
@@ -10100,6 +10520,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.1408,
+      "market": 0.19,
+      "actual": 0.0,
+      "our_brier": 0.0198,
+      "mkt_brier": 0.0361,
+      "beat": true,
+      "spread": 0.0492,
+      "reasoning": ""
+    },
+    {
       "q": "Will Kevin Roy finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -10436,6 +10868,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.2406,
+      "market": 0.285,
+      "actual": 0.0,
+      "our_brier": 0.0579,
+      "mkt_brier": 0.0812,
+      "beat": true,
+      "spread": 0.0444,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Dzumhur vs Sinner",
       "tag": "sports",
       "orcetra": 0.096,
@@ -10576,6 +11020,18 @@
       "our_brier": 0.0177,
       "mkt_brier": 0.0306,
       "beat": true,
+      "spread": 0.042,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the White House call a full lid by 6:30PM on March 21?",
+      "tag": "politics",
+      "orcetra": 0.408,
+      "market": 0.45,
+      "actual": 1.0,
+      "our_brier": 0.3505,
+      "mkt_brier": 0.3025,
+      "beat": false,
       "spread": 0.042,
       "reasoning": ""
     },
@@ -10732,6 +11188,18 @@
       "our_brier": 0.1757,
       "mkt_brier": 0.2116,
       "beat": true,
+      "spread": 0.0408,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the White House call a full lid by 6:30PM on March 20?",
+      "tag": "politics",
+      "orcetra": 0.4192,
+      "market": 0.46,
+      "actual": 1.0,
+      "our_brier": 0.3373,
+      "mkt_brier": 0.2916,
+      "beat": false,
       "spread": 0.0408,
       "reasoning": ""
     },
@@ -11944,6 +12412,30 @@
       "our_brier": 0.2933,
       "mkt_brier": 0.255,
       "beat": false,
+      "spread": 0.0366,
+      "reasoning": ""
+    },
+    {
+      "q": "Spread: Gonzaga Bulldogs (-5.5)",
+      "tag": "sports",
+      "orcetra": 0.4584,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.2101,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.0366,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Take me away vs Last Bullet (BO3) - ESL Challenger League Asia-P",
+      "tag": "sports",
+      "orcetra": 0.4584,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.2101,
+      "mkt_brier": 0.245,
+      "beat": true,
       "spread": 0.0366,
       "reasoning": ""
     },
@@ -18188,6 +18680,858 @@
       "reasoning": ""
     },
     {
+      "q": "OGC Nice leading at halftime?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Paris Saint-Germain FC leading at halftime?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 1 - 1 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 2 - 1 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 2 - 2 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 1 - 2 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 1 - 0 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 2 - 0 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 0 - 1 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 3 - 1 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 0 - 0 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 0 - 2 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 3 - 2 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 1 - 3 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 3 - 0 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 2 - 3 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 3 - 3 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Sporting Kansas City 0 - 3 Colorado Rapids SC?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Any Other Score?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Sporting Kansas City leading at halftime?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Colorado Rapids SC leading at halftime?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Newcastle United FC leading at halftime?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Sunderland AFC leading at halftime?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Hugo Cuypers: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Bruno Damiani: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Ezekiel Alladoh: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Milan Iloski: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Sal Olivas: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Stas Korzeniowski: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Jason Shokalook: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Eddy Davis III: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Agustin Anello: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Philip Zinckernagel: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Cavan Sullivan: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Indiana Vassilev: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Alejandro Bedoya: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Chris Mueller: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Puso Dithejane: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Jonathan Bamba: Anytime Goalscorer",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: Astini+5 vs Zero Tenacity (BO3) - European Pro League Group A",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Ethereum Up or Down - March 21, 7:05PM-7:10PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Dogecoin Up or Down - March 21, 7:00PM-7:05PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Bitcoin Up or Down - March 21, 7:00PM-7:15PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Take me away vs Last Bullet - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Take me away vs Last Bullet - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 3: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Wanted Goons vs FlyQuest RED (BO3) - ESL Challenger League North",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Wanted Goons vs FlyQuest RED - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Wanted Goons vs FlyQuest RED - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 3: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Solana Up or Down - March 22, 7:30AM-7:35AM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Ethereum Up or Down - March 22, 7:10AM-7:15AM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Dogecoin Up or Down - March 22, 7:10AM-7:15AM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Dogecoin Up or Down - March 22, 7:05AM-7:10AM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Bitcoin Up or Down - March 22, 1:35PM-1:40PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Solana Up or Down - March 22, 1:30PM-1:45PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Bitcoin Up or Down - March 22, 1:30PM-1:45PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Ethereum Up or Down - March 22, 1:30PM-1:35PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Hyperliquid Up or Down - March 22, 1:30PM-1:35PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Hyperliquid Up or Down - March 22, 1:20PM-1:25PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Ethereum Up or Down - March 22, 1:20PM-1:25PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Ethereum Up or Down - March 22, 1:15PM-1:30PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Hyperliquid Up or Down - March 22, 1:15PM-1:20PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "XRP Up or Down - March 22, 1:10PM-1:15PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Dogecoin Up or Down - March 22, 1:10PM-1:15PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Hyperliquid Up or Down - March 22, 1:05PM-1:10PM ET",
+      "tag": "crypto",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post 260-279 tweets from March 10 to March 17, 2026?",
       "tag": "politics",
       "orcetra": 0.4674,
@@ -19376,6 +20720,42 @@
       "reasoning": ""
     },
     {
+      "q": "Game 3: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Bitcoin Up or Down - March 22, 7:20AM-7:25AM ET",
+      "tag": "crypto",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
       "q": "Map Handicap: K27 (-1.5) vs Bushido Wildcats (+1.5)",
       "tag": "sports",
       "orcetra": 0.38,
@@ -19940,6 +21320,18 @@
       "reasoning": ""
     },
     {
+      "q": "Miami Open: Martin Damm vs Alexander Zverev",
+      "tag": "sports",
+      "orcetra": 0.1252,
+      "market": 0.16,
+      "actual": 0.0,
+      "our_brier": 0.0157,
+      "mkt_brier": 0.0256,
+      "beat": true,
+      "spread": 0.0348,
+      "reasoning": ""
+    },
+    {
       "q": "Game 3: Both Teams Destroy Inhibitors?",
       "tag": "sports",
       "orcetra": 0.4808,
@@ -20206,6 +21598,18 @@
     {
       "q": "Game 2: Ends in Daytime?",
       "tag": "sports",
+      "orcetra": 0.4808,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2312,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.0342,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the White House call a full lid by 6:30PM on March 19?",
+      "tag": "politics",
       "orcetra": 0.4808,
       "market": 0.515,
       "actual": 0.0,
@@ -20625,6 +22029,30 @@
     },
     {
       "q": "Game 3: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.4864,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2366,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.0336,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.4864,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2366,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.0336,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: Astini+5 vs Zero Tenacity - Game 2 Winner",
       "tag": "sports",
       "orcetra": 0.4864,
       "market": 0.52,
@@ -21092,6 +22520,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 3: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.4976,
+      "market": 0.53,
+      "actual": 0.0,
+      "our_brier": 0.2476,
+      "mkt_brier": 0.2809,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
       "q": "Game 1: Both Teams Destroy Barracks?",
       "tag": "sports",
       "orcetra": 0.088,
@@ -21149,6 +22589,18 @@
       "mkt_brier": 0.2862,
       "beat": true,
       "spread": 0.0318,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.5088,
+      "market": 0.54,
+      "actual": 0.0,
+      "our_brier": 0.2589,
+      "mkt_brier": 0.2916,
+      "beat": true,
+      "spread": 0.0312,
       "reasoning": ""
     },
     {
@@ -21548,6 +23000,18 @@
       "reasoning": ""
     },
     {
+      "q": "Exact Score: Philadelphia Union 3 - 2 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.4,
+      "market": 0.43,
+      "actual": 0.0,
+      "our_brier": 0.16,
+      "mkt_brier": 0.1849,
+      "beat": true,
+      "spread": 0.03,
+      "reasoning": ""
+    },
+    {
       "q": "Walton vs. Hijikata: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.551,
@@ -21580,6 +23044,18 @@
       "our_brier": 0.2778,
       "mkt_brier": 0.308,
       "beat": true,
+      "spread": 0.0279,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the White House call a full lid by 6:30PM on March 17?",
+      "tag": "politics",
+      "orcetra": 0.5271,
+      "market": 0.555,
+      "actual": 1.0,
+      "our_brier": 0.2236,
+      "mkt_brier": 0.198,
+      "beat": false,
       "spread": 0.0279,
       "reasoning": ""
     },
@@ -22028,6 +23504,18 @@
       "reasoning": ""
     },
     {
+      "q": "Exact Score: Philadelphia Union 2 - 1 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.396,
+      "market": 0.42,
+      "actual": 0.0,
+      "our_brier": 0.1568,
+      "mkt_brier": 0.1764,
+      "beat": true,
+      "spread": 0.024,
+      "reasoning": ""
+    },
+    {
       "q": "Game 3: Any Player Ultra Kill?",
       "tag": "sports",
       "orcetra": 0.5413,
@@ -22328,6 +23816,18 @@
       "reasoning": ""
     },
     {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.367,
+      "market": 0.345,
+      "actual": 0.0,
+      "our_brier": 0.1347,
+      "mkt_brier": 0.119,
+      "beat": false,
+      "spread": 0.022,
+      "reasoning": ""
+    },
+    {
       "q": "Will Powell say \"Food\" or \"Energy\" 3+ times during March press conference?",
       "tag": "economy",
       "orcetra": 0.5484,
@@ -22485,6 +23985,18 @@
     },
     {
       "q": "Dota 2: Winter Bear vs Nemiga Gaming (BO3) - European Pro League Group B",
+      "tag": "sports",
+      "orcetra": 0.394,
+      "market": 0.415,
+      "actual": 0.0,
+      "our_brier": 0.1552,
+      "mkt_brier": 0.1722,
+      "beat": true,
+      "spread": 0.021,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Any Other Score?",
       "tag": "sports",
       "orcetra": 0.394,
       "market": 0.415,
@@ -22791,6 +24303,18 @@
       "actual": 0.0,
       "our_brier": 0.0912,
       "mkt_brier": 0.1024,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 0 - 1 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
       "beat": true,
       "spread": 0.018,
       "reasoning": ""
@@ -23576,6 +25100,30 @@
       "reasoning": ""
     },
     {
+      "q": "Exact Score: Philadelphia Union 1 - 2 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.39,
+      "market": 0.405,
+      "actual": 1.0,
+      "our_brier": 0.3721,
+      "mkt_brier": 0.354,
+      "beat": false,
+      "spread": 0.015,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 0 - 0 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.39,
+      "market": 0.405,
+      "actual": 0.0,
+      "our_brier": 0.1521,
+      "mkt_brier": 0.164,
+      "beat": true,
+      "spread": 0.015,
+      "reasoning": ""
+    },
+    {
       "q": "Asuncion: Adolfo Vallejo vs Carlos Maria Zarate",
       "tag": "sports",
       "orcetra": 0.9197,
@@ -24075,6 +25623,30 @@
       "actual": 1.0,
       "our_brier": 0.0888,
       "mkt_brier": 0.0961,
+      "beat": true,
+      "spread": 0.012,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 3 - 1 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.388,
+      "market": 0.4,
+      "actual": 0.0,
+      "our_brier": 0.1505,
+      "mkt_brier": 0.16,
+      "beat": true,
+      "spread": 0.012,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 0 - 2 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.388,
+      "market": 0.4,
+      "actual": 0.0,
+      "our_brier": 0.1505,
+      "mkt_brier": 0.16,
       "beat": true,
       "spread": 0.012,
       "reasoning": ""
@@ -24968,6 +26540,18 @@
       "reasoning": ""
     },
     {
+      "q": "Exact Score: Philadelphia Union 0 - 3 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.374,
+      "market": 0.365,
+      "actual": 0.0,
+      "our_brier": 0.1399,
+      "mkt_brier": 0.1332,
+      "beat": false,
+      "spread": 0.009,
+      "reasoning": ""
+    },
+    {
       "q": "Will Donald Trump post 120-139 Truth Social posts from March 10 to March 17, 202",
       "tag": "politics",
       "orcetra": 0.0819,
@@ -25605,6 +27189,30 @@
     },
     {
       "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.341,
+      "market": 0.335,
+      "actual": 1.0,
+      "our_brier": 0.4343,
+      "mkt_brier": 0.4422,
+      "beat": true,
+      "spread": 0.006,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the White House call a full lid by 6:30PM on March 18?",
+      "tag": "politics",
+      "orcetra": 0.706,
+      "market": 0.7,
+      "actual": 1.0,
+      "our_brier": 0.0864,
+      "mkt_brier": 0.09,
+      "beat": true,
+      "spread": 0.006,
+      "reasoning": ""
+    },
+    {
+      "q": "Texas Longhorns vs. Gonzaga Bulldogs",
       "tag": "sports",
       "orcetra": 0.341,
       "market": 0.335,
@@ -26312,6 +27920,42 @@
       "reasoning": ""
     },
     {
+      "q": "Exact Score: Philadelphia Union 1 - 0 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.382,
+      "market": 0.385,
+      "actual": 0.0,
+      "our_brier": 0.1459,
+      "mkt_brier": 0.1482,
+      "beat": true,
+      "spread": 0.003,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 1 - 3 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.382,
+      "market": 0.385,
+      "actual": 0.0,
+      "our_brier": 0.1459,
+      "mkt_brier": 0.1482,
+      "beat": true,
+      "spread": 0.003,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 3 - 3 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.378,
+      "market": 0.375,
+      "actual": 0.0,
+      "our_brier": 0.1429,
+      "mkt_brier": 0.1406,
+      "beat": false,
+      "spread": 0.003,
+      "reasoning": ""
+    },
+    {
       "q": "Will Chris Kirk finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.3267,
@@ -26697,6 +28341,30 @@
     },
     {
       "q": "Map Handicap: SportsBetExpert (-1.5) vs regain (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.38,
+      "actual": 0.0,
+      "our_brier": 0.1444,
+      "mkt_brier": 0.1444,
+      "beat": false,
+      "spread": 0.0,
+      "reasoning": ""
+    },
+    {
+      "q": "Exact Score: Philadelphia Union 2 - 2 Chicago Fire FC?",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.38,
+      "actual": 0.0,
+      "our_brier": 0.1444,
+      "mkt_brier": 0.1444,
+      "beat": false,
+      "spread": 0.0,
+      "reasoning": ""
+    },
+    {
+      "q": "Map Handicap: WG (-1.5) vs FlyQuest RED (+1.5)",
       "tag": "sports",
       "orcetra": 0.38,
       "market": 0.38,
