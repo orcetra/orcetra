@@ -76,7 +76,7 @@ def main():
             "resolved": n_checked,
             "pending": total - n_checked,
             "beat_rate": n_beat / n_checked if n_checked else 0,
-            "avg_murmur_brier": sum(c["our_brier"] for c in checks) / n_checked if n_checked else 0,
+            "avg_orcetra_brier": sum(c["our_brier"] for c in checks) / n_checked if n_checked else 0,
             "avg_market_brier": sum(c["mkt_brier"] for c in checks) / n_checked if n_checked else 0,
             "last_updated": batch.get("last_updated", "unknown"),
         },
@@ -102,7 +102,7 @@ def main():
         new = f"data = {json.dumps(dashboard_data)};"
         html_standalone = html.replace(old, new)
 
-        out_path = os.path.join(DASH, "murmur-dashboard.html")
+        out_path = os.path.join(DASH, "orcetra-dashboard.html")
         with open(out_path, "w") as f:
             f.write(html_standalone)
         print(f"Dashboard updated: {n_checked} checks, {n_beat}/{n_checked} beat ({100*n_beat/n_checked:.1f}%)")

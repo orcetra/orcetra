@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MURMUR — Prediction Intelligence Engine</title>
+    <title>ORCETRA — Prediction Intelligence Engine</title>
     <style>
         * {
             margin: 0;
@@ -480,7 +480,7 @@
             position: relative;
         }
 
-        .prob-bar-murmur {
+        .prob-bar-orcetra {
             background: var(--neon-blue);
         }
 
@@ -500,7 +500,7 @@
             width: 40px;
         }
 
-        .prob-bar-value.murmur {
+        .prob-bar-value.orcetra {
             color: var(--neon-blue);
         }
 
@@ -604,7 +604,7 @@
         <!-- Header -->
         <header>
             <div class="logo">
-                <h1>MURMUR</h1>
+                <h1>ORCETRA</h1>
                 <span>Prediction Intelligence Engine</span>
             </div>
             <div class="live-indicator">
@@ -651,7 +651,7 @@
                             <tr>
                                 <th>Question</th>
                                 <th>Tag</th>
-                                <th>Murmur</th>
+                                <th>Orcetra</th>
                                 <th>Market</th>
                                 <th>Actual</th>
                                 <th>Spread</th>
@@ -687,7 +687,7 @@
                         <tr>
                             <th data-sort="q">Question</th>
                             <th data-sort="tag">Tag</th>
-                            <th data-sort="murmur">Murmur %</th>
+                            <th data-sort="orcetra">Orcetra %</th>
                             <th data-sort="market">Market %</th>
                             <th>Comparison</th>
                             <th data-sort="actual">Actual</th>
@@ -705,7 +705,7 @@
         <footer>
             <span>Internal Use Only</span>
             <span class="separator">•</span>
-            <span>Murmur Phase 1.5</span>
+            <span>Orcetra Phase 1.5</span>
             <span class="separator">•</span>
             <span id="last-updated">Last Updated: —</span>
         </footer>
@@ -771,7 +771,7 @@
             animateValue(beatRateEl, 0, summary.beat_rate * 100, 1400, '%', 1);
 
             // Brier advantage
-            const brierAdvantage = (summary.avg_market_brier - summary.avg_murmur_brier).toFixed(4);
+            const brierAdvantage = (summary.avg_market_brier - summary.avg_orcetra_brier).toFixed(4);
             const brierEl = document.getElementById('brier-advantage');
             animateValue(brierEl, 0, parseFloat(brierAdvantage), 1600, '', 4);
         }
@@ -790,7 +790,7 @@
                     <tr class="${rowClass}">
                         <td class="question" title="${escapeHtml(item.q)}">${escapeHtml(item.q)}</td>
                         <td><span class="tag ${tagClass}">${item.tag}</span></td>
-                        <td>${(item.murmur * 100).toFixed(1)}%</td>
+                        <td>${(item.orcetra * 100).toFixed(1)}%</td>
                         <td>${(item.market * 100).toFixed(1)}%</td>
                         <td>${item.actual.toFixed(0)}</td>
                         <td>${(item.spread * 100).toFixed(1)}%</td>
@@ -849,10 +849,10 @@
                 const rowClass = item.beat ? 'row-win' : 'row-loss';
                 const tagClass = item.tag === 'golf' ? 'tag-golf' : 'tag-sports';
                 const winner = item.beat ? '✅' : '❌';
-                const murmurPct = item.murmur * 100;
+                const orcPct = item.orcetra * 100;
                 const marketPct = item.market * 100;
-                const maxPct = Math.max(murmurPct, marketPct, 1);
-                const murmurWidth = (murmurPct / maxPct) * 100;
+                const maxPct = Math.max(orcPct, marketPct, 1);
+                const orcWidth = (orcPct / maxPct) * 100;
                 const marketWidth = (marketPct / maxPct) * 100;
 
                 return `
@@ -861,13 +861,13 @@
                             <span class="question-text" title="${escapeHtml(item.q)}">${escapeHtml(item.q)}</span>
                         </td>
                         <td><span class="tag ${tagClass}">${item.tag}</span></td>
-                        <td>${murmurPct.toFixed(1)}%</td>
+                        <td>${orcPct.toFixed(1)}%</td>
                         <td>${marketPct.toFixed(1)}%</td>
                         <td>
                             <div class="prob-bars">
                                 <div class="prob-bar-label">M</div>
                                 <div class="prob-bar-container">
-                                    <div class="prob-bar prob-bar-murmur" style="width: ${murmurWidth}%"></div>
+                                    <div class="prob-bar prob-bar-orcetra" style="width: ${orcWidth}%"></div>
                                     <div class="prob-bar prob-bar-market" style="width: ${marketWidth}%"></div>
                                 </div>
                             </div>

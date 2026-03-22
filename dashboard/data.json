@@ -4,7 +4,7 @@
     "resolved": 2340,
     "pending": 14904,
     "beat_rate": 0.6730769230769231,
-    "avg_murmur_brier": 0.2221241452991453,
+    "avg_orcetra_brier": 0.2221241452991453,
     "avg_market_brier": 0.23268666666666668,
     "last_updated": "2026-03-22T21:28:11.034748+00:00"
   },
