@@ -955,6 +955,27 @@
         </div>
     </section>
 
+    <!-- Quick Start -->
+    <section style="padding: 80px 0; background: #0d1220;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Quick Start</h2>
+                <p class="section-subtitle">Give it any dataset. It finds the best prediction.</p>
+            </div>
+            <div style="max-width: 700px; margin: 0 auto; background: #141b2d; border-radius: 12px; padding: 32px; border: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #94a3b8;">
+                <div style="margin-bottom: 8px; color: #636e7b;">$ pip install orcetra</div>
+                <div style="margin-bottom: 20px; color: #636e7b;">$ orcetra predict housing.csv --target price --budget 30s</div>
+                <div style="color: #00d4ff;">🎯 Orcetra v0.1.0</div>
+                <div style="margin-top: 12px;">Step 1: Analyzing data... <span style="color:#94a3b8">regression, 8 features</span></div>
+                <div>Step 2: Baselines... <span style="color:#94a3b8">RF: 0.2554 ⭐</span></div>
+                <div>Step 3: AutoResearch loop...</div>
+                <div style="color: #00ff88; margin-top: 8px;">  #5 🎯 QuantileTransformer+GBM: 0.2324 (+9.0%!)</div>
+                <div style="color: #00ff88;">  #18 🎯 QuantileTransformer+GBM: 0.2222 (+13.0%!)</div>
+                <div style="margin-top: 12px; color: #00ff88; font-weight: bold;">✅ +13% improvement over baseline in 20 seconds</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Orcetra -->
     <section class="why-orcetra">
         <div class="container">
