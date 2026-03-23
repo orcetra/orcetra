@@ -52,6 +52,7 @@ def run_prediction(
     baselines = get_baselines(data_info["task_type"])
     best_score = None
     best_model = None
+    baseline_best_score = None  # Track the best baseline score
     
     for model_name, model_fn in baselines.items():
         try:
@@ -64,9 +65,12 @@ def run_prediction(
             if is_better:
                 best_score = score
                 best_model = model_name
+                baseline_best_score = score  # Save baseline best
             console.print(f"  {model_name}: {score:.4f} {'⭐' if is_better else ''}")
         except Exception as e:
             console.print(f"  {model_name}: [red]failed ({e})[/red]")
+    
+    console.print(f"\n[bold yellow]Best baseline: {best_model} = {best_score:.4f}[/bold yellow]")
     
     # Step 4: AutoResearch loop (iterate while budget remains)
     console.print(f"\n[bold]Step 3:[/bold] AutoResearch loop (budget: {budget})...")
@@ -75,6 +79,7 @@ def run_prediction(
     agent = RandomSearchAgent(task_type=data_info["task_type"])
     iteration = 0
     improvements = 0
+    stagnation_count = 0  # Track iterations without improvement
     
     while time.time() - start_time < budget_seconds:
         iteration += 1
@@ -93,11 +98,35 @@ def run_prediction(
             )
             if is_better:
                 improvements += 1
+                old_best = best_score
                 best_score = score
                 best_model = proposal.description
-                console.print(f"  [green]#{iteration} ⭐ {proposal.description}: {score:.4f}[/green]")
-            elif iteration <= 10 or iteration % 50 == 0:
-                console.print(f"  [dim]#{iteration} {proposal.description}: {score:.4f}[/dim]")
+                stagnation_count = 0  # Reset stagnation counter
+                
+                # Check if we beat the baseline
+                beats_baseline = (
+                    (metric_fn.direction == "minimize" and score < baseline_best_score)
+                    or (metric_fn.direction == "maximize" and score > baseline_best_score)
+                )
+                improvement_pct = abs((score - old_best) / old_best * 100) if old_best != 0 else 0
+                
+                if beats_baseline:
+                    console.print(f"  [bold green]#{iteration} 🎯 {proposal.description}: {score:.4f} (+{improvement_pct:.1f}% vs baseline!)[/bold green]")
+                else:
+                    console.print(f"  [green]#{iteration} ⭐ {proposal.description}: {score:.4f} (+{improvement_pct:.1f}%)[/green]")
+            else:
+                stagnation_count += 1
+                
+                # Show progress occasionally
+                if iteration <= 10 or iteration % 50 == 0:
+                    console.print(f"  [dim]#{iteration} {proposal.description}: {score:.4f}[/dim]")
+                
+                # Warn about stagnation but continue
+                if stagnation_count == 50:
+                    console.print(f"  [yellow]⚠️  No improvements in 50 iterations, but continuing...[/yellow]")
+                elif stagnation_count % 100 == 0:
+                    console.print(f"  [yellow]⚠️  {stagnation_count} iterations without improvement[/yellow]")
+                    
         except Exception as e:
             # Silently skip failed proposals (e.g., incompatible hyperparameters)
             if iteration <= 5:  # Show first few errors for debugging
@@ -107,11 +136,32 @@ def run_prediction(
     
     elapsed = time.time() - start_time
     
+    # Final summary with improvement analysis
+    improvement_over_baseline = None
+    if baseline_best_score is not None:
+        if metric_fn.direction == "minimize":
+            improvement_pct = (baseline_best_score - best_score) / baseline_best_score * 100
+            beats_baseline = best_score < baseline_best_score
+        else:
+            improvement_pct = (best_score - baseline_best_score) / baseline_best_score * 100
+            beats_baseline = best_score > baseline_best_score
+        improvement_over_baseline = improvement_pct
+        
+        if beats_baseline:
+            console.print(f"\n[bold green]🎯 Found better model! {improvement_pct:+.1f}% improvement over baseline[/bold green]")
+        else:
+            console.print(f"\n[bold yellow]📊 Best result matches baseline performance[/bold yellow]")
+    
+    console.print(f"\n[bold]Final Result:[/bold] {best_model} = {best_score:.4f}")
+    
     return {
         "best_model": best_model,
         "best_score": best_score,
+        "baseline_score": baseline_best_score,
+        "improvement_over_baseline": improvement_over_baseline,
         "metric_name": metric_fn.name,
         "iterations": iteration,
+        "improvements": improvements,
         "elapsed": elapsed,
         "task_type": data_info["task_type"],
     }
