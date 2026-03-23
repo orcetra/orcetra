@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "orcetra"
+version = "0.1.0"
+description = "AI-powered automated prediction engine. Give it data, it finds the best forecast."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    {name = "Orcetra Team"},
+]
+dependencies = [
+    "click>=8.0",
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "scikit-learn>=1.3",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+llm = ["groq", "openai"]
+xgboost = ["xgboost>=2.0"]
+all = ["orcetra[llm,xgboost]"]
+
+[project.scripts]
+orcetra = "orcetra.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/orcetra"]
