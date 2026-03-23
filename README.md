@@ -85,8 +85,8 @@ Cloudflare Pages     → Auto-deploy to orcetra.ai
 ## Team
 
 **Beibei Li** — Chief Scientist, CMU AI Professor  
-**Kai Zhang** — CEO  
-**Guilin Zhang** — CTO  
+**Kai Zhang** — Researcher  
+**Guilin Zhang** — Researcher  
 
 ## License
 
