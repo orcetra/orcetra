@@ -70,15 +70,40 @@ def run_prediction(
     
     # Step 4: AutoResearch loop (iterate while budget remains)
     console.print(f"\n[bold]Step 3:[/bold] AutoResearch loop (budget: {budget})...")
+    from .agent import RandomSearchAgent
+    
+    agent = RandomSearchAgent(task_type=data_info["task_type"])
     iteration = 0
+    improvements = 0
     
     while time.time() - start_time < budget_seconds:
         iteration += 1
-        # TODO: AI agent proposes improvement
-        # For now, try hyperparameter variations
-        elapsed = time.time() - start_time
-        if elapsed > budget_seconds:
-            break
+        proposal = agent.propose({
+            "best_score": best_score,
+            "best_model": best_model,
+            "iteration": iteration,
+            "task_type": data_info["task_type"],
+        })
+        
+        try:
+            score = proposal.evaluate(data_info, metric_fn)
+            is_better = (
+                (metric_fn.direction == "minimize" and score < best_score)
+                or (metric_fn.direction == "maximize" and score > best_score)
+            )
+            if is_better:
+                improvements += 1
+                best_score = score
+                best_model = proposal.description
+                console.print(f"  [green]#{iteration} ⭐ {proposal.description}: {score:.4f}[/green]")
+            elif iteration <= 10 or iteration % 50 == 0:
+                console.print(f"  [dim]#{iteration} {proposal.description}: {score:.4f}[/dim]")
+        except Exception as e:
+            # Silently skip failed proposals (e.g., incompatible hyperparameters)
+            if iteration <= 5:  # Show first few errors for debugging
+                console.print(f"  [red]#{iteration} {proposal.description}: failed ({str(e)[:50]})[/red]")
+    
+    console.print(f"  Completed {iteration} iterations, {improvements} improvements")
     
     elapsed = time.time() - start_time
     
