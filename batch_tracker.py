@@ -12,8 +12,8 @@ from pathlib import Path
 import httpx
 from rich.console import Console
 
-from murmur.prices import get_price_context
-from murmur.models import Event, OutcomeToken
+from orcetra.prices import get_price_context
+from orcetra.models import Event, OutcomeToken
 
 console = Console()
 RESULTS_DIR = Path("results")
@@ -264,7 +264,7 @@ def rule_predict(title, description, market_price, volume):
 
 def predict_batch():
     """Make predictions on ALL available markets."""
-    console.print("[bold]🔮 Murmur Batch Tracker — Mass Prediction[/bold]\n")
+    console.print("[bold]🔮 Orcetra Batch Tracker — Mass Prediction[/bold]\n")
 
     markets = asyncio.run(fetch_all_active_markets())
     console.print(f"Found {len(markets)} active markets\n")
@@ -333,7 +333,7 @@ def predict_batch():
 
 def check_batch():
     """Check all predictions for resolution."""
-    console.print("[bold]📊 Murmur Batch Tracker — Checking Results[/bold]\n")
+    console.print("[bold]📊 Orcetra Batch Tracker — Checking Results[/bold]\n")
 
     batch = load_batch()
     unresolved = {k: v for k, v in batch["predictions"].items() if not v.get("resolved")}
@@ -446,7 +446,7 @@ def status_command():
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="Murmur Batch Tracker")
+    parser = argparse.ArgumentParser(description="Orcetra Batch Tracker")
     sub = parser.add_subparsers(dest="command")
     sub.add_parser("predict", help="Mass predict all active markets")
     sub.add_parser("check", help="Check for resolved predictions")

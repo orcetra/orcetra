@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Murmur Auto-Check: Verify predictions against resolved markets.
+"""Orcetra Auto-Check: Verify predictions against resolved markets.
 Run daily via cron or manually: python auto_check.py"""
 
 import json, httpx, time, os, sys
@@ -172,7 +172,7 @@ def check_predictions():
 
     # Print report
     print(f"\n{'='*60}")
-    print(f"📊 MURMUR CHECK REPORT — {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"📊 ORCETRA CHECK REPORT — {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"{'='*60}")
     print(f"  New resolved:    {new_checks}")
     print(f"  Total checked:   {total}")

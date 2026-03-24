@@ -11,7 +11,7 @@ from pathlib import Path
 
 from rich.console import Console
 
-from murmur.models import Event, OutcomeToken, Prediction
+from orcetra.models import Event, OutcomeToken, Prediction
 from backtest import get_high_volume_resolved_markets, get_price_at_days_before
 
 console = Console()

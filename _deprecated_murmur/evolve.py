@@ -304,8 +304,8 @@ import os
 import re
 from typing import Optional
 from groq import Groq
-from murmur.models import Event, PricePoint, NewsSignal, OrderBook, Prediction
-from murmur.strategy import PredictionStrategy
+from orcetra.models import Event, PricePoint, NewsSignal, OrderBook, Prediction
+from orcetra.strategy import PredictionStrategy
 """
                 if "import" not in new_code:
                     new_code = imports + "\n" + new_code

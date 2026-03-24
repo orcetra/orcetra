@@ -12,8 +12,8 @@ import httpx
 from rich.console import Console
 from rich.table import Table
 
-from murmur.strategy import LLMStrategy
-from murmur.models import Event, OutcomeToken
+from orcetra.strategy import LLMStrategy
+from orcetra.models import Event, OutcomeToken
 
 console = Console()
 TRACKER_FILE = Path("results/live_predictions.json")
@@ -108,7 +108,7 @@ def save_predictions(data):
 
 def predict_command(n_markets=15):
     """Make predictions on active markets and record them."""
-    console.print("[bold]🔮 Murmur Live Tracker — Recording Predictions[/bold]\n")
+    console.print("[bold]🔮 Orcetra Live Tracker — Recording Predictions[/bold]\n")
 
     # Fetch markets
     markets = asyncio.run(fetch_active_markets(min_volume=100_000, max_days=21))
@@ -195,7 +195,7 @@ def predict_command(n_markets=15):
 
 def check_command():
     """Check outcomes of predicted events."""
-    console.print("[bold]📊 Murmur Live Tracker — Checking Results[/bold]\n")
+    console.print("[bold]📊 Orcetra Live Tracker — Checking Results[/bold]\n")
 
     tracker = load_predictions()
     unresolved = [p for p in tracker["predictions"] if not p.get("resolved")]
@@ -325,7 +325,7 @@ def status_command():
     resolved = sum(1 for p in tracker["predictions"] if p.get("resolved"))
     active = total - resolved
 
-    console.print(f"[bold]Murmur Live Tracker Status[/bold]")
+    console.print(f"[bold]Orcetra Live Tracker Status[/bold]")
     console.print(f"  Total predictions: {total}")
     console.print(f"  Active: {active}")
     console.print(f"  Resolved: {resolved}")
@@ -344,7 +344,7 @@ def status_command():
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="Murmur Live Prediction Tracker")
+    parser = argparse.ArgumentParser(description="Orcetra Live Prediction Tracker")
     sub = parser.add_subparsers(dest="command")
 
     p_predict = sub.add_parser("predict", help="Make predictions on active markets")

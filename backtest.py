@@ -12,9 +12,9 @@ import httpx
 from rich.console import Console
 from rich.table import Table
 
-from murmur.fetcher import PolymarketFetcher
-from murmur.strategy import LLMStrategy
-from murmur.models import Event, OutcomeToken, Prediction
+from orcetra.fetcher import PolymarketFetcher
+from orcetra.strategy import LLMStrategy
+from orcetra.models import Event, OutcomeToken, Prediction
 
 console = Console()
 
@@ -108,7 +108,7 @@ def _parse_json(value, default=None):
 
 async def run_backtest(n_events=20, days_before=7):
     """Run fair backtest: predict using info available N days before resolution."""
-    console.print(f"[bold]Murmur Backtest — predicting {days_before} days before resolution[/bold]\n")
+    console.print(f"[bold]Orcetra Backtest — predicting {days_before} days before resolution[/bold]\n")
 
     # 1. Get resolved markets
     console.print("Fetching resolved markets...", end=" ")
@@ -195,12 +195,12 @@ async def run_backtest(n_events=20, days_before=7):
     console.print(f"\n{'='*60}")
     console.print(f"[bold]RESULTS ({n} events, {days_before}-day lookahead)[/bold]")
     console.print(f"{'='*60}")
-    console.print(f"  Murmur Brier Score:  {avg_brier:.4f}")
+    console.print(f"  Orcetra Brier Score:  {avg_brier:.4f}")
     console.print(f"  Market Brier Score:  {avg_mkt_brier:.4f}")
     console.print(f"  Beat Market Rate:    {wins}/{n} ({wins/n:.0%})")
 
     if avg_brier < avg_mkt_brier:
-        console.print(f"\n  [green bold]🎯 Murmur BEATS the market![/green bold]")
+        console.print(f"\n  [green bold]🎯 Orcetra BEATS the market![/green bold]")
     else:
         gap = avg_brier - avg_mkt_brier
         console.print(f"\n  [yellow]Market wins by {gap:.4f} Brier points[/yellow]")

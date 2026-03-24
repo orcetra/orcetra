@@ -416,7 +416,7 @@ def build_context(event_title: str, description: str = "",
     # Step 7: Get price context (for commodities/crypto)
     price_ctx = None
     try:
-        from murmur.prices import get_price_context
+        from orcetra.prices import get_price_context
         price_ctx = get_price_context(event_title)
     except ImportError:
         pass
@@ -472,7 +472,7 @@ if __name__ == "__main__":
     import sys
     
     if len(sys.argv) < 2:
-        print("Usage: python -m murmur.context_planner 'Event title here'")
+        print("Usage: python -m orcetra.context_planner 'Event title here'")
         sys.exit(1)
     
     title = " ".join(sys.argv[1:])

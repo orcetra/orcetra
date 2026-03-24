@@ -1,4 +1,4 @@
-"""Pydantic data models for Murmur prediction market system."""
+"""Pydantic data models for Orcetra prediction market system."""
 
 from datetime import datetime
 from typing import Optional

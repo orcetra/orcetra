@@ -74,12 +74,32 @@ def run_prediction(
     
     # Step 4: AutoResearch loop (iterate while budget remains)
     console.print(f"\n[bold]Step 3:[/bold] AutoResearch loop (budget: {budget})...")
-    from .agent import RandomSearchAgent
     
-    agent = RandomSearchAgent(task_type=data_info["task_type"])
+    # Try LLM agent first, fall back to random
+    agent = None
+    agent_type = "random"
+    try:
+        import os
+        if os.environ.get("GROQ_API_KEY") or os.environ.get("OPENAI_API_KEY"):
+            from .llm_agent import LLMSearchAgent
+            provider = "groq" if os.environ.get("GROQ_API_KEY") else "openai"
+            agent = LLMSearchAgent(task_type=data_info["task_type"], provider=provider)
+            agent_type = "llm"
+            console.print(f"  Agent: [bold cyan]LLM-guided[/bold cyan] ({provider})")
+    except Exception:
+        pass
+    
+    if agent is None:
+        from .agent import RandomSearchAgent
+        agent = RandomSearchAgent(task_type=data_info["task_type"])
+        console.print(f"  Agent: [dim]Random search[/dim] (set GROQ_API_KEY for LLM-guided)")
     iteration = 0
     improvements = 0
     stagnation_count = 0  # Track iterations without improvement
+    
+    last_proposal_desc = ""
+    last_score = None
+    last_improved = False
     
     while time.time() - start_time < budget_seconds:
         iteration += 1
@@ -88,6 +108,11 @@ def run_prediction(
             "best_model": best_model,
             "iteration": iteration,
             "task_type": data_info["task_type"],
+            "metric_direction": metric_fn.direction,
+            "data_summary": f"{data_info['shape'][0]} rows, {data_info['n_features']} features",
+            "last_proposal": last_proposal_desc,
+            "last_score": last_score,
+            "last_improved": last_improved,
         })
         
         try:
@@ -96,12 +121,17 @@ def run_prediction(
                 (metric_fn.direction == "minimize" and score < best_score)
                 or (metric_fn.direction == "maximize" and score > best_score)
             )
+            last_proposal_desc = proposal.description
+            last_score = score
+            last_improved = False
+            
             if is_better:
                 improvements += 1
                 old_best = best_score
                 best_score = score
                 best_model = proposal.description
                 stagnation_count = 0  # Reset stagnation counter
+                last_improved = True
                 
                 # Check if we beat the baseline
                 beats_baseline = (

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Context-enriched re-prediction for high-value markets.
 
-Picks the top N markets by volume/spread where Murmur has low confidence,
+Picks the top N markets by volume/spread where Orcetra has low confidence,
 runs deep LLM+news analysis, and updates the prediction.
 
 Run: python3 scripts/enrich_top.py [--top 20] [--min-volume 10000]
@@ -15,9 +15,9 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from murmur.fetcher import PolymarketFetcher
-from murmur.news import NewsCollector
-from murmur.strategy import LLMStrategy
+from orcetra.fetcher import PolymarketFetcher
+from orcetra.news import NewsCollector
+from orcetra.strategy import LLMStrategy
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 BATCH_PATH = os.path.join(ROOT, "results", "batch_predictions.json")
@@ -93,7 +93,7 @@ async def enrich_prediction(cid, pred, fetcher, news_collector, strategy):
         news = []
 
     # 2. Build minimal event object for LLM strategy
-    from murmur.models import Event, Token
+    from orcetra.models import Event, Token
     event = Event(
         id=cid,
         slug=slug,

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Murmur daily pipeline: predict → check → enrich → track prices → dashboard → alert
+# Orcetra daily pipeline: predict → check → enrich → track prices → dashboard → alert
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -47,7 +47,7 @@ if n >= 20:
     # Alert if bet-category rate drops below 70%
     if rate < 0.70:
         import subprocess
-        msg = f'⚠️ Murmur alert: bet-category beat rate dropped to {rate:.1%} ({beat}/{n}). Overall: {all_rate:.1%} ({all_beat}/{all_n}). Check pipeline.'
+        msg = f'⚠️ Orcetra alert: bet-category beat rate dropped to {rate:.1%} ({beat}/{n}). Overall: {all_rate:.1%} ({all_beat}/{all_n}). Check pipeline.'
         subprocess.run(['openclaw', 'system', 'event', '--text', msg, '--mode', 'now'], check=False)
         print(f'ALERT SENT: bet={rate:.1%}, overall={all_rate:.1%}')
     else:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Murmur CLI - Prediction Market Crowd Simulation with Self-Evolving AI Agents."""
+"""Orcetra CLI - Prediction Market Crowd Simulation with Self-Evolving AI Agents."""
 
 import argparse
 import asyncio
@@ -11,15 +11,15 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
-from murmur.fetcher import (
+from orcetra.fetcher import (
     PolymarketFetcher,
     list_active_events_sync,
     list_resolved_events_sync,
 )
-from murmur.news import NewsCollector
-from murmur.strategy import get_default_strategy, LLMStrategy
-from murmur.evaluator import evaluate_strategy_sync, format_backtest_results
-from murmur.evolve import run_evolution, load_best_strategy
+from orcetra.news import NewsCollector
+from orcetra.strategy import get_default_strategy, LLMStrategy
+from orcetra.evaluator import evaluate_strategy_sync, format_backtest_results
+from orcetra.evolve import run_evolution, load_best_strategy
 
 console = Console()
 
@@ -262,7 +262,7 @@ def run_evolve(rounds: int = 10) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Murmur - Prediction Market Crowd Simulation",
+        description="Orcetra - Prediction Market Crowd Simulation",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

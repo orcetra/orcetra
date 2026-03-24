@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Domain-level alpha analysis for Murmur paper.
+"""Domain-level alpha analysis for Orcetra paper.
 
 Fetches resolved Polymarket events, classifies by domain, runs zero-shot
 and context-enriched predictions, computes Brier Scores per domain.
@@ -22,11 +22,11 @@ import httpx
 # Add parent to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from murmur.context_planner import ContextPlan, Domain
-from murmur.strategy import LLMStrategy
-from murmur.models import Event, OutcomeToken
-from murmur.prices import get_price_context
-from murmur.news import search_news_sync
+from orcetra.context_planner import ContextPlan, Domain
+from orcetra.strategy import LLMStrategy
+from orcetra.models import Event, OutcomeToken
+from orcetra.prices import get_price_context
+from orcetra.news import search_news_sync
 
 GAMMA_API = "https://gamma-api.polymarket.com"
 CLOB_API = "https://clob.polymarket.com"
@@ -188,7 +188,7 @@ async def get_price_before(token_id: str, end_date_str: str, days_before: int = 
 async def run_domain_analysis(limit=200, days_before=7, use_context=False):
     """Run domain-level analysis for paper."""
     print(f"{'='*70}")
-    print(f"MURMUR DOMAIN ANALYSIS — {limit} events, {days_before}-day lookahead")
+    print(f"ORCETRA DOMAIN ANALYSIS — {limit} events, {days_before}-day lookahead")
     print(f"Context Planner: {'ON' if use_context else 'OFF'}")
     print(f"{'='*70}\n")
     
