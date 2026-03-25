@@ -1,13 +1,16 @@
 """
-AutoResearch prediction loop.
+AutoResearch prediction loop with parallel evaluation and strategy caching.
 
 Inspired by Karpathy's autoresearch: an AI agent iteratively improves
 a prediction pipeline by proposing modifications, testing them, and
 keeping improvements.
 """
 import time
+import hashlib
 import pandas as pd
+import numpy as np
 from typing import Optional
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from rich.console import Console
 from rich.progress import Progress
 
@@ -17,22 +20,77 @@ from ..metrics.base import get_metric
 
 console = Console()
 
+# ── Parallel evaluation helper ────────────────────────────────────────
+
+def _evaluate_proposal(proposal, data_info, metric_fn):
+    """Evaluate a single proposal (picklable for parallel exec)."""
+    try:
+        score = proposal.evaluate(data_info, metric_fn)
+        return (proposal, score, None)
+    except Exception as e:
+        return (proposal, None, str(e))
+
+
+# ── Strategy Cache ────────────────────────────────────────────────────
+
+class StrategyCache:
+    """Dedup cache keyed by (model_class, sorted_params). Stores all results."""
+    
+    def __init__(self):
+        self._seen = {}  # key -> score
+        self.all_results = []  # list of (description, score, improved)
+    
+    def _key(self, proposal):
+        """Hash based on model class + description (covers params)."""
+        return hashlib.md5(proposal.description.encode()).hexdigest()
+    
+    def is_duplicate(self, proposal) -> bool:
+        return self._key(proposal) in self._seen
+    
+    def record(self, proposal, score, improved=False):
+        k = self._key(proposal)
+        self._seen[k] = score
+        self.all_results.append({
+            "description": proposal.description,
+            "score": score,
+            "improved": improved,
+        })
+    
+    @property
+    def tried_count(self):
+        return len(self._seen)
+    
+    def top_k(self, k=5, direction="minimize"):
+        """Return top-k results sorted by score."""
+        reverse = direction == "maximize"
+        valid = [r for r in self.all_results if r["score"] is not None]
+        return sorted(valid, key=lambda x: x["score"], reverse=reverse)[:k]
+
+
+# ── Main Loop ─────────────────────────────────────────────────────────
+
 def run_prediction(
     data_path: str,
     target: str,
     budget: str = "10min",
     metric: str = "auto",
+    parallel: int = 0,  # 0 = auto-detect
 ) -> dict:
     """
     Main entry point for automated prediction.
     
     1. Load and analyze data
     2. Run baseline models
-    3. AutoResearch loop: iteratively improve
+    3. AutoResearch loop: parallel batch evaluation with strategy cache
     4. Return best result
     """
+    import os
     budget_seconds = parse_budget(budget)
     start_time = time.time()
+    
+    # Auto-detect parallelism
+    if parallel <= 0:
+        parallel = min(os.cpu_count() or 4, 8)
     
     # Step 1: Analyze data
     console.print("[bold]Step 1:[/bold] Analyzing data...")
@@ -43,7 +101,22 @@ def run_prediction(
     
     # Step 2: Select metric
     if metric == "auto":
-        metric = "mse" if data_info["task_type"] == "regression" else "accuracy"
+        if data_info["task_type"] == "regression":
+            y_all = pd.concat([data_info["y_train"], data_info["y_test"]])
+            if (y_all > 0).all():
+                try:
+                    from scipy.stats import skew
+                    if skew(y_all) > 1.0:
+                        metric = "rmsle"
+                        console.print(f"  [cyan]Auto-selected RMSLE (positive right-skewed target)[/cyan]")
+                    else:
+                        metric = "mse"
+                except ImportError:
+                    metric = "mse"
+            else:
+                metric = "mse"
+        else:
+            metric = "accuracy"
     metric_fn = get_metric(metric)
     console.print(f"  Metric: {metric_fn.name} ({metric_fn.direction})")
     
@@ -52,7 +125,7 @@ def run_prediction(
     baselines = get_baselines(data_info["task_type"])
     best_score = None
     best_model = None
-    baseline_best_score = None  # Track the best baseline score
+    baseline_best_score = None
     
     for model_name, model_fn in baselines.items():
         try:
@@ -65,21 +138,20 @@ def run_prediction(
             if is_better:
                 best_score = score
                 best_model = model_name
-                baseline_best_score = score  # Save baseline best
+                baseline_best_score = score
             console.print(f"  {model_name}: {score:.4f} {'⭐' if is_better else ''}")
         except Exception as e:
             console.print(f"  {model_name}: [red]failed ({e})[/red]")
     
     console.print(f"\n[bold yellow]Best baseline: {best_model} = {best_score:.4f}[/bold yellow]")
     
-    # Step 4: AutoResearch loop (iterate while budget remains)
-    console.print(f"\n[bold]Step 3:[/bold] AutoResearch loop (budget: {budget})...")
+    # Step 4: AutoResearch loop — parallel batches with strategy cache
+    console.print(f"\n[bold]Step 3:[/bold] AutoResearch loop (budget: {budget}, {parallel}x parallel)...")
     
-    # Try LLM agent first, fall back to random
+    # Initialize agent
     agent = None
     agent_type = "random"
     try:
-        import os
         if os.environ.get("GROQ_API_KEY") or os.environ.get("OPENAI_API_KEY"):
             from .llm_agent import LLMSearchAgent
             provider = "groq" if os.environ.get("GROQ_API_KEY") else "openai"
@@ -93,47 +165,83 @@ def run_prediction(
         from .agent import RandomSearchAgent
         agent = RandomSearchAgent(task_type=data_info["task_type"])
         console.print(f"  Agent: [dim]Random search[/dim] (set GROQ_API_KEY for LLM-guided)")
+    
+    cache = StrategyCache()
     iteration = 0
     improvements = 0
-    stagnation_count = 0  # Track iterations without improvement
+    batch_num = 0
     
     last_proposal_desc = ""
     last_score = None
     last_improved = False
     
+    # Batch size: generate N proposals, deduplicate, evaluate in parallel
+    batch_size = parallel * 2  # Generate more than workers to account for dedup
+    
     while time.time() - start_time < budget_seconds:
-        iteration += 1
-        proposal = agent.propose({
-            "best_score": best_score,
-            "best_model": best_model,
-            "iteration": iteration,
-            "task_type": data_info["task_type"],
-            "metric_direction": metric_fn.direction,
-            "data_summary": f"{data_info['shape'][0]} rows, {data_info['n_features']} features",
-            "last_proposal": last_proposal_desc,
-            "last_score": last_score,
-            "last_improved": last_improved,
-        })
+        batch_num += 1
         
-        try:
-            score = proposal.evaluate(data_info, metric_fn)
+        # Generate batch of proposals (skip duplicates)
+        proposals = []
+        attempts = 0
+        while len(proposals) < batch_size and attempts < batch_size * 3:
+            attempts += 1
+            state = {
+                "best_score": best_score,
+                "best_model": best_model,
+                "iteration": iteration + len(proposals) + 1,
+                "task_type": data_info["task_type"],
+                "metric_direction": metric_fn.direction,
+                "data_summary": f"{data_info['shape'][0]} rows, {data_info['n_features']} features",
+                "last_proposal": last_proposal_desc,
+                "last_score": last_score,
+                "last_improved": last_improved,
+            }
+            proposal = agent.propose(state)
+            if not cache.is_duplicate(proposal):
+                proposals.append(proposal)
+        
+        if not proposals:
+            console.print(f"  [yellow]Batch {batch_num}: all proposals duplicated, stopping[/yellow]")
+            break
+        
+        # Parallel evaluation
+        results = []
+        with ThreadPoolExecutor(max_workers=parallel) as pool:
+            futures = {
+                pool.submit(_evaluate_proposal, p, data_info, metric_fn): p
+                for p in proposals
+            }
+            for future in as_completed(futures):
+                results.append(future.result())
+        
+        # Process results
+        batch_improvements = 0
+        for proposal, score, error in results:
+            iteration += 1
+            
+            if error or score is None:
+                if iteration <= 5:
+                    console.print(f"  [red]#{iteration} {proposal.description}: failed ({error[:50] if error else 'unknown'})[/red]")
+                continue
+            
+            cache.record(proposal, score)
+            
             is_better = (
                 (metric_fn.direction == "minimize" and score < best_score)
                 or (metric_fn.direction == "maximize" and score > best_score)
             )
-            last_proposal_desc = proposal.description
-            last_score = score
-            last_improved = False
             
             if is_better:
                 improvements += 1
+                batch_improvements += 1
                 old_best = best_score
                 best_score = score
                 best_model = proposal.description
-                stagnation_count = 0  # Reset stagnation counter
                 last_improved = True
+                last_proposal_desc = proposal.description
+                last_score = score
                 
-                # Check if we beat the baseline
                 beats_baseline = (
                     (metric_fn.direction == "minimize" and score < baseline_best_score)
                     or (metric_fn.direction == "maximize" and score > baseline_best_score)
@@ -145,28 +253,28 @@ def run_prediction(
                 else:
                     console.print(f"  [green]#{iteration} ⭐ {proposal.description}: {score:.4f} (+{improvement_pct:.1f}%)[/green]")
             else:
-                stagnation_count += 1
-                
-                # Show progress occasionally
-                if iteration <= 10 or iteration % 50 == 0:
-                    console.print(f"  [dim]#{iteration} {proposal.description}: {score:.4f}[/dim]")
-                
-                # Warn about stagnation but continue
-                if stagnation_count == 50:
-                    console.print(f"  [yellow]⚠️  No improvements in 50 iterations, but continuing...[/yellow]")
-                elif stagnation_count % 100 == 0:
-                    console.print(f"  [yellow]⚠️  {stagnation_count} iterations without improvement[/yellow]")
-                    
-        except Exception as e:
-            # Silently skip failed proposals (e.g., incompatible hyperparameters)
-            if iteration <= 5:  # Show first few errors for debugging
-                console.print(f"  [red]#{iteration} {proposal.description}: failed ({str(e)[:50]})[/red]")
+                last_improved = False
+                last_proposal_desc = proposal.description
+                last_score = score
+        
+        # Batch summary (compact)
+        if batch_num <= 3 or batch_num % 5 == 0:
+            elapsed_so_far = time.time() - start_time
+            console.print(f"  [dim]  batch {batch_num}: {len(proposals)} evaluated, {batch_improvements} improved, best={best_score:.4f} ({elapsed_so_far:.0f}s)[/dim]")
     
-    console.print(f"  Completed {iteration} iterations, {improvements} improvements")
+    console.print(f"  Completed {iteration} strategies ({cache.tried_count} unique), {improvements} improvements")
     
     elapsed = time.time() - start_time
     
-    # Final summary with improvement analysis
+    # Show top-5 from cache
+    top5 = cache.top_k(5, metric_fn.direction)
+    if top5:
+        console.print(f"\n[bold]Top 5 strategies:[/bold]")
+        for i, r in enumerate(top5):
+            marker = "🏆" if i == 0 else " "
+            console.print(f"  {marker} {r['score']:.4f} — {r['description']}")
+    
+    # Final summary
     improvement_over_baseline = None
     if baseline_best_score is not None:
         if metric_fn.direction == "minimize":
@@ -191,10 +299,13 @@ def run_prediction(
         "improvement_over_baseline": improvement_over_baseline,
         "metric_name": metric_fn.name,
         "iterations": iteration,
+        "unique_strategies": cache.tried_count,
         "improvements": improvements,
         "elapsed": elapsed,
         "task_type": data_info["task_type"],
+        "top_5": cache.top_k(5, metric_fn.direction),
     }
+
 
 def parse_budget(budget: str) -> float:
     """Parse budget string like '10min', '1h', '30s' to seconds."""

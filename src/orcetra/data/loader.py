@@ -15,6 +15,11 @@ def analyze_and_load(data_path: str, target: str) -> Dict[str, Any]:
     y = df[target]
     X = df.drop(columns=[target])
     
+    # Drop id-like columns (row identifiers, not features)
+    id_cols = [c for c in X.columns if c.lower() in ("id", "index", "row_id", "rowid")]
+    if id_cols:
+        X = X.drop(columns=id_cols)
+    
     # Auto-detect task type
     if y.dtype in ["object", "bool"] or y.nunique() <= 20:
         task_type = "classification"

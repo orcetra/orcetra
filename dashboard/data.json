@@ -1,21 +1,21 @@
 {
   "summary": {
     "total_predictions": 17244,
-    "resolved": 1974,
-    "pending": 15270,
-    "beat_rate": 0.7016210739614995,
-    "avg_orcetra_brier": 0.21701560283687943,
-    "avg_market_brier": 0.2294917933130699,
+    "resolved": 2087,
+    "pending": 15157,
+    "beat_rate": 0.706756109247724,
+    "avg_orcetra_brier": 0.21524115955917586,
+    "avg_market_brier": 0.22801538092956394,
     "last_updated": "2026-03-22T21:28:11.034748+00:00",
-    "crypto_binary_excluded": 366
+    "crypto_binary_excluded": 417
   },
   "by_tag": {
     "sports": {
-      "total": 1750,
-      "beat": 1209,
-      "rate": 0.6908571428571428,
-      "avg_our_brier": 0.22336177142857144,
-      "avg_mkt_brier": 0.23521199999999998
+      "total": 1843,
+      "beat": 1281,
+      "rate": 0.6950623982637005,
+      "avg_our_brier": 0.22216619641888224,
+      "avg_mkt_brier": 0.2344902875746066
     },
     "golf": {
       "total": 97,
@@ -32,18 +32,18 @@
       "avg_mkt_brier": 0.19610731707317072
     },
     "politics": {
-      "total": 80,
-      "beat": 61,
-      "rate": 0.7625,
-      "avg_our_brier": 0.15239875,
-      "avg_mkt_brier": 0.15752625
+      "total": 99,
+      "beat": 78,
+      "rate": 0.7878787878787878,
+      "avg_our_brier": 0.14364343434343435,
+      "avg_mkt_brier": 0.14811919191919193
     },
     "commodities": {
-      "total": 6,
-      "beat": 2,
-      "rate": 0.3333333333333333,
-      "avg_our_brier": 0.24280000000000002,
-      "avg_mkt_brier": 0.23556666666666667
+      "total": 7,
+      "beat": 3,
+      "rate": 0.42857142857142855,
+      "avg_our_brier": 0.23975714285714286,
+      "avg_mkt_brier": 0.2369142857142857
     }
   },
   "top_divergences": [
@@ -192,6 +192,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.133,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0177,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.122,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.133,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0177,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.122,
+      "reasoning": ""
+    },
+    {
       "q": "Aboian vs. Silva: Set 1 Games O/U 10.5",
       "tag": "sports",
       "orcetra": 0.117,
@@ -261,30 +285,6 @@
       "mkt_brier": 0.0529,
       "beat": true,
       "spread": 0.114,
-      "reasoning": ""
-    },
-    {
-      "q": "Game 1: Any Player Quadra Kill?",
-      "tag": "sports",
-      "orcetra": 0.116,
-      "market": 0.23,
-      "actual": 0.0,
-      "our_brier": 0.0135,
-      "mkt_brier": 0.0529,
-      "beat": true,
-      "spread": 0.114,
-      "reasoning": ""
-    },
-    {
-      "q": "Jubb vs. Mrva: Set 1 Games O/U 10.5",
-      "tag": "sports",
-      "orcetra": 0.115,
-      "market": 0.225,
-      "actual": 0.0,
-      "our_brier": 0.0132,
-      "mkt_brier": 0.0506,
-      "beat": true,
-      "spread": 0.11,
       "reasoning": ""
     }
   ],
@@ -429,6 +429,30 @@
       "actual": 0.0,
       "our_brier": 0.0139,
       "mkt_brier": 0.0576,
+      "beat": true,
+      "spread": 0.122,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.133,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0177,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.122,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.133,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0177,
+      "mkt_brier": 0.065,
       "beat": true,
       "spread": 0.122,
       "reasoning": ""
@@ -1334,6 +1358,42 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.1818,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0331,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.0732,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.1818,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0331,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.0732,
+      "reasoning": ""
+    },
+    {
+      "q": "Alicante: Ivan Gakhov vs Lloyd Harris",
+      "tag": "sports",
+      "orcetra": 0.1668,
+      "market": 0.24,
+      "actual": 0.0,
+      "our_brier": 0.0278,
+      "mkt_brier": 0.0576,
+      "beat": true,
+      "spread": 0.0732,
+      "reasoning": ""
+    },
+    {
       "q": "Will Donald Trump post 80-99 Truth Social posts from March 10 to March 17, 2026?",
       "tag": "politics",
       "orcetra": 0.165,
@@ -1694,6 +1754,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post 40-64 tweets from March 21 to March 23, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1616,
+      "market": 0.23,
+      "actual": 0.0,
+      "our_brier": 0.0261,
+      "mkt_brier": 0.0529,
+      "beat": true,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Trungelliti vs Kolar",
       "tag": "sports",
       "orcetra": 0.392,
@@ -1846,6 +1918,18 @@
       "our_brier": 0.3697,
       "mkt_brier": 0.2916,
       "beat": false,
+      "spread": 0.068,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.392,
+      "market": 0.46,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.2116,
+      "beat": true,
       "spread": 0.068,
       "reasoning": ""
     },
@@ -2631,6 +2715,18 @@
     },
     {
       "q": "Michalski vs. Gea: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.422,
+      "market": 0.485,
+      "actual": 1.0,
+      "our_brier": 0.3341,
+      "mkt_brier": 0.2652,
+      "beat": false,
+      "spread": 0.063,
+      "reasoning": ""
+    },
+    {
+      "q": "Tabilo vs. Michelsen: Match O/U 23.5",
       "tag": "sports",
       "orcetra": 0.422,
       "market": 0.485,
@@ -6638,6 +6734,114 @@
       "reasoning": ""
     },
     {
+      "q": "Nedic vs. Sels: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Set 1 Winner: Nedic vs Sels",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Monmouth Hawks vs. Cleveland State Vikings (W)",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Pacheco vs. Daniel: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Pacheco vs. Daniel: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Pacheco vs. Daniel: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
       "q": "Jubb vs. Mrva: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.446,
@@ -8054,6 +8258,222 @@
       "reasoning": ""
     },
     {
+      "q": "Nedic vs. Sels: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Nedic vs. Sels: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Nedic vs. Sels: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Nedic vs. Sels: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Nedic vs. Sels: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Andrej Nedic vs. Jelle Sels: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Ivan Gakhov vs. Lloyd Harris: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Set 1 Winner: Gakhov vs Harris",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Gakhov vs. Harris: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Gakhov vs. Harris: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Gakhov vs. Harris: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Gakhov vs. Harris: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Gakhov vs. Harris: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Gakhov vs. Harris: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Moutet vs. Sinner: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Moutet vs. Sinner: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Set 1 Winner: Pacheco vs Daniel",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
       "q": "Game 2: Any Player Rampage?",
       "tag": "sports",
       "orcetra": 0.1512,
@@ -9314,6 +9734,54 @@
       "reasoning": ""
     },
     {
+      "q": "Rodrigo Pacheco vs. Taro Daniel: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.458,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2098,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.057,
+      "reasoning": ""
+    },
+    {
+      "q": "Pacheco vs. Daniel: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.458,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2098,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.057,
+      "reasoning": ""
+    },
+    {
+      "q": "Pacheco vs. Daniel: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.458,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2098,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.057,
+      "reasoning": ""
+    },
+    {
+      "q": "Pacheco vs. Daniel: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.458,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2098,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.057,
+      "reasoning": ""
+    },
+    {
       "q": "Will Johnny Keefer finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -9614,6 +10082,42 @@
       "reasoning": ""
     },
     {
+      "q": "Moutet vs. Sinner: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": ""
+    },
+    {
+      "q": "Moutet vs. Sinner: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": ""
+    },
+    {
+      "q": "Moutet vs. Sinner: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": ""
+    },
+    {
       "q": "Will Rasmus Hojgaard finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -9902,6 +10406,42 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.47,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2209,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.055,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.47,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2209,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.055,
+      "reasoning": ""
+    },
+    {
+      "q": "Set 1 Winner: Tabilo vs Michelsen",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.435,
+      "actual": 1.0,
+      "our_brier": 0.3844,
+      "mkt_brier": 0.3192,
+      "beat": false,
+      "spread": 0.055,
+      "reasoning": ""
+    },
+    {
       "q": "Tobon vs. Ficovich: Set 1 Games O/U 9.5",
       "tag": "sports",
       "orcetra": 0.476,
@@ -10059,6 +10599,42 @@
     },
     {
       "q": "Majchrzak vs. Tien: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.476,
+      "market": 0.53,
+      "actual": 0.0,
+      "our_brier": 0.2266,
+      "mkt_brier": 0.2809,
+      "beat": true,
+      "spread": 0.054,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.101,
+      "market": 0.155,
+      "actual": 0.0,
+      "our_brier": 0.0102,
+      "mkt_brier": 0.024,
+      "beat": true,
+      "spread": 0.054,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.101,
+      "market": 0.155,
+      "actual": 0.0,
+      "our_brier": 0.0102,
+      "mkt_brier": 0.024,
+      "beat": true,
+      "spread": 0.054,
+      "reasoning": ""
+    },
+    {
+      "q": "Set 1 Winner: Moutet vs Sinner",
       "tag": "sports",
       "orcetra": 0.476,
       "market": 0.53,
@@ -10274,6 +10850,18 @@
       "reasoning": ""
     },
     {
+      "q": "Tabilo vs. Michelsen: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.494,
+      "market": 0.545,
+      "actual": 0.0,
+      "our_brier": 0.244,
+      "mkt_brier": 0.297,
+      "beat": true,
+      "spread": 0.051,
+      "reasoning": ""
+    },
+    {
       "q": "Will Andrew Putnam finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -10406,6 +10994,18 @@
       "reasoning": ""
     },
     {
+      "q": "Corentin Moutet vs. Jannik Sinner: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.5,
+      "market": 0.55,
+      "actual": 0.0,
+      "our_brier": 0.25,
+      "mkt_brier": 0.3025,
+      "beat": true,
+      "spread": 0.05,
+      "reasoning": ""
+    },
+    {
       "q": "Game 2: Any Player Ultra Kill?",
       "tag": "sports",
       "orcetra": 0.2308,
@@ -10526,6 +11126,30 @@
       "reasoning": ""
     },
     {
+      "q": "Will the total number of TSA passengers for March 16 - March 22 be between 17,50",
+      "tag": "politics",
+      "orcetra": 0.2308,
+      "market": 0.28,
+      "actual": 0.0,
+      "our_brier": 0.0533,
+      "mkt_brier": 0.0784,
+      "beat": true,
+      "spread": 0.0492,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 90-114 tweets from March 21 to March 23, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1408,
+      "market": 0.19,
+      "actual": 1.0,
+      "our_brier": 0.7382,
+      "mkt_brier": 0.6561,
+      "beat": false,
+      "spread": 0.0492,
+      "reasoning": ""
+    },
+    {
       "q": "Will Kevin Roy finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -10611,6 +11235,18 @@
     },
     {
       "q": "Set Handicap: Muchova (-1.5) vs Boulter (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.5085,
+      "market": 0.555,
+      "actual": 1.0,
+      "our_brier": 0.2416,
+      "mkt_brier": 0.198,
+      "beat": false,
+      "spread": 0.0465,
+      "reasoning": ""
+    },
+    {
+      "q": "Tabilo vs. Michelsen: Match O/U 22.5",
       "tag": "sports",
       "orcetra": 0.5085,
       "market": 0.555,
@@ -11330,6 +11966,18 @@
       "reasoning": ""
     },
     {
+      "q": "Alejandro Tabilo vs. Alex Michelsen: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.42,
+      "actual": 1.0,
+      "our_brier": 0.3844,
+      "mkt_brier": 0.3364,
+      "beat": false,
+      "spread": 0.04,
+      "reasoning": ""
+    },
+    {
       "q": "WTT - Men's Singles: Hugo Calderano vs Felix Lebrun",
       "tag": "sports",
       "orcetra": 0.2504,
@@ -11459,6 +12107,30 @@
       "mkt_brier": 0.0289,
       "beat": true,
       "spread": 0.0396,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 16 - March 22 be less than 17,",
+      "tag": "politics",
+      "orcetra": 0.1304,
+      "market": 0.17,
+      "actual": 0.0,
+      "our_brier": 0.017,
+      "mkt_brier": 0.0289,
+      "beat": true,
+      "spread": 0.0396,
+      "reasoning": ""
+    },
+    {
+      "q": "Tabilo vs. Michelsen: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.5255,
+      "market": 0.565,
+      "actual": 1.0,
+      "our_brier": 0.2252,
+      "mkt_brier": 0.1892,
+      "beat": false,
+      "spread": 0.0395,
       "reasoning": ""
     },
     {
@@ -11654,6 +12326,18 @@
       "reasoning": ""
     },
     {
+      "q": "T20 Nigeria Invitational Tournament, Women: Rwanda vs South Africa",
+      "tag": "sports",
+      "orcetra": 0.436,
+      "market": 0.475,
+      "actual": 1.0,
+      "our_brier": 0.3181,
+      "mkt_brier": 0.2756,
+      "beat": false,
+      "spread": 0.039,
+      "reasoning": ""
+    },
+    {
       "q": "Will William Mouw finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.0924,
@@ -11714,6 +12398,18 @@
       "reasoning": ""
     },
     {
+      "q": "Morelia: Rodrigo Pacheco vs Taro Daniel",
+      "tag": "sports",
+      "orcetra": 0.4416,
+      "market": 0.48,
+      "actual": 0.0,
+      "our_brier": 0.195,
+      "mkt_brier": 0.2304,
+      "beat": true,
+      "spread": 0.0384,
+      "reasoning": ""
+    },
+    {
       "q": "Game 1: Both Teams Destroy Barracks?",
       "tag": "sports",
       "orcetra": 0.092,
@@ -11722,6 +12418,30 @@
       "our_brier": 0.0085,
       "mkt_brier": 0.0169,
       "beat": true,
+      "spread": 0.038,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.092,
+      "market": 0.13,
+      "actual": 0.0,
+      "our_brier": 0.0085,
+      "mkt_brier": 0.0169,
+      "beat": true,
+      "spread": 0.038,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.092,
+      "market": 0.13,
+      "actual": 1.0,
+      "our_brier": 0.8245,
+      "mkt_brier": 0.7569,
+      "beat": false,
       "spread": 0.038,
       "reasoning": ""
     },
@@ -15710,6 +16430,54 @@
       "reasoning": ""
     },
     {
+      "q": "T20 Nigeria Invitational Tournament, Women: Rwanda vs South Africa - Team Top Ba",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 3: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post 260-279 tweets from March 10 to March 17, 2026?",
       "tag": "politics",
       "orcetra": 0.4674,
@@ -16418,6 +17186,42 @@
       "reasoning": ""
     },
     {
+      "q": "T20 Nigeria Invitational Tournament, Women: Rwanda vs South Africa - Team Top Ba",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Split: Andrej Nedic vs Jelle Sels",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
       "q": "Map Handicap: K27 (-1.5) vs Bushido Wildcats (+1.5)",
       "tag": "sports",
       "orcetra": 0.38,
@@ -16994,6 +17798,18 @@
       "reasoning": ""
     },
     {
+      "q": "T20 Nigeria Invitational Tournament, Women: Rwanda vs South Africa - Team Top Ba",
+      "tag": "sports",
+      "orcetra": 0.4752,
+      "market": 0.51,
+      "actual": 0.0,
+      "our_brier": 0.2258,
+      "mkt_brier": 0.2601,
+      "beat": true,
+      "spread": 0.0348,
+      "reasoning": ""
+    },
+    {
       "q": "Game 3: Both Teams Destroy Inhibitors?",
       "tag": "sports",
       "orcetra": 0.4808,
@@ -17326,6 +18142,18 @@
       "our_brier": 0.5242,
       "mkt_brier": 0.4761,
       "beat": false,
+      "spread": 0.034,
+      "reasoning": ""
+    },
+    {
+      "q": "Moutet vs. Sinner: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.276,
+      "market": 0.31,
+      "actual": 0.0,
+      "our_brier": 0.0762,
+      "mkt_brier": 0.0961,
+      "beat": true,
       "spread": 0.034,
       "reasoning": ""
     },
@@ -17726,6 +18554,18 @@
       "reasoning": ""
     },
     {
+      "q": "T20 Nigeria Invitational Tournament, Women: Rwanda vs South Africa - Completed m",
+      "tag": "sports",
+      "orcetra": 0.4864,
+      "market": 0.52,
+      "actual": 1.0,
+      "our_brier": 0.2638,
+      "mkt_brier": 0.2304,
+      "beat": false,
+      "spread": 0.0336,
+      "reasoning": ""
+    },
+    {
       "q": "Kigali 2: Marco Trungelliti vs Zdenek Kolar",
       "tag": "sports",
       "orcetra": 0.402,
@@ -17990,6 +18830,42 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2421,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 Nigeria Invitational Tournament, Women: Rwanda vs South Africa - Who wins th",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 1.0,
+      "our_brier": 0.2581,
+      "mkt_brier": 0.2256,
+      "beat": false,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 1.0,
+      "our_brier": 0.2581,
+      "mkt_brier": 0.2256,
+      "beat": false,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
       "q": "Will Chad Ramey finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -18190,6 +19066,30 @@
       "our_brier": 0.2476,
       "mkt_brier": 0.2809,
       "beat": true,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.1226,
+      "market": 0.155,
+      "actual": 0.0,
+      "our_brier": 0.015,
+      "mkt_brier": 0.024,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.1226,
+      "market": 0.155,
+      "actual": 1.0,
+      "our_brier": 0.7698,
+      "mkt_brier": 0.714,
+      "beat": false,
       "spread": 0.0324,
       "reasoning": ""
     },
@@ -18674,6 +19574,18 @@
       "reasoning": ""
     },
     {
+      "q": "Tabilo vs. Michelsen: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.35,
+      "actual": 0.0,
+      "our_brier": 0.1444,
+      "mkt_brier": 0.1225,
+      "beat": false,
+      "spread": 0.03,
+      "reasoning": ""
+    },
+    {
       "q": "Walton vs. Hijikata: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.551,
@@ -18695,6 +19607,18 @@
       "mkt_brier": 0.0196,
       "beat": true,
       "spread": 0.029,
+      "reasoning": ""
+    },
+    {
+      "q": "Tabilo vs. Michelsen: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.8735,
+      "market": 0.845,
+      "actual": 1.0,
+      "our_brier": 0.016,
+      "mkt_brier": 0.024,
+      "beat": true,
+      "spread": 0.0285,
       "reasoning": ""
     },
     {
@@ -18794,6 +19718,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.084,
+      "market": 0.11,
+      "actual": 0.0,
+      "our_brier": 0.0071,
+      "mkt_brier": 0.0121,
+      "beat": true,
+      "spread": 0.026,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.084,
+      "market": 0.11,
+      "actual": 0.0,
+      "our_brier": 0.0071,
+      "mkt_brier": 0.0121,
+      "beat": true,
+      "spread": 0.026,
+      "reasoning": ""
+    },
+    {
       "q": "Will Starmer say \"U-turn\" during the next Prime Minister's Questions event?",
       "tag": "politics",
       "orcetra": 0.5342,
@@ -18867,6 +19815,30 @@
     },
     {
       "q": "Will Trump say \"US Steel\" during events with Japanese PM?",
+      "tag": "politics",
+      "orcetra": 0.2798,
+      "market": 0.305,
+      "actual": 0.0,
+      "our_brier": 0.0783,
+      "mkt_brier": 0.093,
+      "beat": true,
+      "spread": 0.0252,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 16 - March 22 be between 18,50",
+      "tag": "politics",
+      "orcetra": 0.2798,
+      "market": 0.305,
+      "actual": 0.0,
+      "our_brier": 0.0783,
+      "mkt_brier": 0.093,
+      "beat": true,
+      "spread": 0.0252,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 65-89 tweets from March 21 to March 23, 2026?",
       "tag": "politics",
       "orcetra": 0.2798,
       "market": 0.305,
@@ -19055,6 +20027,18 @@
       "mkt_brier": 0.7482,
       "beat": false,
       "spread": 0.0246,
+      "reasoning": ""
+    },
+    {
+      "q": "Crude Oil (CL) Up or Down on March 23?",
+      "tag": "commodities",
+      "orcetra": 0.4706,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.2215,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.0244,
       "reasoning": ""
     },
     {
@@ -19251,6 +20235,30 @@
     },
     {
       "q": "Exact Score: Racing Club de Lens 2 - 0 Angers SCO?",
+      "tag": "sports",
+      "orcetra": 0.1072,
+      "market": 0.13,
+      "actual": 0.0,
+      "our_brier": 0.0115,
+      "mkt_brier": 0.0169,
+      "beat": true,
+      "spread": 0.0228,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.1072,
+      "market": 0.13,
+      "actual": 0.0,
+      "our_brier": 0.0115,
+      "mkt_brier": 0.0169,
+      "beat": true,
+      "spread": 0.0228,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Destroy Barracks?",
       "tag": "sports",
       "orcetra": 0.1072,
       "market": 0.13,
@@ -19730,6 +20738,18 @@
       "reasoning": ""
     },
     {
+      "q": "Set Handicap: Michelsen (-1.5) vs Tabilo (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.36,
+      "actual": 0.0,
+      "our_brier": 0.1444,
+      "mkt_brier": 0.1296,
+      "beat": false,
+      "spread": 0.02,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Catry vs Hayen",
       "tag": "sports",
       "orcetra": 0.8345,
@@ -19754,6 +20774,18 @@
       "reasoning": ""
     },
     {
+      "q": "Dota 2: Team Yandex vs PARIVISION (BO2) - ESL One Birmingham Group A",
+      "tag": "sports",
+      "orcetra": 0.5555,
+      "market": 0.575,
+      "actual": 0.0,
+      "our_brier": 0.3086,
+      "mkt_brier": 0.3306,
+      "beat": true,
+      "spread": 0.0195,
+      "reasoning": ""
+    },
+    {
       "q": "Will Starmer say \"Andrew\" during the next Prime Minister's Questions event?",
       "tag": "politics",
       "orcetra": 0.1008,
@@ -19768,6 +20800,18 @@
     {
       "q": "Game 2: Both Teams Destroy Barracks?",
       "tag": "sports",
+      "orcetra": 0.1008,
+      "market": 0.12,
+      "actual": 0.0,
+      "our_brier": 0.0102,
+      "mkt_brier": 0.0144,
+      "beat": true,
+      "spread": 0.0192,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 300-319 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
       "orcetra": 0.1008,
       "market": 0.12,
       "actual": 0.0,
@@ -20027,6 +21071,42 @@
       "mkt_brier": 0.1764,
       "beat": false,
       "spread": 0.0174,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike:  CSDIILIT vs 8Sins - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.5626,
+      "market": 0.58,
+      "actual": 0.0,
+      "our_brier": 0.3165,
+      "mkt_brier": 0.3364,
+      "beat": true,
+      "spread": 0.0174,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike:  CSDIILIT vs 8Sins - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.5626,
+      "market": 0.58,
+      "actual": 1.0,
+      "our_brier": 0.1913,
+      "mkt_brier": 0.1764,
+      "beat": false,
+      "spread": 0.0174,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 16 - March 22 be greater than ",
+      "tag": "politics",
+      "orcetra": 0.0973,
+      "market": 0.1145,
+      "actual": 0.0,
+      "our_brier": 0.0095,
+      "mkt_brier": 0.0131,
+      "beat": true,
+      "spread": 0.0172,
       "reasoning": ""
     },
     {
@@ -20337,6 +21417,42 @@
       "actual": 0.0,
       "our_brier": 0.0896,
       "mkt_brier": 0.0992,
+      "beat": true,
+      "spread": 0.0156,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.0944,
+      "market": 0.11,
+      "actual": 0.0,
+      "our_brier": 0.0089,
+      "mkt_brier": 0.0121,
+      "beat": true,
+      "spread": 0.0156,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.0944,
+      "market": 0.11,
+      "actual": 0.0,
+      "our_brier": 0.0089,
+      "mkt_brier": 0.0121,
+      "beat": true,
+      "spread": 0.0156,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 260-279 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0944,
+      "market": 0.11,
+      "actual": 0.0,
+      "our_brier": 0.0089,
+      "mkt_brier": 0.0121,
       "beat": true,
       "spread": 0.0156,
       "reasoning": ""
@@ -20774,6 +21890,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post <40 tweets from March 21 to March 23, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0918,
+      "market": 0.106,
+      "actual": 0.0,
+      "our_brier": 0.0084,
+      "mkt_brier": 0.0112,
+      "beat": true,
+      "spread": 0.0142,
+      "reasoning": ""
+    },
+    {
       "q": "Will Wyndham Clark finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.076,
@@ -20944,6 +22072,18 @@
     {
       "q": "Exact Score: FC Midtjylland 1 - 1 Nottingham Forest FC?",
       "tag": "sports",
+      "orcetra": 0.0912,
+      "market": 0.105,
+      "actual": 0.0,
+      "our_brier": 0.0083,
+      "mkt_brier": 0.011,
+      "beat": true,
+      "spread": 0.0138,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 320-339 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
       "orcetra": 0.0912,
       "market": 0.105,
       "actual": 0.0,
@@ -21254,6 +22394,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post 280-299 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.088,
+      "market": 0.1,
+      "actual": 0.0,
+      "our_brier": 0.0077,
+      "mkt_brier": 0.01,
+      "beat": true,
+      "spread": 0.012,
+      "reasoning": ""
+    },
+    {
       "q": "Will Powell say \"Gold\" or \"Oil\" during March press conference?",
       "tag": "economy",
       "orcetra": 0.8668,
@@ -21322,6 +22474,18 @@
       "our_brier": 0.4441,
       "mkt_brier": 0.429,
       "beat": false,
+      "spread": 0.0114,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike:  CSDIILIT vs 8Sins (BO3) - CCT Europe Closed Qualifier: Series #",
+      "tag": "sports",
+      "orcetra": 0.6664,
+      "market": 0.655,
+      "actual": 1.0,
+      "our_brier": 0.1113,
+      "mkt_brier": 0.119,
+      "beat": true,
       "spread": 0.0114,
       "reasoning": ""
     },
@@ -21458,6 +22622,18 @@
       "reasoning": ""
     },
     {
+      "q": "Counter-Strike: ASTRAL vs Wave Esports (BO1) - Urban Riga Open #3 Group C",
+      "tag": "sports",
+      "orcetra": 0.6708,
+      "market": 0.66,
+      "actual": 1.0,
+      "our_brier": 0.1084,
+      "mkt_brier": 0.1156,
+      "beat": true,
+      "spread": 0.0108,
+      "reasoning": ""
+    },
+    {
       "q": "Cecchinato vs. Gea: Set 1 Games O/U 8.5",
       "tag": "sports",
       "orcetra": 0.7955,
@@ -21561,6 +22737,18 @@
       "actual": 1.0,
       "our_brier": 0.1055,
       "mkt_brier": 0.1122,
+      "beat": true,
+      "spread": 0.0102,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 115-139 tweets from March 21 to March 23, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0848,
+      "market": 0.095,
+      "actual": 0.0,
+      "our_brier": 0.0072,
+      "mkt_brier": 0.009,
       "beat": true,
       "spread": 0.0102,
       "reasoning": ""
@@ -21789,6 +22977,18 @@
       "actual": 1.0,
       "our_brier": 0.0841,
       "mkt_brier": 0.09,
+      "beat": true,
+      "spread": 0.01,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 140-164 tweets from March 21 to March 23, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0845,
+      "market": 0.0945,
+      "actual": 0.0,
+      "our_brier": 0.0071,
+      "mkt_brier": 0.0089,
       "beat": true,
       "spread": 0.01,
       "reasoning": ""
@@ -22154,6 +23354,18 @@
       "reasoning": ""
     },
     {
+      "q": "Dota 2: OG vs Nigma Galaxy (BO2) - ESL One Birmingham Group B",
+      "tag": "sports",
+      "orcetra": 0.591,
+      "market": 0.6,
+      "actual": 0.0,
+      "our_brier": 0.3493,
+      "mkt_brier": 0.36,
+      "beat": true,
+      "spread": 0.009,
+      "reasoning": ""
+    },
+    {
       "q": "Will Donald Trump post 120-139 Truth Social posts from March 10 to March 17, 202",
       "tag": "politics",
       "orcetra": 0.0819,
@@ -22322,6 +23534,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will the total number of TSA passengers for March 16 - March 22 be between 18,00",
+      "tag": "politics",
+      "orcetra": 0.6884,
+      "market": 0.68,
+      "actual": 1.0,
+      "our_brier": 0.0971,
+      "mkt_brier": 0.1024,
+      "beat": true,
+      "spread": 0.0084,
+      "reasoning": ""
+    },
+    {
       "q": "Exact Score: Racing Club de Lens 2 - 1 Angers SCO?",
       "tag": "sports",
       "orcetra": 0.0813,
@@ -22377,6 +23601,18 @@
       "actual": 0.0,
       "our_brier": 0.0052,
       "mkt_brier": 0.0064,
+      "beat": true,
+      "spread": 0.008,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: Team Yandex vs PARIVISION - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.602,
+      "market": 0.61,
+      "actual": 0.0,
+      "our_brier": 0.3624,
+      "mkt_brier": 0.3721,
       "beat": true,
       "spread": 0.008,
       "reasoning": ""
@@ -22538,6 +23774,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post 340-359 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0784,
+      "market": 0.085,
+      "actual": 0.0,
+      "our_brier": 0.0061,
+      "mkt_brier": 0.0072,
+      "beat": true,
+      "spread": 0.0066,
+      "reasoning": ""
+    },
+    {
       "q": "Exact Score: Racing Club de Lens 0 - 2 Angers SCO?",
       "tag": "sports",
       "orcetra": 0.318,
@@ -22547,6 +23795,18 @@
       "mkt_brier": 0.1053,
       "beat": true,
       "spread": 0.0065,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 240-259 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0781,
+      "market": 0.0845,
+      "actual": 0.0,
+      "our_brier": 0.0061,
+      "mkt_brier": 0.0071,
+      "beat": true,
+      "spread": 0.0064,
       "reasoning": ""
     },
     {
@@ -22826,6 +24086,30 @@
       "reasoning": ""
     },
     {
+      "q": "Dota 2: OG vs Nigma Galaxy - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.636,
+      "market": 0.63,
+      "actual": 0.0,
+      "our_brier": 0.4045,
+      "mkt_brier": 0.3969,
+      "beat": false,
+      "spread": 0.006,
+      "reasoning": ""
+    },
+    {
+      "q": "Miami Open: Alejandro Tabilo vs Alex Michelsen",
+      "tag": "sports",
+      "orcetra": 0.384,
+      "market": 0.39,
+      "actual": 0.0,
+      "our_brier": 0.1475,
+      "mkt_brier": 0.1521,
+      "beat": true,
+      "spread": 0.006,
+      "reasoning": ""
+    },
+    {
       "q": "Will the total number of TSA passengers for March 13 be greater than 2,800,000?",
       "tag": "economy",
       "orcetra": 0.6407,
@@ -22907,6 +24191,18 @@
       "mkt_brier": 0.0066,
       "beat": true,
       "spread": 0.0053,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 220-239 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0758,
+      "market": 0.081,
+      "actual": 0.0,
+      "our_brier": 0.0057,
+      "mkt_brier": 0.0066,
+      "beat": true,
+      "spread": 0.0052,
       "reasoning": ""
     },
     {
@@ -23054,6 +24350,18 @@
       "reasoning": ""
     },
     {
+      "q": "Map Handicap:  CSDIILIT (-1.5) vs 8Sins (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.385,
+      "actual": 1.0,
+      "our_brier": 0.3844,
+      "mkt_brier": 0.3782,
+      "beat": false,
+      "spread": 0.005,
+      "reasoning": ""
+    },
+    {
       "q": "Dota 2: Team Lynx vs Team Shpilit - Game 2 Winner",
       "tag": "sports",
       "orcetra": 0.6052,
@@ -23158,6 +24466,30 @@
       "our_brier": 0.0057,
       "mkt_brier": 0.0064,
       "beat": true,
+      "spread": 0.0048,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: Team Yandex vs PARIVISION - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.6052,
+      "market": 0.61,
+      "actual": 1.0,
+      "our_brier": 0.1559,
+      "mkt_brier": 0.1521,
+      "beat": false,
+      "spread": 0.0048,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 360-379 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0752,
+      "market": 0.08,
+      "actual": 1.0,
+      "our_brier": 0.8553,
+      "mkt_brier": 0.8464,
+      "beat": false,
       "spread": 0.0048,
       "reasoning": ""
     },
@@ -23373,6 +24705,18 @@
       "actual": 1.0,
       "our_brier": 0.4374,
       "mkt_brier": 0.4422,
+      "beat": true,
+      "spread": 0.0036,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: OG vs Nigma Galaxy - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.6336,
+      "market": 0.63,
+      "actual": 1.0,
+      "our_brier": 0.1342,
+      "mkt_brier": 0.1369,
       "beat": true,
       "spread": 0.0036,
       "reasoning": ""
@@ -23758,6 +25102,18 @@
       "our_brier": 0.1452,
       "mkt_brier": 0.1444,
       "beat": false,
+      "spread": 0.001,
+      "reasoning": ""
+    },
+    {
+      "q": "NL: Lausanne vs. Geneve-Servette",
+      "tag": "sports",
+      "orcetra": 0.746,
+      "market": 0.745,
+      "actual": 1.0,
+      "our_brier": 0.0645,
+      "mkt_brier": 0.065,
+      "beat": true,
       "spread": 0.001,
       "reasoning": ""
     },

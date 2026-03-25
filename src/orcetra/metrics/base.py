@@ -15,12 +15,12 @@ class Metric(ABC):
     def compute(self, y_true, y_pred) -> float: ...
 
 def get_metric(name: str) -> Metric:
-    from .regression import MSE, MAE, R2
+    from .regression import MSE, MAE, R2, RMSLE
     from .classification import Accuracy, F1
     from .brier import BrierScore
-    
+
     metrics = {
-        "mse": MSE(), "mae": MAE(), "r2": R2(),
+        "mse": MSE(), "mae": MAE(), "r2": R2(), "rmsle": RMSLE(),
         "accuracy": Accuracy(), "f1": F1(),
         "brier": BrierScore(),
     }

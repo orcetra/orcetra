@@ -34,6 +34,19 @@ from sklearn.preprocessing import (
 )
 from sklearn.decomposition import PCA
 
+# Optional boosting libraries
+try:
+    from xgboost import XGBRegressor, XGBClassifier
+    _HAS_XGB = True
+except ImportError:
+    _HAS_XGB = False
+
+try:
+    from lightgbm import LGBMRegressor, LGBMClassifier
+    _HAS_LGBM = True
+except ImportError:
+    _HAS_LGBM = False
+
 
 # All available models the LLM can choose from
 MODEL_REGISTRY = {
@@ -95,6 +108,31 @@ MODEL_REGISTRY = {
             min_samples_split=kw.get("min_samples_split", 2),
             random_state=42,
         ),
+        **({
+            "XGBoost": lambda **kw: XGBRegressor(
+                n_estimators=kw.get("n_estimators", 200),
+                learning_rate=kw.get("learning_rate", 0.1),
+                max_depth=kw.get("max_depth", 5),
+                subsample=kw.get("subsample", 0.8),
+                colsample_bytree=kw.get("colsample_bytree", 0.8),
+                reg_alpha=kw.get("reg_alpha", 0),
+                reg_lambda=kw.get("reg_lambda", 1),
+                random_state=42, n_jobs=-1, verbosity=0,
+            ),
+        } if _HAS_XGB else {}),
+        **({
+            "LightGBM": lambda **kw: LGBMRegressor(
+                n_estimators=kw.get("n_estimators", 200),
+                learning_rate=kw.get("learning_rate", 0.1),
+                max_depth=kw.get("max_depth", -1),
+                num_leaves=kw.get("num_leaves", 31),
+                subsample=kw.get("subsample", 0.8),
+                colsample_bytree=kw.get("colsample_bytree", 0.8),
+                reg_alpha=kw.get("reg_alpha", 0),
+                reg_lambda=kw.get("reg_lambda", 0),
+                random_state=42, n_jobs=-1, verbose=-1,
+            ),
+        } if _HAS_LGBM else {}),
     },
     "classification": {
         "LogisticRegression": lambda **kw: LogisticRegression(
@@ -149,6 +187,23 @@ MODEL_REGISTRY = {
             min_samples_split=kw.get("min_samples_split", 2),
             random_state=42,
         ),
+        **({
+            "XGBoost": lambda **kw: XGBClassifier(
+                n_estimators=kw.get("n_estimators", 200),
+                learning_rate=kw.get("learning_rate", 0.1),
+                max_depth=kw.get("max_depth", 5),
+                random_state=42, n_jobs=-1, verbosity=0,
+                use_label_encoder=False, eval_metric='logloss',
+            ),
+        } if _HAS_XGB else {}),
+        **({
+            "LightGBM": lambda **kw: LGBMClassifier(
+                n_estimators=kw.get("n_estimators", 200),
+                learning_rate=kw.get("learning_rate", 0.1),
+                num_leaves=kw.get("num_leaves", 31),
+                random_state=42, n_jobs=-1, verbose=-1,
+            ),
+        } if _HAS_LGBM else {}),
     },
 }
 
@@ -196,34 +251,33 @@ def _build_prompt(state: dict) -> str:
     models_available = ", ".join(MODEL_REGISTRY[task].keys())
     preprocessors_available = ", ".join(PREPROCESSOR_REGISTRY.keys())
 
-    return f"""You are an AutoML research agent. Your goal is to find the best prediction pipeline.
+    return f"""You are an AutoML research agent optimizing a prediction pipeline on tabular data.
 
-Task type: {task}
-Metric: {metric_direction} (lower is better for minimize, higher for maximize)
-Current best: {best_model} = {best_score:.6f}
-Iteration: {iteration}
-{f'Data: {data_summary}' if data_summary else ''}
+Task: {task} | Metric: {metric_direction} | Best so far: {best_model} = {best_score:.6f}
+Iteration: {iteration} | {f'Data: {data_summary}' if data_summary else ''}
 
-Recent experiment history:
+Recent experiments:
 {history_text}
+
+STRATEGY RULES:
+- For tabular data, tree-based models (GradientBoosting, HistGradientBoosting, XGBoost, LightGBM, RandomForest) almost always win.
+- DO NOT try SVR, KNN, or LinearRegression when tree-based models are clearly ahead.
+- Focus on HYPERPARAMETER TUNING around the current best model type.
+- Try small variations: slightly different learning_rate, max_depth, n_estimators, subsample, colsample_bytree.
+- If GBM-family is winning, try: more estimators with lower learning rate, different depth, subsample<1.0.
+- XGBoost and LightGBM with reg_alpha/reg_lambda regularization can beat vanilla GBM.
+- Preprocessing is usually NOT needed for tree models. Only use it for linear models.
 
 Available models: {models_available}
 Available preprocessors: {preprocessors_available}
 
-Based on the experiment history, propose ONE new pipeline configuration to try.
-Think about:
-1. Which model families haven't been tried yet?
-2. If tree-based models are winning, try different hyperparameters.
-3. If linear models failed, scaling/normalization might help.
-4. Consider preprocessing that matches the data characteristics.
-
-Respond with ONLY a JSON object (no markdown, no explanation):
+Respond with ONLY a JSON object:
 {{
   "model": "<model_name>",
-  "model_params": {{"param1": value1, ...}},
-  "preprocessor": "<preprocessor_name or None>",
-  "preprocessor_params": {{"param1": value1, ...}},
-  "rationale": "<one sentence explaining why>"
+  "model_params": {{"param1": value1}},
+  "preprocessor": "None",
+  "preprocessor_params": {{}},
+  "rationale": "<why this specific config>"
 }}"""
 
 
