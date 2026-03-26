@@ -15,9 +15,9 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from orcetra.fetcher import PolymarketFetcher
-from orcetra.news import NewsCollector
-from orcetra.strategy import LLMStrategy
+from _deprecated_murmur.fetcher import PolymarketFetcher
+from _deprecated_murmur.news import NewsCollector
+from _deprecated_murmur.strategy import LLMStrategy
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 BATCH_PATH = os.path.join(ROOT, "results", "batch_predictions.json")
@@ -93,7 +93,7 @@ async def enrich_prediction(cid, pred, fetcher, news_collector, strategy):
         news = []
 
     # 2. Build minimal event object for LLM strategy
-    from orcetra.models import Event, Token
+    from _deprecated_murmur.models import Event, Token
     event = Event(
         id=cid,
         slug=slug,

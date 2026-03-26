@@ -12,8 +12,8 @@ from pathlib import Path
 import httpx
 from rich.console import Console
 
-from orcetra.prices import get_price_context
-from orcetra.models import Event, OutcomeToken
+from _deprecated_murmur.prices import get_price_context
+from _deprecated_murmur.models import Event, OutcomeToken
 
 console = Console()
 RESULTS_DIR = Path("results")

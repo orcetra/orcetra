@@ -12,9 +12,9 @@ import httpx
 from rich.console import Console
 from rich.table import Table
 
-from orcetra.fetcher import PolymarketFetcher
-from orcetra.strategy import LLMStrategy
-from orcetra.models import Event, OutcomeToken, Prediction
+from _deprecated_murmur.fetcher import PolymarketFetcher
+from _deprecated_murmur.strategy import LLMStrategy
+from _deprecated_murmur.models import Event, OutcomeToken, Prediction
 
 console = Console()
 

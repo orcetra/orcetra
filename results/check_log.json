@@ -39629,14 +39629,29 @@
       "bet_made": false,
       "pnl": 0.0,
       "checked_at": "2026-03-26T18:00:03.134748+00:00"
+    },
+    {
+      "condition_id": "0x2a147ba039d1c88b2a89dc50eda77306fdb60dc78efe77ab980c35a5594d6be7",
+      "question": "AHL: Charlotte Checkers vs. Bridgeport Islanders",
+      "tag": "sports",
+      "signal": "HOLD",
+      "market_price": 0.505,
+      "our_prediction": 0.446,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat_market": true,
+      "bet_made": false,
+      "pnl": 0.0,
+      "checked_at": "2026-03-26T23:11:25.458569+00:00"
     }
   ],
   "summary": {
-    "total_checked": 2642,
-    "beat_market_rate": 0.6699,
+    "total_checked": 2643,
+    "beat_market_rate": 0.6701,
     "total_bets": 0,
     "win_rate": 0,
     "total_pnl_per_dollar": 0,
-    "last_check": "2026-03-26T18:00:03.135373+00:00"
+    "last_check": "2026-03-26T23:11:25.459374+00:00"
   }
 }

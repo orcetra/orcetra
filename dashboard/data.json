@@ -1,21 +1,21 @@
 {
   "summary": {
-    "total_predictions": 17244,
-    "resolved": 2225,
-    "pending": 15019,
-    "beat_rate": 0.6979775280898877,
-    "avg_orcetra_brier": 0.2156431011235955,
-    "avg_market_brier": 0.22737856179775282,
-    "last_updated": "2026-03-22T21:28:11.034748+00:00",
+    "total_predictions": 18512,
+    "resolved": 2226,
+    "pending": 16286,
+    "beat_rate": 0.6981132075471698,
+    "avg_orcetra_brier": 0.2156355795148248,
+    "avg_market_brier": 0.22739097035040431,
+    "last_updated": "2026-03-26T23:11:16.037305+00:00",
     "crypto_binary_excluded": 417
   },
   "by_tag": {
     "sports": {
-      "total": 1924,
-      "beat": 1321,
-      "rate": 0.6865904365904366,
-      "avg_our_brier": 0.22303835758835758,
-      "avg_mkt_brier": 0.23462650727650727
+      "total": 1925,
+      "beat": 1322,
+      "rate": 0.6867532467532468,
+      "avg_our_brier": 0.2230258181818182,
+      "avg_mkt_brier": 0.2346370909090909
     },
     "golf": {
       "total": 97,
@@ -8815,6 +8815,18 @@
       "beat": true,
       "spread": 0.059,
       "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "AHL: Charlotte Checkers vs. Bridgeport Islanders",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
     },
     {
       "q": "Game 2: Any Player Rampage?",

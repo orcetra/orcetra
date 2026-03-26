@@ -11,15 +11,15 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
-from orcetra.fetcher import (
+from _deprecated_murmur.fetcher import (
     PolymarketFetcher,
     list_active_events_sync,
     list_resolved_events_sync,
 )
-from orcetra.news import NewsCollector
-from orcetra.strategy import get_default_strategy, LLMStrategy
-from orcetra.evaluator import evaluate_strategy_sync, format_backtest_results
-from orcetra.evolve import run_evolution, load_best_strategy
+from _deprecated_murmur.news import NewsCollector
+from _deprecated_murmur.strategy import get_default_strategy, LLMStrategy
+from _deprecated_murmur.evaluator import evaluate_strategy_sync, format_backtest_results
+from _deprecated_murmur.evolve import run_evolution, load_best_strategy
 
 console = Console()
 
