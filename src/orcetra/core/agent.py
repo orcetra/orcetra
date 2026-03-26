@@ -96,26 +96,46 @@ def _weighted_model_choice(best_model_type: Optional[str] = None) -> str:
 
 
 class RandomSearchAgent(Agent):
-    """Agent that explores models using weighted random search."""
+    """Agent that explores models using guided random search.
+    
+    Strategy: explore broadly early, then exploit (refine) the winning model
+    family with increasing probability as iterations progress.
+    """
     
     def __init__(self, task_type: str):
         self.task_type = task_type
-        self.best_model_type = None  # Track winning model family
+        self.best_model_type = None
         self.has_improvement = False
+        self.tried_families = set()  # Track which families we've explored
         
     def propose(self, state: dict) -> Proposal:
-        # Track what's winning
+        iteration = state.get("iteration", 0)
         best_model = state.get("best_model", "")
-        if state.get("iteration", 0) > 1:
+        
+        if iteration > 1:
             self.best_model_type = self._detect_model_type(best_model)
         
-        # Ensemble attempt: 10% chance after iteration 15
-        if state.get("iteration", 0) > 15 and random.random() < 0.10:
-            return self._propose_ensemble()
+        # Phase 1 (iter 1-5): Force diversity — try each major family once
+        untried_trees = [m for m in TREE_MODELS if m not in self.tried_families]
+        if iteration <= 5 and untried_trees:
+            model_choice = untried_trees[0]
+            self.tried_families.add(model_choice)
+        # Phase 2 (iter 6+): Increasingly exploit the best family
+        else:
+            # Ensemble attempt: 15% chance after iteration 10
+            if iteration > 10 and random.random() < 0.15:
+                return self._propose_ensemble()
+            
+            # Refinement probability increases with iteration
+            # iter 6: 50% refine, iter 20: 70% refine
+            refine_prob = min(0.5 + iteration * 0.01, 0.75)
+            
+            if self.best_model_type and random.random() < refine_prob:
+                model_choice = self.best_model_type
+            else:
+                model_choice = _weighted_model_choice(None)
         
-        model_choice = _weighted_model_choice(
-            self.best_model_type if self.has_improvement else None
-        )
+        self.tried_families.add(model_choice)
         
         if self.task_type == "regression":
             model, description = self._get_regression_model(model_choice)

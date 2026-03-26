@@ -1,21 +1,21 @@
 {
   "summary": {
     "total_predictions": 17244,
-    "resolved": 2087,
-    "pending": 15157,
-    "beat_rate": 0.706756109247724,
-    "avg_orcetra_brier": 0.21524115955917586,
-    "avg_market_brier": 0.22801538092956394,
+    "resolved": 2225,
+    "pending": 15019,
+    "beat_rate": 0.6979775280898877,
+    "avg_orcetra_brier": 0.2156431011235955,
+    "avg_market_brier": 0.22737856179775282,
     "last_updated": "2026-03-22T21:28:11.034748+00:00",
     "crypto_binary_excluded": 417
   },
   "by_tag": {
     "sports": {
-      "total": 1843,
-      "beat": 1281,
-      "rate": 0.6950623982637005,
-      "avg_our_brier": 0.22216619641888224,
-      "avg_mkt_brier": 0.2344902875746066
+      "total": 1924,
+      "beat": 1321,
+      "rate": 0.6865904365904366,
+      "avg_our_brier": 0.22303835758835758,
+      "avg_mkt_brier": 0.23462650727650727
     },
     "golf": {
       "total": 97,
@@ -32,11 +32,11 @@
       "avg_mkt_brier": 0.19610731707317072
     },
     "politics": {
-      "total": 99,
-      "beat": 78,
-      "rate": 0.7878787878787878,
-      "avg_our_brier": 0.14364343434343435,
-      "avg_mkt_brier": 0.14811919191919193
+      "total": 153,
+      "beat": 114,
+      "rate": 0.7450980392156863,
+      "avg_our_brier": 0.16210718954248365,
+      "avg_mkt_brier": 0.16435098039215687
     },
     "commodities": {
       "total": 7,
@@ -44,6 +44,13 @@
       "rate": 0.42857142857142855,
       "avg_our_brier": 0.23975714285714286,
       "avg_mkt_brier": 0.2369142857142857
+    },
+    "science": {
+      "total": 3,
+      "beat": 2,
+      "rate": 0.6666666666666666,
+      "avg_our_brier": 0.11413333333333332,
+      "avg_mkt_brier": 0.10383333333333333
     }
   },
   "top_divergences": [
@@ -1766,6 +1773,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will White House post 180-199 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1616,
+      "market": 0.23,
+      "actual": 1.0,
+      "our_brier": 0.7029,
+      "mkt_brier": 0.5929,
+      "beat": false,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Trungelliti vs Kolar",
       "tag": "sports",
       "orcetra": 0.392,
@@ -2608,6 +2627,18 @@
     {
       "q": "Exact Score: Philadelphia Union 2 - 3 Chicago Fire FC?",
       "tag": "sports",
+      "orcetra": 0.2014,
+      "market": 0.265,
+      "actual": 0.0,
+      "our_brier": 0.0406,
+      "mkt_brier": 0.0702,
+      "beat": true,
+      "spread": 0.0636,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 90-114 tweets from March 23 to March 25, 2026?",
+      "tag": "politics",
       "orcetra": 0.2014,
       "market": 0.265,
       "actual": 0.0,
@@ -6842,6 +6873,126 @@
       "reasoning": ""
     },
     {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "KHL: Ak Bars Kazan vs. Traktor",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "KHL: Avtomobilist Yekaterinburg vs. Salavat Yulaev Ufa",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "DEL: Adler Mannheim vs. Bremerhaven",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
       "q": "Jubb vs. Mrva: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.446,
@@ -8474,6 +8625,198 @@
       "reasoning": ""
     },
     {
+      "q": "Map Handicap: KR\u00dc (-1.5) vs Looking For Laburo (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Simundza vs. Coulibaly: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Simundza vs. Coulibaly: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Simundza vs. Coulibaly: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Simundza vs. Coulibaly: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Set 1 Winner: Simundza vs Coulibaly",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Simundza vs. Coulibaly: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Simundza vs. Coulibaly: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Map Handicap: ESC (-1.5) vs Inner Circle Academy (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "AHL: Texas Stars vs. San Jose Barracuda",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "AHL: Manitoba Moose vs. Toronto Marlies",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Map Handicap: OSG (-1.5) vs ARETE (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
       "q": "Game 2: Any Player Rampage?",
       "tag": "sports",
       "orcetra": 0.1512,
@@ -8566,6 +8909,18 @@
       "our_brier": 0.0229,
       "mkt_brier": 0.0441,
       "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 80-99 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1512,
+      "market": 0.21,
+      "actual": 1.0,
+      "our_brier": 0.7205,
+      "mkt_brier": 0.6241,
+      "beat": false,
       "spread": 0.0588,
       "reasoning": ""
     },
@@ -9230,6 +9585,18 @@
       "reasoning": ""
     },
     {
+      "q": "AHL: Providence Bruins vs. Springfield Thunderbirds",
+      "tag": "sports",
+      "orcetra": 0.452,
+      "market": 0.51,
+      "actual": 1.0,
+      "our_brier": 0.3003,
+      "mkt_brier": 0.2401,
+      "beat": false,
+      "spread": 0.058,
+      "reasoning": ""
+    },
+    {
       "q": "Games Total: O/U 2.5",
       "tag": "sports",
       "orcetra": 0.458,
@@ -9771,6 +10138,18 @@
     },
     {
       "q": "Pacheco vs. Daniel: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.458,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2098,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.057,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
       "tag": "sports",
       "orcetra": 0.458,
       "market": 0.515,
@@ -11006,6 +11385,18 @@
       "reasoning": ""
     },
     {
+      "q": "Counter-Strike: MOUZ NXT vs Nexus (BO1) - BC Game Masters Championship Group A",
+      "tag": "sports",
+      "orcetra": 0.5,
+      "market": 0.55,
+      "actual": 1.0,
+      "our_brier": 0.25,
+      "mkt_brier": 0.2025,
+      "beat": false,
+      "spread": 0.05,
+      "reasoning": ""
+    },
+    {
       "q": "Game 2: Any Player Ultra Kill?",
       "tag": "sports",
       "orcetra": 0.2308,
@@ -11187,6 +11578,18 @@
     },
     {
       "q": "Will Elon Musk post 90-114 tweets from March 19 to March 21, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1382,
+      "market": 0.185,
+      "actual": 0.0,
+      "our_brier": 0.0191,
+      "mkt_brier": 0.0342,
+      "beat": true,
+      "spread": 0.0468,
+      "reasoning": ""
+    },
+    {
+      "q": "Will White House post 160-179 posts from March 17 to March 24, 2026?",
       "tag": "politics",
       "orcetra": 0.1382,
       "market": 0.185,
@@ -11510,6 +11913,42 @@
       "reasoning": ""
     },
     {
+      "q": "Split: Josip Simundza vs Eliakim Coulibaly",
+      "tag": "sports",
+      "orcetra": 0.1356,
+      "market": 0.18,
+      "actual": 0.0,
+      "our_brier": 0.0184,
+      "mkt_brier": 0.0324,
+      "beat": true,
+      "spread": 0.0444,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 115-139 tweets from March 23 to March 25, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1356,
+      "market": 0.18,
+      "actual": 0.0,
+      "our_brier": 0.0184,
+      "mkt_brier": 0.0324,
+      "beat": true,
+      "spread": 0.0444,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Starmer say \"Epstein\" during the next Prime Minister's Questions event?",
+      "tag": "politics",
+      "orcetra": 0.2406,
+      "market": 0.285,
+      "actual": 0.0,
+      "our_brier": 0.0579,
+      "mkt_brier": 0.0812,
+      "beat": true,
+      "spread": 0.0444,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Dzumhur vs Sinner",
       "tag": "sports",
       "orcetra": 0.096,
@@ -11666,6 +12105,30 @@
       "reasoning": ""
     },
     {
+      "q": "Will Ted Cruz post 60-79 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.133,
+      "market": 0.175,
+      "actual": 0.0,
+      "our_brier": 0.0177,
+      "mkt_brier": 0.0306,
+      "beat": true,
+      "spread": 0.042,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Starmer say \"Iran\" 3+ times during the next Prime Minister's Questions even",
+      "tag": "politics",
+      "orcetra": 0.408,
+      "market": 0.45,
+      "actual": 0.0,
+      "our_brier": 0.1665,
+      "mkt_brier": 0.2025,
+      "beat": true,
+      "spread": 0.042,
+      "reasoning": ""
+    },
+    {
       "q": "Map 1: Odd/Even Total Rounds?",
       "tag": "sports",
       "orcetra": 0.4136,
@@ -11734,6 +12197,18 @@
       "our_brier": 0.3439,
       "mkt_brier": 0.297,
       "beat": false,
+      "spread": 0.0414,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Starmer say \"Trump\" during the next Prime Minister's Questions event?",
+      "tag": "politics",
+      "orcetra": 0.4136,
+      "market": 0.455,
+      "actual": 0.0,
+      "our_brier": 0.1711,
+      "mkt_brier": 0.207,
+      "beat": true,
       "spread": 0.0414,
       "reasoning": ""
     },
@@ -11978,6 +12453,18 @@
       "reasoning": ""
     },
     {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.42,
+      "actual": 0.0,
+      "our_brier": 0.1444,
+      "mkt_brier": 0.1764,
+      "beat": true,
+      "spread": 0.04,
+      "reasoning": ""
+    },
+    {
       "q": "WTT - Men's Singles: Hugo Calderano vs Felix Lebrun",
       "tag": "sports",
       "orcetra": 0.2504,
@@ -12117,6 +12604,18 @@
       "actual": 0.0,
       "our_brier": 0.017,
       "mkt_brier": 0.0289,
+      "beat": true,
+      "spread": 0.0396,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 65-89 tweets from March 23 to March 25, 2026?",
+      "tag": "politics",
+      "orcetra": 0.2504,
+      "market": 0.29,
+      "actual": 0.0,
+      "our_brier": 0.0627,
+      "mkt_brier": 0.0841,
       "beat": true,
       "spread": 0.0396,
       "reasoning": ""
@@ -12338,6 +12837,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Starmer say \"Police\" during the next Prime Minister's Questions event?",
+      "tag": "politics",
+      "orcetra": 0.406,
+      "market": 0.445,
+      "actual": 0.0,
+      "our_brier": 0.1648,
+      "mkt_brier": 0.198,
+      "beat": true,
+      "spread": 0.039,
+      "reasoning": ""
+    },
+    {
       "q": "Will William Mouw finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.0924,
@@ -12407,6 +12918,18 @@
       "mkt_brier": 0.2304,
       "beat": true,
       "spread": 0.0384,
+      "reasoning": ""
+    },
+    {
+      "q": "Another 7.0 or above earthquake by March 31, 2026?",
+      "tag": "science",
+      "orcetra": 0.4444,
+      "market": 0.4825,
+      "actual": 1.0,
+      "our_brier": 0.3087,
+      "mkt_brier": 0.2678,
+      "beat": false,
+      "spread": 0.0381,
       "reasoning": ""
     },
     {
@@ -12627,6 +13150,18 @@
     },
     {
       "q": "Valorant: Chivas Esports vs Contra - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.4528,
+      "market": 0.49,
+      "actual": 0.0,
+      "our_brier": 0.205,
+      "mkt_brier": 0.2401,
+      "beat": true,
+      "spread": 0.0372,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Malawi vs Ghana - Who wins the ",
       "tag": "sports",
       "orcetra": 0.4528,
       "market": 0.49,
@@ -13131,6 +13666,18 @@
     },
     {
       "q": "Counter-Strike: Take me away vs Last Bullet (BO3) - ESL Challenger League Asia-P",
+      "tag": "sports",
+      "orcetra": 0.4584,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.2101,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.0366,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 Nigeria Invitational Tournament, Women: Zimbabwe vs South Africa - Team Top ",
       "tag": "sports",
       "orcetra": 0.4584,
       "market": 0.495,
@@ -16478,6 +17025,330 @@
       "reasoning": ""
     },
     {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Ghana vs Seychelles",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Ghana vs Seychelles - Who wins ",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Ghana vs Seychelles - Completed",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 Nigeria Invitational Tournament, Women: Nigeria vs Rwanda - Who wins the tos",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 Nigeria Invitational Tournament, Women: Nigeria vs Rwanda - Completed match?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 Series New Zealand vs South Africa: New Zealand vs South Africa",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Eswatini vs Tanzania - Who wins",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Eswatini vs Tanzania - Complete",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Eswatini vs Tanzania",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: TNC vs KUUSAMO.gg (BO1) - Urban Riga Open #3 Group B",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Inner Circle Academy vs ESC Gaming (BO3) - LORGAR RANKINGS Close",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Counter-Strike: Inner Circle Academy vs ESC Gaming - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Counter-Strike: Inner Circle Academy vs ESC Gaming - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 2: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 3: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Malawi vs Ghana",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: ARETE vs ONSIDE GAMING - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Valorant: ARETE vs ONSIDE GAMING - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Valorant: ARETE vs ONSIDE GAMING (BO3) - VCL Korea: Regular Season",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Starmer say \"Scotland\" during the next Prime Minister's Questions event?",
+      "tag": "politics",
+      "orcetra": 0.404,
+      "market": 0.44,
+      "actual": 0.0,
+      "our_brier": 0.1632,
+      "mkt_brier": 0.1936,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Starmer say \"Abuse\" during the next Prime Minister's Questions event?",
+      "tag": "politics",
+      "orcetra": 0.404,
+      "market": 0.44,
+      "actual": 0.0,
+      "our_brier": 0.1632,
+      "mkt_brier": 0.1936,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Starmer say \"Tory\" during the next Prime Minister's Questions event?",
+      "tag": "politics",
+      "orcetra": 0.404,
+      "market": 0.44,
+      "actual": 1.0,
+      "our_brier": 0.3552,
+      "mkt_brier": 0.3136,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post 260-279 tweets from March 10 to March 17, 2026?",
       "tag": "politics",
       "orcetra": 0.4674,
@@ -17222,6 +18093,174 @@
       "reasoning": ""
     },
     {
+      "q": "Valorant: KR\u00dc Blaze vs Looking For Laburo - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: KR\u00dc Blaze vs Looking For Laburo - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Phantom vs TNC (BO1) - Urban Riga Open #3 Group B",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 Nigeria Invitational Tournament, Women: Zimbabwe vs South Africa - Team Top ",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 Nigeria Invitational Tournament, Women: Zimbabwe vs South Africa - Team Top ",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 Series New Zealand vs South Africa: New Zealand vs South Africa - Who wins t",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: Mir Gaming vs Gen.G Global Academy (BO3) - VCL Korea: Regular Season",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: Mir Gaming vs Gen.G Global Academy - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: Mir Gaming vs Gen.G Global Academy - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Eswatini vs Tanzania - Toss Mat",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Malawi vs Ghana - Completed mat",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Commander-in-Chief\" during the next White House Press Briefing",
+      "tag": "politics",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
       "q": "Map Handicap: K27 (-1.5) vs Bushido Wildcats (+1.5)",
       "tag": "sports",
       "orcetra": 0.38,
@@ -17810,6 +18849,42 @@
       "reasoning": ""
     },
     {
+      "q": "T20 Nigeria Invitational Tournament, Women: Nigeria vs Rwanda",
+      "tag": "sports",
+      "orcetra": 0.4752,
+      "market": 0.51,
+      "actual": 0.0,
+      "our_brier": 0.2258,
+      "mkt_brier": 0.2601,
+      "beat": true,
+      "spread": 0.0348,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Eswatini vs Tanzania - Toss Mat",
+      "tag": "sports",
+      "orcetra": 0.4752,
+      "market": 0.51,
+      "actual": 0.0,
+      "our_brier": 0.2258,
+      "mkt_brier": 0.2601,
+      "beat": true,
+      "spread": 0.0348,
+      "reasoning": ""
+    },
+    {
+      "q": "T20 World Cup, Sub Regional Africa, Qualifier B: Eswatini vs Tanzania - Toss Mat",
+      "tag": "sports",
+      "orcetra": 0.4752,
+      "market": 0.51,
+      "actual": 0.0,
+      "our_brier": 0.2258,
+      "mkt_brier": 0.2601,
+      "beat": true,
+      "spread": 0.0348,
+      "reasoning": ""
+    },
+    {
       "q": "Game 3: Both Teams Destroy Inhibitors?",
       "tag": "sports",
       "orcetra": 0.4808,
@@ -18094,6 +19169,18 @@
       "our_brier": 0.2312,
       "mkt_brier": 0.2652,
       "beat": true,
+      "spread": 0.0342,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: KR\u00dc Blaze vs Looking For Laburo (BO3) - VCT Game Changers Latin Americ",
+      "tag": "sports",
+      "orcetra": 0.4808,
+      "market": 0.515,
+      "actual": 1.0,
+      "our_brier": 0.2696,
+      "mkt_brier": 0.2352,
+      "beat": false,
       "spread": 0.0342,
       "reasoning": ""
     },
@@ -18866,6 +19953,30 @@
       "reasoning": ""
     },
     {
+      "q": "T20 Series New Zealand vs South Africa: New Zealand vs South Africa - Completed ",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 1.0,
+      "our_brier": 0.2581,
+      "mkt_brier": 0.2256,
+      "beat": false,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Starmer say \"Ireland\" during the next Prime Minister's Questions event?",
+      "tag": "politics",
+      "orcetra": 0.402,
+      "market": 0.435,
+      "actual": 0.0,
+      "our_brier": 0.1616,
+      "mkt_brier": 0.1892,
+      "beat": true,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
       "q": "Will Chad Ramey finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -19084,6 +20195,30 @@
     {
       "q": "Game 2: Any Player Ultra Kill?",
       "tag": "sports",
+      "orcetra": 0.1226,
+      "market": 0.155,
+      "actual": 1.0,
+      "our_brier": 0.7698,
+      "mkt_brier": 0.714,
+      "beat": false,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 120-139 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1226,
+      "market": 0.155,
+      "actual": 0.0,
+      "our_brier": 0.015,
+      "mkt_brier": 0.024,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 40-64 tweets from March 23 to March 25, 2026?",
+      "tag": "politics",
       "orcetra": 0.1226,
       "market": 0.155,
       "actual": 1.0,
@@ -19586,6 +20721,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Leavitt say \"Ceasefire\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.4,
+      "market": 0.43,
+      "actual": 1.0,
+      "our_brier": 0.36,
+      "mkt_brier": 0.3249,
+      "beat": false,
+      "spread": 0.03,
+      "reasoning": ""
+    },
+    {
       "q": "Walton vs. Hijikata: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.551,
@@ -19695,6 +20842,18 @@
     },
     {
       "q": "Will Trump say \"Kamikaze\" during events with Japanese PM?",
+      "tag": "politics",
+      "orcetra": 0.1136,
+      "market": 0.14,
+      "actual": 0.0,
+      "our_brier": 0.0129,
+      "mkt_brier": 0.0196,
+      "beat": true,
+      "spread": 0.0264,
+      "reasoning": ""
+    },
+    {
+      "q": "Will White House post 200+ posts from March 17 to March 24, 2026?",
       "tag": "politics",
       "orcetra": 0.1136,
       "market": 0.14,
@@ -20270,6 +21429,30 @@
       "reasoning": ""
     },
     {
+      "q": "Will Ted Cruz post 140-159 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1072,
+      "market": 0.13,
+      "actual": 0.0,
+      "our_brier": 0.0115,
+      "mkt_brier": 0.0169,
+      "beat": true,
+      "spread": 0.0228,
+      "reasoning": ""
+    },
+    {
+      "q": "Will White House post 120-139 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1072,
+      "market": 0.13,
+      "actual": 0.0,
+      "our_brier": 0.0115,
+      "mkt_brier": 0.0169,
+      "beat": true,
+      "spread": 0.0228,
+      "reasoning": ""
+    },
+    {
       "q": "Exact Score: Racing Club de Lens 3 - 3 Angers SCO?",
       "tag": "sports",
       "orcetra": 0.1059,
@@ -20618,6 +21801,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will White House post 140-159 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.104,
+      "market": 0.125,
+      "actual": 0.0,
+      "our_brier": 0.0108,
+      "mkt_brier": 0.0156,
+      "beat": true,
+      "spread": 0.021,
+      "reasoning": ""
+    },
+    {
       "q": "Will Ludvig Aberg win the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -20750,6 +21945,18 @@
       "reasoning": ""
     },
     {
+      "q": "Map Handicap: GEN.A (-1.5) vs Mir Gaming (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.4,
+      "actual": 1.0,
+      "our_brier": 0.3844,
+      "mkt_brier": 0.36,
+      "beat": false,
+      "spread": 0.02,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Catry vs Hayen",
       "tag": "sports",
       "orcetra": 0.8345,
@@ -20811,6 +22018,18 @@
     },
     {
       "q": "Will Elon Musk post 300-319 tweets from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1008,
+      "market": 0.12,
+      "actual": 0.0,
+      "our_brier": 0.0102,
+      "mkt_brier": 0.0144,
+      "beat": true,
+      "spread": 0.0192,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 160-179 posts from March 17 to March 24, 2026?",
       "tag": "politics",
       "orcetra": 0.1008,
       "market": 0.12,
@@ -20966,6 +22185,282 @@
       "reasoning": ""
     },
     {
+      "q": "Another 7.0 or above earthquake by April 30, 2026?",
+      "tag": "science",
+      "orcetra": 0.868,
+      "market": 0.85,
+      "actual": 1.0,
+      "our_brier": 0.0174,
+      "mkt_brier": 0.0225,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Regime\" 10+ times during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Capitol Hill\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Boots on the Ground\" during the next White House Press Briefin",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Make Iran Great Again\" during the next White House Press Brief",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"ICE\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Hezbollah\" or \"Hamas\" during the next White House Press Briefi",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"SAVE Act\" or \"SAVE America Act\" during the next White House Pr",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Democrat Shutdown\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Why not\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Illegal Alien\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Threat\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Go ahead\" 5+ times during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Sponsor of Terror\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Ayatollah\" or \"Mojtaba\" during the next White House Press Brie",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Lebanon\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Qatar\" or \"UAE\" or \"Oman\" during the next White House Press Br",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Call your Democrat\" or \"Call a Democrat\" during the next White",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Air\" or \"Land\" or \"Sea\" 3+ times during the next White House P",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Markwayne\" or \"Mullin\" during the next White House Press Brief",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Death to America\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.3481,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"AI\" or \"Intelligence\" during the next White House Press Briefi",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Another 7.0 or above earthquake by May 31, 2026?",
+      "tag": "science",
+      "orcetra": 0.8722,
+      "market": 0.8545,
+      "actual": 1.0,
+      "our_brier": 0.0163,
+      "mkt_brier": 0.0212,
+      "beat": true,
+      "spread": 0.0177,
+      "reasoning": ""
+    },
+    {
       "q": "Counter-Strike: K27 vs Bushido Wildcats - Map 1 Winner",
       "tag": "sports",
       "orcetra": 0.5626,
@@ -21094,6 +22589,30 @@
       "our_brier": 0.1913,
       "mkt_brier": 0.1764,
       "beat": false,
+      "spread": 0.0174,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 200+ posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0976,
+      "market": 0.115,
+      "actual": 0.0,
+      "our_brier": 0.0095,
+      "mkt_brier": 0.0132,
+      "beat": true,
+      "spread": 0.0174,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Starmer say \"Mr Speaker\" 10+ times during the next Prime Minister's Questio",
+      "tag": "politics",
+      "orcetra": 0.8774,
+      "market": 0.86,
+      "actual": 1.0,
+      "our_brier": 0.015,
+      "mkt_brier": 0.0196,
+      "beat": true,
       "spread": 0.0174,
       "reasoning": ""
     },
@@ -21290,6 +22809,18 @@
       "reasoning": ""
     },
     {
+      "q": "Josip Simundza vs. Eliakim Coulibaly: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.6615,
+      "market": 0.645,
+      "actual": 1.0,
+      "our_brier": 0.1146,
+      "mkt_brier": 0.126,
+      "beat": true,
+      "spread": 0.0165,
+      "reasoning": ""
+    },
+    {
       "q": "Morelos: Robin Catry vs Alejandro Hayen",
       "tag": "sports",
       "orcetra": 0.8962,
@@ -21321,6 +22852,18 @@
       "actual": 1.0,
       "our_brier": 0.0207,
       "mkt_brier": 0.0256,
+      "beat": true,
+      "spread": 0.0162,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: AaB esport vs Exilium (BO1) - Urban Riga Open #3 Group D",
+      "tag": "sports",
+      "orcetra": 0.8962,
+      "market": 0.88,
+      "actual": 1.0,
+      "our_brier": 0.0108,
+      "mkt_brier": 0.0144,
       "beat": true,
       "spread": 0.0162,
       "reasoning": ""
@@ -22406,6 +23949,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Starmer say \"Reform\" during the next Prime Minister's Questions event?",
+      "tag": "politics",
+      "orcetra": 0.662,
+      "market": 0.65,
+      "actual": 1.0,
+      "our_brier": 0.1142,
+      "mkt_brier": 0.1225,
+      "beat": true,
+      "spread": 0.012,
+      "reasoning": ""
+    },
+    {
       "q": "Will Powell say \"Gold\" or \"Oil\" during March press conference?",
       "tag": "economy",
       "orcetra": 0.8668,
@@ -22634,6 +24189,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Ted Cruz post 100-119 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.3092,
+      "market": 0.32,
+      "actual": 0.0,
+      "our_brier": 0.0956,
+      "mkt_brier": 0.1024,
+      "beat": true,
+      "spread": 0.0108,
+      "reasoning": ""
+    },
+    {
       "q": "Cecchinato vs. Gea: Set 1 Games O/U 8.5",
       "tag": "sports",
       "orcetra": 0.7955,
@@ -22743,6 +24310,18 @@
     },
     {
       "q": "Will Elon Musk post 115-139 tweets from March 21 to March 23, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0848,
+      "market": 0.095,
+      "actual": 0.0,
+      "our_brier": 0.0072,
+      "mkt_brier": 0.009,
+      "beat": true,
+      "spread": 0.0102,
+      "reasoning": ""
+    },
+    {
+      "q": "Will White House post 100-119 posts from March 17 to March 24, 2026?",
       "tag": "politics",
       "orcetra": 0.0848,
       "market": 0.095,
@@ -22994,6 +24573,18 @@
       "reasoning": ""
     },
     {
+      "q": "KHL: Metallurg Magnitogorsk vs. Sibir Novosibirsk",
+      "tag": "sports",
+      "orcetra": 0.71,
+      "market": 0.7,
+      "actual": 1.0,
+      "our_brier": 0.0841,
+      "mkt_brier": 0.09,
+      "beat": true,
+      "spread": 0.01,
+      "reasoning": ""
+    },
+    {
       "q": "Counter-Strike: 1WIN vs EC BANGA - Map 1 Winner",
       "tag": "sports",
       "orcetra": 0.6549,
@@ -23122,6 +24713,18 @@
       "our_brier": 0.4154,
       "mkt_brier": 0.4032,
       "beat": false,
+      "spread": 0.0095,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: 9INE vs INFINITE Talent (BO1) - BC Game Masters Championship Gro",
+      "tag": "sports",
+      "orcetra": 0.6445,
+      "market": 0.635,
+      "actual": 1.0,
+      "our_brier": 0.1264,
+      "mkt_brier": 0.1332,
+      "beat": true,
       "spread": 0.0095,
       "reasoning": ""
     },
@@ -23362,6 +24965,18 @@
       "our_brier": 0.3493,
       "mkt_brier": 0.36,
       "beat": true,
+      "spread": 0.009,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Leavitt say \"Hormuz\" during the next White House Press Briefing?",
+      "tag": "politics",
+      "orcetra": 0.591,
+      "market": 0.6,
+      "actual": 1.0,
+      "our_brier": 0.1673,
+      "mkt_brier": 0.16,
+      "beat": false,
       "spread": 0.009,
       "reasoning": ""
     },
@@ -23781,6 +25396,30 @@
       "actual": 0.0,
       "our_brier": 0.0061,
       "mkt_brier": 0.0072,
+      "beat": true,
+      "spread": 0.0066,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 180-199 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0784,
+      "market": 0.085,
+      "actual": 0.0,
+      "our_brier": 0.0061,
+      "mkt_brier": 0.0072,
+      "beat": true,
+      "spread": 0.0066,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Starmer say \"Mr Speaker\" 20+ times during the next Prime Minister's Questio",
+      "tag": "politics",
+      "orcetra": 0.7016,
+      "market": 0.695,
+      "actual": 1.0,
+      "our_brier": 0.089,
+      "mkt_brier": 0.093,
       "beat": true,
       "spread": 0.0066,
       "reasoning": ""
@@ -24494,6 +26133,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Ted Cruz post 40-59 posts from March 17 to March 24, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0752,
+      "market": 0.08,
+      "actual": 0.0,
+      "our_brier": 0.0057,
+      "mkt_brier": 0.0064,
+      "beat": true,
+      "spread": 0.0048,
+      "reasoning": ""
+    },
+    {
       "q": "Trungelliti vs. Kolar: Set 1 Games O/U 8.5",
       "tag": "sports",
       "orcetra": 0.7695,
@@ -25114,6 +26765,18 @@
       "our_brier": 0.0645,
       "mkt_brier": 0.065,
       "beat": true,
+      "spread": 0.001,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: fnatic vs aimclub (BO1) - BC Game Masters Championship Group A",
+      "tag": "sports",
+      "orcetra": 0.619,
+      "market": 0.62,
+      "actual": 1.0,
+      "our_brier": 0.1452,
+      "mkt_brier": 0.1444,
+      "beat": false,
       "spread": 0.001,
       "reasoning": ""
     },
