@@ -1,21 +1,21 @@
 {
   "summary": {
-    "total_predictions": 22000,
-    "resolved": 2484,
-    "pending": 19516,
-    "beat_rate": 0.6916264090177133,
-    "avg_orcetra_brier": 0.2144583735909823,
-    "avg_market_brier": 0.22494911433172302,
-    "last_updated": "2026-03-28T12:00:09.225135+00:00",
+    "total_predictions": 22472,
+    "resolved": 2538,
+    "pending": 19934,
+    "beat_rate": 0.69424743892829,
+    "avg_orcetra_brier": 0.2134671000788022,
+    "avg_market_brier": 0.22395323089046493,
+    "last_updated": "2026-03-28T18:00:08.726806+00:00",
     "crypto_binary_excluded": 417
   },
   "by_tag": {
     "sports": {
-      "total": 2089,
-      "beat": 1414,
-      "rate": 0.6768788894207755,
-      "avg_our_brier": 0.2238961704164672,
-      "avg_mkt_brier": 0.2344856869315462
+      "total": 2133,
+      "beat": 1448,
+      "rate": 0.6788560712611346,
+      "avg_our_brier": 0.22323844350679795,
+      "avg_mkt_brier": 0.23384238162212845
     },
     "golf": {
       "total": 97,
@@ -25,18 +25,18 @@
       "avg_mkt_brier": 0.19938041237113402
     },
     "economy": {
-      "total": 48,
-      "beat": 32,
-      "rate": 0.6666666666666666,
-      "avg_our_brier": 0.19464791666666667,
-      "avg_mkt_brier": 0.19318958333333333
+      "total": 51,
+      "beat": 35,
+      "rate": 0.6862745098039216,
+      "avg_our_brier": 0.18609411764705883,
+      "avg_mkt_brier": 0.18548431372549018
     },
     "politics": {
-      "total": 232,
-      "beat": 178,
-      "rate": 0.7672413793103449,
-      "avg_our_brier": 0.15909008620689657,
-      "avg_mkt_brier": 0.16258836206896551
+      "total": 239,
+      "beat": 185,
+      "rate": 0.7740585774058577,
+      "avg_our_brier": 0.15639163179916318,
+      "avg_mkt_brier": 0.15986778242677824
     },
     "commodities": {
       "total": 15,
@@ -789,6 +789,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.114,
+      "market": 0.22,
+      "actual": 0.0,
+      "our_brier": 0.013,
+      "mkt_brier": 0.0484,
+      "beat": true,
+      "spread": 0.106,
+      "reasoning": ""
+    },
+    {
       "q": "Catry vs. Hayen: Set 1 Games O/U 10.5",
       "tag": "sports",
       "orcetra": 0.113,
@@ -1221,6 +1233,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.198,
+      "market": 0.28,
+      "actual": 0.0,
+      "our_brier": 0.0392,
+      "mkt_brier": 0.0784,
+      "beat": true,
+      "spread": 0.082,
+      "reasoning": ""
+    },
+    {
       "q": "Game 1: Both Teams Beat Roshan?",
       "tag": "sports",
       "orcetra": 0.107,
@@ -1593,6 +1617,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.1668,
+      "market": 0.24,
+      "actual": 1.0,
+      "our_brier": 0.6942,
+      "mkt_brier": 0.5776,
+      "beat": false,
+      "spread": 0.0732,
+      "reasoning": ""
+    },
+    {
+      "q": "StarCraft II: Zoun vs Cure (BO5) - RSL Revival Playoffs",
+      "tag": "sports",
+      "orcetra": 0.1818,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0331,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.0732,
+      "reasoning": "Market price: 0.26. Calibration-corrected market: 0.133. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.255 \u2192 0.182. Final: 0.182 (confidence: 0.5)"
+    },
+    {
       "q": "Will Donald Trump post 80-99 Truth Social posts from March 10 to March 17, 2026?",
       "tag": "politics",
       "orcetra": 0.165,
@@ -1733,6 +1781,18 @@
       "our_brier": 0.801,
       "mkt_brier": 0.6806,
       "beat": false,
+      "spread": 0.07,
+      "reasoning": ""
+    },
+    {
+      "q": "Bulls vs. Thunder",
+      "tag": "sports",
+      "orcetra": 0.105,
+      "market": 0.175,
+      "actual": 0.0,
+      "our_brier": 0.011,
+      "mkt_brier": 0.0306,
+      "beat": true,
       "spread": 0.07,
       "reasoning": ""
     },
@@ -2793,6 +2853,30 @@
       "reasoning": ""
     },
     {
+      "q": "Knicks vs. Hornets",
+      "tag": "sports",
+      "orcetra": 0.41,
+      "market": 0.475,
+      "actual": 0.0,
+      "our_brier": 0.1681,
+      "mkt_brier": 0.2256,
+      "beat": true,
+      "spread": 0.065,
+      "reasoning": ""
+    },
+    {
+      "q": "Map Handicap: EP (-1.5) vs UCAM Esports Club (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.41,
+      "market": 0.475,
+      "actual": 1.0,
+      "our_brier": 0.3481,
+      "mkt_brier": 0.2756,
+      "beat": false,
+      "spread": 0.065,
+      "reasoning": "Market price: 0.47. Sports question detected \u2192 using calibrated market only: 0.475 \u2192 0.410. Final: 0.410 (confidence: 0.4)"
+    },
+    {
       "q": "Cecchinato vs. Gea: Match O/U 22.5",
       "tag": "sports",
       "orcetra": 0.416,
@@ -3766,6 +3850,18 @@
     },
     {
       "q": "Iowa Hawkeyes vs. Florida Gators: O/U 145.5",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Heat vs. Cavaliers",
       "tag": "sports",
       "orcetra": 0.434,
       "market": 0.495,
@@ -7641,6 +7737,30 @@
       "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
     },
     {
+      "q": "Justo vs. Roncadelli: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Justo vs. Roncadelli: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
       "q": "Jubb vs. Mrva: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.446,
@@ -9681,6 +9801,42 @@
       "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
     },
     {
+      "q": "Game 1: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Map Handicap: Cure (-1.5) vs Zoun (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Map Handicap: Cure (-2.5) vs Zoun (+2.5)",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
       "q": "Game 2: Any Player Rampage?",
       "tag": "sports",
       "orcetra": 0.1512,
@@ -11109,6 +11265,30 @@
       "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.515 \u2192 0.458. Final: 0.458 (confidence: 0.4)"
     },
     {
+      "q": "Games Total: O/U 3.5",
+      "tag": "sports",
+      "orcetra": 0.458,
+      "market": 0.515,
+      "actual": 1.0,
+      "our_brier": 0.2938,
+      "mkt_brier": 0.2352,
+      "beat": false,
+      "spread": 0.057,
+      "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.515 \u2192 0.458. Final: 0.458 (confidence: 0.4)"
+    },
+    {
+      "q": "Games Total: O/U 4.5",
+      "tag": "sports",
+      "orcetra": 0.458,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2098,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.057,
+      "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.515 \u2192 0.458. Final: 0.458 (confidence: 0.4)"
+    },
+    {
       "q": "Will Johnny Keefer finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -12057,6 +12237,18 @@
       "reasoning": "Market price: 0.53. Sports question detected \u2192 using calibrated market only: 0.530 \u2192 0.476. Final: 0.476 (confidence: 0.4)"
     },
     {
+      "q": "Will the total number of TSA passengers for March 26 be between 2,800,000 and 3,",
+      "tag": "economy",
+      "orcetra": 0.221,
+      "market": 0.275,
+      "actual": 0.0,
+      "our_brier": 0.0488,
+      "mkt_brier": 0.0756,
+      "beat": true,
+      "spread": 0.054,
+      "reasoning": "Market price: 0.28. Calibration-corrected market: 0.185. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.275 \u2192 0.221. Final: 0.221 (confidence: 0.5)"
+    },
+    {
       "q": "Semenistaja vs. Kraus: Match O/U 23.5",
       "tag": "sports",
       "orcetra": 0.482,
@@ -12453,6 +12645,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.1,
+      "market": 0.15,
+      "actual": 0.0,
+      "our_brier": 0.01,
+      "mkt_brier": 0.0225,
+      "beat": true,
+      "spread": 0.05,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.43,
+      "actual": 0.0,
+      "our_brier": 0.1444,
+      "mkt_brier": 0.1849,
+      "beat": true,
+      "spread": 0.05,
+      "reasoning": "Market price: 0.43. Sports question detected \u2192 using calibrated market only: 0.430 \u2192 0.380. Final: 0.380 (confidence: 0.4)"
+    },
+    {
       "q": "Game 2: Any Player Ultra Kill?",
       "tag": "sports",
       "orcetra": 0.2308,
@@ -12609,6 +12825,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.2308,
+      "market": 0.28,
+      "actual": 0.0,
+      "our_brier": 0.0533,
+      "mkt_brier": 0.0784,
+      "beat": true,
+      "spread": 0.0492,
+      "reasoning": ""
+    },
+    {
       "q": "Will Kevin Roy finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -12659,6 +12887,18 @@
     {
       "q": "Will White House post 160-179 posts from March 17 to March 24, 2026?",
       "tag": "politics",
+      "orcetra": 0.1382,
+      "market": 0.185,
+      "actual": 0.0,
+      "our_brier": 0.0191,
+      "mkt_brier": 0.0342,
+      "beat": true,
+      "spread": 0.0468,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Rampage?",
+      "tag": "sports",
       "orcetra": 0.1382,
       "market": 0.185,
       "actual": 0.0,
@@ -14273,6 +14513,18 @@
       "our_brier": 0.8245,
       "mkt_brier": 0.7569,
       "beat": false,
+      "spread": 0.038,
+      "reasoning": ""
+    },
+    {
+      "q": "Utah State Aggies vs. Arizona Wildcats",
+      "tag": "sports",
+      "orcetra": 0.092,
+      "market": 0.13,
+      "actual": 0.0,
+      "our_brier": 0.0085,
+      "mkt_brier": 0.0169,
+      "beat": true,
       "spread": 0.038,
       "reasoning": ""
     },
@@ -20073,6 +20325,90 @@
       "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
     },
     {
+      "q": "Game 2: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "StarCraft II: Zoun vs Cure - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
+    },
+    {
+      "q": "StarCraft II: Zoun vs Cure - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
+    },
+    {
+      "q": "StarCraft II: Zoun vs Cure - Map 3 Winner",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
+    },
+    {
+      "q": "StarCraft II: Zoun vs Cure - Map 4 Winner",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
+    },
+    {
       "q": "Map Handicap: K27 (-1.5) vs Bushido Wildcats (+1.5)",
       "tag": "sports",
       "orcetra": 0.38,
@@ -20769,6 +21105,18 @@
       "reasoning": ""
     },
     {
+      "q": "Bucaramanga: Guido Justo vs Franco Roncadelli",
+      "tag": "sports",
+      "orcetra": 0.4752,
+      "market": 0.51,
+      "actual": 1.0,
+      "our_brier": 0.2754,
+      "mkt_brier": 0.2401,
+      "beat": false,
+      "spread": 0.0348,
+      "reasoning": "Market price: 0.51. Calibration-corrected market: 0.452. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.510 \u2192 0.475. Final: 0.475 (confidence: 0.5)"
+    },
+    {
       "q": "Game 3: Both Teams Destroy Inhibitors?",
       "tag": "sports",
       "orcetra": 0.4808,
@@ -21101,6 +21449,42 @@
       "our_brier": 0.2696,
       "mkt_brier": 0.2352,
       "beat": false,
+      "spread": 0.0342,
+      "reasoning": ""
+    },
+    {
+      "q": "Legends Cricket League: 3rd Place vs 4th Place - Most Sixes 3rd Place Winner",
+      "tag": "sports",
+      "orcetra": 0.4808,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2312,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.0342,
+      "reasoning": ""
+    },
+    {
+      "q": "Legends Cricket League: 3rd Place vs 4th Place - Most Sixes Draw",
+      "tag": "sports",
+      "orcetra": 0.4808,
+      "market": 0.515,
+      "actual": 1.0,
+      "our_brier": 0.2696,
+      "mkt_brier": 0.2352,
+      "beat": false,
+      "spread": 0.0342,
+      "reasoning": ""
+    },
+    {
+      "q": "Legends Cricket League: 3rd Place vs 4th Place - Most Sixes 4th Place Winner",
+      "tag": "sports",
+      "orcetra": 0.4808,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2312,
+      "mkt_brier": 0.2652,
+      "beat": true,
       "spread": 0.0342,
       "reasoning": ""
     },
@@ -21981,6 +22365,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 3: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2421,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2421,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
       "q": "Will Chad Ramey finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -22269,6 +22677,18 @@
       "reasoning": "Market price: 0.53. Calibration-corrected market: 0.476. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.530 \u2192 0.498. Final: 0.498 (confidence: 0.5)"
     },
     {
+      "q": "Will the total number of TSA passengers for March 26 be between 2,400,000 and 2,",
+      "tag": "economy",
+      "orcetra": 0.1226,
+      "market": 0.155,
+      "actual": 0.0,
+      "our_brier": 0.015,
+      "mkt_brier": 0.024,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": "Market price: 0.15. Calibration-corrected market: 0.101. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.155 \u2192 0.123. Final: 0.123 (confidence: 0.5)"
+    },
+    {
       "q": "Game 1: Both Teams Destroy Barracks?",
       "tag": "sports",
       "orcetra": 0.088,
@@ -22507,6 +22927,18 @@
       "beat": false,
       "spread": 0.0306,
       "reasoning": "Market price: 0.55. Calibration-corrected market: 0.494. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.545 \u2192 0.514. Final: 0.514 (confidence: 0.5)"
+    },
+    {
+      "q": "Game 3: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.5144,
+      "market": 0.545,
+      "actual": 1.0,
+      "our_brier": 0.2358,
+      "mkt_brier": 0.207,
+      "beat": false,
+      "spread": 0.0306,
+      "reasoning": ""
     },
     {
       "q": "Map Handicap: NEM (-1.5) vs ex-Zero Tenacity (+1.5)",
@@ -23661,6 +24093,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.1072,
+      "market": 0.13,
+      "actual": 0.0,
+      "our_brier": 0.0115,
+      "mkt_brier": 0.0169,
+      "beat": true,
+      "spread": 0.0228,
+      "reasoning": ""
+    },
+    {
       "q": "Exact Score: Racing Club de Lens 3 - 3 Angers SCO?",
       "tag": "sports",
       "orcetra": 0.1059,
@@ -24787,6 +25231,18 @@
       "beat": true,
       "spread": 0.0177,
       "reasoning": "Market price: 0.85. Calibration-corrected market: 0.885. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.855 \u2192 0.873. Final: 0.873 (confidence: 0.5)"
+    },
+    {
+      "q": "Dota 2: Astini+5 vs LiXO eSports (BO3) - European Pro League Group A",
+      "tag": "sports",
+      "orcetra": 0.8727,
+      "market": 0.855,
+      "actual": 1.0,
+      "our_brier": 0.0162,
+      "mkt_brier": 0.021,
+      "beat": true,
+      "spread": 0.0177,
+      "reasoning": ""
     },
     {
       "q": "Counter-Strike: K27 vs Bushido Wildcats - Map 1 Winner",
@@ -26057,6 +26513,30 @@
       "our_brier": 0.4816,
       "mkt_brier": 0.4624,
       "beat": false,
+      "spread": 0.014,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.354,
+      "market": 0.34,
+      "actual": 1.0,
+      "our_brier": 0.4173,
+      "mkt_brier": 0.4356,
+      "beat": true,
+      "spread": 0.014,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.076,
+      "market": 0.09,
+      "actual": 0.0,
+      "our_brier": 0.0058,
+      "mkt_brier": 0.0081,
+      "beat": true,
       "spread": 0.014,
       "reasoning": ""
     },
@@ -27381,6 +27861,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Khamenei tweet again on March 17, 2026?",
+      "tag": "politics",
+      "orcetra": 0.8149,
+      "market": 0.805,
+      "actual": 1.0,
+      "our_brier": 0.0343,
+      "mkt_brier": 0.038,
+      "beat": true,
+      "spread": 0.0099,
+      "reasoning": ""
+    },
+    {
       "q": "Counter-Strike: 1WIN vs EC BANGA (BO3) - ESL Challenger League Europe Cup #2 Pla",
       "tag": "sports",
       "orcetra": 0.6796,
@@ -27439,6 +27931,30 @@
       "beat": true,
       "spread": 0.0096,
       "reasoning": ""
+    },
+    {
+      "q": "Valorant: Enterprise Esports vs UCAM Esports Club - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.6796,
+      "market": 0.67,
+      "actual": 1.0,
+      "our_brier": 0.1027,
+      "mkt_brier": 0.1089,
+      "beat": true,
+      "spread": 0.0096,
+      "reasoning": "Market price: 0.67. Calibration-corrected market: 0.686. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.670 \u2192 0.680. Final: 0.680 (confidence: 0.5)"
+    },
+    {
+      "q": "Valorant: Enterprise Esports vs UCAM Esports Club - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.6796,
+      "market": 0.67,
+      "actual": 1.0,
+      "our_brier": 0.1027,
+      "mkt_brier": 0.1089,
+      "beat": true,
+      "spread": 0.0096,
+      "reasoning": "Market price: 0.67. Calibration-corrected market: 0.686. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.670 \u2192 0.680. Final: 0.680 (confidence: 0.5)"
     },
     {
       "q": "McNally vs. Masarova: Set 1 Games O/U 8.5",
@@ -27957,6 +28473,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Khamenei tweet again on March 20, 2026?",
+      "tag": "politics",
+      "orcetra": 0.8031,
+      "market": 0.795,
+      "actual": 1.0,
+      "our_brier": 0.0388,
+      "mkt_brier": 0.042,
+      "beat": true,
+      "spread": 0.0081,
+      "reasoning": ""
+    },
+    {
       "q": "Dota 2: Team Lynx vs Team Shpilit - Game 1 Winner",
       "tag": "sports",
       "orcetra": 0.602,
@@ -28252,6 +28780,18 @@
       "actual": 0.0,
       "our_brier": 0.0061,
       "mkt_brier": 0.0072,
+      "beat": true,
+      "spread": 0.0066,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Khamenei tweet again on March 23, 2026?",
+      "tag": "politics",
+      "orcetra": 0.7016,
+      "market": 0.695,
+      "actual": 1.0,
+      "our_brier": 0.089,
+      "mkt_brier": 0.093,
       "beat": true,
       "spread": 0.0066,
       "reasoning": ""
@@ -28641,6 +29181,18 @@
       "reasoning": "Market price: 0.39. Calibration-corrected market: 0.380. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.390 \u2192 0.384. Final: 0.384 (confidence: 0.5)"
     },
     {
+      "q": "Will Khamenei tweet again on March 22, 2026?",
+      "tag": "politics",
+      "orcetra": 0.706,
+      "market": 0.7,
+      "actual": 1.0,
+      "our_brier": 0.0864,
+      "mkt_brier": 0.09,
+      "beat": true,
+      "spread": 0.006,
+      "reasoning": ""
+    },
+    {
       "q": "Will the total number of TSA passengers for March 13 be greater than 2,800,000?",
       "tag": "economy",
       "orcetra": 0.6407,
@@ -28723,6 +29275,30 @@
       "beat": true,
       "spread": 0.0054,
       "reasoning": ""
+    },
+    {
+      "q": "Will Khamenei tweet again on March 18, 2026?",
+      "tag": "politics",
+      "orcetra": 0.7104,
+      "market": 0.705,
+      "actual": 1.0,
+      "our_brier": 0.0839,
+      "mkt_brier": 0.087,
+      "beat": true,
+      "spread": 0.0054,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 26 be between 2,600,000 and 2,",
+      "tag": "economy",
+      "orcetra": 0.7104,
+      "market": 0.705,
+      "actual": 1.0,
+      "our_brier": 0.0839,
+      "mkt_brier": 0.087,
+      "beat": true,
+      "spread": 0.0054,
+      "reasoning": "Market price: 0.70. Calibration-corrected market: 0.714. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.705 \u2192 0.710. Final: 0.710 (confidence: 0.5)"
     },
     {
       "q": "Will Elon Musk post 180-199 tweets from March 13 to March 20, 2026?",
@@ -29143,6 +29719,18 @@
       "beat": false,
       "spread": 0.0045,
       "reasoning": "Market price: 0.78. Calibration-corrected market: 0.783. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.775 \u2192 0.780. Final: 0.780 (confidence: 0.5)"
+    },
+    {
+      "q": "Game Handicap: A+5 (-1.5) vs LiXO eSports (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.6105,
+      "market": 0.615,
+      "actual": 0.0,
+      "our_brier": 0.3727,
+      "mkt_brier": 0.3782,
+      "beat": true,
+      "spread": 0.0045,
+      "reasoning": ""
     },
     {
       "q": "Miami Open, Qualification: Mattia Bellucci vs Murphy Cassone",
@@ -29589,6 +30177,18 @@
       "reasoning": ""
     },
     {
+      "q": "Dota 2: Astini+5 vs LiXO eSports - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.763,
+      "market": 0.76,
+      "actual": 1.0,
+      "our_brier": 0.0562,
+      "mkt_brier": 0.0576,
+      "beat": true,
+      "spread": 0.003,
+      "reasoning": ""
+    },
+    {
       "q": "Will Chris Kirk finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.3267,
@@ -29651,6 +30251,18 @@
     {
       "q": "Valorant: S2G Esports vs MIR (BO3) - VCL EMEA: Group D",
       "tag": "sports",
+      "orcetra": 0.7324,
+      "market": 0.73,
+      "actual": 1.0,
+      "our_brier": 0.0716,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.0024,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Khamenei tweet again on March 21, 2026?",
+      "tag": "politics",
       "orcetra": 0.7324,
       "market": 0.73,
       "actual": 1.0,
@@ -29767,6 +30379,18 @@
       "beat": true,
       "spread": 0.0018,
       "reasoning": "Market price: 0.73. Calibration-corrected market: 0.738. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.735 \u2192 0.737. Final: 0.737 (confidence: 0.5)"
+    },
+    {
+      "q": "Dota 2: Astini+5 vs LiXO eSports - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.7618,
+      "market": 0.76,
+      "actual": 0.0,
+      "our_brier": 0.5803,
+      "mkt_brier": 0.5776,
+      "beat": false,
+      "spread": 0.0018,
+      "reasoning": ""
     },
     {
       "q": "Counter-Strike: TDK vs HyperSpirit (BO3) - ESL Challenger League Europe Cup #2 P",
@@ -29935,6 +30559,30 @@
       "beat": true,
       "spread": 0.0006,
       "reasoning": ""
+    },
+    {
+      "q": "Will Khamenei tweet again on March 19, 2026?",
+      "tag": "politics",
+      "orcetra": 0.7456,
+      "market": 0.745,
+      "actual": 1.0,
+      "our_brier": 0.0647,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.0006,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: Enterprise Esports vs UCAM Esports Club (BO3) - VCL EMEA: Playoffs",
+      "tag": "sports",
+      "orcetra": 0.7456,
+      "market": 0.745,
+      "actual": 1.0,
+      "our_brier": 0.0647,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.0006,
+      "reasoning": "Market price: 0.74. Calibration-corrected market: 0.746. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.745 \u2192 0.746. Final: 0.746 (confidence: 0.5)"
     },
     {
       "q": "Set 1 Winner: Cecchinato vs Gea",

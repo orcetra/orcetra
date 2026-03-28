@@ -83,56 +83,108 @@ def get_datasets(max_datasets=3000):
     return dataset_ids
 
 
+class SkipDatasetError(Exception):
+    """Raised when a dataset should be skipped (not an error, just unsuitable)."""
+    pass
+
+
+def _densify_series(s):
+    """Convert sparse series to dense, handling various sparse types."""
+    if hasattr(s, 'sparse'):
+        # pandas SparseDtype
+        return s.sparse.to_dense()
+    if hasattr(s, 'to_dense'):
+        return s.to_dense()
+    # Check for scipy sparse
+    if hasattr(s, 'toarray'):
+        return pd.Series(s.toarray().ravel())
+    return s
+
+
+def _safe_median(s):
+    """Compute median, handling sparse arrays by densifying first."""
+    s = _densify_series(s)
+    s = pd.to_numeric(s, errors='coerce')
+    med = s.median()
+    if pd.isna(med):
+        med = 0.0
+    return med
+
+
 def load_openml_dataset(dataset_id):
     """Load an OpenML dataset, return (X, y, task_type, name) or raise."""
     import openml
-    
+
     dataset = openml.datasets.get_dataset(
         dataset_id,
         download_data=True,
         download_qualities=False,
         download_features_meta_data=False,
     )
-    
+
     X, y, categorical_indicator, attribute_names = dataset.get_data(
         target=dataset.default_target_attribute,
     )
-    
+
+    # "No data" cases should be skipped gracefully, not errored
     if X is None or y is None:
-        raise ValueError("No data")
-    
+        raise SkipDatasetError("No data")
+
     if len(X) < 50:
-        raise ValueError(f"Too few samples: {len(X)}")
-    
+        raise SkipDatasetError(f"Too few samples: {len(X)}")
+
     # Convert to DataFrame
     if not isinstance(X, pd.DataFrame):
         X = pd.DataFrame(X, columns=attribute_names)
-    
+
+    # === Densify y if sparse (fixes "factorize requires Series" error) ===
+    y = _densify_series(y)
+    if not isinstance(y, pd.Series):
+        y = pd.Series(y)
+
     # Determine task type
-    if y.dtype in ["object", "category", "bool"] or y.nunique() <= 20:
+    # Use try/except for nunique in case of remaining edge cases
+    try:
+        n_unique = y.nunique()
+    except Exception:
+        # Fallback: convert to numpy and count unique
+        n_unique = len(np.unique(y.dropna().values))
+
+    if y.dtype in ["object", "category", "bool"] or n_unique <= 20:
         task_type = "classification"
-        # Encode target
+        # Encode target - ensure y is a proper array type
         from sklearn.preprocessing import LabelEncoder
-        y = pd.Series(LabelEncoder().fit_transform(y.astype(str)))
+        y_values = np.asarray(y).astype(str)
+        y = pd.Series(LabelEncoder().fit_transform(y_values))
     else:
         task_type = "regression"
         y = pd.to_numeric(y, errors="coerce")
         if y.isna().sum() > len(y) * 0.1:
-            raise ValueError("Target has too many NaN")
-        y = y.fillna(y.median())
-    
-    # Handle features
+            raise SkipDatasetError("Target has too many NaN")
+        # Use safe median to handle sparse types
+        med = _safe_median(y)
+        y = y.fillna(med)
+
+    # Handle features - densify sparse columns first
+    for col in X.columns:
+        if hasattr(X[col], 'sparse') or hasattr(X[col], 'to_dense'):
+            X[col] = _densify_series(X[col])
+
     for col in X.select_dtypes(include=["object", "category"]).columns:
         X[col] = X[col].astype(str).astype("category").cat.codes
     X = X.apply(pd.to_numeric, errors="coerce")
-    X = X.fillna(X.median())
-    
+
+    # Use safe median for fillna (fixes "cannot perform median with Sparse" error)
+    for col in X.columns:
+        if X[col].isna().any():
+            X[col] = X[col].fillna(_safe_median(X[col]))
+
     # Drop constant columns
     X = X.loc[:, X.nunique() > 1]
-    
+
     if X.shape[1] < 1:
-        raise ValueError("No valid features after cleaning")
-    
+        raise SkipDatasetError("No valid features after cleaning")
+
     return X, y, task_type, dataset.name
 
 
@@ -503,6 +555,12 @@ def main():
                   f"baseline={baseline_score:.4f} orc={orc_score:.4f} ({pct_change:+.1f}%) | "
                   f"win_rate={win_rate:.0f}% avg_imp={avg_imp:.1f}% | {rate:.0f}/hr")
             
+        except SkipDatasetError as e:
+            # Graceful skip - not an error, just unsuitable dataset
+            result["status"] = "skip"
+            result["skip_reason"] = str(e)[:200]
+            if total <= 10:
+                print(f"  [{total}] ⊘ dataset {did} skipped: {str(e)[:60]}")
         except Exception as e:
             result["status"] = "error"
             result["error"] = str(e)[:200]

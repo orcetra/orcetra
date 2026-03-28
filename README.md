@@ -1,6 +1,6 @@
 # 🎯 Orcetra — Automated Prediction Engine
 
-**AutoML that beats FLAML on 50.9% of datasets. Verified on 108 OpenML benchmarks with equal compute budget.**
+**AutoML that beats FLAML on 78.4% of datasets. Verified on 513 OpenML benchmarks with equal 30-second compute budget.**
 
 [Live Dashboard](https://orcetra.ai/dashboard.html) · [Website](https://orcetra.ai) · [Paper (coming soon)](#)
 
@@ -12,28 +12,30 @@ Orcetra is an automated prediction engine that combines **intelligent model sear
 
 ## Benchmark Results
 
-### Orcetra vs FLAML (108 OpenML datasets, 30s budget each)
+### Orcetra vs FLAML (513 OpenML datasets, strict 30s budget each)
 
 | | Orcetra Wins | FLAML Wins | Tie |
 |---|---|---|---|
-| **Overall** | **55 (50.9%)** | 35 (32.4%) | 13 (12.0%) |
-| Classification (74) | **39 (52.7%)** | 24 (32.4%) | 11 (14.9%) |
-| Regression (34) | **16 (47.1%)** | 11 (32.4%) | 2 (5.9%) |
+| **Overall** | **402 (78.4%)** | 75 (14.6%) | 36 (7.0%) |
+| Classification (382) | **299 (78.3%)** | 49 (12.8%) | 34 (8.9%) |
+| Regression (131) | **103 (78.6%)** | 26 (19.8%) | 2 (1.5%) |
 
 ### By Dataset Size
 
 | Scale | Orcetra | FLAML | Tie |
 |---|---|---|---|
-| Small (<5K samples) | **18** | 9 | 5 |
-| Medium (5-50K) | **31** | 24 | 6 |
-| Large (>50K) | **6** | 2 | 2 |
+| Small (<5K samples) | **73 (86%)** | 7 (8%) | 5 |
+| Medium (5-50K) | **260 (79%)** | 48 (15%) | 21 |
+| Large (>50K) | **69 (70%)** | 20 (20%) | 10 |
 
-### OpenML Baseline Benchmark (477 datasets)
+### Compute Fairness
 
-| | Win Rate | Median Improvement |
-|---|---|---|
-| Classification (362) | **87.8%** | +2.84% |
-| Regression (115) | **92.2%** | +57.2% |
+Both systems receive exactly 30 seconds. Orcetra's baseline evaluation phase counts toward the budget.
+
+| | Median Time |
+|---|---|
+| Orcetra | **30.0s** |
+| FLAML | **31.3s** |
 
 ### Polymarket Prediction Benchmark
 
@@ -116,8 +118,8 @@ live_tracker.py     → LLM-powered deep analysis
 
 - [x] Baseline model pool (RF, GBC, XGB, LightGBM, HistGBM, LogReg, etc.)
 - [x] Random search agent
-- [x] OpenML benchmark framework (477/670 datasets passing)
-- [x] FLAML head-to-head comparison
+- [x] OpenML benchmark framework (513 datasets, 78.4% win rate vs FLAML)
+- [x] FLAML head-to-head comparison (strict 30s, compute-fair)
 - [x] Polymarket live prediction pipeline (22K+ markets)
 - [ ] LLM-guided search agent (Groq/OpenAI)
 - [ ] Meta-learning knowledge base
