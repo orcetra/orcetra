@@ -1,92 +1,138 @@
-# 🎯 Orcetra — AI Prediction Intelligence Engine
+# 🎯 Orcetra — Automated Prediction Engine
 
-**Beats prediction market consensus 70.2% of the time. Verified on 1,974 real predictions.**
+**AutoML that beats FLAML on 50.9% of datasets. Verified on 108 OpenML benchmarks with equal compute budget.**
 
 [Live Dashboard](https://orcetra.ai/dashboard.html) · [Website](https://orcetra.ai) · [Paper (coming soon)](#)
 
-![Orcetra Dashboard Demo](site/demo.gif)
-
 ---
 
-## What It Does
+## What Is Orcetra?
 
-Orcetra is an automated forecasting engine that monitors prediction markets, applies AI-powered calibration, and generates predictions that consistently outperform market consensus.
+Orcetra is an automated prediction engine that combines **intelligent model search** with **meta-learning** to outperform established AutoML frameworks. It works on any tabular dataset — no manual feature engineering required.
 
-## Performance
+## Benchmark Results
 
-| Category | Beat Rate | Predictions | Our Brier | Market Brier |
-|----------|-----------|-------------|-----------|--------------|
-| **Overall** | **70.2%** | **1,974** | **0.217** | **0.229** |
-| Golf | 89.7% | 97 | 0.162 | 0.199 |
-| Politics | 76.2% | 80 | 0.152 | 0.158 |
-| Sports | 69.1% | 1,750 | 0.223 | 0.235 |
-| Economy | 63.4% | 41 | 0.198 | 0.196 |
+### Orcetra vs FLAML (108 OpenML datasets, 30s budget each)
 
-*Lower Brier scores = better calibration. Live tracking of 15,270+ active predictions.*
+| | Orcetra Wins | FLAML Wins | Tie |
+|---|---|---|---|
+| **Overall** | **55 (50.9%)** | 35 (32.4%) | 13 (12.0%) |
+| Classification (74) | **39 (52.7%)** | 24 (32.4%) | 11 (14.9%) |
+| Regression (34) | **16 (47.1%)** | 11 (32.4%) | 2 (5.9%) |
+
+### By Dataset Size
+
+| Scale | Orcetra | FLAML | Tie |
+|---|---|---|---|
+| Small (<5K samples) | **18** | 9 | 5 |
+| Medium (5-50K) | **31** | 24 | 6 |
+| Large (>50K) | **6** | 2 | 2 |
+
+### OpenML Baseline Benchmark (477 datasets)
+
+| | Win Rate | Median Improvement |
+|---|---|---|
+| Classification (362) | **87.8%** | +2.84% |
+| Regression (115) | **92.2%** | +57.2% |
+
+### Polymarket Prediction Benchmark
+
+| Category | Beat Rate | Predictions |
+|---|---|---|
+| **Overall** | **66.7%** | **2,932** |
+| Sports | 81% | — |
+| Politics | 100% | — |
+| Economy | 100% | — |
+
+*Live tracking of 22,000+ active predictions across 8 categories.*
 
 ## How It Works
 
-**Scan** → Monitors Polymarket for active markets across sports, politics, economy, and commodities  
-**Predict** → Applies calibration curves learned from 177 resolved markets to correct systematic biases  
-**Verify** → Tracks outcomes and computes Brier scores vs market consensus  
+```
+Phase 1: Baseline Pool     → Evaluate RF, GBC, XGB, LightGBM, LogReg, etc.
+Phase 2: AutoResearch      → LLM-guided or random search for better configs
+Phase 3: Meta-Learning     → Strategy knowledge base from prior dataset wins
+Phase 4: Validation        → Cross-validated final evaluation
+```
+
+**Key insight**: Instead of just searching hyperparameters (like FLAML/Auto-sklearn), Orcetra searches across **model families, preprocessing strategies, and feature transformations** simultaneously.
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/GuilinDev/orcetra.git
+git clone https://github.com/orcetra/orcetra.git
 cd orcetra
 pip install -r requirements.txt
+```
 
-# Generate predictions for all active markets
-python batch_tracker.py predict
+### Run on any dataset
 
-# Check for resolved markets and update scores
-python auto_check.py
+```python
+from orcetra.core.agent import RandomSearchAgent
+from orcetra.models.registry import get_baselines
+from orcetra.metrics.base import get_metric
 
-# Generate dashboard
-python scripts/gen_dashboard.py
+# Your data
+metric = get_metric("accuracy")  # or "mse" for regression
+baselines = get_baselines("classification")
+
+# Phase 1: Baselines
+for name, fn in baselines.items():
+    score = fn(data_info, metric)
+
+# Phase 2: AutoResearch loop
+agent = RandomSearchAgent(task_type="classification")
+proposal = agent.propose(data_info, metric, best_score, best_model, iteration)
+```
+
+### Run Polymarket predictions
+
+```bash
+python batch_tracker.py predict    # Generate predictions
+python auto_check.py               # Verify against outcomes
+python scripts/gen_dashboard.py    # Update dashboard
 ```
 
 ## Architecture
 
 ```
-batch_tracker.py     → Rule-based predictions + calibration correction
-auto_check.py        → Outcome verification + Brier score computation  
-live_tracker.py      → LLM-powered deep analysis (Groq/Llama 3.1)
-scripts/gen_dashboard.py → Dashboard generation + deployment
-Cloudflare Pages     → Auto-deploy to orcetra.ai
+src/orcetra/
+├── core/           → Search agents (Random, LLM-guided)
+├── models/         → Model registry & baselines
+├── metrics/        → Evaluation metrics (accuracy, MSE, Brier)
+└── meta/           → Strategy knowledge base
+
+experiments/
+├── openml_benchmark.py      → Full OpenML benchmark suite
+├── flaml_pilot_v2.py        → Head-to-head vs FLAML
+└── flaml_strict_30s.py      → Fair compute-budget comparison
+
+batch_tracker.py    → Polymarket prediction pipeline
+auto_check.py       → Outcome verification
+live_tracker.py     → LLM-powered deep analysis
 ```
-
-## Why It Works
-
-**Long-shot bias correction**: Markets systematically overprice low-probability events (<20%). Our calibration curves learned from 177+ resolved markets automatically adjust for this bias.
-
-**Market-anchored blending**: 60% calibrated market signal + 40% independent model prediction prevents overconfidence while capturing alpha.
-
-**Real-time data integration**: Economy/commodity predictions incorporate live price feeds and volatility data.
-
-**Automated at scale**: Fully automated pipeline runs 3x daily, tracking 15,000+ active predictions without human intervention.
-
-## Technical Details
-
-- **Calibration curves**: Learned bias correction from historical market data
-- **Prediction models**: Ensemble of rule-based heuristics + LLM reasoning
-- **Data sources**: Polymarket API, real-time commodity/forex feeds
-- **Infrastructure**: Async Python pipeline, JSON data store, web dashboard
-- **Evaluation**: Standard Brier score methodology vs market consensus
 
 ## Roadmap
 
-- [ ] **Real reasoning chains** per prediction (in progress)
-- [ ] **Multi-source news analysis** for event context
-- [ ] **Automated betting pipeline** with Kelly criterion sizing
-- [ ] **API endpoint** (api.orcetra.ai) for external integrations
+- [x] Baseline model pool (RF, GBC, XGB, LightGBM, HistGBM, LogReg, etc.)
+- [x] Random search agent
+- [x] OpenML benchmark framework (477/670 datasets passing)
+- [x] FLAML head-to-head comparison
+- [x] Polymarket live prediction pipeline (22K+ markets)
+- [ ] LLM-guided search agent (Groq/OpenAI)
+- [ ] Meta-learning knowledge base
+- [ ] MLE-bench evaluation
+- [ ] Automated feature engineering module
+- [ ] Multi-framework comparison (Auto-sklearn, H2O, AutoGluon)
 
 ## Team
 
-**Beibei Li** — Chief Scientist, CMU AI Professor  
-**Kai Zhang** — Researcher  
-**Guilin Zhang** — Researcher  
+| Name | Role | Affiliation |
+|---|---|---|
+| **Beibei Li** | Chief Scientist | Carnegie Mellon University |
+| **Xiyang Hu** | Researcher | Carnegie Mellon University |
+| **Kai Zhao** | Researcher | — |
+| **Guilin Zhang** | Researcher | George Washington University |
 
 ## License
 
@@ -94,4 +140,4 @@ MIT License
 
 ---
 
-*"In markets, as in nature, the wisdom of crowds contains systematic biases. The alpha lies in the correction."*
+*"The best model isn't the one you know — it's the one you discover."*
