@@ -133,7 +133,8 @@ live_tracker.py     → LLM-powered deep analysis
 |---|---|---|
 | **Beibei Li** | Chief Scientist | Carnegie Mellon University |
 | **Xiyang Hu** | Researcher | Carnegie Mellon University |
-| **Kai Zhao** | Researcher | — |
+| **Luyi Ma** | Researcher | Carnegie Mellon University |
+| **Kai Zhao** | Researcher | New York University |
 | **Guilin Zhang** | Researcher | George Washington University |
 
 ## License
