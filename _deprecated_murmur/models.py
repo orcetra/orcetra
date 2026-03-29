@@ -46,6 +46,15 @@ class OutcomeToken(BaseModel):
     price: float = Field(ge=0, le=1)
 
 
+class Market(BaseModel):
+    """A single market within a multi-outcome event."""
+    question: str
+    outcome_label: str  # Extracted label (e.g. team name, rate level)
+    yes_price: float = Field(ge=0, le=1)
+    token_id: str = ""
+    closed: bool = False
+
+
 class Event(BaseModel):
     """A Polymarket event with its markets."""
     id: str
@@ -59,8 +68,14 @@ class Event(BaseModel):
     outcome: Optional[str] = None  # For resolved events
     outcome_price: Optional[float] = None  # Final price (0 or 1 for resolved)
     tokens: list[OutcomeToken] = Field(default_factory=list)
+    markets: list[Market] = Field(default_factory=list)  # Per-market data for multi-outcome events
     volume: float = 0.0
     liquidity: float = 0.0
+
+    @property
+    def is_multi_outcome(self) -> bool:
+        """True if this event has multiple markets (multi-choice)."""
+        return len(self.markets) > 1
 
 
 class NewsSignal(BaseModel):

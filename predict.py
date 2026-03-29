@@ -4,6 +4,9 @@
 import argparse
 import asyncio
 import sys
+
+from dotenv import load_dotenv
+load_dotenv()
 from typing import Optional
 
 from rich.console import Console
@@ -57,7 +60,24 @@ async def predict_event(url_or_slug: str, use_evolved: bool = False) -> None:
             ))
 
             # Show current market prices
-            if event.tokens:
+            import re as _re
+            if event.is_multi_outcome:
+                # Compact display for multi-outcome events
+                active_markets = [
+                    m for m in event.markets
+                    if not m.closed and m.yes_price > 0.001
+                    and not _re.match(r'^Team \d+$', m.outcome_label)
+                ]
+                if active_markets:
+                    table = Table(title=f"Current Market Prices ({len(active_markets)} active outcomes)")
+                    table.add_column("Outcome", style="cyan", max_width=30)
+                    table.add_column("Market Price", justify="right", style="green")
+                    for m in sorted(active_markets, key=lambda x: x.yes_price, reverse=True)[:20]:
+                        table.add_row(m.outcome_label, f"{m.yes_price:.1%}")
+                    if len(active_markets) > 20:
+                        table.add_row(f"... +{len(active_markets) - 20} more", "")
+                    console.print(table)
+            elif event.tokens:
                 table = Table(title="Current Market Prices")
                 table.add_column("Outcome", style="cyan")
                 table.add_column("Price", justify="right", style="green")
@@ -103,40 +123,100 @@ async def predict_event(url_or_slug: str, use_evolved: bool = False) -> None:
             else:
                 strategy = get_default_strategy()
 
-            # Run prediction
-            prediction = strategy.predict(event, price_history, news_signals, orderbook)
+            # Detect multi-outcome event
+            is_multi = event.is_multi_outcome
+
+            if is_multi:
+                progress.update(task, description="Running multi-choice prediction...")
+                multi_results = strategy.predict_multi(event, news_signals)
+            else:
+                # Run single prediction
+                prediction = strategy.predict(event, price_history, news_signals, orderbook)
 
         # Display prediction results
         console.print()
 
-        # Prediction panel
-        prob_color = "green" if prediction.probability > 0.5 else "red"
-        market_diff = prediction.probability - (event.tokens[0].price if event.tokens else 0.5)
-        diff_sign = "+" if market_diff > 0 else ""
+        if is_multi:
+            # --- Multi-choice display ---
+            active_results = [
+                r for r in multi_results
+                if r["market_price"] > 0.001
+                and not _re.match(r'^Team \d+$', r["outcome"])
+            ]
+            if not active_results:
+                active_results = multi_results
 
-        console.print(Panel(
-            f"[bold {prob_color}]{prediction.probability:.1%}[/bold {prob_color}] probability of YES\n\n"
-            f"Confidence: [bold]{prediction.confidence:.1%}[/bold]\n"
-            f"Market price: {event.tokens[0].price:.1%}\n"
-            f"Difference: [{'green' if market_diff > 0 else 'red'}]{diff_sign}{market_diff:.1%}[/]",
-            title="Prediction",
-            border_style="green" if prediction.probability > 0.5 else "red",
-        ))
+            console.print(Panel(
+                f"[bold]Multi-outcome event with {len(active_results)} active choices[/bold]",
+                title="Multi-Choice Prediction",
+                border_style="blue",
+            ))
 
-        # Reasoning
-        console.print(Panel(
-            prediction.reasoning,
-            title="Reasoning",
-            border_style="yellow",
-        ))
+            table = Table(title="Ranked Predictions")
+            table.add_column("#", style="dim", width=4)
+            table.add_column("Outcome", style="cyan", max_width=30)
+            table.add_column("Market", justify="right", style="yellow")
+            table.add_column("Predicted", justify="right", style="bold green")
+            table.add_column("Edge", justify="right")
+            table.add_column("Reasoning", max_width=45)
 
-        # 7-day trajectory
-        if prediction.trajectory_7d:
-            table = Table(title="7-Day Price Trajectory")
-            for i, price in enumerate(prediction.trajectory_7d, 1):
-                table.add_column(f"Day {i}", justify="center")
-            table.add_row(*[f"{p:.1%}" for p in prediction.trajectory_7d])
+            for i, r in enumerate(active_results[:20], 1):
+                edge = r["predicted_prob"] - r["market_price"]
+                edge_sign = "+" if edge > 0 else ""
+                edge_color = "green" if edge > 0.02 else "red" if edge < -0.02 else "yellow"
+
+                table.add_row(
+                    str(i),
+                    r["outcome"],
+                    f"{r['market_price']:.1%}",
+                    f"{r['predicted_prob']:.1%}",
+                    f"[{edge_color}]{edge_sign}{edge:.1%}[/]",
+                    (r.get("reasoning") or "")[:45],
+                )
+
             console.print(table)
+
+            # Show top pick
+            if active_results:
+                top = active_results[0]
+                console.print(Panel(
+                    f"[bold green]{top['outcome']}[/bold green] — "
+                    f"Predicted: [bold]{top['predicted_prob']:.1%}[/bold] | "
+                    f"Market: {top['market_price']:.1%}\n\n"
+                    f"{top.get('reasoning', '')}",
+                    title="Top Pick",
+                    border_style="green",
+                ))
+
+        else:
+            # --- Single YES/NO display ---
+            prob_color = "green" if prediction.probability > 0.5 else "red"
+            market_diff = prediction.probability - (event.tokens[0].price if event.tokens else 0.5)
+            diff_sign = "+" if market_diff > 0 else ""
+
+            console.print(Panel(
+                f"[bold {prob_color}]{prediction.probability:.1%}[/bold {prob_color}] probability of YES\n\n"
+                f"Confidence: [bold]{prediction.confidence:.1%}[/bold]\n"
+                f"Market price: {event.tokens[0].price:.1%}\n"
+                f"Difference: [{'green' if market_diff > 0 else 'red'}]{diff_sign}{market_diff:.1%}[/]",
+                title="Prediction",
+                border_style="green" if prediction.probability > 0.5 else "red",
+            ))
+
+            # Reasoning
+            console.print(Panel(
+                prediction.reasoning,
+                title="Reasoning",
+                border_style="yellow",
+            ))
+
+            # 7-day trajectory
+            if prediction.trajectory_7d:
+                table = Table(title="7-Day Price Trajectory")
+                for i, price in enumerate(prediction.trajectory_7d, 1):
+                    table.add_column(f"Day {i}", justify="center")
+                table.add_row(*[f"{p:.1%}" for p in prediction.trajectory_7d])
+                console.print(table)
 
         # News signals summary
         if news_signals:
