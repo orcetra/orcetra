@@ -1,21 +1,21 @@
 {
   "summary": {
-    "total_predictions": 22472,
-    "resolved": 2538,
-    "pending": 19934,
-    "beat_rate": 0.69424743892829,
-    "avg_orcetra_brier": 0.2134671000788022,
-    "avg_market_brier": 0.22395323089046493,
-    "last_updated": "2026-03-28T18:00:08.726806+00:00",
+    "total_predictions": 23397,
+    "resolved": 2622,
+    "pending": 20775,
+    "beat_rate": 0.6914569031273837,
+    "avg_orcetra_brier": 0.21374938977879482,
+    "avg_market_brier": 0.2237718916857361,
+    "last_updated": "2026-03-29T00:00:11.245586+00:00",
     "crypto_binary_excluded": 417
   },
   "by_tag": {
     "sports": {
-      "total": 2133,
-      "beat": 1448,
-      "rate": 0.6788560712611346,
-      "avg_our_brier": 0.22323844350679795,
-      "avg_mkt_brier": 0.23384238162212845
+      "total": 2209,
+      "beat": 1493,
+      "rate": 0.6758714350384789,
+      "avg_our_brier": 0.22338338614757808,
+      "avg_mkt_brier": 0.2334770031688547
     },
     "golf": {
       "total": 97,
@@ -32,11 +32,11 @@
       "avg_mkt_brier": 0.18548431372549018
     },
     "politics": {
-      "total": 239,
-      "beat": 185,
-      "rate": 0.7740585774058577,
-      "avg_our_brier": 0.15639163179916318,
-      "avg_mkt_brier": 0.15986778242677824
+      "total": 247,
+      "beat": 191,
+      "rate": 0.7732793522267206,
+      "avg_our_brier": 0.156934008097166,
+      "avg_mkt_brier": 0.16024331983805667
     },
     "commodities": {
       "total": 15,
@@ -113,6 +113,18 @@
       "beat": true,
       "spread": 0.13,
       "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.12,
+      "market": 0.25,
+      "actual": 0.0,
+      "our_brier": 0.0144,
+      "mkt_brier": 0.0625,
+      "beat": true,
+      "spread": 0.13,
+      "reasoning": "Market price: 0.25. Sports question detected \u2192 using calibrated market only: 0.250 \u2192 0.120. Final: 0.120 (confidence: 0.4)"
     },
     {
       "q": "Game 1: Both Teams Beat Roshan?",
@@ -281,18 +293,6 @@
       "beat": true,
       "spread": 0.118,
       "reasoning": ""
-    },
-    {
-      "q": "Game 1: Both Teams Beat Roshan?",
-      "tag": "sports",
-      "orcetra": 0.117,
-      "market": 0.235,
-      "actual": 0.0,
-      "our_brier": 0.0137,
-      "mkt_brier": 0.0552,
-      "beat": true,
-      "spread": 0.118,
-      "reasoning": ""
     }
   ],
   "all_checked": [
@@ -355,6 +355,18 @@
       "beat": true,
       "spread": 0.13,
       "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.12,
+      "market": 0.25,
+      "actual": 0.0,
+      "our_brier": 0.0144,
+      "mkt_brier": 0.0625,
+      "beat": true,
+      "spread": 0.13,
+      "reasoning": "Market price: 0.25. Sports question detected \u2192 using calibrated market only: 0.250 \u2192 0.120. Final: 0.120 (confidence: 0.4)"
     },
     {
       "q": "Game 1: Both Teams Beat Roshan?",
@@ -609,6 +621,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.116,
+      "market": 0.23,
+      "actual": 0.0,
+      "our_brier": 0.0135,
+      "mkt_brier": 0.0529,
+      "beat": true,
+      "spread": 0.114,
+      "reasoning": ""
+    },
+    {
       "q": "Jubb vs. Mrva: Set 1 Games O/U 10.5",
       "tag": "sports",
       "orcetra": 0.115,
@@ -691,6 +715,18 @@
       "beat": true,
       "spread": 0.11,
       "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.115,
+      "market": 0.225,
+      "actual": 0.0,
+      "our_brier": 0.0132,
+      "mkt_brier": 0.0506,
+      "beat": true,
+      "spread": 0.11,
+      "reasoning": "Market price: 0.23. Sports question detected \u2192 using calibrated market only: 0.225 \u2192 0.115. Final: 0.115 (confidence: 0.4)"
     },
     {
       "q": "Game 1: Both Teams Beat Roshan?",
@@ -1305,6 +1341,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.107,
+      "market": 0.185,
+      "actual": 0.0,
+      "our_brier": 0.0114,
+      "mkt_brier": 0.0342,
+      "beat": true,
+      "spread": 0.078,
+      "reasoning": "Market price: 0.18. Sports question detected \u2192 using calibrated market only: 0.185 \u2192 0.107. Final: 0.107 (confidence: 0.4)"
+    },
+    {
+      "q": "Game 2: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.172,
+      "market": 0.25,
+      "actual": 0.0,
+      "our_brier": 0.0296,
+      "mkt_brier": 0.0625,
+      "beat": true,
+      "spread": 0.078,
+      "reasoning": "Market price: 0.25. Calibration-corrected market: 0.120. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.250 \u2192 0.172. Final: 0.172 (confidence: 0.5)"
+    },
+    {
       "q": "Will the number of US flights delayed on March 26 be between 4,500 and 5,000?",
       "tag": "politics",
       "orcetra": 0.1715,
@@ -1675,6 +1735,18 @@
       "beat": true,
       "spread": 0.0708,
       "reasoning": "Market price: 0.23. Calibration-corrected market: 0.117. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.235 \u2192 0.164. Final: 0.164 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump\u2019s approval rating be between 40.0 and 40.4 on March 27, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1642,
+      "market": 0.235,
+      "actual": 1.0,
+      "our_brier": 0.6986,
+      "mkt_brier": 0.5852,
+      "beat": false,
+      "spread": 0.0708,
+      "reasoning": ""
     },
     {
       "q": "Jubb vs. Mrva: Match O/U 22.5",
@@ -2121,6 +2193,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.1616,
+      "market": 0.23,
+      "actual": 1.0,
+      "our_brier": 0.7029,
+      "mkt_brier": 0.5929,
+      "beat": false,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Trungelliti vs Kolar",
       "tag": "sports",
       "orcetra": 0.392,
@@ -2301,6 +2385,30 @@
       "reasoning": ""
     },
     {
+      "q": "Total Kills Over/Under 51.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.392,
+      "market": 0.46,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.2916,
+      "beat": false,
+      "spread": 0.068,
+      "reasoning": "Market price: 0.46. Sports question detected \u2192 using calibrated market only: 0.460 \u2192 0.392. Final: 0.392 (confidence: 0.4)"
+    },
+    {
+      "q": "Total Kills Over/Under 51.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.392,
+      "market": 0.46,
+      "actual": 1.0,
+      "our_brier": 0.3697,
+      "mkt_brier": 0.2916,
+      "beat": false,
+      "spread": 0.068,
+      "reasoning": "Market price: 0.46. Sports question detected \u2192 using calibrated market only: 0.460 \u2192 0.392. Final: 0.392 (confidence: 0.4)"
+    },
+    {
       "q": "Will Joe Highsmith finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.395,
@@ -2407,6 +2515,18 @@
       "beat": true,
       "spread": 0.067,
       "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 50.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.398,
+      "market": 0.465,
+      "actual": 1.0,
+      "our_brier": 0.3624,
+      "mkt_brier": 0.2862,
+      "beat": false,
+      "spread": 0.067,
+      "reasoning": "Market price: 0.47. Sports question detected \u2192 using calibrated market only: 0.465 \u2192 0.398. Final: 0.398 (confidence: 0.4)"
     },
     {
       "q": "Will Tony Finau finish in the Top 10 at the 2026 THE PLAYERS Championship?",
@@ -2635,6 +2755,42 @@
       "beat": false,
       "spread": 0.066,
       "reasoning": "Market price: 0.47. Sports question detected \u2192 using calibrated market only: 0.470 \u2192 0.404. Final: 0.404 (confidence: 0.4)"
+    },
+    {
+      "q": "Will Trump\u2019s approval rating be between 41.5 and 41.9 on March 27, 2026?",
+      "tag": "politics",
+      "orcetra": 0.159,
+      "market": 0.225,
+      "actual": 0.0,
+      "our_brier": 0.0253,
+      "mkt_brier": 0.0506,
+      "beat": true,
+      "spread": 0.066,
+      "reasoning": ""
+    },
+    {
+      "q": "Set 1 Winner: Andreeva vs Mboko",
+      "tag": "sports",
+      "orcetra": 0.404,
+      "market": 0.47,
+      "actual": 0.0,
+      "our_brier": 0.1632,
+      "mkt_brier": 0.2209,
+      "beat": true,
+      "spread": 0.066,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.159,
+      "market": 0.225,
+      "actual": 0.0,
+      "our_brier": 0.0253,
+      "mkt_brier": 0.0506,
+      "beat": true,
+      "spread": 0.066,
+      "reasoning": "Market price: 0.23. Calibration-corrected market: 0.115. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.225 \u2192 0.159. Final: 0.159 (confidence: 0.5)"
     },
     {
       "q": "Will Brian Harman finish in the Top 10 at the 2026 THE PLAYERS Championship?",
@@ -2877,6 +3033,18 @@
       "reasoning": "Market price: 0.47. Sports question detected \u2192 using calibrated market only: 0.475 \u2192 0.410. Final: 0.410 (confidence: 0.4)"
     },
     {
+      "q": "Total Kills Over/Under 50.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.41,
+      "market": 0.475,
+      "actual": 1.0,
+      "our_brier": 0.3481,
+      "mkt_brier": 0.2756,
+      "beat": false,
+      "spread": 0.065,
+      "reasoning": "Market price: 0.47. Sports question detected \u2192 using calibrated market only: 0.475 \u2192 0.410. Final: 0.410 (confidence: 0.4)"
+    },
+    {
       "q": "Cecchinato vs. Gea: Match O/U 22.5",
       "tag": "sports",
       "orcetra": 0.416,
@@ -2993,6 +3161,18 @@
       "our_brier": 0.1731,
       "mkt_brier": 0.2304,
       "beat": true,
+      "spread": 0.064,
+      "reasoning": ""
+    },
+    {
+      "q": "Andreeva vs. Mboko: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.416,
+      "market": 0.48,
+      "actual": 1.0,
+      "our_brier": 0.3411,
+      "mkt_brier": 0.2704,
+      "beat": false,
       "spread": 0.064,
       "reasoning": ""
     },
@@ -3415,6 +3595,18 @@
       "beat": false,
       "spread": 0.062,
       "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.428,
+      "market": 0.49,
+      "actual": 0.0,
+      "our_brier": 0.1832,
+      "mkt_brier": 0.2401,
+      "beat": true,
+      "spread": 0.062,
+      "reasoning": "Market price: 0.49. Sports question detected \u2192 using calibrated market only: 0.490 \u2192 0.428. Final: 0.428 (confidence: 0.4)"
     },
     {
       "q": "Will JT Poston win the 2026 THE PLAYERS Championship?",
@@ -3871,6 +4063,42 @@
       "beat": true,
       "spread": 0.061,
       "reasoning": ""
+    },
+    {
+      "q": "Hawks vs. Celtics",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Pelicans vs. Raptors",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 49.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 1.0,
+      "our_brier": 0.3204,
+      "mkt_brier": 0.255,
+      "beat": false,
+      "spread": 0.061,
+      "reasoning": "Market price: 0.49. Sports question detected \u2192 using calibrated market only: 0.495 \u2192 0.434. Final: 0.434 (confidence: 0.4)"
     },
     {
       "q": "Will Brian Campbell finish in the Top 10 at the 2026 THE PLAYERS Championship?",
@@ -7761,6 +7989,66 @@
       "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
     },
     {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Andreeva vs. Mboko: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Mobile Legends Bang Bang: Alter Ego vs ONIC - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
       "q": "Jubb vs. Mrva: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.446,
@@ -9837,6 +10125,102 @@
       "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
     },
     {
+      "q": "Andreeva vs. Mboko: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Andreeva vs. Mboko: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Andreeva vs. Mboko: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Andreeva vs. Mboko: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Game Handicap: ONIC (-1.5) vs Alter Ego (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 49.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "First Blood in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
       "q": "Game 2: Any Player Rampage?",
       "tag": "sports",
       "orcetra": 0.1512,
@@ -10651,6 +11035,18 @@
       "beat": true,
       "spread": 0.058,
       "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.510 \u2192 0.452. Final: 0.452 (confidence: 0.4)"
+    },
+    {
+      "q": "Game 1: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.102,
+      "market": 0.16,
+      "actual": 1.0,
+      "our_brier": 0.8064,
+      "mkt_brier": 0.7056,
+      "beat": false,
+      "spread": 0.058,
+      "reasoning": ""
     },
     {
       "q": "Games Total: O/U 2.5",
@@ -11661,6 +12057,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.520 \u2192 0.464. Final: 0.464 (confidence: 0.4)"
+    },
+    {
       "q": "Will Rasmus Hojgaard finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -12009,6 +12417,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.47,
+      "market": 0.525,
+      "actual": 1.0,
+      "our_brier": 0.2809,
+      "mkt_brier": 0.2256,
+      "beat": false,
+      "spread": 0.055,
+      "reasoning": ""
+    },
+    {
       "q": "Tobon vs. Ficovich: Set 1 Games O/U 9.5",
       "tag": "sports",
       "orcetra": 0.476,
@@ -12249,6 +12669,42 @@
       "reasoning": "Market price: 0.28. Calibration-corrected market: 0.185. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.275 \u2192 0.221. Final: 0.221 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump\u2019s approval rating be less than 40.0 on March 27, 2026?",
+      "tag": "politics",
+      "orcetra": 0.146,
+      "market": 0.2,
+      "actual": 0.0,
+      "our_brier": 0.0213,
+      "mkt_brier": 0.04,
+      "beat": true,
+      "spread": 0.054,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 48.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.476,
+      "market": 0.53,
+      "actual": 1.0,
+      "our_brier": 0.2746,
+      "mkt_brier": 0.2209,
+      "beat": false,
+      "spread": 0.054,
+      "reasoning": "Market price: 0.53. Sports question detected \u2192 using calibrated market only: 0.530 \u2192 0.476. Final: 0.476 (confidence: 0.4)"
+    },
+    {
+      "q": "Total Kills Over/Under 48.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.476,
+      "market": 0.53,
+      "actual": 1.0,
+      "our_brier": 0.2746,
+      "mkt_brier": 0.2209,
+      "beat": false,
+      "spread": 0.054,
+      "reasoning": "Market price: 0.53. Sports question detected \u2192 using calibrated market only: 0.530 \u2192 0.476. Final: 0.476 (confidence: 0.4)"
+    },
+    {
       "q": "Semenistaja vs. Kraus: Match O/U 23.5",
       "tag": "sports",
       "orcetra": 0.482,
@@ -12393,6 +12849,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post 90-114 tweets from March 26 to March 28, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1434,
+      "market": 0.195,
+      "actual": 0.0,
+      "our_brier": 0.0206,
+      "mkt_brier": 0.038,
+      "beat": true,
+      "spread": 0.0516,
+      "reasoning": "Market price: 0.20. Calibration-corrected market: 0.109. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.195 \u2192 0.143. Final: 0.143 (confidence: 0.5)"
+    },
+    {
       "q": "Will Viktor Hovland finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.494,
@@ -12463,6 +12931,18 @@
       "beat": true,
       "spread": 0.051,
       "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 47.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.494,
+      "market": 0.545,
+      "actual": 1.0,
+      "our_brier": 0.256,
+      "mkt_brier": 0.207,
+      "beat": false,
+      "spread": 0.051,
+      "reasoning": "Market price: 0.55. Sports question detected \u2192 using calibrated market only: 0.545 \u2192 0.494. Final: 0.494 (confidence: 0.4)"
     },
     {
       "q": "Will Andrew Putnam finish in the Top 10 at the 2026 THE PLAYERS Championship?",
@@ -12835,6 +13315,18 @@
       "beat": true,
       "spread": 0.0492,
       "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.1408,
+      "market": 0.19,
+      "actual": 0.0,
+      "our_brier": 0.0198,
+      "mkt_brier": 0.0361,
+      "beat": true,
+      "spread": 0.0492,
+      "reasoning": "Market price: 0.19. Calibration-corrected market: 0.108. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.190 \u2192 0.141. Final: 0.141 (confidence: 0.5)"
     },
     {
       "q": "Will Kevin Roy finish in the Top 10 at the 2026 THE PLAYERS Championship?",
@@ -13353,6 +13845,18 @@
       "reasoning": ""
     },
     {
+      "q": "Total Kills Over/Under 47.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.517,
+      "market": 0.56,
+      "actual": 1.0,
+      "our_brier": 0.2333,
+      "mkt_brier": 0.1936,
+      "beat": false,
+      "spread": 0.043,
+      "reasoning": "Market price: 0.56. Sports question detected \u2192 using calibrated market only: 0.560 \u2192 0.517. Final: 0.517 (confidence: 0.4)"
+    },
+    {
       "q": "Games Total: O/U 2.5",
       "tag": "sports",
       "orcetra": 0.263,
@@ -13809,6 +14313,18 @@
       "reasoning": ""
     },
     {
+      "q": "Miami Open: Mirra Andreeva vs Victoria Mboko",
+      "tag": "sports",
+      "orcetra": 0.4248,
+      "market": 0.465,
+      "actual": 0.0,
+      "our_brier": 0.1805,
+      "mkt_brier": 0.2162,
+      "beat": true,
+      "spread": 0.0402,
+      "reasoning": ""
+    },
+    {
       "q": "Games Total: O/U 2.5",
       "tag": "sports",
       "orcetra": 0.38,
@@ -13937,6 +14453,18 @@
       "our_brier": 0.1444,
       "mkt_brier": 0.1764,
       "beat": true,
+      "spread": 0.04,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: Aurora vs Team Spirit - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.42,
+      "actual": 1.0,
+      "our_brier": 0.3844,
+      "mkt_brier": 0.3364,
+      "beat": false,
       "spread": 0.04,
       "reasoning": ""
     },
@@ -14131,6 +14659,18 @@
       "beat": false,
       "spread": 0.0396,
       "reasoning": "Market price: 0.47. Calibration-corrected market: 0.404. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.470 \u2192 0.430. Final: 0.430 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump\u2019s approval rating be between 41.0 and 41.4 on March 27, 2026?",
+      "tag": "politics",
+      "orcetra": 0.2504,
+      "market": 0.29,
+      "actual": 0.0,
+      "our_brier": 0.0627,
+      "mkt_brier": 0.0841,
+      "beat": true,
+      "spread": 0.0396,
+      "reasoning": ""
     },
     {
       "q": "Tabilo vs. Michelsen: Match O/U 21.5",
@@ -19329,6 +19869,138 @@
       "reasoning": ""
     },
     {
+      "q": "Map Handicap: BIG.A (-1.5) vs aimclub (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.534,
+      "market": 0.57,
+      "actual": 1.0,
+      "our_brier": 0.2172,
+      "mkt_brier": 0.1849,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 2: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: BIG Academy vs aimclub - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 3: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: Aurora vs Team Spirit (BO2) - ESL One Birmingham Group B",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Pakistan Super League: Multan Sultans vs Islamabad United - Most Sixes Multan Su",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Pakistan Super League: Multan Sultans vs Islamabad United - Most Sixes Draw",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Pakistan Super League: Multan Sultans vs Islamabad United - Most Sixes Islamabad",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Mobile Legends Bang Bang: Alter Ego vs ONIC (BO3) - MPL Indonesia Regular Season",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Mobile Legends Bang Bang: Alter Ego vs ONIC - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post 260-279 tweets from March 10 to March 17, 2026?",
       "tag": "politics",
       "orcetra": 0.4674,
@@ -20409,6 +21081,30 @@
       "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
     },
     {
+      "q": "First Blood in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
+    },
+    {
+      "q": "Game 3: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
+    },
+    {
       "q": "Map Handicap: K27 (-1.5) vs Bushido Wildcats (+1.5)",
       "tag": "sports",
       "orcetra": 0.38,
@@ -20506,6 +21202,18 @@
     },
     {
       "q": "Saint Louis Billikens vs. Michigan Wolverines",
+      "tag": "sports",
+      "orcetra": 0.09,
+      "market": 0.125,
+      "actual": 0.0,
+      "our_brier": 0.0081,
+      "mkt_brier": 0.0156,
+      "beat": true,
+      "spread": 0.035,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Destroy Barracks?",
       "tag": "sports",
       "orcetra": 0.09,
       "market": 0.125,
@@ -21117,6 +21825,18 @@
       "reasoning": "Market price: 0.51. Calibration-corrected market: 0.452. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.510 \u2192 0.475. Final: 0.475 (confidence: 0.5)"
     },
     {
+      "q": "Game 2: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.1252,
+      "market": 0.16,
+      "actual": 0.0,
+      "our_brier": 0.0157,
+      "mkt_brier": 0.0256,
+      "beat": true,
+      "spread": 0.0348,
+      "reasoning": ""
+    },
+    {
       "q": "Game 3: Both Teams Destroy Inhibitors?",
       "tag": "sports",
       "orcetra": 0.4808,
@@ -21487,6 +22207,18 @@
       "beat": true,
       "spread": 0.0342,
       "reasoning": ""
+    },
+    {
+      "q": "Game 3: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.4808,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2312,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.0342,
+      "reasoning": "Market price: 0.52. Calibration-corrected market: 0.458. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.515 \u2192 0.481. Final: 0.481 (confidence: 0.5)"
     },
     {
       "q": "LoL: G2 NORD vs Witchcraft - Game 1 Winner",
@@ -22005,6 +22737,30 @@
       "reasoning": "Market price: 0.52. Calibration-corrected market: 0.464. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.520 \u2192 0.486. Final: 0.486 (confidence: 0.5)"
     },
     {
+      "q": "Game 2: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.4864,
+      "market": 0.52,
+      "actual": 1.0,
+      "our_brier": 0.2638,
+      "mkt_brier": 0.2304,
+      "beat": false,
+      "spread": 0.0336,
+      "reasoning": "Market price: 0.52. Calibration-corrected market: 0.464. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.520 \u2192 0.486. Final: 0.486 (confidence: 0.5)"
+    },
+    {
+      "q": "Game 3: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.4864,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2366,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.0336,
+      "reasoning": "Market price: 0.52. Calibration-corrected market: 0.464. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.520 \u2192 0.486. Final: 0.486 (confidence: 0.5)"
+    },
+    {
       "q": "Kigali 2: Marco Trungelliti vs Zdenek Kolar",
       "tag": "sports",
       "orcetra": 0.402,
@@ -22389,6 +23145,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2421,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
       "q": "Will Chad Ramey finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -22687,6 +23455,18 @@
       "beat": true,
       "spread": 0.0324,
       "reasoning": "Market price: 0.15. Calibration-corrected market: 0.101. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.155 \u2192 0.123. Final: 0.123 (confidence: 0.5)"
+    },
+    {
+      "q": "Game 3: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.4976,
+      "market": 0.53,
+      "actual": 0.0,
+      "our_brier": 0.2476,
+      "mkt_brier": 0.2809,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": "Market price: 0.53. Calibration-corrected market: 0.476. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.530 \u2192 0.498. Final: 0.498 (confidence: 0.5)"
     },
     {
       "q": "Game 1: Both Teams Destroy Barracks?",
@@ -23289,6 +24069,18 @@
       "reasoning": "Market price: 0.55. Calibration-corrected market: 0.500. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.550 \u2192 0.520. Final: 0.520 (confidence: 0.5)"
     },
     {
+      "q": "Will Elon Musk post 40-64 tweets from March 26 to March 28, 2026?",
+      "tag": "politics",
+      "orcetra": 0.27,
+      "market": 0.3,
+      "actual": 0.0,
+      "our_brier": 0.0729,
+      "mkt_brier": 0.09,
+      "beat": true,
+      "spread": 0.03,
+      "reasoning": "Market price: 0.30. Calibration-corrected market: 0.250. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.300 \u2192 0.270. Final: 0.270 (confidence: 0.5)"
+    },
+    {
       "q": "Walton vs. Hijikata: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.551,
@@ -23481,6 +24273,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.084,
+      "market": 0.11,
+      "actual": 0.0,
+      "our_brier": 0.0071,
+      "mkt_brier": 0.0121,
+      "beat": true,
+      "spread": 0.026,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.289,
+      "market": 0.315,
+      "actual": 1.0,
+      "our_brier": 0.5055,
+      "mkt_brier": 0.4692,
+      "beat": false,
+      "spread": 0.026,
+      "reasoning": "Market price: 0.32. Sports question detected \u2192 using calibrated market only: 0.315 \u2192 0.289. Final: 0.289 (confidence: 0.4)"
+    },
+    {
       "q": "Will Starmer say \"U-turn\" during the next Prime Minister's Questions event?",
       "tag": "politics",
       "orcetra": 0.5342,
@@ -23527,6 +24343,18 @@
       "beat": true,
       "spread": 0.0255,
       "reasoning": ""
+    },
+    {
+      "q": "Dota 2: Aurora vs PARIVISION - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.5595,
+      "market": 0.585,
+      "actual": 0.0,
+      "our_brier": 0.313,
+      "mkt_brier": 0.3422,
+      "beat": true,
+      "spread": 0.0255,
+      "reasoning": "Market price: 0.58. Sports question detected \u2192 using calibrated market only: 0.585 \u2192 0.559. Final: 0.559 (confidence: 0.4)"
     },
     {
       "q": "Morelos: Dan Martin vs Facundo Mena",
@@ -23901,6 +24729,18 @@
       "reasoning": ""
     },
     {
+      "q": "Dota 2: Aurora vs Team Spirit - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.396,
+      "market": 0.42,
+      "actual": 0.0,
+      "our_brier": 0.1568,
+      "mkt_brier": 0.1764,
+      "beat": true,
+      "spread": 0.024,
+      "reasoning": ""
+    },
+    {
       "q": "Game 3: Any Player Ultra Kill?",
       "tag": "sports",
       "orcetra": 0.5413,
@@ -23935,6 +24775,18 @@
       "beat": true,
       "spread": 0.0237,
       "reasoning": ""
+    },
+    {
+      "q": "Dota 2: Aurora vs PARIVISION (BO3) - ESL One Birmingham Playoffs",
+      "tag": "sports",
+      "orcetra": 0.5413,
+      "market": 0.565,
+      "actual": 0.0,
+      "our_brier": 0.293,
+      "mkt_brier": 0.3192,
+      "beat": true,
+      "spread": 0.0237,
+      "reasoning": "Market price: 0.56. Calibration-corrected market: 0.525. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.565 \u2192 0.541. Final: 0.541 (confidence: 0.5)"
     },
     {
       "q": "Dominic Solanke: Anytime Goalscorer",
@@ -24333,6 +25185,18 @@
       "reasoning": "Market price: 0.57. Calibration-corrected market: 0.534. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.570 \u2192 0.548. Final: 0.548 (confidence: 0.5)"
     },
     {
+      "q": "Dota 2: Aurora vs PARIVISION - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.5484,
+      "market": 0.57,
+      "actual": 0.0,
+      "our_brier": 0.3007,
+      "mkt_brier": 0.3249,
+      "beat": true,
+      "spread": 0.0216,
+      "reasoning": "Market price: 0.57. Calibration-corrected market: 0.534. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.570 \u2192 0.548. Final: 0.548 (confidence: 0.5)"
+    },
+    {
       "q": "Will Elon Musk post 200-219 tweets from March 13 to March 20, 2026?",
       "tag": "politics",
       "orcetra": 0.1043,
@@ -24487,6 +25351,18 @@
       "beat": false,
       "spread": 0.021,
       "reasoning": "Market price: 0.41. Calibration-corrected market: 0.380. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.415 \u2192 0.394. Final: 0.394 (confidence: 0.5)"
+    },
+    {
+      "q": "Game 2: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.104,
+      "market": 0.125,
+      "actual": 0.0,
+      "our_brier": 0.0108,
+      "mkt_brier": 0.0156,
+      "beat": true,
+      "spread": 0.021,
+      "reasoning": ""
     },
     {
       "q": "Will Ludvig Aberg win the 2026 THE PLAYERS Championship?",
@@ -24645,6 +25521,18 @@
       "reasoning": ""
     },
     {
+      "q": "Set Handicap: Mboko (-1.5) vs Andreeva (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.67,
+      "market": 0.65,
+      "actual": 0.0,
+      "our_brier": 0.4489,
+      "mkt_brier": 0.4225,
+      "beat": false,
+      "spread": 0.02,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Catry vs Hayen",
       "tag": "sports",
       "orcetra": 0.8345,
@@ -24751,6 +25639,18 @@
       "beat": true,
       "spread": 0.0185,
       "reasoning": ""
+    },
+    {
+      "q": "Game Handicap: AUR (-1.5) vs PARIVISION (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.5765,
+      "market": 0.595,
+      "actual": 0.0,
+      "our_brier": 0.3324,
+      "mkt_brier": 0.354,
+      "beat": true,
+      "spread": 0.0185,
+      "reasoning": "Market price: 0.59. Sports question detected \u2192 using calibrated market only: 0.595 \u2192 0.576. Final: 0.576 (confidence: 0.4)"
     },
     {
       "q": "Counter-Strike: STATE vs G2 Ares (BO3) - ESL Challenger League Europe Cup #2 Pla",
@@ -25605,6 +26505,18 @@
       "reasoning": "Market price: 0.67. Sports question detected \u2192 using calibrated market only: 0.665 \u2192 0.682. Final: 0.682 (confidence: 0.4)"
     },
     {
+      "q": "Mirra Andreeva vs. Victoria Mboko: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.682,
+      "market": 0.665,
+      "actual": 1.0,
+      "our_brier": 0.1011,
+      "mkt_brier": 0.1122,
+      "beat": true,
+      "spread": 0.017,
+      "reasoning": ""
+    },
+    {
       "q": "LoL: Gen.G vs LYON - Game 3 Winner",
       "tag": "sports",
       "orcetra": 0.8868,
@@ -25891,6 +26803,30 @@
       "beat": false,
       "spread": 0.0156,
       "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.0944,
+      "market": 0.11,
+      "actual": 0.0,
+      "our_brier": 0.0089,
+      "mkt_brier": 0.0121,
+      "beat": true,
+      "spread": 0.0156,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.2994,
+      "market": 0.315,
+      "actual": 0.0,
+      "our_brier": 0.0896,
+      "mkt_brier": 0.0992,
+      "beat": true,
+      "spread": 0.0156,
+      "reasoning": "Market price: 0.32. Calibration-corrected market: 0.289. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.315 \u2192 0.299. Final: 0.299 (confidence: 0.5)"
     },
     {
       "q": "Exact Score: Racing Club de Lens 2 - 3 Angers SCO?",
@@ -26537,6 +27473,18 @@
       "our_brier": 0.0058,
       "mkt_brier": 0.0081,
       "beat": true,
+      "spread": 0.014,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.354,
+      "market": 0.34,
+      "actual": 0.0,
+      "our_brier": 0.1253,
+      "mkt_brier": 0.1156,
+      "beat": false,
       "spread": 0.014,
       "reasoning": ""
     },
@@ -29193,6 +30141,42 @@
       "reasoning": ""
     },
     {
+      "q": "Counter-Strike: BIG Academy vs aimclub - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.706,
+      "market": 0.7,
+      "actual": 1.0,
+      "our_brier": 0.0864,
+      "mkt_brier": 0.09,
+      "beat": true,
+      "spread": 0.006,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump\u2019s approval rating be between 40.5 and 40.9 on March 27, 2026?",
+      "tag": "politics",
+      "orcetra": 0.319,
+      "market": 0.325,
+      "actual": 0.0,
+      "our_brier": 0.1018,
+      "mkt_brier": 0.1056,
+      "beat": true,
+      "spread": 0.006,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.319,
+      "market": 0.325,
+      "actual": 0.0,
+      "our_brier": 0.1018,
+      "mkt_brier": 0.1056,
+      "beat": true,
+      "spread": 0.006,
+      "reasoning": "Market price: 0.33. Calibration-corrected market: 0.315. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.325 \u2192 0.319. Final: 0.319 (confidence: 0.5)"
+    },
+    {
       "q": "Will the total number of TSA passengers for March 13 be greater than 2,800,000?",
       "tag": "economy",
       "orcetra": 0.6407,
@@ -30189,6 +31173,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post 65-89 tweets from March 26 to March 28, 2026?",
+      "tag": "politics",
+      "orcetra": 0.382,
+      "market": 0.385,
+      "actual": 1.0,
+      "our_brier": 0.3819,
+      "mkt_brier": 0.3782,
+      "beat": false,
+      "spread": 0.003,
+      "reasoning": "Market price: 0.39. Calibration-corrected market: 0.380. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.385 \u2192 0.382. Final: 0.382 (confidence: 0.5)"
+    },
+    {
       "q": "Will Chris Kirk finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.3267,
@@ -30214,6 +31210,18 @@
     },
     {
       "q": "Miami Open: Karolina Muchova vs Katie Boulter",
+      "tag": "sports",
+      "orcetra": 0.7677,
+      "market": 0.765,
+      "actual": 1.0,
+      "our_brier": 0.054,
+      "mkt_brier": 0.0552,
+      "beat": true,
+      "spread": 0.0027,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: BIG Academy vs aimclub (BO3) - CCT Europe Closed Qualifier: Seri",
       "tag": "sports",
       "orcetra": 0.7677,
       "market": 0.765,
