@@ -12,8 +12,8 @@ import httpx
 from rich.console import Console
 from rich.table import Table
 
-from _deprecated_murmur.strategy import LLMStrategy
-from _deprecated_murmur.models import Event, OutcomeToken
+from orcetra.polymarket.strategy import LLMStrategy
+from orcetra.polymarket.models import Event, OutcomeToken
 
 console = Console()
 TRACKER_FILE = Path("results/live_predictions.json")

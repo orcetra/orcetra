@@ -2,6 +2,7 @@
 """Orcetra CLI - Prediction Market Crowd Simulation with Self-Evolving AI Agents."""
 
 import argparse
+import re
 import asyncio
 import sys
 
@@ -14,15 +15,15 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
-from _deprecated_murmur.fetcher import (
+from orcetra.polymarket.fetcher import (
     PolymarketFetcher,
     list_active_events_sync,
     list_resolved_events_sync,
 )
-from _deprecated_murmur.news import NewsCollector
-from _deprecated_murmur.strategy import get_default_strategy, LLMStrategy
-from _deprecated_murmur.evaluator import evaluate_strategy_sync, format_backtest_results
-from _deprecated_murmur.evolve import run_evolution, load_best_strategy
+from orcetra.polymarket.news import NewsCollector
+from orcetra.polymarket.strategy import get_default_strategy, LLMStrategy
+from orcetra.polymarket.evaluator import evaluate_strategy_sync, format_backtest_results
+from orcetra.polymarket.evolve import run_evolution, load_best_strategy
 
 console = Console()
 
@@ -60,13 +61,12 @@ async def predict_event(url_or_slug: str, use_evolved: bool = False) -> None:
             ))
 
             # Show current market prices
-            import re as _re
             if event.is_multi_outcome:
                 # Compact display for multi-outcome events
                 active_markets = [
                     m for m in event.markets
                     if not m.closed and m.yes_price > 0.001
-                    and not _re.match(r'^Team \d+$', m.outcome_label)
+                    and not re.match(r'^Team \d+$', m.outcome_label)
                 ]
                 if active_markets:
                     table = Table(title=f"Current Market Prices ({len(active_markets)} active outcomes)")
@@ -141,7 +141,7 @@ async def predict_event(url_or_slug: str, use_evolved: bool = False) -> None:
             active_results = [
                 r for r in multi_results
                 if r["market_price"] > 0.001
-                and not _re.match(r'^Team \d+$', r["outcome"])
+                and not re.match(r'^Team \d+$', r["outcome"])
             ]
             if not active_results:
                 active_results = multi_results

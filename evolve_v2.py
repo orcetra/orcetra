@@ -11,7 +11,7 @@ from pathlib import Path
 
 from rich.console import Console
 
-from _deprecated_murmur.models import Event, OutcomeToken, Prediction
+from orcetra.polymarket.models import Event, OutcomeToken, Prediction
 from backtest import get_high_volume_resolved_markets, get_price_at_days_before
 
 console = Console()
