@@ -9,4 +9,6 @@ dist/
 build/
 .venv/
 venv/
-results/
+catboost_*/
+video/public/*.mp3
+video/out/
