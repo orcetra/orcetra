@@ -8,7 +8,7 @@ from typing import Optional
 
 from groq import Groq
 
-from .models import Event, NewsSignal, OrderBook, PricePoint, Prediction
+from .models import Event, Market, NewsSignal, OrderBook, PricePoint, Prediction
 
 
 class PredictionStrategy(ABC):
@@ -101,6 +101,159 @@ class LLMStrategy(PredictionStrategy):
                 trajectory_7d=[market_prob] * 7,
                 market_price=market_prob,
             )
+
+    def predict_multi(
+        self,
+        event: Event,
+        news_signals: list[NewsSignal],
+    ) -> list[dict]:
+        """Predict probabilities for all outcomes in a multi-choice event.
+        Returns a list of dicts with outcome_label, market_price, predicted_prob, reasoning.
+        """
+        if not self.groq_api_key:
+            raise ValueError("GROQ_API_KEY not set")
+
+        # Filter to active (non-closed) markets with meaningful prices
+        # Exclude placeholder markets (e.g. "Team 48") and eliminated (0%) outcomes
+        active_markets = [
+            m for m in event.markets
+            if not m.closed
+            and m.yes_price > 0.001
+            and not re.match(r'^Team \d+$', m.outcome_label)
+        ]
+        if not active_markets:
+            active_markets = [m for m in event.markets if not m.closed and m.yes_price > 0.001]
+
+        # Build the outcomes table for the LLM
+        outcomes_text = "\n".join(
+            f"  - {m.outcome_label}: market price = {m.yes_price:.1%}"
+            for m in active_markets
+        )
+
+        # News context
+        news_text = "None"
+        if news_signals:
+            sorted_signals = sorted(news_signals, key=lambda x: x.relevance, reverse=True)[:10]
+            news_items = []
+            for s in sorted_signals:
+                news_items.append(f"  - [{s.sentiment or 'neutral'}] {s.title} ({s.source})")
+            news_text = "\n".join(news_items)
+
+        prompt = f"""Analyze this multi-outcome prediction market and predict probabilities for each outcome.
+
+EVENT: {event.title}
+DESCRIPTION: {(event.description or '')[:500]}
+END DATE: {event.end_date.isoformat() if event.end_date else 'Unknown'}
+VOLUME: ${event.volume:,.0f} | LIQUIDITY: ${event.liquidity:,.0f}
+
+OUTCOMES AND CURRENT MARKET PRICES:
+{outcomes_text}
+
+NEWS SIGNALS:
+{news_text}
+
+For each outcome, predict your probability (0-1). Your probabilities should sum to approximately 1.0.
+Focus on finding alpha — where the market might be over- or under-pricing an outcome.
+
+Respond in this exact JSON format:
+{{
+    "predictions": [
+        {{"outcome": "<label>", "probability": <float 0-1>, "reasoning": "<brief reasoning>"}},
+        ...
+    ],
+    "overall_analysis": "<1-2 sentence summary>"
+}}
+
+Include ALL outcomes listed above. Output valid JSON only."""
+
+        try:
+            client = Groq(api_key=self.groq_api_key)
+            response = client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": "You are an expert prediction market analyst. Analyze multi-outcome events and predict calibrated probabilities. Your probabilities across all outcomes should sum to approximately 1.0."},
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=0.2,
+                max_tokens=4000,
+            )
+
+            content = response.choices[0].message.content.strip()
+            data = None
+
+            # Parse JSON
+            code_match = re.search(r'```json\s*(\{[\s\S]*?\})\s*```', content)
+            if code_match:
+                try:
+                    data = json.loads(code_match.group(1))
+                except json.JSONDecodeError:
+                    pass
+
+            if data is None:
+                start = content.find('{')
+                if start >= 0:
+                    depth = 0
+                    for i, ch in enumerate(content[start:], start):
+                        if ch == '{':
+                            depth += 1
+                        elif ch == '}':
+                            depth -= 1
+                            if depth == 0:
+                                try:
+                                    data = json.loads(content[start:i+1])
+                                except json.JSONDecodeError:
+                                    pass
+                                break
+
+            if not data or "predictions" not in data:
+                # Fallback: return market prices as predictions
+                return [
+                    {"outcome": m.outcome_label, "market_price": m.yes_price,
+                     "predicted_prob": m.yes_price, "reasoning": "Could not parse LLM response"}
+                    for m in active_markets
+                ]
+
+            # Match LLM predictions to markets
+            llm_preds = {p["outcome"].lower(): p for p in data["predictions"]}
+            results = []
+            for m in active_markets:
+                label_lower = m.outcome_label.lower()
+                # Try exact match, then substring match
+                pred = llm_preds.get(label_lower)
+                if not pred:
+                    for k, v in llm_preds.items():
+                        if k in label_lower or label_lower in k:
+                            pred = v
+                            break
+
+                raw_prob = float(pred["probability"]) if pred else m.yes_price
+                reasoning = pred.get("reasoning", "") if pred else ""
+
+                # Apply calibration blend
+                cal_market = self._calibration_correct(m.yes_price)
+                llm_weight = 0.4
+                blended = cal_market * (1 - llm_weight) + raw_prob * llm_weight
+                blended = max(0.01, min(0.99, blended))
+
+                results.append({
+                    "outcome": m.outcome_label,
+                    "market_price": m.yes_price,
+                    "predicted_prob": blended,
+                    "raw_llm_prob": raw_prob,
+                    "reasoning": reasoning,
+                })
+
+            # Sort by predicted probability descending
+            results.sort(key=lambda x: x["predicted_prob"], reverse=True)
+            return results
+
+        except Exception as e:
+            print(f"Error in multi-choice prediction: {e}")
+            return [
+                {"outcome": m.outcome_label, "market_price": m.yes_price,
+                 "predicted_prob": m.yes_price, "reasoning": f"Error: {str(e)}"}
+                for m in active_markets
+            ]
 
     @staticmethod
     def _calibration_correct(p: float) -> float:

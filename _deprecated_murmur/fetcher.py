@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 
 import httpx
 
-from .models import Event, OrderBook, OrderBookLevel, OutcomeToken, PricePoint
+from .models import Event, Market, OrderBook, OrderBookLevel, OutcomeToken, PricePoint
 
 # API endpoints
 CLOB_API_BASE = "https://clob.polymarket.com"
@@ -131,9 +131,29 @@ class PolymarketFetcher:
                 return default or []
         return value if value else (default or [])
 
+    @staticmethod
+    def _extract_outcome_label(question: str, event_title: str) -> str:
+        """Extract the outcome label from a market question.
+        E.g., 'Will Michigan win the 2026 NCAA Tournament?' → 'Michigan'
+        """
+        q = question.strip().rstrip("?")
+        # Try "Will X win/hit/be/reach..." pattern
+        match = re.match(r'^Will\s+(.+?)\s+(?:win|hit|be|reach|beat|finish|pass|enter|visit)', q, re.IGNORECASE)
+        if match:
+            return match.group(1).strip()
+        # Try "Will X ..." generic
+        match = re.match(r'^Will\s+(.+?)\s+', q, re.IGNORECASE)
+        if match:
+            label = match.group(1).strip()
+            if len(label) < 60:
+                return label
+        # Fallback: use the question minus the event title
+        return q[:60]
+
     def _parse_event(self, data: dict) -> Event:
         """Parse event data from Gamma API response."""
         tokens = []
+        parsed_markets = []
         markets = data.get("markets", [])
 
         for market in markets:
@@ -141,6 +161,26 @@ class PolymarketFetcher:
             outcomes = self._parse_json_field(market.get("outcomes"), ["Yes", "No"])
             prices = self._parse_json_field(market.get("outcomePrices"), ["0.5", "0.5"])
             token_ids = self._parse_json_field(market.get("clobTokenIds"), ["", ""])
+
+            # Find YES price and token_id
+            yes_price = 0.5
+            yes_token_id = ""
+            for i, outcome in enumerate(outcomes):
+                if outcome.lower() in ("yes", "true", "1"):
+                    yes_price = float(prices[i]) if i < len(prices) else 0.5
+                    yes_token_id = token_ids[i] if i < len(token_ids) else ""
+                    break
+
+            question = market.get("question", "")
+            # Prefer groupItemTitle for cleaner labels (e.g. "↑ $120", "Arizona")
+            label = market.get("groupItemTitle") or self._extract_outcome_label(question, data.get("title", ""))
+            parsed_markets.append(Market(
+                question=question,
+                outcome_label=label,
+                yes_price=yes_price,
+                token_id=yes_token_id or market.get("conditionId", ""),
+                closed=market.get("closed", False),
+            ))
 
             for i, outcome in enumerate(outcomes):
                 token_id = token_ids[i] if i < len(token_ids) else ""
@@ -195,6 +235,7 @@ class PolymarketFetcher:
             outcome=outcome,
             outcome_price=outcome_price,
             tokens=tokens,
+            markets=parsed_markets,
             volume=float(data.get("volume", 0) or 0),
             liquidity=float(data.get("liquidity", 0) or 0),
         )
