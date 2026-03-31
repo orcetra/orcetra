@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orcetra — Open-Source AutoML Prediction Engine</title>
-    <meta name="description" content="LLM-guided automated prediction engine. Give it any CSV, it finds the best model. pip install orcetra. Verified on 1,974+ real predictions.">
+    <meta name="description" content="LLM-guided automated prediction engine. Give it any CSV, it finds the best model. pip install orcetra. Wins 57% on 513 OpenML datasets. Verified on 3,698+ real predictions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -839,7 +839,7 @@
                         </a>
                     </div>
                     <div class="social-proof-hero">
-                        Verified on <span class="highlight">1,974+ predictions</span> • Built with CMU AI research
+                        Verified on <span class="highlight">3,698+ predictions</span> • Wins <span class="highlight">57%</span> on 513 OpenML datasets • Built with CMU AI research
                     </div>
                 </div>
                 <div class="hero-right">
@@ -856,16 +856,16 @@
                             <div class="chart-legend">
                                 <div class="legend-item">
                                     <div class="legend-dot legend-market"></div>
-                                    <span>Market (65.3%)</span>
+                                    <span>Market Baseline</span>
                                 </div>
                                 <div class="legend-item">
                                     <div class="legend-dot legend-orcetra"></div>
-                                    <span>Orcetra (70.2%)</span>
+                                    <span>Orcetra (66.6%)</span>
                                 </div>
                             </div>
                             <div class="flying-numbers">
-                                <div class="number-animate">70.2%+</div>
-                                <div class="number-animate">1,974+</div>
+                                <div class="number-animate">57.1%</div>
+                                <div class="number-animate">3,698+</div>
                                 <div class="number-animate">24/7</div>
                             </div>
                         </div>
@@ -880,24 +880,24 @@
         <div class="container">
             <div class="stats-grid fade-in">
                 <div class="stat-card">
-                    <div class="stat-number">70.2%+</div>
-                    <div class="stat-label">Beat Rate</div>
-                    <div class="stat-description">Outperforming market consensus</div>
+                    <div class="stat-number">57.1%</div>
+                    <div class="stat-label">Win Rate</div>
+                    <div class="stat-description">Beats AutoGluon &amp; FLAML on 513 datasets</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">1,974+</div>
+                    <div class="stat-number">3,698+</div>
                     <div class="stat-label">Predictions</div>
                     <div class="stat-description">Resolved and verified</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">89.7%</div>
+                    <div class="stat-number">91.1%</div>
                     <div class="stat-label">Golf</div>
                     <div class="stat-description">Top performing category</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">76.2%</div>
+                    <div class="stat-number">72.9%</div>
                     <div class="stat-label">Politics</div>
-                    <div class="stat-description">Election accuracy</div>
+                    <div class="stat-description">Election &amp; policy accuracy</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">24/7</div>
@@ -950,6 +950,67 @@
                     <div class="step-icon">✅</div>
                     <h3>Verify</h3>
                     <p>Generates calibrated predictions and tracks accuracy against resolved outcomes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benchmark Results -->
+    <section style="padding: 80px 0; background: var(--bg-primary);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Benchmark Results</h2>
+                <p class="section-subtitle">
+                    Tested on 513 OpenML datasets with a 60-second budget per dataset. Three-way comparison against leading AutoML frameworks.
+                </p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Overall Results -->
+                <div class="fade-in" style="background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 1rem; padding: 2rem; margin-bottom: 1.5rem;">
+                    <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">Overall — 513 Datasets</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span style="font-weight: 600;">Orcetra</span>
+                                <span style="font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">57.1%</span>
+                            </div>
+                            <div style="height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 57.1%; height: 100%; background: var(--accent-gradient); border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span style="font-weight: 600;">AutoGluon</span>
+                                <span style="color: var(--text-secondary);">21.6%</span>
+                            </div>
+                            <div style="height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 21.6%; height: 100%; background: var(--text-secondary); border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span style="font-weight: 600;">FLAML</span>
+                                <span style="color: var(--text-secondary);">10.9%</span>
+                            </div>
+                            <div style="height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 10.9%; height: 100%; background: var(--text-tertiary); border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0.5rem;">Tie: 10.3% • 60-second budget • CPU only</div>
+                    </div>
+                </div>
+                <!-- Classification & Regression -->
+                <div class="fade-in" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div style="background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 1rem; padding: 1.5rem;">
+                        <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1rem; margin-bottom: 1rem; color: var(--text-secondary);">Classification (382)</h3>
+                        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">58.4%</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">vs AutoGluon 17.5% · FLAML 11.3%</div>
+                    </div>
+                    <div style="background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 1rem; padding: 1.5rem;">
+                        <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1rem; margin-bottom: 1rem; color: var(--text-secondary);">Regression (131)</h3>
+                        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">53.4%</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">vs AutoGluon 33.6% · FLAML 9.9%</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1047,7 +1108,7 @@
             <div class="cta-content fade-in">
                 <h2 class="cta-title">See It In Action</h2>
                 <p class="cta-subtitle">
-                    Explore our live dashboard with 1,974+ verified predictions and real-time analysis
+                    Explore our live dashboard with 3,698+ verified predictions and real-time analysis
                 </p>
                 <a href="dashboard.html" class="btn btn-cta">
                     Live Dashboard →
