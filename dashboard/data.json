@@ -1,21 +1,21 @@
 {
   "summary": {
-    "total_predictions": 28862,
-    "resolved": 3281,
-    "pending": 25581,
-    "beat_rate": 0.6848521792136544,
-    "avg_orcetra_brier": 0.21622618104236513,
-    "avg_market_brier": 0.2259863761048461,
-    "last_updated": "2026-03-31T12:00:09.410674+00:00",
+    "total_predictions": 29573,
+    "resolved": 3479,
+    "pending": 26094,
+    "beat_rate": 0.6892785283127335,
+    "avg_orcetra_brier": 0.21463774073009484,
+    "avg_market_brier": 0.22458358723771196,
+    "last_updated": "2026-03-31T18:00:35.879112+00:00",
     "crypto_binary_excluded": 417
   },
   "by_tag": {
     "sports": {
-      "total": 2696,
-      "beat": 1794,
-      "rate": 0.6654302670623146,
-      "avg_our_brier": 0.22485192878338278,
-      "avg_mkt_brier": 0.23432032640949557
+      "total": 2835,
+      "beat": 1900,
+      "rate": 0.6701940035273368,
+      "avg_our_brier": 0.22369382716049382,
+      "avg_mkt_brier": 0.23355097001763667
     },
     "golf": {
       "total": 191,
@@ -25,18 +25,18 @@
       "avg_mkt_brier": 0.2223109947643979
     },
     "economy": {
-      "total": 51,
+      "total": 52,
       "beat": 35,
-      "rate": 0.6862745098039216,
-      "avg_our_brier": 0.18609411764705883,
-      "avg_mkt_brier": 0.18548431372549018
+      "rate": 0.6730769230769231,
+      "avg_our_brier": 0.18799423076923077,
+      "avg_mkt_brier": 0.1866865384615385
     },
     "politics": {
-      "total": 325,
-      "beat": 237,
-      "rate": 0.7292307692307692,
-      "avg_our_brier": 0.16818123076923078,
-      "avg_mkt_brier": 0.16988646153846154
+      "total": 383,
+      "beat": 282,
+      "rate": 0.7362924281984334,
+      "avg_our_brier": 0.16629086161879894,
+      "avg_mkt_brier": 0.1682524804177546
     },
     "commodities": {
       "total": 15,
@@ -561,6 +561,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Any Player Quadra Kill?",
+      "tag": "sports",
+      "orcetra": 0.117,
+      "market": 0.235,
+      "actual": 0.0,
+      "our_brier": 0.0137,
+      "mkt_brier": 0.0552,
+      "beat": true,
+      "spread": 0.118,
+      "reasoning": ""
+    },
+    {
       "q": "Game 1: Both Teams Destroy Barracks?",
       "tag": "sports",
       "orcetra": 0.116,
@@ -646,6 +658,30 @@
     },
     {
       "q": "Barrow AFC vs. Bromley FC: O/U 3.5",
+      "tag": "sports",
+      "orcetra": 0.146,
+      "market": 0.26,
+      "actual": 0.0,
+      "our_brier": 0.0213,
+      "mkt_brier": 0.0676,
+      "beat": true,
+      "spread": 0.114,
+      "reasoning": "Market price: 0.26. Sports question detected \u2192 using calibrated market only: 0.260 \u2192 0.146. Final: 0.146 (confidence: 0.4)"
+    },
+    {
+      "q": "Game 1: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.116,
+      "market": 0.23,
+      "actual": 0.0,
+      "our_brier": 0.0135,
+      "mkt_brier": 0.0529,
+      "beat": true,
+      "spread": 0.114,
+      "reasoning": ""
+    },
+    {
+      "q": "Alexander Shevchenko vs. Radu David Turcanu: Total Sets O/U 2.5",
       "tag": "sports",
       "orcetra": 0.146,
       "market": 0.26,
@@ -931,6 +967,18 @@
       "beat": true,
       "spread": 0.102,
       "reasoning": "Market price: 0.21. Sports question detected \u2192 using calibrated market only: 0.215 \u2192 0.113. Final: 0.113 (confidence: 0.4)"
+    },
+    {
+      "q": "Game 1: Both Teams Destroy Inhibitors?",
+      "tag": "sports",
+      "orcetra": 0.113,
+      "market": 0.215,
+      "actual": 0.0,
+      "our_brier": 0.0128,
+      "mkt_brier": 0.0462,
+      "beat": true,
+      "spread": 0.102,
+      "reasoning": ""
     },
     {
       "q": "Will Patrick Rodgers finish in the Top 10 at the 2026 THE PLAYERS Championship?",
@@ -1401,6 +1449,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.198,
+      "market": 0.28,
+      "actual": 0.0,
+      "our_brier": 0.0392,
+      "mkt_brier": 0.0784,
+      "beat": true,
+      "spread": 0.082,
+      "reasoning": ""
+    },
+    {
       "q": "Game 1: Both Teams Beat Roshan?",
       "tag": "sports",
       "orcetra": 0.107,
@@ -1493,6 +1553,18 @@
       "our_brier": 0.0296,
       "mkt_brier": 0.0625,
       "beat": true,
+      "spread": 0.078,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.172,
+      "market": 0.25,
+      "actual": 1.0,
+      "our_brier": 0.6856,
+      "mkt_brier": 0.5625,
+      "beat": false,
       "spread": 0.078,
       "reasoning": ""
     },
@@ -1697,6 +1769,18 @@
       "our_brier": 0.0112,
       "mkt_brier": 0.0324,
       "beat": true,
+      "spread": 0.074,
+      "reasoning": ""
+    },
+    {
+      "q": "Game Handicap: BLG (-2.5) vs G2 Esports (+2.5)",
+      "tag": "sports",
+      "orcetra": 0.211,
+      "market": 0.285,
+      "actual": 1.0,
+      "our_brier": 0.6225,
+      "mkt_brier": 0.5112,
+      "beat": false,
       "spread": 0.074,
       "reasoning": ""
     },
@@ -2035,6 +2119,18 @@
       "beat": true,
       "spread": 0.07,
       "reasoning": "Market price: 0.45. Sports question detected \u2192 using calibrated market only: 0.450 \u2192 0.380. Final: 0.380 (confidence: 0.4)"
+    },
+    {
+      "q": "Game 1: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.105,
+      "market": 0.175,
+      "actual": 0.0,
+      "our_brier": 0.011,
+      "mkt_brier": 0.0306,
+      "beat": true,
+      "spread": 0.07,
+      "reasoning": ""
     },
     {
       "q": "Will Max Greyserman finish in the Top 10 at the 2026 THE PLAYERS Championship?",
@@ -2407,6 +2503,42 @@
       "beat": false,
       "spread": 0.0684,
       "reasoning": "Market price: 0.26. Calibration-corrected market: 0.146. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.260 \u2192 0.192. Final: 0.192 (confidence: 0.5)"
+    },
+    {
+      "q": "Game 3: Both Teams Slay Baron Nashor?",
+      "tag": "sports",
+      "orcetra": 0.1616,
+      "market": 0.23,
+      "actual": 0.0,
+      "our_brier": 0.0261,
+      "mkt_brier": 0.0529,
+      "beat": true,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Any Player Quadra Kill?",
+      "tag": "sports",
+      "orcetra": 0.1616,
+      "market": 0.23,
+      "actual": 0.0,
+      "our_brier": 0.0261,
+      "mkt_brier": 0.0529,
+      "beat": true,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Soleimani\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.1916,
+      "market": 0.26,
+      "actual": 1.0,
+      "our_brier": 0.6535,
+      "mkt_brier": 0.5476,
+      "beat": false,
+      "spread": 0.0684,
+      "reasoning": ""
     },
     {
       "q": "Set 1 Winner: Trungelliti vs Kolar",
@@ -3561,6 +3693,18 @@
       "reasoning": "Market price: 0.27. Calibration-corrected market: 0.159. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.265 \u2192 0.201. Final: 0.201 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump say \"Daddy\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.1564,
+      "market": 0.22,
+      "actual": 0.0,
+      "our_brier": 0.0245,
+      "mkt_brier": 0.0484,
+      "beat": true,
+      "spread": 0.0636,
+      "reasoning": ""
+    },
+    {
       "q": "Trungelliti vs. Kolar: Match O/U 22.5",
       "tag": "sports",
       "orcetra": 0.422,
@@ -4018,6 +4162,18 @@
     },
     {
       "q": "Will Donald Trump post 100-119 Truth Social posts from March 17 to March 24, 202",
+      "tag": "politics",
+      "orcetra": 0.1538,
+      "market": 0.215,
+      "actual": 0.0,
+      "our_brier": 0.0237,
+      "mkt_brier": 0.0462,
+      "beat": true,
+      "spread": 0.0612,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Jake Paul\" on Truth Social this week?",
       "tag": "politics",
       "orcetra": 0.1538,
       "market": 0.215,
@@ -4541,6 +4697,54 @@
       "our_brier": 0.3204,
       "mkt_brier": 0.255,
       "beat": false,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 31.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 29.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 31.5 in Game 4?",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
+      "spread": 0.061,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 32.5 in Game 5?",
+      "tag": "sports",
+      "orcetra": 0.434,
+      "market": 0.495,
+      "actual": 0.0,
+      "our_brier": 0.1884,
+      "mkt_brier": 0.245,
+      "beat": true,
       "spread": 0.061,
       "reasoning": ""
     },
@@ -9525,6 +9729,438 @@
       "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
     },
     {
+      "q": "Total Kills Over/Under 31.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 28.5 in Game 3?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 30.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 30.5 in Game 5?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 30.5 in Game 3?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 29.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 28.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 28.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 32.5 in Game 4?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 32.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 29.5 in Game 3?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 30.5 in Game 4?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 28.5 in Game 4?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 31.5 in Game 3?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 32.5 in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 28.5 in Game 5?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 30.5 in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 29.5 in Game 5?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 4: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 5: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game Handicap: VIT (-1.5) vs Team Heretics (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Slay Baron Nashor?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Slay a Dragon?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Both Teams Destroy Inhibitors?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Penta Kill?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map Handicap: MK (-1.5) vs ShindeN (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.44,
+      "actual": 0.0,
+      "our_brier": 0.1444,
+      "mkt_brier": 0.1936,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Indian Premier League: Royal Challengers Bangalore vs Sunrisers Hyderabad - Who ",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Indian Premier League: Royal Challengers Bangalore vs Sunrisers Hyderabad - Comp",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
       "q": "Jubb vs. Mrva: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.446,
@@ -12573,6 +13209,162 @@
       "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
     },
     {
+      "q": "Total Kills Over/Under 29.5 in Game 4?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "First Blood in Game 1?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: AVULUS vs Team Shpilit - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Game Handicap: AVL (-1.5) vs Team Shpilit (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Quadra Kill?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": ""
+    },
+    {
+      "q": "Shevchenko vs. Turcanu: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Shevchenko vs. Turcanu: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Shevchenko vs. Turcanu: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Shevchenko vs. Turcanu: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Shevchenko vs. Turcanu: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
       "q": "Game 2: Any Player Rampage?",
       "tag": "sports",
       "orcetra": 0.1512,
@@ -12739,6 +13531,54 @@
       "beat": true,
       "spread": 0.0588,
       "reasoning": "Market price: 0.27. Calibration-corrected market: 0.172. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.270 \u2192 0.211. Final: 0.211 (confidence: 0.5)"
+    },
+    {
+      "q": "Game 2: Both Teams Destroy Inhibitors?",
+      "tag": "sports",
+      "orcetra": 0.1512,
+      "market": 0.21,
+      "actual": 0.0,
+      "our_brier": 0.0229,
+      "mkt_brier": 0.0441,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Destroy Inhibitors?",
+      "tag": "sports",
+      "orcetra": 0.1512,
+      "market": 0.21,
+      "actual": 0.0,
+      "our_brier": 0.0229,
+      "mkt_brier": 0.0441,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Ayatollah\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.2112,
+      "market": 0.27,
+      "actual": 0.0,
+      "our_brier": 0.0446,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Greenland\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.1512,
+      "market": 0.21,
+      "actual": 0.0,
+      "our_brier": 0.0229,
+      "mkt_brier": 0.0441,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
     },
     {
       "q": "Jubb vs. Mrva: Match O/U 23.5",
@@ -13651,6 +14491,30 @@
       "beat": false,
       "spread": 0.058,
       "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.510 \u2192 0.452. Final: 0.452 (confidence: 0.4)"
+    },
+    {
+      "q": "Total Kills Over/Under 32.5 in Game 3?",
+      "tag": "sports",
+      "orcetra": 0.452,
+      "market": 0.51,
+      "actual": 1.0,
+      "our_brier": 0.3003,
+      "mkt_brier": 0.2401,
+      "beat": false,
+      "spread": 0.058,
+      "reasoning": ""
+    },
+    {
+      "q": "Total Kills Over/Under 31.5 in Game 5?",
+      "tag": "sports",
+      "orcetra": 0.452,
+      "market": 0.51,
+      "actual": 0.0,
+      "our_brier": 0.2043,
+      "mkt_brier": 0.2601,
+      "beat": true,
+      "spread": 0.058,
+      "reasoning": ""
     },
     {
       "q": "Games Total: O/U 2.5",
@@ -14793,6 +15657,18 @@
       "reasoning": ""
     },
     {
+      "q": "LoL: Team Heretics vs Team Vitality - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": ""
+    },
+    {
       "q": "Will Rasmus Hojgaard finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -15177,6 +16053,30 @@
       "reasoning": ""
     },
     {
+      "q": "Dota 2: AVULUS vs Team Shpilit (BO3) - PREMIER SERIES Play-In Group A",
+      "tag": "sports",
+      "orcetra": 0.47,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2209,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.055,
+      "reasoning": ""
+    },
+    {
+      "q": "Shevchenko vs. Turcanu: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.47,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2209,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.055,
+      "reasoning": "Market price: 0.53. Sports question detected \u2192 using calibrated market only: 0.525 \u2192 0.470. Final: 0.470 (confidence: 0.4)"
+    },
+    {
       "q": "Tobon vs. Ficovich: Set 1 Games O/U 9.5",
       "tag": "sports",
       "orcetra": 0.476,
@@ -15513,6 +16413,18 @@
       "reasoning": "Market price: 0.53. Sports question detected \u2192 using calibrated market only: 0.530 \u2192 0.476. Final: 0.476 (confidence: 0.4)"
     },
     {
+      "q": "Will Trump post \"Mutilization\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.221,
+      "market": 0.275,
+      "actual": 1.0,
+      "our_brier": 0.6068,
+      "mkt_brier": 0.5256,
+      "beat": false,
+      "spread": 0.054,
+      "reasoning": ""
+    },
+    {
       "q": "Will Khamenei post 100-119 posts from March 17 to March 24, 2026?",
       "tag": "politics",
       "orcetra": 0.222,
@@ -15811,6 +16723,18 @@
       "beat": true,
       "spread": 0.051,
       "reasoning": "Market price: 0.55. Sports question detected \u2192 using calibrated market only: 0.545 \u2192 0.494. Final: 0.494 (confidence: 0.4)"
+    },
+    {
+      "q": "Indian Premier League: Royal Challengers Bangalore vs Sunrisers Hyderabad",
+      "tag": "sports",
+      "orcetra": 0.494,
+      "market": 0.545,
+      "actual": 1.0,
+      "our_brier": 0.256,
+      "mkt_brier": 0.207,
+      "beat": false,
+      "spread": 0.051,
+      "reasoning": ""
     },
     {
       "q": "Will Andrew Putnam finish in the Top 10 at the 2026 THE PLAYERS Championship?",
@@ -16216,6 +17140,18 @@
       "actual": 0.0,
       "our_brier": 0.0198,
       "mkt_brier": 0.0361,
+      "beat": true,
+      "spread": 0.0492,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.2308,
+      "market": 0.28,
+      "actual": 0.0,
+      "our_brier": 0.0533,
+      "mkt_brier": 0.0784,
       "beat": true,
       "spread": 0.0492,
       "reasoning": ""
@@ -16749,6 +17685,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Any Player Penta Kill?",
+      "tag": "sports",
+      "orcetra": 0.1356,
+      "market": 0.18,
+      "actual": 0.0,
+      "our_brier": 0.0184,
+      "mkt_brier": 0.0324,
+      "beat": true,
+      "spread": 0.0444,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Ass\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.1356,
+      "market": 0.18,
+      "actual": 0.0,
+      "our_brier": 0.0184,
+      "mkt_brier": 0.0324,
+      "beat": true,
+      "spread": 0.0444,
+      "reasoning": ""
+    },
+    {
       "q": "Set 1 Winner: Dzumhur vs Sinner",
       "tag": "sports",
       "orcetra": 0.096,
@@ -17047,6 +18007,18 @@
       "beat": false,
       "spread": 0.042,
       "reasoning": "Market price: 0.17. Calibration-corrected market: 0.105. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.175 \u2192 0.133. Final: 0.133 (confidence: 0.5)"
+    },
+    {
+      "q": "Game 3: Any Player Penta Kill?",
+      "tag": "sports",
+      "orcetra": 0.133,
+      "market": 0.175,
+      "actual": 0.0,
+      "our_brier": 0.0177,
+      "mkt_brier": 0.0306,
+      "beat": true,
+      "spread": 0.042,
+      "reasoning": ""
     },
     {
       "q": "Map 1: Odd/Even Total Rounds?",
@@ -17841,6 +18813,30 @@
       "reasoning": "Market price: 0.47. Calibration-corrected market: 0.404. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.470 \u2192 0.430. Final: 0.430 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump post \"Mamdani\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.1304,
+      "market": 0.17,
+      "actual": 0.0,
+      "our_brier": 0.017,
+      "mkt_brier": 0.0289,
+      "beat": true,
+      "spread": 0.0396,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Lawsuit\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.4304,
+      "market": 0.47,
+      "actual": 0.0,
+      "our_brier": 0.1852,
+      "mkt_brier": 0.2209,
+      "beat": true,
+      "spread": 0.0396,
+      "reasoning": ""
+    },
+    {
       "q": "Tabilo vs. Michelsen: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.5255,
@@ -18141,6 +19137,42 @@
       "reasoning": "Market price: 0.47. Calibration-corrected market: 0.410. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.475 \u2192 0.436. Final: 0.436 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump post \"Hamas\" or \"Hezbollah\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.436,
+      "market": 0.475,
+      "actual": 0.0,
+      "our_brier": 0.1901,
+      "mkt_brier": 0.2256,
+      "beat": true,
+      "spread": 0.039,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Texas\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.406,
+      "market": 0.445,
+      "actual": 1.0,
+      "our_brier": 0.3528,
+      "mkt_brier": 0.308,
+      "beat": false,
+      "spread": 0.039,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Hormuz\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.436,
+      "market": 0.475,
+      "actual": 0.0,
+      "our_brier": 0.1901,
+      "mkt_brier": 0.2256,
+      "beat": true,
+      "spread": 0.039,
+      "reasoning": ""
+    },
+    {
       "q": "Will William Mouw finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.0924,
@@ -18257,6 +19289,30 @@
       "our_brier": 0.3118,
       "mkt_brier": 0.2704,
       "beat": false,
+      "spread": 0.0384,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"SOTU\" or \"State of the Union\" or \"State of Our Union\"on Truth S",
+      "tag": "politics",
+      "orcetra": 0.4416,
+      "market": 0.48,
+      "actual": 0.0,
+      "our_brier": 0.195,
+      "mkt_brier": 0.2304,
+      "beat": true,
+      "spread": 0.0384,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Son\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.4416,
+      "market": 0.48,
+      "actual": 0.0,
+      "our_brier": 0.195,
+      "mkt_brier": 0.2304,
+      "beat": true,
       "spread": 0.0384,
       "reasoning": ""
     },
@@ -18511,6 +19567,18 @@
       "beat": true,
       "spread": 0.0378,
       "reasoning": "Market price: 0.48. Calibration-corrected market: 0.422. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.485 \u2192 0.447. Final: 0.447 (confidence: 0.5)"
+    },
+    {
+      "q": "LoL: Team Heretics vs Team Vitality (BO3) - LEC Group Stage",
+      "tag": "sports",
+      "orcetra": 0.4472,
+      "market": 0.485,
+      "actual": 0.0,
+      "our_brier": 0.2,
+      "mkt_brier": 0.2352,
+      "beat": true,
+      "spread": 0.0378,
+      "reasoning": ""
     },
     {
       "q": "Will Elon Musk post 220-239 tweets from March 13 to March 20, 2026?",
@@ -25461,6 +26529,246 @@
       "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
     },
     {
+      "q": "First Blood in Game 3?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 4: Both Teams Slay a Dragon?",
+      "tag": "sports",
+      "orcetra": 0.404,
+      "market": 0.44,
+      "actual": 0.0,
+      "our_brier": 0.1632,
+      "mkt_brier": 0.1936,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 4: Any Player Penta Kill?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 5: Both Teams Slay a Dragon?",
+      "tag": "sports",
+      "orcetra": 0.404,
+      "market": 0.44,
+      "actual": 0.0,
+      "our_brier": 0.1632,
+      "mkt_brier": 0.1936,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 5: Any Player Penta Kill?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Epic Fury\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.404,
+      "market": 0.44,
+      "actual": 0.0,
+      "our_brier": 0.1632,
+      "mkt_brier": 0.1936,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Slay Baron Nashor?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Destroy Inhibitors?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Penta Kill?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Slay Baron Nashor?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Slay a Dragon?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Destroy Inhibitors?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Any Player Quadra Kill?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: ShindeN vs Melser Kindergarten (BO3) - VCL Latin America South Playoff",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: ShindeN vs Melser Kindergarten - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Valorant: ShindeN vs Melser Kindergarten - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": ""
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 2: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 3: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 28 be less than 2,600,000?",
+      "tag": "economy",
+      "orcetra": 0.4662,
+      "market": 0.502,
+      "actual": 1.0,
+      "our_brier": 0.2849,
+      "mkt_brier": 0.248,
+      "beat": false,
+      "spread": 0.0358,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.442. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.502 \u2192 0.466. Final: 0.466 (confidence: 0.5)"
+    },
+    {
       "q": "Will Elon Musk post 260-279 tweets from March 10 to March 17, 2026?",
       "tag": "politics",
       "orcetra": 0.4674,
@@ -27261,6 +28569,102 @@
       "reasoning": "Market price: 0.51. Calibration-corrected market: 0.446. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.505 \u2192 0.470. Final: 0.470 (confidence: 0.5)"
     },
     {
+      "q": "First Blood in Game 5?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "First Blood in Game 2?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "First Blood in Game 4?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Ends in Daytime?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Slay a Dragon?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.2813,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Quadra Kill?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Any Player Penta Kill?",
+      "tag": "sports",
+      "orcetra": 0.4696,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.2205,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.0354,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post <40 tweets from March 28 to March 30, 2026?",
       "tag": "politics",
       "orcetra": 0.1257,
@@ -28185,6 +29589,18 @@
       "reasoning": "Market price: 0.51. Calibration-corrected market: 0.452. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.510 \u2192 0.475. Final: 0.475 (confidence: 0.5)"
     },
     {
+      "q": "Game 3: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.4752,
+      "market": 0.51,
+      "actual": 0.0,
+      "our_brier": 0.2258,
+      "mkt_brier": 0.2601,
+      "beat": true,
+      "spread": 0.0348,
+      "reasoning": ""
+    },
+    {
       "q": "Game 3: Both Teams Destroy Inhibitors?",
       "tag": "sports",
       "orcetra": 0.4808,
@@ -28605,6 +30021,30 @@
       "reasoning": "Market price: 0.52. Calibration-corrected market: 0.458. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.515 \u2192 0.481. Final: 0.481 (confidence: 0.5)"
     },
     {
+      "q": "Game 4: Both Teams Destroy Inhibitors?",
+      "tag": "sports",
+      "orcetra": 0.4808,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2312,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.0342,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 5: Both Teams Destroy Inhibitors?",
+      "tag": "sports",
+      "orcetra": 0.4808,
+      "market": 0.515,
+      "actual": 0.0,
+      "our_brier": 0.2312,
+      "mkt_brier": 0.2652,
+      "beat": true,
+      "spread": 0.0342,
+      "reasoning": ""
+    },
+    {
       "q": "LoL: G2 NORD vs Witchcraft - Game 1 Winner",
       "tag": "sports",
       "orcetra": 0.276,
@@ -28666,6 +30106,30 @@
     },
     {
       "q": "Map Handicap: B8 (-1.5) vs NRG (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.276,
+      "market": 0.31,
+      "actual": 0.0,
+      "our_brier": 0.0762,
+      "mkt_brier": 0.0961,
+      "beat": true,
+      "spread": 0.034,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.276,
+      "market": 0.31,
+      "actual": 1.0,
+      "our_brier": 0.5242,
+      "mkt_brier": 0.4761,
+      "beat": false,
+      "spread": 0.034,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
       "tag": "sports",
       "orcetra": 0.276,
       "market": 0.31,
@@ -29205,6 +30669,30 @@
       "reasoning": "Market price: 0.52. Calibration-corrected market: 0.464. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.520 \u2192 0.486. Final: 0.486 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump post \"Cornyn\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.4864,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2366,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.0336,
+      "reasoning": ""
+    },
+    {
+      "q": "Dota 2: AVULUS vs Team Shpilit - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.4864,
+      "market": 0.52,
+      "actual": 1.0,
+      "our_brier": 0.2638,
+      "mkt_brier": 0.2304,
+      "beat": false,
+      "spread": 0.0336,
+      "reasoning": ""
+    },
+    {
       "q": "Kigali 2: Marco Trungelliti vs Zdenek Kolar",
       "tag": "sports",
       "orcetra": 0.402,
@@ -29673,6 +31161,30 @@
       "reasoning": ""
     },
     {
+      "q": "Game 4: Both Teams Slay Baron Nashor?",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2421,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 5: Both Teams Slay Baron Nashor?",
+      "tag": "sports",
+      "orcetra": 0.492,
+      "market": 0.525,
+      "actual": 0.0,
+      "our_brier": 0.2421,
+      "mkt_brier": 0.2756,
+      "beat": true,
+      "spread": 0.033,
+      "reasoning": ""
+    },
+    {
       "q": "Will Chad Ramey finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -30033,6 +31545,54 @@
       "reasoning": ""
     },
     {
+      "q": "Game 4: Any Player Quadra Kill?",
+      "tag": "sports",
+      "orcetra": 0.4976,
+      "market": 0.53,
+      "actual": 0.0,
+      "our_brier": 0.2476,
+      "mkt_brier": 0.2809,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 5: Any Player Quadra Kill?",
+      "tag": "sports",
+      "orcetra": 0.4976,
+      "market": 0.53,
+      "actual": 0.0,
+      "our_brier": 0.2476,
+      "mkt_brier": 0.2809,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.4976,
+      "market": 0.53,
+      "actual": 0.0,
+      "our_brier": 0.2476,
+      "mkt_brier": 0.2809,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
+      "q": "LoL: Team Heretics vs Team Vitality - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.4976,
+      "market": 0.53,
+      "actual": 0.0,
+      "our_brier": 0.2476,
+      "mkt_brier": 0.2809,
+      "beat": true,
+      "spread": 0.0324,
+      "reasoning": ""
+    },
+    {
       "q": "Game 1: Both Teams Destroy Barracks?",
       "tag": "sports",
       "orcetra": 0.088,
@@ -30055,6 +31615,18 @@
       "beat": true,
       "spread": 0.032,
       "reasoning": "Market price: 0.12. Sports question detected \u2192 using calibrated market only: 0.120 \u2192 0.088. Final: 0.088 (confidence: 0.4)"
+    },
+    {
+      "q": "Game 1: Both Teams Slay Baron Nashor?",
+      "tag": "sports",
+      "orcetra": 0.088,
+      "market": 0.12,
+      "actual": 0.0,
+      "our_brier": 0.0077,
+      "mkt_brier": 0.0144,
+      "beat": true,
+      "spread": 0.032,
+      "reasoning": ""
     },
     {
       "q": "Will Powell say \"AI\" or \"Artificial Intelligence\" 3+ times during March press co",
@@ -30127,6 +31699,30 @@
       "beat": false,
       "spread": 0.0318,
       "reasoning": "Market price: 0.54. Calibration-corrected market: 0.482. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.535 \u2192 0.503. Final: 0.503 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump post \"RINO\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.5032,
+      "market": 0.535,
+      "actual": 1.0,
+      "our_brier": 0.2468,
+      "mkt_brier": 0.2162,
+      "beat": false,
+      "spread": 0.0318,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Both Teams Beat Roshan?",
+      "tag": "sports",
+      "orcetra": 0.5032,
+      "market": 0.535,
+      "actual": 0.0,
+      "our_brier": 0.2532,
+      "mkt_brier": 0.2862,
+      "beat": true,
+      "spread": 0.0318,
+      "reasoning": ""
     },
     {
       "q": "Game 3: Any Player Ultra Kill?",
@@ -30341,6 +31937,30 @@
       "our_brier": 0.2358,
       "mkt_brier": 0.207,
       "beat": false,
+      "spread": 0.0306,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Death to America\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.5144,
+      "market": 0.545,
+      "actual": 0.0,
+      "our_brier": 0.2646,
+      "mkt_brier": 0.297,
+      "beat": true,
+      "spread": 0.0306,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 3: Any Player Ultra Kill?",
+      "tag": "sports",
+      "orcetra": 0.5144,
+      "market": 0.545,
+      "actual": 0.0,
+      "our_brier": 0.2646,
+      "mkt_brier": 0.297,
+      "beat": true,
       "spread": 0.0306,
       "reasoning": ""
     },
@@ -30742,6 +32362,18 @@
     },
     {
       "q": "Will Donald Trump post 140-159 Truth Social posts from March 20 to March 27, 202",
+      "tag": "politics",
+      "orcetra": 0.27,
+      "market": 0.3,
+      "actual": 0.0,
+      "our_brier": 0.0729,
+      "mkt_brier": 0.09,
+      "beat": true,
+      "spread": 0.03,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Claude\" or \"Anthropic\" on Truth Social this week?",
       "tag": "politics",
       "orcetra": 0.27,
       "market": 0.3,
@@ -31785,6 +33417,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Any Player Quadra Kill?",
+      "tag": "sports",
+      "orcetra": 0.1072,
+      "market": 0.13,
+      "actual": 0.0,
+      "our_brier": 0.0115,
+      "mkt_brier": 0.0169,
+      "beat": true,
+      "spread": 0.0228,
+      "reasoning": ""
+    },
+    {
       "q": "Will Khamenei post 60-79 posts from March 17 to March 24, 2026?",
       "tag": "politics",
       "orcetra": 0.1062,
@@ -32061,6 +33705,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Trump say \"Obliterate\" or \"Obliterated\" or \"Obliterating\" during Taoiseach ",
+      "tag": "politics",
+      "orcetra": 0.5484,
+      "market": 0.57,
+      "actual": 1.0,
+      "our_brier": 0.2039,
+      "mkt_brier": 0.1849,
+      "beat": false,
+      "spread": 0.0216,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post 200-219 tweets from March 13 to March 20, 2026?",
       "tag": "politics",
       "orcetra": 0.1043,
@@ -32289,6 +33945,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 2: Both Teams Destroy Barracks?",
+      "tag": "sports",
+      "orcetra": 0.104,
+      "market": 0.125,
+      "actual": 1.0,
+      "our_brier": 0.8028,
+      "mkt_brier": 0.7656,
+      "beat": false,
+      "spread": 0.021,
+      "reasoning": ""
+    },
+    {
       "q": "Will Ludvig Aberg win the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -32350,6 +34018,18 @@
     },
     {
       "q": "Will Donald Trump post 120-139 Truth Social posts from March 20 to March 27, 202",
+      "tag": "politics",
+      "orcetra": 0.2896,
+      "market": 0.31,
+      "actual": 0.0,
+      "our_brier": 0.0839,
+      "mkt_brier": 0.0961,
+      "beat": true,
+      "spread": 0.0204,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Illinois\" on Truth Social this week?",
       "tag": "politics",
       "orcetra": 0.2896,
       "market": 0.31,
@@ -32579,6 +34259,18 @@
     {
       "q": "Will Donald Trump post 40-59 Truth Social posts from March 20 to March 27, 2026?",
       "tag": "politics",
+      "orcetra": 0.1008,
+      "market": 0.12,
+      "actual": 0.0,
+      "our_brier": 0.0102,
+      "mkt_brier": 0.0144,
+      "beat": true,
+      "spread": 0.0192,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Slay Baron Nashor?",
+      "tag": "sports",
       "orcetra": 0.1008,
       "market": 0.12,
       "actual": 0.0,
@@ -33129,6 +34821,30 @@
       "reasoning": "Market price: 0.35. Calibration-corrected market: 0.380. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.350 \u2192 0.368. Final: 0.368 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump post \"Hillary\" or \"Clinton\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.368,
+      "market": 0.35,
+      "actual": 0.0,
+      "our_brier": 0.1354,
+      "mkt_brier": 0.1225,
+      "beat": false,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Democrat Shutdown\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.392,
+      "market": 0.41,
+      "actual": 0.0,
+      "our_brier": 0.1537,
+      "mkt_brier": 0.1681,
+      "beat": true,
+      "spread": 0.018,
+      "reasoning": ""
+    },
+    {
       "q": "Another 7.0 or above earthquake by May 31, 2026?",
       "tag": "science",
       "orcetra": 0.8722,
@@ -33379,6 +35095,18 @@
       "beat": true,
       "spread": 0.0174,
       "reasoning": "Market price: 0.12. Calibration-corrected market: 0.086. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.115 \u2192 0.098. Final: 0.098 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump say \"Six Seven\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.0976,
+      "market": 0.115,
+      "actual": 0.0,
+      "our_brier": 0.0095,
+      "mkt_brier": 0.0132,
+      "beat": true,
+      "spread": 0.0174,
+      "reasoning": ""
     },
     {
       "q": "Will the total number of TSA passengers for March 16 - March 22 be greater than ",
@@ -33897,6 +35625,30 @@
       "reasoning": "Market price: 0.32. Calibration-corrected market: 0.289. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.315 \u2192 0.299. Final: 0.299 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump post \"Too Big to Rig\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.2994,
+      "market": 0.315,
+      "actual": 0.0,
+      "our_brier": 0.0896,
+      "mkt_brier": 0.0992,
+      "beat": true,
+      "spread": 0.0156,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Ireland\" or \"Irish\" 3+ times during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.9056,
+      "market": 0.89,
+      "actual": 1.0,
+      "our_brier": 0.0089,
+      "mkt_brier": 0.0121,
+      "beat": true,
+      "spread": 0.0156,
+      "reasoning": ""
+    },
+    {
       "q": "Exact Score: Racing Club de Lens 2 - 3 Angers SCO?",
       "tag": "sports",
       "orcetra": 0.0941,
@@ -33904,6 +35656,18 @@
       "actual": 0.0,
       "our_brier": 0.0089,
       "mkt_brier": 0.012,
+      "beat": true,
+      "spread": 0.0154,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Hormuz\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.9089,
+      "market": 0.8935,
+      "actual": 1.0,
+      "our_brier": 0.0083,
+      "mkt_brier": 0.0113,
       "beat": true,
       "spread": 0.0154,
       "reasoning": ""
@@ -34425,6 +36189,42 @@
       "reasoning": "Market price: 0.60. Sports question detected \u2192 using calibrated market only: 0.600 \u2192 0.585. Final: 0.585 (confidence: 0.4)"
     },
     {
+      "q": "Game Handicap: BLG (-1.5) vs G2 Esports (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.69,
+      "market": 0.675,
+      "actual": 1.0,
+      "our_brier": 0.0961,
+      "mkt_brier": 0.1056,
+      "beat": true,
+      "spread": 0.015,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Bibi\" or \"Netanyahu\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.39,
+      "market": 0.405,
+      "actual": 0.0,
+      "our_brier": 0.1521,
+      "mkt_brier": 0.164,
+      "beat": true,
+      "spread": 0.015,
+      "reasoning": ""
+    },
+    {
+      "q": "Map Handicap: BBP (-1.5) vs 8Sins (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.38,
+      "market": 0.365,
+      "actual": 1.0,
+      "our_brier": 0.3844,
+      "mkt_brier": 0.4032,
+      "beat": true,
+      "spread": 0.015,
+      "reasoning": "Market price: 0.36. Sports question detected \u2192 using calibrated market only: 0.365 \u2192 0.380. Final: 0.380 (confidence: 0.4)"
+    },
+    {
       "q": "Asuncion: Adolfo Vallejo vs Carlos Maria Zarate",
       "tag": "sports",
       "orcetra": 0.9197,
@@ -34471,6 +36271,18 @@
       "beat": true,
       "spread": 0.0144,
       "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Bebop vs 8Sins (BO3) - CCT Europe Closed Qualifier: Series #20 G",
+      "tag": "sports",
+      "orcetra": 0.8444,
+      "market": 0.83,
+      "actual": 1.0,
+      "our_brier": 0.0242,
+      "mkt_brier": 0.0289,
+      "beat": true,
+      "spread": 0.0144,
+      "reasoning": "Market price: 0.83. Calibration-corrected market: 0.854. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.830 \u2192 0.844. Final: 0.844 (confidence: 0.5)"
     },
     {
       "q": "Will Elon Musk post <40 tweets from March 21 to March 23, 2026?",
@@ -34701,6 +36513,30 @@
       "reasoning": ""
     },
     {
+      "q": "Games Total: O/U 4.5",
+      "tag": "sports",
+      "orcetra": 0.354,
+      "market": 0.34,
+      "actual": 0.0,
+      "our_brier": 0.1253,
+      "mkt_brier": 0.1156,
+      "beat": false,
+      "spread": 0.014,
+      "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.354,
+      "market": 0.34,
+      "actual": 0.0,
+      "our_brier": 0.1253,
+      "mkt_brier": 0.1156,
+      "beat": false,
+      "spread": 0.014,
+      "reasoning": "Market price: 0.34. Sports question detected \u2192 using calibrated market only: 0.340 \u2192 0.354. Final: 0.354 (confidence: 0.4)"
+    },
+    {
       "q": "Counter-Strike: hindsight vs Rune Eaters - Map 1 Winner",
       "tag": "sports",
       "orcetra": 0.0912,
@@ -34893,6 +36729,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Trump say \"Crypto\" or \"Bitcoin\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.1072,
+      "market": 0.12,
+      "actual": 0.0,
+      "our_brier": 0.0115,
+      "mkt_brier": 0.0144,
+      "beat": true,
+      "spread": 0.0128,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post 400-419 tweets from March 20 to March 27, 2026?",
       "tag": "politics",
       "orcetra": 0.0893,
@@ -34926,6 +36774,18 @@
       "mkt_brier": 0.0101,
       "beat": true,
       "spread": 0.0122,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Terrorist\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.8296,
+      "market": 0.8175,
+      "actual": 1.0,
+      "our_brier": 0.029,
+      "mkt_brier": 0.0333,
+      "beat": true,
+      "spread": 0.0121,
       "reasoning": ""
     },
     {
@@ -35373,6 +37233,18 @@
       "reasoning": ""
     },
     {
+      "q": "Bucharest Open: Alexander Shevchenko vs Radu David Turcanu",
+      "tag": "sports",
+      "orcetra": 0.8267,
+      "market": 0.815,
+      "actual": 1.0,
+      "our_brier": 0.03,
+      "mkt_brier": 0.0342,
+      "beat": true,
+      "spread": 0.0117,
+      "reasoning": "Market price: 0.81. Calibration-corrected market: 0.834. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.815 \u2192 0.827. Final: 0.827 (confidence: 0.5)"
+    },
+    {
       "q": "Set 1 Winner: Hayen vs Martin",
       "tag": "sports",
       "orcetra": 0.5935,
@@ -35457,6 +37329,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Trump say \"Ballroom\" or \"Arch\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.6664,
+      "market": 0.655,
+      "actual": 1.0,
+      "our_brier": 0.1113,
+      "mkt_brier": 0.119,
+      "beat": true,
+      "spread": 0.0114,
+      "reasoning": ""
+    },
+    {
       "q": "Will Donald Trump post 100-119 Truth Social posts from March 10 to March 17, 202",
       "tag": "politics",
       "orcetra": 0.6673,
@@ -35517,6 +37401,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Trump post \"Filibuster\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.5839,
+      "market": 0.595,
+      "actual": 1.0,
+      "our_brier": 0.1731,
+      "mkt_brier": 0.164,
+      "beat": false,
+      "spread": 0.0111,
+      "reasoning": ""
+    },
+    {
       "q": "Lys vs. Starodubtseva: Set 1 Games O/U 9.5",
       "tag": "sports",
       "orcetra": 0.706,
@@ -35537,6 +37433,18 @@
       "our_brier": 0.4984,
       "mkt_brier": 0.483,
       "beat": false,
+      "spread": 0.011,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 1: Any Player Rampage?",
+      "tag": "sports",
+      "orcetra": 0.074,
+      "market": 0.085,
+      "actual": 0.0,
+      "our_brier": 0.0055,
+      "mkt_brier": 0.0072,
+      "beat": true,
       "spread": 0.011,
       "reasoning": ""
     },
@@ -35647,6 +37555,18 @@
       "beat": true,
       "spread": 0.0108,
       "reasoning": "Market price: 0.81. Calibration-corrected market: 0.828. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.810 \u2192 0.821. Final: 0.821 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump say \"Biden / Obama\" 5+ times during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.3092,
+      "market": 0.32,
+      "actual": 1.0,
+      "our_brier": 0.4772,
+      "mkt_brier": 0.4624,
+      "beat": false,
+      "spread": 0.0108,
+      "reasoning": ""
     },
     {
       "q": "Cecchinato vs. Gea: Set 1 Games O/U 8.5",
@@ -35827,6 +37747,18 @@
       "beat": true,
       "spread": 0.0102,
       "reasoning": "Market price: 0.10. Calibration-corrected market: 0.078. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.095 \u2192 0.085. Final: 0.085 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump say \"Pipeline\" or \"Road\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.6752,
+      "market": 0.665,
+      "actual": 0.0,
+      "our_brier": 0.4559,
+      "mkt_brier": 0.4422,
+      "beat": false,
+      "spread": 0.0102,
+      "reasoning": ""
     },
     {
       "q": "Game Handicap: Z10 (-1.5) vs Team Lynx (+1.5)",
@@ -36129,6 +38061,18 @@
       "reasoning": ""
     },
     {
+      "q": "Games Total: O/U 3.5",
+      "tag": "sports",
+      "orcetra": 0.71,
+      "market": 0.7,
+      "actual": 0.0,
+      "our_brier": 0.5041,
+      "mkt_brier": 0.49,
+      "beat": false,
+      "spread": 0.01,
+      "reasoning": ""
+    },
+    {
       "q": "Counter-Strike: 1WIN vs EC BANGA - Map 1 Winner",
       "tag": "sports",
       "orcetra": 0.6549,
@@ -36196,6 +38140,30 @@
       "actual": 1.0,
       "our_brier": 0.0343,
       "mkt_brier": 0.038,
+      "beat": true,
+      "spread": 0.0099,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Stupid\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.6549,
+      "market": 0.645,
+      "actual": 0.0,
+      "our_brier": 0.4289,
+      "mkt_brier": 0.416,
+      "beat": false,
+      "spread": 0.0099,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"China\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.6549,
+      "market": 0.645,
+      "actual": 1.0,
+      "our_brier": 0.1191,
+      "mkt_brier": 0.126,
       "beat": true,
       "spread": 0.0099,
       "reasoning": ""
@@ -36285,6 +38253,30 @@
       "reasoning": "Market price: 0.67. Calibration-corrected market: 0.686. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.670 \u2192 0.680. Final: 0.680 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump say \"Iran\" 5+ times during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.6796,
+      "market": 0.67,
+      "actual": 1.0,
+      "our_brier": 0.1027,
+      "mkt_brier": 0.1089,
+      "beat": true,
+      "spread": 0.0096,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"NATO\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.6796,
+      "market": 0.67,
+      "actual": 1.0,
+      "our_brier": 0.1027,
+      "mkt_brier": 0.1089,
+      "beat": true,
+      "spread": 0.0096,
+      "reasoning": ""
+    },
+    {
       "q": "McNally vs. Masarova: Set 1 Games O/U 8.5",
       "tag": "sports",
       "orcetra": 0.6445,
@@ -36319,6 +38311,18 @@
       "beat": true,
       "spread": 0.0095,
       "reasoning": "Market price: 0.64. Sports question detected \u2192 using calibrated market only: 0.635 \u2192 0.645. Final: 0.645 (confidence: 0.4)"
+    },
+    {
+      "q": "LoL: Bilibili Gaming vs G2 Esports - Game 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.6445,
+      "market": 0.635,
+      "actual": 1.0,
+      "our_brier": 0.1264,
+      "mkt_brier": 0.1332,
+      "beat": true,
+      "spread": 0.0095,
+      "reasoning": ""
     },
     {
       "q": "Counter-Strike: K27 vs Bushido Wildcats (BO3) - ESL Challenger League Europe Cup",
@@ -36669,6 +38673,18 @@
       "reasoning": "Market price: 0.60. Calibration-corrected market: 0.585. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.600 \u2192 0.591. Final: 0.591 (confidence: 0.5)"
     },
     {
+      "q": "Will Trump post \"Oscar\" or \"Oscars\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.386,
+      "market": 0.395,
+      "actual": 0.0,
+      "our_brier": 0.149,
+      "mkt_brier": 0.156,
+      "beat": true,
+      "spread": 0.009,
+      "reasoning": ""
+    },
+    {
       "q": "Will Donald Trump post 120-139 Truth Social posts from March 10 to March 17, 202",
       "tag": "politics",
       "orcetra": 0.0819,
@@ -36909,6 +38925,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 3: Both Teams Slay a Dragon?",
+      "tag": "sports",
+      "orcetra": 0.6884,
+      "market": 0.68,
+      "actual": 1.0,
+      "our_brier": 0.0971,
+      "mkt_brier": 0.1024,
+      "beat": true,
+      "spread": 0.0084,
+      "reasoning": ""
+    },
+    {
       "q": "Exact Score: Racing Club de Lens 2 - 1 Angers SCO?",
       "tag": "sports",
       "orcetra": 0.0813,
@@ -37077,6 +39105,42 @@
       "reasoning": "Market price: 0.69. Calibration-corrected market: 0.698. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.685 \u2192 0.693. Final: 0.693 (confidence: 0.5)"
     },
     {
+      "q": "LoL: Bilibili Gaming vs G2 Esports - Game 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.6478,
+      "market": 0.64,
+      "actual": 1.0,
+      "our_brier": 0.124,
+      "mkt_brier": 0.1296,
+      "beat": true,
+      "spread": 0.0078,
+      "reasoning": ""
+    },
+    {
+      "q": "LoL: Bilibili Gaming vs G2 Esports - Game 3 Winner",
+      "tag": "sports",
+      "orcetra": 0.6478,
+      "market": 0.64,
+      "actual": 1.0,
+      "our_brier": 0.124,
+      "mkt_brier": 0.1296,
+      "beat": true,
+      "spread": 0.0078,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"250\" or \"250th\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.6478,
+      "market": 0.64,
+      "actual": 1.0,
+      "our_brier": 0.124,
+      "mkt_brier": 0.1296,
+      "beat": true,
+      "spread": 0.0078,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post 380-399 tweets from March 20 to March 27, 2026?",
       "tag": "politics",
       "orcetra": 0.0803,
@@ -37209,6 +39273,18 @@
       "reasoning": ""
     },
     {
+      "q": "LoL: Bilibili Gaming vs G2 Esports - Game 4 Winner",
+      "tag": "sports",
+      "orcetra": 0.5981,
+      "market": 0.605,
+      "actual": 0.0,
+      "our_brier": 0.3577,
+      "mkt_brier": 0.366,
+      "beat": true,
+      "spread": 0.0069,
+      "reasoning": ""
+    },
+    {
       "q": "Will Crude Oil (CL) hit (HIGH) $100 by March 20?",
       "tag": "commodities",
       "orcetra": 0.4733,
@@ -37216,6 +39292,18 @@
       "actual": 0.0,
       "our_brier": 0.224,
       "mkt_brier": 0.2304,
+      "beat": true,
+      "spread": 0.0067,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Chairman\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.7937,
+      "market": 0.787,
+      "actual": 1.0,
+      "our_brier": 0.0426,
+      "mkt_brier": 0.0454,
       "beat": true,
       "spread": 0.0067,
       "reasoning": ""
@@ -37307,6 +39395,30 @@
     {
       "q": "Will Donald Trump post 160-179 Truth Social posts from March 17 to March 24, 202",
       "tag": "politics",
+      "orcetra": 0.0784,
+      "market": 0.085,
+      "actual": 0.0,
+      "our_brier": 0.0061,
+      "mkt_brier": 0.0072,
+      "beat": true,
+      "spread": 0.0066,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"UK\" or \"United Kingdom\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.7016,
+      "market": 0.695,
+      "actual": 1.0,
+      "our_brier": 0.089,
+      "mkt_brier": 0.093,
+      "beat": true,
+      "spread": 0.0066,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Any Player Rampage?",
+      "tag": "sports",
       "orcetra": 0.0784,
       "market": 0.085,
       "actual": 0.0,
@@ -37821,6 +39933,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Trump post \"IRGC\" or \"Islamic Revolutionary Guard Corps\" on Truth Social th",
+      "tag": "politics",
+      "orcetra": 0.319,
+      "market": 0.325,
+      "actual": 0.0,
+      "our_brier": 0.1018,
+      "mkt_brier": 0.1056,
+      "beat": true,
+      "spread": 0.006,
+      "reasoning": ""
+    },
+    {
       "q": "Will the total number of TSA passengers for March 13 be greater than 2,800,000?",
       "tag": "economy",
       "orcetra": 0.6407,
@@ -38145,6 +40269,18 @@
       "reasoning": ""
     },
     {
+      "q": "Set 1 Winner: Shevchenko vs Turcanu",
+      "tag": "sports",
+      "orcetra": 0.73,
+      "market": 0.725,
+      "actual": 1.0,
+      "our_brier": 0.0729,
+      "mkt_brier": 0.0756,
+      "beat": true,
+      "spread": 0.005,
+      "reasoning": "Market price: 0.72. Sports question detected \u2192 using calibrated market only: 0.725 \u2192 0.730. Final: 0.730 (confidence: 0.4)"
+    },
+    {
       "q": "Dota 2: Team Lynx vs Team Shpilit - Game 2 Winner",
       "tag": "sports",
       "orcetra": 0.6052,
@@ -38299,6 +40435,18 @@
       "beat": true,
       "spread": 0.0048,
       "reasoning": "Market price: 0.71. Calibration-corrected market: 0.718. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.710 \u2192 0.715. Final: 0.715 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump say \"Military\" or \"Troops\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.7148,
+      "market": 0.71,
+      "actual": 1.0,
+      "our_brier": 0.0813,
+      "mkt_brier": 0.0841,
+      "beat": true,
+      "spread": 0.0048,
+      "reasoning": ""
     },
     {
       "q": "Trungelliti vs. Kolar: Set 1 Games O/U 8.5",
@@ -38469,6 +40617,18 @@
       "reasoning": ""
     },
     {
+      "q": "Game 1: Both Teams Slay a Dragon?",
+      "tag": "sports",
+      "orcetra": 0.734,
+      "market": 0.73,
+      "actual": 1.0,
+      "our_brier": 0.0708,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.004,
+      "reasoning": ""
+    },
+    {
       "q": "Kigali 2: Marco Cecchinato vs Arthur Gea",
       "tag": "sports",
       "orcetra": 0.3386,
@@ -38611,6 +40771,54 @@
       "beat": true,
       "spread": 0.0036,
       "reasoning": "Market price: 0.72. Calibration-corrected market: 0.726. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.720 \u2192 0.724. Final: 0.724 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump post \"Donald Trump\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.6336,
+      "market": 0.63,
+      "actual": 1.0,
+      "our_brier": 0.1342,
+      "mkt_brier": 0.1369,
+      "beat": true,
+      "spread": 0.0036,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Nuclear\" 3+ times during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.6336,
+      "market": 0.63,
+      "actual": 1.0,
+      "our_brier": 0.1342,
+      "mkt_brier": 0.1369,
+      "beat": true,
+      "spread": 0.0036,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Drone\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.7236,
+      "market": 0.72,
+      "actual": 1.0,
+      "our_brier": 0.0764,
+      "mkt_brier": 0.0784,
+      "beat": true,
+      "spread": 0.0036,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Pride\" or \"Proud\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.7236,
+      "market": 0.72,
+      "actual": 1.0,
+      "our_brier": 0.0764,
+      "mkt_brier": 0.0784,
+      "beat": true,
+      "spread": 0.0036,
+      "reasoning": ""
     },
     {
       "q": "Miami Open, Qualification: Elvina Kalieva vs Diane Parry",
@@ -38913,6 +41121,54 @@
       "reasoning": ""
     },
     {
+      "q": "Will Trump post \"Venezuela\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.382,
+      "market": 0.385,
+      "actual": 1.0,
+      "our_brier": 0.3819,
+      "mkt_brier": 0.3782,
+      "beat": false,
+      "spread": 0.003,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Million\" or \"Billion\" or \"Trillion\" 8+ times during Taoiseach ev",
+      "tag": "politics",
+      "orcetra": 0.728,
+      "market": 0.725,
+      "actual": 1.0,
+      "our_brier": 0.074,
+      "mkt_brier": 0.0756,
+      "beat": true,
+      "spread": 0.003,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Tariff\" 5+ times during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.382,
+      "market": 0.385,
+      "actual": 0.0,
+      "our_brier": 0.1459,
+      "mkt_brier": 0.1482,
+      "beat": true,
+      "spread": 0.003,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Peace in the Middle East\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.378,
+      "market": 0.375,
+      "actual": 0.0,
+      "our_brier": 0.1429,
+      "mkt_brier": 0.1406,
+      "beat": false,
+      "spread": 0.003,
+      "reasoning": ""
+    },
+    {
       "q": "Will Chris Kirk finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.3267,
@@ -38998,6 +41254,30 @@
     },
     {
       "q": "Will Khamenei tweet again on March 21, 2026?",
+      "tag": "politics",
+      "orcetra": 0.7324,
+      "market": 0.73,
+      "actual": 1.0,
+      "our_brier": 0.0716,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.0024,
+      "reasoning": ""
+    },
+    {
+      "q": "Game 2: Both Teams Slay a Dragon?",
+      "tag": "sports",
+      "orcetra": 0.7324,
+      "market": 0.73,
+      "actual": 1.0,
+      "our_brier": 0.0716,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.0024,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump post \"Strait of Hormuz\" on Truth Social this week?",
       "tag": "politics",
       "orcetra": 0.7324,
       "market": 0.73,
@@ -39297,6 +41577,30 @@
       "reasoning": ""
     },
     {
+      "q": "Will Trump post \"Ayatollah\" or \"Khamenei\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.7412,
+      "market": 0.74,
+      "actual": 1.0,
+      "our_brier": 0.067,
+      "mkt_brier": 0.0676,
+      "beat": true,
+      "spread": 0.0012,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"New York\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.7412,
+      "market": 0.74,
+      "actual": 1.0,
+      "our_brier": 0.067,
+      "mkt_brier": 0.0676,
+      "beat": true,
+      "spread": 0.0012,
+      "reasoning": ""
+    },
+    {
       "q": "Set Handicap: Khachanov (-1.5) vs Agut (+1.5)",
       "tag": "sports",
       "orcetra": 0.619,
@@ -39439,6 +41743,30 @@
       "beat": false,
       "spread": 0.0006,
       "reasoning": "Market price: 0.62. Calibration-corrected market: 0.619. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.620 \u2192 0.619. Final: 0.619 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Trump post \"Epic Fury\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.6194,
+      "market": 0.62,
+      "actual": 0.0,
+      "our_brier": 0.3837,
+      "mkt_brier": 0.3844,
+      "beat": true,
+      "spread": 0.0006,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Friend of mine\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.7456,
+      "market": 0.745,
+      "actual": 1.0,
+      "our_brier": 0.0647,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.0006,
+      "reasoning": ""
     },
     {
       "q": "Set 1 Winner: Cecchinato vs Gea",
@@ -39667,6 +41995,54 @@
       "beat": false,
       "spread": 0.0,
       "reasoning": ""
+    },
+    {
+      "q": "LoL: Bilibili Gaming vs G2 Esports (BO5) - First Stand Group A",
+      "tag": "sports",
+      "orcetra": 0.75,
+      "market": 0.75,
+      "actual": 1.0,
+      "our_brier": 0.0625,
+      "mkt_brier": 0.0625,
+      "beat": false,
+      "spread": 0.0,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Trump say \"Heritage\" or \"Culture\" during Taoiseach events?",
+      "tag": "politics",
+      "orcetra": 0.75,
+      "market": 0.75,
+      "actual": 1.0,
+      "our_brier": 0.0625,
+      "mkt_brier": 0.0625,
+      "beat": false,
+      "spread": 0.0,
+      "reasoning": ""
+    },
+    {
+      "q": "Counter-Strike: Bebop vs 8Sins - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.75,
+      "market": 0.75,
+      "actual": 1.0,
+      "our_brier": 0.0625,
+      "mkt_brier": 0.0625,
+      "beat": false,
+      "spread": 0.0,
+      "reasoning": "Market price: 0.75. Calibration-corrected market: 0.750. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.750 \u2192 0.750. Final: 0.750 (confidence: 0.5)"
+    },
+    {
+      "q": "Counter-Strike: Bebop vs 8Sins - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.75,
+      "market": 0.75,
+      "actual": 1.0,
+      "our_brier": 0.0625,
+      "mkt_brier": 0.0625,
+      "beat": false,
+      "spread": 0.0,
+      "reasoning": "Market price: 0.75. Calibration-corrected market: 0.750. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.750 \u2192 0.750. Final: 0.750 (confidence: 0.5)"
     }
   ]
 }
