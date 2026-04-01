@@ -1,146 +1,109 @@
-# 🎯 Orcetra — Automated Prediction Engine
+# Orcetra
 
-**AutoML that beats FLAML on 78.4% of datasets. Verified on 513 OpenML benchmarks with equal 30-second compute budget.**
+**Give it data, it finds the best model.** AutoML engine that wins 57% on 513 OpenML datasets vs AutoGluon (21.6%) and FLAML (10.9%).
 
-[Live Dashboard](https://orcetra.ai/dashboard.html) · [Website](https://orcetra.ai) · [Paper (coming soon)](#)
+[![PyPI](https://img.shields.io/pypi/v/orcetra)](https://pypi.org/project/orcetra/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
----
+## Install
 
-## What Is Orcetra?
-
-Orcetra is an automated prediction engine that combines **intelligent model search** with **meta-learning** to outperform established AutoML frameworks. It works on any tabular dataset — no manual feature engineering required.
-
-## Benchmark Results
-
-### Orcetra vs FLAML (513 OpenML datasets, strict 30s budget each)
-
-| | Orcetra Wins | FLAML Wins | Tie |
-|---|---|---|---|
-| **Overall** | **402 (78.4%)** | 75 (14.6%) | 36 (7.0%) |
-| Classification (382) | **299 (78.3%)** | 49 (12.8%) | 34 (8.9%) |
-| Regression (131) | **103 (78.6%)** | 26 (19.8%) | 2 (1.5%) |
-
-### By Dataset Size
-
-| Scale | Orcetra | FLAML | Tie |
-|---|---|---|---|
-| Small (<5K samples) | **73 (86%)** | 7 (8%) | 5 |
-| Medium (5-50K) | **260 (79%)** | 48 (15%) | 21 |
-| Large (>50K) | **69 (70%)** | 20 (20%) | 10 |
-
-### Compute Fairness
-
-Both systems receive exactly 30 seconds. Orcetra's baseline evaluation phase counts toward the budget.
-
-| | Median Time |
-|---|---|
-| Orcetra | **30.0s** |
-| FLAML | **31.3s** |
-
-### Polymarket Prediction Benchmark
-
-| Category | Beat Rate | Predictions |
-|---|---|---|
-| **Overall** | **66.7%** | **2,932** |
-| Sports | 81% | — |
-| Politics | 100% | — |
-| Economy | 100% | — |
-
-*Live tracking of 22,000+ active predictions across 8 categories.*
-
-## How It Works
-
+```bash
+pip install orcetra
 ```
-Phase 1: Baseline Pool     → Evaluate RF, GBC, XGB, LightGBM, LogReg, etc.
-Phase 2: AutoResearch      → LLM-guided or random search for better configs
-Phase 3: Meta-Learning     → Strategy knowledge base from prior dataset wins
-Phase 4: Validation        → Cross-validated final evaluation
-```
-
-**Key insight**: Instead of just searching hyperparameters (like FLAML/Auto-sklearn), Orcetra searches across **model families, preprocessing strategies, and feature transformations** simultaneously.
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/orcetra/orcetra.git
-cd orcetra
-pip install -r requirements.txt
+orcetra predict housing.csv --target price --budget 60s
 ```
-
-### Run on any dataset
 
 ```python
-from orcetra.core.agent import RandomSearchAgent
-from orcetra.models.registry import get_baselines
-from orcetra.metrics.base import get_metric
+from orcetra.core.loop import run_prediction
 
-# Your data
-metric = get_metric("accuracy")  # or "mse" for regression
-baselines = get_baselines("classification")
-
-# Phase 1: Baselines
-for name, fn in baselines.items():
-    score = fn(data_info, metric)
-
-# Phase 2: AutoResearch loop
-agent = RandomSearchAgent(task_type="classification")
-proposal = agent.propose(data_info, metric, best_score, best_model, iteration)
+result = run_prediction("housing.csv", target="price", budget="60s")
+print(result["best_model"], result["best_score"])
 ```
 
-### Run Polymarket predictions
+## Benchmark Results
+
+**513 OpenML datasets, 60-second budget, CPU only.**
+
+| | Orcetra | AutoGluon | FLAML | Tie |
+|---|---|---|---|---|
+| **Overall (513)** | **57.1%** | 21.6% | 10.9% | 10.3% |
+| Classification (382) | **58.4%** | 17.5% | 11.3% | 12.8% |
+| Regression (131) | **53.4%** | 33.6% | 9.9% | 3.1% |
+
+### Orcetra vs FLAML only (30-second budget)
+
+| | Orcetra | FLAML | Tie |
+|---|---|---|---|
+| **Overall (513)** | **78.4%** | 14.6% | 7.0% |
+
+## How It Works
+
+```
+1. Analyze    → Detect task type, features, data shape
+2. Baseline   → Evaluate RF, GBC, XGB, LightGBM, LogReg, etc.
+3. Search     → Parallel strategy search with dedup cache
+4. Result     → Best model + score + improvement over baseline
+```
+
+**Why it's fast:** Calibration-based warm start + meta-search space (searches what works for similar data, not the full space) + optimized for short budgets (30-60s).
+
+## Optional Extras
 
 ```bash
-python batch_tracker.py predict    # Generate predictions
-python auto_check.py               # Verify against outcomes
-python scripts/gen_dashboard.py    # Update dashboard
+pip install orcetra[xgboost]   # XGBoost support
+pip install orcetra[llm]       # LLM-guided search (Groq/OpenAI)
+pip install orcetra[all]       # Everything
 ```
 
 ## Architecture
 
 ```
 src/orcetra/
-├── core/           → Search agents (Random, LLM-guided)
-├── models/         → Model registry & baselines
-├── metrics/        → Evaluation metrics (accuracy, MSE, Brier)
-└── meta/           → Strategy knowledge base
-
-experiments/
-├── openml_benchmark.py      → Full OpenML benchmark suite
-├── flaml_pilot_v2.py        → Head-to-head vs FLAML
-└── flaml_strict_30s.py      → Fair compute-budget comparison
-
-batch_tracker.py    → Polymarket prediction pipeline
-auto_check.py       → Outcome verification
-live_tracker.py     → LLM-powered deep analysis
+├── core/           # Search loop + agents (Random, LLM-guided)
+│   ├── loop.py     # Main prediction loop
+│   ├── agent.py    # RandomSearchAgent
+│   ├── llm_agent.py # LLM-guided search
+│   └── calibration.py
+├── data/           # Data loading + splitting
+├── models/         # Model registry + baselines
+├── metrics/        # Evaluation (accuracy, MSE, R², etc.)
+├── benchmarks/     # OpenML benchmark suite
+└── cli.py          # CLI entry point
 ```
 
 ## Roadmap
 
-- [x] Baseline model pool (RF, GBC, XGB, LightGBM, HistGBM, LogReg, etc.)
-- [x] Random search agent
-- [x] OpenML benchmark framework (513 datasets, 78.4% win rate vs FLAML)
-- [x] FLAML head-to-head comparison (strict 30s, compute-fair)
-- [x] Polymarket live prediction pipeline (22K+ markets)
-- [ ] LLM-guided search agent (Groq/OpenAI)
-- [ ] Meta-learning knowledge base
-- [ ] MLE-bench evaluation
-- [ ] Automated feature engineering module
-- [ ] Multi-framework comparison (Auto-sklearn, H2O, AutoGluon)
+- [x] Baseline model pool (RF, GBC, XGB, LightGBM, HistGBM, LogReg)
+- [x] Parallel random search with strategy cache
+- [x] OpenML benchmark (513 datasets, 3-way comparison)
+- [x] PyPI package (`pip install orcetra`)
+- [ ] CatBoost baseline ([#10](https://github.com/orcetra/orcetra/issues/10))
+- [ ] Top-3 ensemble ([#11](https://github.com/orcetra/orcetra/issues/11))
+- [ ] Feature engineering module ([#1](https://github.com/orcetra/orcetra/issues/1))
+- [ ] Meta-learning knowledge base ([#8](https://github.com/orcetra/orcetra/issues/8))
+- [ ] GitHub Actions CI ([#18](https://github.com/orcetra/orcetra/issues/18))
 
-## Team
+## Paper
 
-| Name | Role | Affiliation |
-|---|---|---|
-| **Beibei Li** | Chief Scientist | Carnegie Mellon University |
-| **Xiyang Hu** | Researcher | Carnegie Mellon University |
-| **Luyi Ma** | Researcher | Carnegie Mellon University |
-| **Kai Zhao** | Researcher | New York University |
-| **Guilin Zhang** | Researcher | George Washington University |
+> Orcetra: Calibration-Aware Automated Prediction via Self-Improving Research Loops
+>
+> Target: ICML 2026 Workshop
+
+## Contributing
+
+PRs welcome. Main branch is protected — open a PR and request review.
+
+```bash
+git clone https://github.com/orcetra/orcetra.git
+cd orcetra
+pip install -e ".[all]"
+```
 
 ## License
 
-MIT License
-
----
-
-*"The best model isn't the one you know — it's the one you discover."*
+MIT
