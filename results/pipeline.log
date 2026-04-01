@@ -1,0 +1,2216 @@
+=== 2026-03-16T17:36:44-04:00 ===
+[1/3] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 2100 active markets
+
+✅ 1845 new predictions in 5.1s (skipped 255 existing)
+   Total tracked: 3299
+            sports: 1312
+          politics: 329
+            crypto: 100
+           science: 87
+       commodities: 12
+           economy: 5
+
+   Signals: ↑BUY YES: 12 | ↓BUY NO: 1440 | ≈HOLD: 1847
+[2/3] Auto check...
+🔍 Fetching resolved markets...
+   Found 1452 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-16 17:36
+============================================================
+  New resolved:    0
+  Total checked:   159
+  Beat market:     133/159 (84%)
+[3/3] Update dashboard...
+Dashboard updated: 159 checks, 133/159 beat (83.6%)
+=== Done 2026-03-16T17:36:56-04:00 ===
+=== 2026-03-16T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1761 active markets
+
+✅ 797 new predictions in 3.9s (skipped 964 existing)
+   Total tracked: 4096
+            sports: 680
+            crypto: 100
+          politics: 14
+           science: 2
+           economy: 1
+
+   Signals: ↑BUY YES: 12 | ↓BUY NO: 1553 | ≈HOLD: 2531
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1353 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-16 20:00
+============================================================
+  New resolved:    0
+  Total checked:   159
+  Beat market:     133/159 (84%)
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-17T00:00:19.496862
+[4/5] Update dashboard...
+Dashboard updated: 159 checks, 133/159 beat (83.6%)
+[5/5] Alert check...
+OK: beat rate 83.6% (133/159)
+=== Done 2026-03-16T20:00:24-04:00 ===
+=== 2026-03-17T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 2121 active markets
+
+✅ 1092 new predictions in 5.8s (skipped 1029 existing)
+   Total tracked: 5188
+            sports: 855
+          politics: 114
+            crypto: 100
+           economy: 22
+              golf: 1
+
+   Signals: ↑BUY YES: 12 | ↓BUY NO: 1773 | ≈HOLD: 3403
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1084 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-17 08:00
+============================================================
+  New resolved:    3
+  Total checked:   162
+  Beat market:     134/162 (83%)
+
+  By category (new):
+         economy:   3 checked, 33% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-17T12:00:15.346600
+[4/5] Update dashboard...
+Dashboard updated: 162 checks, 134/162 beat (82.7%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+OK: beat rate 82.7% (134/162)
+[6/6] Git push...
+=== 2026-03-17T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1840 active markets
+
+✅ 827 new predictions in 3.5s (skipped 1013 existing)
+   Total tracked: 6015
+            sports: 703
+            crypto: 93
+           economy: 22
+          politics: 6
+       commodities: 3
+
+   Signals: ↑BUY YES: 12 | ↓BUY NO: 1947 | ≈HOLD: 4056
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 908 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-17 14:00
+============================================================
+  New resolved:    0
+  Total checked:   162
+  Beat market:     134/162 (83%)
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-17T18:00:13.055102
+[4/5] Update dashboard...
+Dashboard updated: 162 checks, 134/162 beat (82.7%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+OK: beat rate 82.7% (134/162)
+[6/6] Git push...
+=== 2026-03-17T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 2159 active markets
+
+✅ 745 new predictions in 1.9s (skipped 1414 existing)
+   Total tracked: 6760
+            sports: 598
+            crypto: 93
+           economy: 42
+          politics: 12
+
+   Signals: ↑BUY YES: 12 | ↓BUY NO: 2231 | ≈HOLD: 4517
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 808 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-17 20:00
+============================================================
+  New resolved:    2
+  Total checked:   164
+  Beat market:     136/164 (83%)
+
+  By category (new):
+        politics:   2 checked, 100% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-18T00:00:13.158079
+[4/5] Update dashboard...
+Dashboard updated: 164 checks, 136/164 beat (82.9%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+OK: beat rate 82.9% (136/164)
+[6/6] Git push...
+=== 2026-03-18T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1874 active markets
+
+✅ 897 new predictions in 3.5s (skipped 977 existing)
+   Total tracked: 7657
+            sports: 784
+            crypto: 93
+          politics: 19
+           science: 1
+
+   Signals: ↑BUY YES: 12 | ↓BUY NO: 2599 | ≈HOLD: 5046
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1180 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-18 08:00
+============================================================
+  New resolved:    64
+  Total checked:   228
+  Beat market:     174/228 (76%)
+
+  By category (new):
+          sports:  47 checked, 64% beat mkt
+          crypto:  13 checked, 38% beat mkt
+         economy:   3 checked, 100% beat mkt
+     commodities:   1 checked, 0% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-18T12:00:12.890060
+[4/5] Update dashboard...
+Dashboard updated: 228 checks, 174/228 beat (76.3%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+OK: beat rate 76.3% (174/228)
+[6/6] Git push...
+=== 2026-03-18T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1451 active markets
+
+✅ 514 new predictions in 2.8s (skipped 937 existing)
+   Total tracked: 8171
+            sports: 403
+            crypto: 100
+          politics: 7
+       commodities: 3
+           economy: 1
+
+   Signals: ↑BUY YES: 12 | ↓BUY NO: 2747 | ≈HOLD: 5412
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1632 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-18 14:00
+============================================================
+  New resolved:    242
+  Total checked:   470
+  Beat market:     315/470 (67%)
+
+  By category (new):
+          sports: 205 checked, 57% beat mkt
+          crypto:  36 checked, 67% beat mkt
+     commodities:   1 checked, 0% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-18T18:00:12.084193
+[4/5] Update dashboard...
+Dashboard updated: 470 checks, 315/470 beat (67.0%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: 67.0%
+[6/6] Git push...
+=== 2026-03-18T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1898 active markets
+
+✅ 738 new predictions in 3.0s (skipped 1160 existing)
+   Total tracked: 8909
+            sports: 621
+            crypto: 100
+          politics: 14
+           economy: 2
+       commodities: 1
+
+   Signals: ↑BUY YES: 13 | ↓BUY NO: 3007 | ≈HOLD: 5889
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1248 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-18 20:00
+============================================================
+  New resolved:    31
+  Total checked:   501
+  Beat market:     337/501 (67%)
+
+  By category (new):
+          sports:  23 checked, 70% beat mkt
+        politics:   8 checked, 75% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-19T00:00:12.429076
+[4/5] Update dashboard...
+Dashboard updated: 501 checks, 337/501 beat (67.3%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: 67.3%
+[6/6] Git push...
+=== 2026-03-19T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 2000 active markets
+
+✅ 468 new predictions in 3.3s (skipped 1532 existing)
+   Total tracked: 9377
+            sports: 341
+            crypto: 93
+          politics: 25
+              golf: 4
+           science: 3
+       commodities: 2
+
+   Signals: ↑BUY YES: 14 | ↓BUY NO: 3177 | ≈HOLD: 6186
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1438 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-19 08:00
+============================================================
+  New resolved:    131
+  Total checked:   632
+  Beat market:     423/632 (67%)
+
+  By category (new):
+          sports:  47 checked, 77% beat mkt
+          crypto:  38 checked, 47% beat mkt
+         economy:  33 checked, 61% beat mkt
+        politics:  13 checked, 92% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-19T12:00:13.227557
+[4/5] Update dashboard...
+Dashboard updated: 632 checks, 423/632 beat (66.9%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+OK: bet=72.0% (180/250), overall=66.9% (423/632)
+[6/6] Git push...
+=== 2026-03-19T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1511 active markets
+
+✅ 608 new predictions in 5.9s (skipped 903 existing)
+   Total tracked: 9985
+            sports: 492
+            crypto: 100
+       commodities: 8
+          politics: 7
+           science: 1
+
+   Signals: ↑BUY YES: 16 | ↓BUY NO: 3415 | ≈HOLD: 6554
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1306 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-19 14:00
+============================================================
+  New resolved:    132
+  Total checked:   764
+  Beat market:     504/764 (66%)
+
+  By category (new):
+          sports: 112 checked, 65% beat mkt
+          crypto:  20 checked, 40% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-19T18:00:17.426391
+[4/5] Update dashboard...
+Dashboard updated: 764 checks, 504/764 beat (66.0%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=69.6%, overall=66.0%
+[6/6] Git push...
+=== 2026-03-19T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 2000 active markets
+
+✅ 1042 new predictions in 3.6s (skipped 958 existing)
+   Total tracked: 11027
+            sports: 907
+            crypto: 99
+          politics: 22
+           economy: 12
+           science: 2
+
+   Signals: ↑BUY YES: 16 | ↓BUY NO: 3968 | ≈HOLD: 7043
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1502 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-19 20:00
+============================================================
+  New resolved:    107
+  Total checked:   871
+  Beat market:     552/871 (63%)
+
+  By category (new):
+          sports:  73 checked, 44% beat mkt
+          crypto:  33 checked, 48% beat mkt
+     commodities:   1 checked, 0% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-20T00:00:12.742625
+[4/5] Update dashboard...
+Dashboard updated: 871 checks, 552/871 beat (63.4%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=67.1%, overall=63.4%
+[6/6] Git push...
+=== 2026-03-20T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1938 active markets
+
+✅ 973 new predictions in 4.1s (skipped 965 existing)
+   Total tracked: 12000
+            sports: 847
+            crypto: 100
+          politics: 16
+           economy: 10
+
+   Signals: ↑BUY YES: 16 | ↓BUY NO: 4356 | ≈HOLD: 7628
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1451 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-20 08:00
+============================================================
+  New resolved:    197
+  Total checked:   1068
+  Beat market:     681/1068 (64%)
+
+  By category (new):
+          sports: 151 checked, 68% beat mkt
+        politics:  24 checked, 71% beat mkt
+          crypto:  21 checked, 38% beat mkt
+     commodities:   1 checked, 100% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-20T12:00:13.964439
+[4/5] Update dashboard...
+Dashboard updated: 1068 checks, 681/1068 beat (63.8%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=65.7%, overall=63.8%
+[6/6] Git push...
+=== 2026-03-20T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1419 active markets
+
+✅ 556 new predictions in 5.3s (skipped 863 existing)
+   Total tracked: 12556
+            sports: 276
+          politics: 156
+            crypto: 113
+           science: 7
+       commodities: 3
+           economy: 1
+
+   Signals: ↑BUY YES: 16 | ↓BUY NO: 4479 | ≈HOLD: 8061
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1236 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-20 14:00
+============================================================
+  New resolved:    54
+  Total checked:   1122
+  Beat market:     702/1122 (63%)
+
+  By category (new):
+          sports:  31 checked, 39% beat mkt
+          crypto:  23 checked, 39% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-20T18:00:16.124036
+[4/5] Update dashboard...
+Dashboard updated: 1122 checks, 702/1122 beat (62.6%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=64.1%, overall=62.6%
+[6/6] Git push...
+=== 2026-03-20T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1920 active markets
+
+✅ 887 new predictions in 5.9s (skipped 1033 existing)
+   Total tracked: 13443
+            sports: 663
+            crypto: 118
+          politics: 90
+           economy: 15
+           science: 1
+
+   Signals: ↑BUY YES: 16 | ↓BUY NO: 4806 | ≈HOLD: 8621
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1447 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-20 20:00
+============================================================
+  New resolved:    139
+  Total checked:   1261
+  Beat market:     795/1261 (63%)
+
+  By category (new):
+          sports: 101 checked, 62% beat mkt
+        politics:  19 checked, 79% beat mkt
+          crypto:  19 checked, 79% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-21T00:00:17.570225
+[4/5] Update dashboard...
+Dashboard updated: 1261 checks, 795/1261 beat (63.0%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=65.5%, overall=63.0%
+[6/6] Git push...
+=== 2026-03-21T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1792 active markets
+
+✅ 894 new predictions in 5.4s (skipped 898 existing)
+   Total tracked: 14337
+            sports: 699
+            crypto: 118
+          politics: 75
+       commodities: 2
+
+   Signals: ↑BUY YES: 16 | ↓BUY NO: 5107 | ≈HOLD: 9214
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1238 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-21 08:00
+============================================================
+  New resolved:    152
+  Total checked:   1413
+  Beat market:     903/1413 (64%)
+
+  By category (new):
+          sports: 110 checked, 78% beat mkt
+          crypto:  40 checked, 52% beat mkt
+     commodities:   2 checked, 50% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-21T12:00:14.727433
+[4/5] Update dashboard...
+Dashboard updated: 1413 checks, 903/1413 beat (63.9%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=64.2%, overall=63.9%
+[6/6] Git push...
+=== 2026-03-21T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1407 active markets
+
+✅ 375 new predictions in 3.6s (skipped 1032 existing)
+   Total tracked: 14712
+            sports: 258
+            crypto: 111
+          politics: 5
+           economy: 1
+
+   Signals: ↑BUY YES: 16 | ↓BUY NO: 5213 | ≈HOLD: 9483
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1581 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-21 14:00
+============================================================
+  New resolved:    248
+  Total checked:   1661
+  Beat market:     1072/1661 (65%)
+
+  By category (new):
+          sports: 228 checked, 71% beat mkt
+          crypto:  20 checked, 35% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-21T18:00:13.295950
+[4/5] Update dashboard...
+Dashboard updated: 1661 checks, 1072/1661 beat (64.5%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=63.0%, overall=64.5%
+[6/6] Git push...
+=== 2026-03-21T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1813 active markets
+
+✅ 884 new predictions in 3.1s (skipped 929 existing)
+   Total tracked: 15596
+            sports: 763
+            crypto: 118
+          politics: 3
+
+   Signals: ↑BUY YES: 16 | ↓BUY NO: 5730 | ≈HOLD: 9850
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1371 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-21 20:00
+============================================================
+  New resolved:    77
+  Total checked:   1738
+  Beat market:     1136/1738 (65%)
+
+  By category (new):
+          sports:  57 checked, 84% beat mkt
+          crypto:  13 checked, 85% beat mkt
+        politics:   7 checked, 71% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-22T00:00:13.228044
+[4/5] Update dashboard...
+Dashboard updated: 1738 checks, 1136/1738 beat (65.4%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=63.7%, overall=65.4%
+[6/6] Git push...
+=== 2026-03-22T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1675 active markets
+
+✅ 727 new predictions in 2.8s (skipped 948 existing)
+   Total tracked: 16323
+            sports: 612
+            crypto: 111
+          politics: 2
+       commodities: 1
+           science: 1
+
+   Signals: ↑BUY YES: 17 | ↓BUY NO: 5997 | ≈HOLD: 10309
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1595 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-22 08:00
+============================================================
+  New resolved:    211
+  Total checked:   1949
+  Beat market:     1282/1949 (66%)
+
+  By category (new):
+          sports: 168 checked, 74% beat mkt
+          crypto:  41 checked, 46% beat mkt
+        politics:   2 checked, 100% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-22T12:00:11.506627
+[4/5] Update dashboard...
+Dashboard updated: 1949 checks, 1282/1949 beat (65.8%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.5%, overall=65.8%
+[6/6] Git push...
+=== 2026-03-22T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Murmur Batch Tracker — Mass Prediction
+
+Found 1503 active markets
+
+✅ 608 new predictions in 2.6s (skipped 895 existing)
+   Total tracked: 16931
+            sports: 499
+            crypto: 108
+           economy: 1
+
+   Signals: ↑BUY YES: 17 | ↓BUY NO: 6255 | ≈HOLD: 10659
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1558 resolved markets
+
+============================================================
+📊 MURMUR CHECK REPORT — 2026-03-22 14:00
+============================================================
+  New resolved:    252
+  Total checked:   2201
+  Beat market:     1466/2201 (67%)
+
+  By category (new):
+          sports: 223 checked, 75% beat mkt
+          crypto:  29 checked, 55% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/murmur/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-22T18:00:13.183387
+[4/5] Update dashboard...
+Dashboard updated: 2201 checks, 1466/2201 beat (66.6%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.1%, overall=66.6%
+[6/6] Git push...
+=== 2026-03-24T08:00:01-04:00 ===
+[1/5] Batch predict...
+Traceback (most recent call last):
+  File "/home/guilinzhang/allProjects/orcetra/batch_tracker.py", line 15, in <module>
+    from orcetra.prices import get_price_context
+ModuleNotFoundError: No module named 'orcetra.prices'
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1163 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-24 08:00
+============================================================
+  New resolved:    71
+  Total checked:   2411
+  Beat market:     1623/2411 (67%)
+
+  By category (new):
+          crypto:  37 checked, 57% beat mkt
+          sports:  29 checked, 76% beat mkt
+        politics:   5 checked, 100% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-24T12:00:03.321145
+[4/5] Update dashboard...
+Dashboard updated: 2008 checks, 1412/2008 beat (70.3%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.0%, overall=67.3%
+[6/6] Git push...
+=== 2026-03-24T14:00:01-04:00 ===
+[1/5] Batch predict...
+Traceback (most recent call last):
+  File "/home/guilinzhang/allProjects/orcetra/batch_tracker.py", line 15, in <module>
+    from orcetra.prices import get_price_context
+ModuleNotFoundError: No module named 'orcetra.prices'
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 862 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-24 14:00
+============================================================
+  New resolved:    67
+  Total checked:   2478
+  Beat market:     1667/2478 (67%)
+
+  By category (new):
+          sports:  46 checked, 70% beat mkt
+          crypto:  14 checked, 43% beat mkt
+        politics:   6 checked, 83% beat mkt
+     commodities:   1 checked, 100% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-24T18:00:05.404930
+[4/5] Update dashboard...
+Dashboard updated: 2061 checks, 1450/2061 beat (70.4%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=61.9%, overall=67.3%
+[6/6] Git push...
+=== 2026-03-24T20:00:01-04:00 ===
+[1/5] Batch predict...
+Traceback (most recent call last):
+  File "/home/guilinzhang/allProjects/orcetra/batch_tracker.py", line 15, in <module>
+    from orcetra.prices import get_price_context
+ModuleNotFoundError: No module named 'orcetra.prices'
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1026 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-24 20:00
+============================================================
+  New resolved:    26
+  Total checked:   2504
+  Beat market:     1692/2504 (68%)
+
+  By category (new):
+          sports:  18 checked, 100% beat mkt
+        politics:   8 checked, 88% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-25T00:00:04.422948
+[4/5] Update dashboard...
+Dashboard updated: 2087 checks, 1475/2087 beat (70.7%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.2%, overall=67.6%
+[6/6] Git push...
+=== 2026-03-25T08:00:01-04:00 ===
+[1/5] Batch predict...
+Traceback (most recent call last):
+  File "/home/guilinzhang/allProjects/orcetra/batch_tracker.py", line 15, in <module>
+    from orcetra.prices import get_price_context
+ModuleNotFoundError: No module named 'orcetra.prices'
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1651 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-25 08:00
+============================================================
+  New resolved:    39
+  Total checked:   2543
+  Beat market:     1715/2543 (67%)
+
+  By category (new):
+          sports:  30 checked, 50% beat mkt
+        politics:   9 checked, 89% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-25T12:00:03.367681
+[4/5] Update dashboard...
+Dashboard updated: 2126 checks, 1498/2126 beat (70.5%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.5%, overall=67.4%
+[6/6] Git push...
+=== 2026-03-25T14:00:01-04:00 ===
+[1/5] Batch predict...
+Traceback (most recent call last):
+  File "/home/guilinzhang/allProjects/orcetra/batch_tracker.py", line 15, in <module>
+    from orcetra.prices import get_price_context
+ModuleNotFoundError: No module named 'orcetra.prices'
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1012 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-25 14:00
+============================================================
+  New resolved:    15
+  Total checked:   2558
+  Beat market:     1722/2558 (67%)
+
+  By category (new):
+          sports:  15 checked, 47% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-25T18:00:03.813221
+[4/5] Update dashboard...
+Dashboard updated: 2141 checks, 1505/2141 beat (70.3%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.5%, overall=67.3%
+[6/6] Git push...
+=== 2026-03-25T20:00:01-04:00 ===
+[1/5] Batch predict...
+Traceback (most recent call last):
+  File "/home/guilinzhang/allProjects/orcetra/batch_tracker.py", line 15, in <module>
+    from orcetra.prices import get_price_context
+ModuleNotFoundError: No module named 'orcetra.prices'
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1285 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-25 20:00
+============================================================
+  New resolved:    29
+  Total checked:   2587
+  Beat market:     1738/2587 (67%)
+
+  By category (new):
+          sports:  19 checked, 42% beat mkt
+        politics:  10 checked, 80% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-26T00:00:03.127010
+[4/5] Update dashboard...
+Dashboard updated: 2170 checks, 1521/2170 beat (70.1%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.8%, overall=67.2%
+[6/6] Git push...
+=== 2026-03-26T08:00:01-04:00 ===
+[1/5] Batch predict...
+Traceback (most recent call last):
+  File "/home/guilinzhang/allProjects/orcetra/batch_tracker.py", line 15, in <module>
+    from orcetra.prices import get_price_context
+ModuleNotFoundError: No module named 'orcetra.prices'
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1144 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-26 08:00
+============================================================
+  New resolved:    19
+  Total checked:   2606
+  Beat market:     1750/2606 (67%)
+
+  By category (new):
+          sports:  16 checked, 62% beat mkt
+         science:   3 checked, 67% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-26T12:00:02.801470
+[4/5] Update dashboard...
+Dashboard updated: 2189 checks, 1533/2189 beat (70.0%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.8%, overall=67.2%
+[6/6] Git push...
+=== 2026-03-26T14:00:01-04:00 ===
+[1/5] Batch predict...
+Traceback (most recent call last):
+  File "/home/guilinzhang/allProjects/orcetra/batch_tracker.py", line 15, in <module>
+    from orcetra.prices import get_price_context
+ModuleNotFoundError: No module named 'orcetra.prices'
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1371 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-26 14:00
+============================================================
+  New resolved:    36
+  Total checked:   2642
+  Beat market:     1770/2642 (67%)
+
+  By category (new):
+        politics:  35 checked, 57% beat mkt
+          sports:   1 checked, 0% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-26T18:00:03.277504
+[4/5] Update dashboard...
+Dashboard updated: 2225 checks, 1553/2225 beat (69.8%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.5%, overall=67.0%
+[6/6] Git push...
+=== 2026-03-26T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1628 active markets
+
+✅ 479 new predictions in 0.6s (skipped 1149 existing)
+   Total tracked: 18991
+            sports: 466
+          politics: 10
+           economy: 2
+              golf: 1
+
+   Signals: ↑BUY YES: 27 | ↓BUY NO: 7071 | ≈HOLD: 11893
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1171 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-26 20:00
+============================================================
+  New resolved:    0
+  Total checked:   2643
+  Beat market:     1771/2643 (67%)
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-27T00:00:11.710721
+[4/5] Update dashboard...
+Dashboard updated: 2226 checks, 1554/2226 beat (69.8%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.5%, overall=67.0%
+[6/6] Git push...
+=== 2026-03-27T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1919 active markets
+
+✅ 803 new predictions in 2.3s (skipped 1116 existing)
+   Total tracked: 19794
+            sports: 734
+              golf: 47
+            crypto: 16
+          politics: 5
+           economy: 1
+
+   Signals: ↑BUY YES: 27 | ↓BUY NO: 7512 | ≈HOLD: 12255
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1633 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-27 08:00
+============================================================
+  New resolved:    2
+  Total checked:   2645
+  Beat market:     1771/2645 (67%)
+
+  By category (new):
+          sports:   2 checked, 0% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-27T12:00:11.952212
+[4/5] Update dashboard...
+Dashboard updated: 2228 checks, 1554/2228 beat (69.7%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=62.5%, overall=67.0%
+[6/6] Git push...
+=== 2026-03-27T14:00:02-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1481 active markets
+
+✅ 416 new predictions in 0.8s (skipped 1065 existing)
+   Total tracked: 20210
+            sports: 338
+          politics: 58
+           science: 7
+            crypto: 7
+       commodities: 4
+           economy: 1
+              golf: 1
+
+   Signals: ↑BUY YES: 27 | ↓BUY NO: 7803 | ≈HOLD: 12380
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1668 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-27 14:00
+============================================================
+  New resolved:    29
+  Total checked:   2674
+  Beat market:     1786/2674 (67%)
+
+  By category (new):
+          sports:  14 checked, 50% beat mkt
+     commodities:   8 checked, 25% beat mkt
+         economy:   7 checked, 86% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-27T18:00:11.911455
+[4/5] Update dashboard...
+Dashboard updated: 2257 checks, 1569/2257 beat (69.5%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=62.3%, overall=66.8%
+[6/6] Git push...
+=== 2026-03-27T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1851 active markets
+
+✅ 943 new predictions in 8.7s (skipped 908 existing)
+   Total tracked: 21153
+            sports: 662
+          politics: 174
+       commodities: 56
+           economy: 23
+            crypto: 16
+           science: 10
+              golf: 2
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 8192 | ≈HOLD: 12917
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 2489 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-27 20:00
+============================================================
+  New resolved:    76
+  Total checked:   2750
+  Beat market:     1847/2750 (67%)
+
+  By category (new):
+        politics:  50 checked, 88% beat mkt
+          sports:  26 checked, 65% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-28T00:00:19.345910
+[4/5] Update dashboard...
+Dashboard updated: 2333 checks, 1630/2333 beat (69.9%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=64.0%, overall=67.2%
+[6/6] Git push...
+=== 2026-03-28T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1950 active markets
+
+✅ 847 new predictions in 1.5s (skipped 1103 existing)
+   Total tracked: 22000
+            sports: 747
+          politics: 79
+            crypto: 18
+           economy: 3
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 8616 | ≈HOLD: 13340
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 2134 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-28 08:00
+============================================================
+  New resolved:    151
+  Total checked:   2901
+  Beat market:     1935/2901 (67%)
+
+  By category (new):
+          sports: 122 checked, 56% beat mkt
+        politics:  29 checked, 69% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-28T12:00:11.267853
+[4/5] Update dashboard...
+Dashboard updated: 2484 checks, 1718/2484 beat (69.2%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=64.2%, overall=66.7%
+[6/6] Git push...
+=== 2026-03-28T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1587 active markets
+
+✅ 472 new predictions in 1.0s (skipped 1115 existing)
+   Total tracked: 22472
+            sports: 459
+            crypto: 8
+          politics: 4
+           economy: 1
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 9010 | ≈HOLD: 13418
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1625 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-28 14:00
+============================================================
+  New resolved:    23
+  Total checked:   2955
+  Beat market:     1979/2955 (67%)
+
+  By category (new):
+          sports:  23 checked, 74% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-28T18:00:10.793803
+[4/5] Update dashboard...
+Dashboard updated: 2538 checks, 1762/2538 beat (69.4%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=64.6%, overall=67.0%
+[6/6] Git push...
+=== 2026-03-28T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 2029 active markets
+
+✅ 925 new predictions in 2.6s (skipped 1104 existing)
+   Total tracked: 23397
+            sports: 902
+            crypto: 20
+          politics: 2
+           economy: 1
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 9544 | ≈HOLD: 13809
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1637 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-28 20:00
+============================================================
+  New resolved:    84
+  Total checked:   3039
+  Beat market:     2030/3039 (67%)
+
+  By category (new):
+          sports:  76 checked, 59% beat mkt
+        politics:   8 checked, 75% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-29T00:00:13.350679
+[4/5] Update dashboard...
+Dashboard updated: 2622 checks, 1813/2622 beat (69.1%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=64.7%, overall=66.8%
+[6/6] Git push...
+=== 2026-03-29T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1799 active markets
+
+✅ 745 new predictions in 1.0s (skipped 1054 existing)
+   Total tracked: 24142
+            sports: 729
+            crypto: 12
+          politics: 3
+           economy: 1
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 9971 | ≈HOLD: 14127
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1782 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-29 08:00
+============================================================
+  New resolved:    106
+  Total checked:   3145
+  Beat market:     2093/3145 (67%)
+
+  By category (new):
+          sports: 101 checked, 58% beat mkt
+        politics:   5 checked, 80% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-29T12:00:10.619991
+[4/5] Update dashboard...
+Dashboard updated: 2728 checks, 1876/2728 beat (68.8%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=64.8%, overall=66.6%
+[6/6] Git push...
+=== 2026-03-29T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1676 active markets
+
+✅ 650 new predictions in 0.7s (skipped 1026 existing)
+   Total tracked: 24792
+            sports: 633
+            crypto: 15
+           economy: 1
+          politics: 1
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 10308 | ≈HOLD: 14440
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1112 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-29 14:00
+============================================================
+  New resolved:    21
+  Total checked:   3166
+  Beat market:     2108/3166 (67%)
+
+  By category (new):
+          sports:  18 checked, 72% beat mkt
+        politics:   3 checked, 67% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-29T18:00:10.119269
+[4/5] Update dashboard...
+Dashboard updated: 2749 checks, 1891/2749 beat (68.8%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=64.8%, overall=66.6%
+[6/6] Git push...
+=== 2026-03-29T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1807 active markets
+
+✅ 890 new predictions in 1.5s (skipped 917 existing)
+   Total tracked: 25682
+            sports: 860
+            crypto: 20
+          politics: 8
+           economy: 2
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 10707 | ≈HOLD: 14931
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1863 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-29 20:00
+============================================================
+  New resolved:    96
+  Total checked:   3262
+  Beat market:     2165/3262 (66%)
+
+  By category (new):
+          sports:  89 checked, 58% beat mkt
+        politics:   7 checked, 71% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-30T00:00:11.125120
+[4/5] Update dashboard...
+Dashboard updated: 2845 checks, 1948/2845 beat (68.5%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=64.9%, overall=66.4%
+[6/6] Git push...
+=== 2026-03-30T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1563 active markets
+
+✅ 670 new predictions in 0.9s (skipped 893 existing)
+   Total tracked: 26352
+            sports: 648
+            crypto: 14
+          politics: 7
+           science: 1
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 11062 | ≈HOLD: 15246
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 2188 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-30 08:00
+============================================================
+  New resolved:    186
+  Total checked:   3448
+  Beat market:     2308/3448 (67%)
+
+  By category (new):
+            golf:  94 checked, 93% beat mkt
+        politics:  49 checked, 51% beat mkt
+          sports:  43 checked, 72% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-30T12:00:10.509056
+[4/5] Update dashboard...
+Dashboard updated: 3031 checks, 2091/3031 beat (69.0%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  google-gemini-cli auth configured, enabled automatically.  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor ──────────────────────────────────────────────╮
+│                                                       │
+│  Run "openclaw doctor --fix" to apply these changes.  │
+│                                                       │
+├───────────────────────────────────────────────────────╯
+Config was last written by a newer OpenClaw (2026.3.23-2); current version is 2026.3.8.
+ok
+ALERT SENT: bet=66.8%, overall=66.9%
+[6/6] Git push...
+=== 2026-03-30T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1757 active markets
+
+✅ 914 new predictions in 1.7s (skipped 843 existing)
+   Total tracked: 27266
+            sports: 887
+            crypto: 14
+          politics: 9
+       commodities: 4
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 11324 | ≈HOLD: 15898
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1114 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-30 14:00
+============================================================
+  New resolved:    35
+  Total checked:   3483
+  Beat market:     2332/3483 (67%)
+
+  By category (new):
+          sports:  35 checked, 69% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-30T18:00:13.165311
+[4/5] Update dashboard...
+Dashboard updated: 3066 checks, 2115/3066 beat (69.0%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=66.8%, overall=67.0%
+[6/6] Git push...
+[main 5d367f9] data: auto-update 2026-03-30_14:00
+ 5 files changed, 34881 insertions(+), 402 deletions(-)
+Pushed updates
+=== Done 2026-03-30T14:00:21-04:00 ===
+=== 2026-03-30T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1902 active markets
+
+✅ 768 new predictions in 1.9s (skipped 1134 existing)
+   Total tracked: 28034
+            sports: 572
+          politics: 98
+           economy: 80
+            crypto: 18
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 11735 | ≈HOLD: 16255
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 2038 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-30 20:00
+============================================================
+  New resolved:    94
+  Total checked:   3577
+  Beat market:     2397/3577 (67%)
+
+  By category (new):
+          sports:  85 checked, 69% beat mkt
+        politics:   9 checked, 67% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-31T00:00:12.696936
+[4/5] Update dashboard...
+Dashboard updated: 3160 checks, 2180/3160 beat (69.0%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+Error: gateway closed (1006 abnormal closure (no close frame)): no close reason
+Gateway target: wss://127.0.0.1:18789
+Source: local loopback
+Config: /home/guilinzhang/.openclaw/openclaw.json
+Bind: lan
+ALERT SENT: bet=66.8%, overall=67.0%
+[6/6] Git push...
+[main d01d866] data: auto-update 2026-03-30_20:00
+ 5 files changed, 16387 insertions(+), 25 deletions(-)
+Pushed updates
+=== Done 2026-03-30T20:00:21-04:00 ===
+=== 2026-03-31T08:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 2045 active markets
+
+✅ 828 new predictions in 1.0s (skipped 1217 existing)
+   Total tracked: 28862
+            sports: 726
+          politics: 81
+            crypto: 14
+              golf: 6
+           economy: 1
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 12185 | ≈HOLD: 16633
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1420 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-31 08:00
+============================================================
+  New resolved:    121
+  Total checked:   3698
+  Beat market:     2464/3698 (67%)
+
+  By category (new):
+          sports: 116 checked, 54% beat mkt
+        politics:   5 checked, 80% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-31T12:00:11.496537
+[4/5] Update dashboard...
+Dashboard updated: 3281 checks, 2247/3281 beat (68.5%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=66.9%, overall=66.6%
+[6/6] Git push...
+[main 620f0cb] data: auto-update 2026-03-31_08:00
+ 5 files changed, 18318 insertions(+), 147 deletions(-)
+Pushed updates
+=== Done 2026-03-31T08:00:19-04:00 ===
+=== 2026-03-31T14:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1989 active markets
+
+✅ 711 new predictions in 2.1s (skipped 1278 existing)
+   Total tracked: 29573
+            sports: 619
+          politics: 54
+            crypto: 20
+       commodities: 16
+              golf: 2
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 12500 | ≈HOLD: 17029
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 2429 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-31 14:00
+============================================================
+  New resolved:    198
+  Total checked:   3896
+  Beat market:     2615/3896 (67%)
+
+  By category (new):
+          sports: 139 checked, 76% beat mkt
+        politics:  58 checked, 78% beat mkt
+         economy:   1 checked, 0% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-03-31T18:00:38.157758
+[4/5] Update dashboard...
+Dashboard updated: 3479 checks, 2398/3479 beat (68.9%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=67.4%, overall=67.1%
+[6/6] Git push...
+[main 64e10f3] data: auto-update 2026-03-31_14:00
+ 5 files changed, 18207 insertions(+), 63 deletions(-)
+Pushed updates
+=== Done 2026-03-31T14:00:47-04:00 ===
+=== 2026-03-31T20:00:01-04:00 ===
+[1/5] Batch predict...
+🔮 Orcetra Batch Tracker — Mass Prediction
+
+Found 1881 active markets
+
+✅ 378 new predictions in 2.4s (skipped 1503 existing)
+   Total tracked: 29951
+            sports: 301
+          politics: 47
+            crypto: 19
+           economy: 7
+       commodities: 2
+              golf: 2
+
+   Signals: ↑BUY YES: 44 | ↓BUY NO: 12649 | ≈HOLD: 17258
+[2/5] Auto check...
+🔍 Fetching resolved markets...
+   Found 1310 resolved markets
+
+============================================================
+📊 ORCETRA CHECK REPORT — 2026-03-31 20:00
+============================================================
+  New resolved:    88
+  Total checked:   3984
+  Beat market:     2671/3984 (67%)
+
+  By category (new):
+          sports:  45 checked, 44% beat mkt
+        politics:  38 checked, 84% beat mkt
+         economy:   5 checked, 80% beat mkt
+[3/5] Price tracking...
+/home/guilinzhang/allProjects/orcetra/scripts/track_prices.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+📈 Price snapshot: 0 prices tracked at 2026-04-01T00:00:14.250460
+[4/5] Update dashboard...
+Dashboard updated: 3567 checks, 2454/3567 beat (68.8%)
+Copied to site/dashboard.html
+[5/5] Alert check...
+Config warnings:\n- plugins.entries.google: plugin not found: google (stale config entry ignored; remove it from plugins config)
+│
+◇  Config warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - plugins.entries.google: plugin not found: google (stale config entry  │
+│    ignored; remove it from plugins config)                               │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+ok
+ALERT SENT: bet=68.0%, overall=67.0%
+[6/6] Git push...
+[main 72b5765] data: auto-update 2026-03-31_20:00
+ 5 files changed, 9208 insertions(+), 28 deletions(-)
+Pushed updates
+=== Done 2026-03-31T20:00:53-04:00 ===

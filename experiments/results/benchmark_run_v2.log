@@ -1,0 +1,626 @@
+Fetching OpenML dataset catalog...
+  Curated datasets: 127
+  Total selected: 3500 (94 curated + 3406 popular)
+
+Datasets to process: 3500 (of 3500 total)
+  [1/3500] ✓ higgs                          | class | baseline=0.7168 orc=0.7289 (+1.7%) | win_rate=100% avg_imp=1.7% | 16/hr
+  [2/3500] ✓ numerai28.6                    | class | baseline=0.5197 orc=0.5224 (+0.5%) | win_rate=100% avg_imp=1.1% | 19/hr
+  [3/3500] ✓ jannis                         | class | baseline=0.7036 orc=0.7161 (+1.8%) | win_rate=100% avg_imp=1.3% | 7/hr
+  [4/3500] · APSFailure                     | class | baseline=0.9939 orc=0.9934 (-0.1%) | win_rate=75% avg_imp=1.3% | 6/hr
+  [5/3500] ✓ connect-4                      | class | baseline=0.6616 orc=0.8617 (+30.2%) | win_rate=80% avg_imp=8.6% | 7/hr
+  [6/3500] ✓ volkert                        | class | baseline=0.6687 orc=0.7040 (+5.3%) | win_rate=83% avg_imp=7.9% | 3/hr
+  [7/3500] · shuttle                        | class | baseline=0.9999 orc=0.9998 (-0.0%) | win_rate=71% avg_imp=7.9% | 4/hr
+  [8/3500] ✓ diamonds                       | regre | baseline=3355006.1694 orc=0.0892 (+100.0%) | win_rate=75% avg_imp=23.3% | 4/hr
+  [9/3500] ✓ adult                          | class | baseline=0.8663 orc=0.8798 (+1.6%) | win_rate=78% avg_imp=20.2% | 5/hr
+  [10/3500] ✓ electricity                    | class | baseline=0.7123 orc=0.9356 (+31.3%) | win_rate=80% avg_imp=21.6% | 5/hr
+  [11/3500] ✓ bank-marketing                 | class | baseline=0.7419 orc=0.9083 (+22.4%) | win_rate=82% avg_imp=21.7% | 6/hr
+  [12/3500] ✓ jungle_chess_2pcs_raw_endgame_ | class | baseline=0.6842 orc=0.8703 (+27.2%) | win_rate=83% avg_imp=22.2% | 6/hr
+  [13/3500] ✓ OnlineNewsPopularity           | regre | baseline=141236172.5130 orc=1.0339 (+100.0%) | win_rate=85% avg_imp=29.3% | 7/hr
+  [14/3500] ✓ nomao                          | class | baseline=0.9440 orc=0.9730 (+3.1%) | win_rate=86% avg_imp=27.1% | 7/hr
+  [15/3500] ✓ Amazon_employee_access         | class | baseline=0.9472 orc=0.9535 (+0.7%) | win_rate=87% avg_imp=25.1% | 7/hr
+  [16/3500] ✓ house_16H                      | regre | baseline=1036370403.1125 orc=919552612.4410 (+11.3%) | win_rate=88% avg_imp=24.1% | 8/hr
+  [17/3500] ✓ house_sales                    | regre | baseline=16653107967.9243 orc=0.1638 (+100.0%) | win_rate=88% avg_imp=29.1% | 8/hr
+  [18/3500] ✓ letter                         | class | baseline=0.9627 orc=0.9708 (+0.8%) | win_rate=89% avg_imp=27.4% | 9/hr
+  [19/3500] · elevators                      | regre | baseline=0.0000 orc=0.0021 (-24055.2%) | win_rate=84% avg_imp=27.4% | 9/hr
+  [20/3500] ✓ pol                            | class | baseline=0.8864 orc=0.8947 (+0.9%) | win_rate=85% avg_imp=25.8% | 9/hr
+  [21/3500] ✓ PhishingWebsites               | class | baseline=0.9684 orc=0.9715 (+0.3%) | win_rate=86% avg_imp=24.4% | 10/hr
+  [22/3500] ✓ pendigits                      | class | baseline=0.9906 orc=0.9941 (+0.3%) | win_rate=86% avg_imp=23.1% | 10/hr
+  [23/3500] ✓ jm1                            | class | baseline=0.8044 orc=0.8181 (+1.7%) | win_rate=87% avg_imp=22.1% | 11/hr
+  [24/3500] ✓ Brazilian_houses               | regre | baseline=8151048.7544 orc=0.0001 (+100.0%) | win_rate=88% avg_imp=25.8% | 11/hr
+  [25/3500] ✓ GesturePhaseSegmentationProces | class | baseline=0.4680 orc=0.7043 (+50.5%) | win_rate=88% avg_imp=26.9% | 11/hr
+  [26/3500] ✓ topo_2_1                       | regre | baseline=0.0009 orc=0.0008 (+10.9%) | win_rate=88% avg_imp=26.2% | 11/hr
+  [27/3500] ✓ yprop_4_1                      | regre | baseline=0.0008 orc=0.0007 (+14.4%) | win_rate=89% avg_imp=25.7% | 12/hr
+  [28/3500] ✓ wine_quality                   | class | baseline=0.4866 orc=0.6915 (+42.1%) | win_rate=89% avg_imp=26.4% | 12/hr
+  [29/3500] ✓ satimage                       | class | baseline=0.9148 orc=0.9331 (+2.0%) | win_rate=90% avg_imp=25.4% | 12/hr
+  [30/3500] ✓ first-order-theorem-proving    | class | baseline=0.5775 orc=0.6152 (+6.5%) | win_rate=90% avg_imp=24.7% | 12/hr
+  [31/3500] ✓ optdigits                      | class | baseline=0.9756 orc=0.9858 (+1.0%) | win_rate=90% avg_imp=23.9% | 13/hr
+  [32/3500] ✓ texture                        | class | baseline=0.9809 orc=0.9964 (+1.6%) | win_rate=91% avg_imp=23.1% | 13/hr
+  [33/3500] ✓ wall-robot-navigation          | class | baseline=0.9945 orc=0.9963 (+0.2%) | win_rate=91% avg_imp=22.3% | 13/hr
+  [34/3500] ✓ phoneme                        | class | baseline=0.9119 orc=0.9130 (+0.1%) | win_rate=91% avg_imp=21.6% | 14/hr
+  [35/3500] ✓ sylvine                        | class | baseline=0.9374 orc=0.9590 (+2.3%) | win_rate=91% avg_imp=21.0% | 14/hr
+  [36/3500] ✓ churn                          | class | baseline=0.9566 orc=0.9660 (+1.0%) | win_rate=92% avg_imp=20.4% | 14/hr
+  [37/3500] ✓ wilt                           | class | baseline=0.9820 orc=0.9886 (+0.7%) | win_rate=92% avg_imp=19.8% | 15/hr
+  [38/3500] ✓ spambase                       | class | baseline=0.9300 orc=0.9663 (+3.9%) | win_rate=92% avg_imp=19.4% | 15/hr
+  [39/3500] ✓ SAT11-HAND-runtime-regression  | regre | baseline=3744665.9597 orc=1127543.7513 (+69.9%) | win_rate=92% avg_imp=20.8% | 15/hr
+  [40/3500] ✓ Mercedes_Benz_Greener_Manufact | regre | baseline=72.8393 orc=0.0720 (+99.9%) | win_rate=92% avg_imp=22.9% | 16/hr
+  [41/3500] ✓ abalone                        | regre | baseline=4.9809 orc=0.1747 (+96.5%) | win_rate=93% avg_imp=24.9% | 16/hr
+  [42/3500] ✓ sick                           | class | baseline=0.9865 orc=0.9947 (+0.8%) | win_rate=93% avg_imp=24.2% | 16/hr
+  [43/3500] ✓ kr-vs-kp                       | class | baseline=0.9446 orc=0.9938 (+5.2%) | win_rate=93% avg_imp=23.8% | 17/hr
+  [44/3500] ✓ splice                         | class | baseline=0.9614 orc=0.9765 (+1.6%) | win_rate=93% avg_imp=23.2% | 17/hr
+  [45/3500] ✓ dna                            | class | baseline=0.9645 orc=0.9671 (+0.3%) | win_rate=93% avg_imp=22.7% | 17/hr
+  [46/3500] ✓ space_ga                       | regre | baseline=0.0175 orc=0.0107 (+38.7%) | win_rate=93% avg_imp=23.1% | 18/hr
+  [47/3500] · jasmine                        | class | baseline=0.8204 orc=0.8141 (-0.8%) | win_rate=91% avg_imp=23.1% | 18/hr
+  [48/3500] ✓ ozone-level-8hr                | class | baseline=0.9365 orc=0.9467 (+1.1%) | win_rate=92% avg_imp=22.6% | 18/hr
+  [49/3500] · segment                        | class | baseline=0.9377 orc=0.9351 (-0.3%) | win_rate=90% avg_imp=22.6% | 18/hr
+  [50/3500] ✓ quake                          | class | baseline=0.2750 orc=0.2982 (+8.4%) | win_rate=90% avg_imp=22.2% | 19/hr
+  [51/3500] ✓ kc1                            | class | baseline=0.8383 orc=0.8697 (+3.7%) | win_rate=90% avg_imp=21.8% | 19/hr
+  [52/3500] · mfeat-pixel                    | class | baseline=0.9775 orc=0.9775 (+0.0%) | win_rate=88% avg_imp=21.8% | 19/hr
+  [53/3500] ✓ mfeat-factors                  | class | baseline=0.9655 orc=0.9850 (+2.0%) | win_rate=89% avg_imp=21.4% | 19/hr
+  [54/3500] ✓ mfeat-fourier                  | class | baseline=0.8300 orc=0.8450 (+1.8%) | win_rate=89% avg_imp=21.0% | 19/hr
+  [55/3500] ✓ mfeat-karhunen                 | class | baseline=0.9600 orc=0.9700 (+1.0%) | win_rate=89% avg_imp=20.6% | 19/hr
+  [56/3500] ✓ mfeat-morphological            | class | baseline=0.7120 orc=0.7500 (+5.3%) | win_rate=89% avg_imp=20.3% | 20/hr
+  [57/3500] ✓ mfeat-zernike                  | class | baseline=0.7720 orc=0.8175 (+5.9%) | win_rate=89% avg_imp=20.0% | 20/hr
+  [58/3500] ✓ us_crime                       | regre | baseline=0.0185 orc=0.0167 (+9.6%) | win_rate=90% avg_imp=19.8% | 20/hr
+  [59/3500] ✓ steel-plates-fault             | class | baseline=0.6265 orc=0.8149 (+30.1%) | win_rate=90% avg_imp=20.0% | 20/hr
+  [60/3500] ✓ car                            | class | baseline=0.8155 orc=0.9942 (+21.9%) | win_rate=90% avg_imp=20.0% | 21/hr
+  [61/3500] ✓ semeion                        | class | baseline=0.9372 orc=0.9467 (+1.0%) | win_rate=90% avg_imp=19.7% | 21/hr
+  [62/3500] ✓ pc3                            | class | baseline=0.9040 orc=0.9042 (+0.0%) | win_rate=90% avg_imp=19.3% | 21/hr
+  [63/3500] ✓ cmc                            | class | baseline=0.5608 orc=0.6305 (+12.4%) | win_rate=90% avg_imp=19.2% | 21/hr
+  [64/3500] ✓ house_prices_nominal           | regre | baseline=723546720.9296 orc=0.1328 (+100.0%) | win_rate=91% avg_imp=20.6% | 22/hr
+  [65/3500] ✓ pc4                            | class | baseline=0.9102 orc=0.9212 (+1.2%) | win_rate=91% avg_imp=20.3% | 22/hr
+  [66/3500] ✓ banknote-authentication        | class | baseline=0.9956 orc=1.0000 (+0.4%) | win_rate=91% avg_imp=20.0% | 22/hr
+  [67/3500] ✓ Moneyball                      | regre | baseline=571.5160 orc=489.5850 (+14.3%) | win_rate=91% avg_imp=19.9% | 22/hr
+  [68/3500] ✓ socmob                         | regre | baseline=429.2301 orc=230.4084 (+46.3%) | win_rate=91% avg_imp=20.3% | 23/hr
+  [69/3500] · pc1                            | class | baseline=0.9324 orc=0.9279 (-0.5%) | win_rate=90% avg_imp=20.3% | 23/hr
+  [70/3500] ✓ MIP-2016-regression            | regre | baseline=672961203.0977 orc=3.1584 (+100.0%) | win_rate=90% avg_imp=21.6% | 23/hr
+  [71/3500] ✓ MiceProtein                    | class | baseline=0.6065 orc=1.0000 (+64.9%) | win_rate=90% avg_imp=22.2% | 23/hr
+  [72/3500] ✓ qsar-biodeg                    | class | baseline=0.8569 orc=0.8957 (+4.5%) | win_rate=90% avg_imp=22.0% | 24/hr
+  [73/3500] ✓ credit-g                       | class | baseline=0.7570 orc=0.8300 (+9.6%) | win_rate=90% avg_imp=21.8% | 24/hr
+  [74/3500] ✓ vowel                          | class | baseline=0.5848 orc=0.9949 (+70.1%) | win_rate=91% avg_imp=22.5% | 24/hr
+  [75/3500] ✓ tic-tac-toe                    | class | baseline=0.8228 orc=1.0000 (+21.5%) | win_rate=91% avg_imp=22.5% | 24/hr
+  [76/3500] ✓ vehicle                        | class | baseline=0.7683 orc=0.8294 (+7.9%) | win_rate=91% avg_imp=22.3% | 25/hr
+  [77/3500] ✓ analcatdata_authorship         | class | baseline=0.9857 orc=1.0000 (+1.4%) | win_rate=91% avg_imp=22.0% | 25/hr
+  [78/3500] ✓ analcatdata_dmft               | class | baseline=0.2147 orc=0.2437 (+13.5%) | win_rate=91% avg_imp=21.9% | 25/hr
+  [79/3500] ✓ diabetes                       | class | baseline=0.7670 orc=0.8052 (+5.0%) | win_rate=91% avg_imp=21.6% | 25/hr
+  [80/3500] ✓ blood-transfusion-service-cent | class | baseline=0.7113 orc=0.8067 (+13.4%) | win_rate=91% avg_imp=21.5% | 25/hr
+  [81/3500] ✓ eucalyptus                     | class | baseline=0.5624 orc=0.7027 (+24.9%) | win_rate=91% avg_imp=21.6% | 26/hr
+  [82/3500] ✓ breast-w                       | class | baseline=0.9657 orc=0.9857 (+2.1%) | win_rate=91% avg_imp=21.3% | 26/hr
+  [83/3500] ✓ Australian                     | class | baseline=0.8667 orc=0.8913 (+2.8%) | win_rate=92% avg_imp=21.1% | 26/hr
+  [84/3500] ✓ credit-approval                | class | baseline=0.8522 orc=0.8841 (+3.7%) | win_rate=92% avg_imp=20.8% | 26/hr
+  [85/3500] ✓ balance-scale                  | class | baseline=0.6528 orc=0.9040 (+38.5%) | win_rate=92% avg_imp=21.1% | 27/hr
+  [86/3500] ✓ ilpd                           | class | baseline=0.7066 orc=0.8120 (+14.9%) | win_rate=92% avg_imp=21.0% | 27/hr
+  [87/3500] ✓ sensory                        | class | baseline=0.1337 orc=0.2586 (+93.4%) | win_rate=92% avg_imp=21.9% | 27/hr
+  [88/3500] ✓ wdbc                           | class | baseline=0.9614 orc=0.9912 (+3.1%) | win_rate=92% avg_imp=21.6% | 27/hr
+  [89/3500] ✓ climate-model-simulation-crash | class | baseline=0.9481 orc=0.9630 (+1.6%) | win_rate=92% avg_imp=21.4% | 27/hr
+  [90/3500] ✓ cylinder-bands                 | class | baseline=0.6185 orc=0.8704 (+40.7%) | win_rate=92% avg_imp=21.6% | 28/hr
+  [91/3500] ✓ kc2                            | class | baseline=0.7988 orc=0.8667 (+8.5%) | win_rate=92% avg_imp=21.5% | 28/hr
+  [92/3500] ✓ boston                         | regre | baseline=18.7462 orc=0.1076 (+99.4%) | win_rate=92% avg_imp=22.4% | 28/hr
+  [93/3500] ✓ dresses-sales                  | class | baseline=0.5620 orc=0.6300 (+12.1%) | win_rate=92% avg_imp=22.3% | 28/hr
+  [94/3500] ✓ tecator                        | regre | baseline=3.7214 orc=0.6468 (+82.6%) | win_rate=93% avg_imp=23.0% | 29/hr
+  [95/3500] ✓ dataset_credit_score           | class | baseline=0.6776 orc=0.7907 (+16.7%) | win_rate=93% avg_imp=22.9% | 28/hr
+  [96/3500] ✓ mercari_price_suggestion100K   | regre | baseline=0.0000 orc=0.0000 (+90.3%) | win_rate=93% avg_imp=23.7% | 28/hr
+  [97/3500] ✓ mercari_price_suggestion100K   | regre | baseline=0.0000 orc=0.0000 (+91.4%) | win_rate=93% avg_imp=24.4% | 29/hr
+  [98/3500] ✓ Credit_score_classification    | class | baseline=0.6805 orc=0.7915 (+16.3%) | win_rate=93% avg_imp=24.3% | 28/hr
+  [99/3500] ✓ dataset_credit_score           | class | baseline=0.6776 orc=0.7907 (+16.7%) | win_rate=93% avg_imp=24.2% | 27/hr
+
+==================================================
+  Processed: 100 | Success: 99 | Errors: 1
+  Orcetra wins: 92/99 (92.9%)
+  Avg improvement: 24.24% | Median: 8.18%
+  Elapsed: 3.7h | Rate: 27/hr
+==================================================
+
+  [102/3500] ✓ credit-score-classification-Hz | class | baseline=0.6827 orc=0.7964 (+16.6%) | win_rate=93% avg_imp=24.2% | 26/hr
+  [103/3500] ✓ CERN-Electron-Collision-Data   | regre | baseline=33.7638 orc=0.1612 (+99.5%) | win_rate=93% avg_imp=25.0% | 26/hr
+  [105/3500] ✓ Credit_Score_Classification    | class | baseline=0.6827 orc=0.8076 (+18.3%) | win_rate=93% avg_imp=24.9% | 25/hr
+  [106/3500] ✓ WorkersCompensation            | regre | baseline=2493732160.1839 orc=1.7128 (+100.0%) | win_rate=93% avg_imp=25.7% | 25/hr
+  [112/3500] ✓ higgs                          | class | baseline=0.7168 orc=0.7267 (+1.4%) | win_rate=93% avg_imp=25.4% | 26/hr
+  [116/3500] ✓ Temperature-Readings--IOT-Devi | regre | baseline=33.9618 orc=0.2850 (+99.2%) | win_rate=93% avg_imp=26.2% | 26/hr
+  [121/3500] ✓ sarcasm_detection              | class | baseline=0.8556 orc=0.8640 (+1.0%) | win_rate=93% avg_imp=25.9% | 27/hr
+  [122/3500] ✓ Stylized_Meta_Album_BRD_STY_Ex | class | baseline=0.9994 orc=1.0000 (+0.1%) | win_rate=93% avg_imp=25.7% | 27/hr
+  [124/3500] ✓ COMET_MC_SAMPLE                | class | baseline=0.9829 orc=0.9947 (+1.2%) | win_rate=94% avg_imp=25.4% | 27/hr
+  [125/3500] ✓ Run_or_walk_information        | class | baseline=0.9834 orc=0.9923 (+0.9%) | win_rate=94% avg_imp=25.2% | 28/hr
+  [126/3500] ✓ EDA-Home-Mortgage-NY           | class | baseline=0.8220 orc=0.8277 (+0.7%) | win_rate=94% avg_imp=24.9% | 27/hr
+  [127/3500] ✓ EDA-Home-Mortgage-NY-2         | class | baseline=0.8213 orc=0.8247 (+0.4%) | win_rate=94% avg_imp=24.7% | 27/hr
+  [128/3500] ✓ EDA-Home-Mortgage-NY-2         | class | baseline=0.8226 orc=0.8280 (+0.7%) | win_rate=94% avg_imp=24.5% | 26/hr
+  [130/3500] ✓ kick_starter_funding           | class | baseline=0.6914 orc=0.6917 (+0.0%) | win_rate=94% avg_imp=24.2% | 27/hr
+  [131/3500] ✓ kick_starter_funding           | class | baseline=0.6914 orc=0.6922 (+0.1%) | win_rate=94% avg_imp=24.0% | 27/hr
+  [133/3500] · Stylized_Meta_Album_DOG_STY_Ex | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=93% avg_imp=24.0% | 27/hr
+  [134/3500] ✓ wine_reviews                   | class | baseline=0.4726 orc=0.4823 (+2.0%) | win_rate=93% avg_imp=23.8% | 26/hr
+  [137/3500] · KDD98                          | class | baseline=0.8824 orc=0.8813 (-0.1%) | win_rate=92% avg_imp=23.8% | 26/hr
+  [142/3500] ✓ BNG(mv)                        | regre | baseline=21.4611 orc=20.8179 (+3.0%) | win_rate=92% avg_imp=23.6% | 26/hr
+  [143/3500] · Risk_Level_Classification      | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=92% avg_imp=23.6% | 27/hr
+  [144/3500] ✓ SDSS17                         | class | baseline=0.9783 orc=0.9789 (+0.1%) | win_rate=92% avg_imp=23.4% | 26/hr
+  [146/3500] ✓ Santander_Customer_Satisfactio | class | baseline=0.9599 orc=0.9602 (+0.0%) | win_rate=92% avg_imp=23.2% | 27/hr
+  [147/3500] ✓ Santander_Customer_Satisfactio | class | baseline=0.8074 orc=0.9601 (+18.9%) | win_rate=92% avg_imp=23.2% | 26/hr
+  [148/3500] ✓ APSFailure                     | class | baseline=0.9938 orc=0.9951 (+0.1%) | win_rate=92% avg_imp=23.0% | 25/hr
+WARNING:openml.datasets.functions:Could not download file from https://data.openml.org/datasets/0004/45927/dataset_45927.pq: Object at 'https://data.openml.org/datasets/0004/45927/dataset_45927.pq' does not exist.
+WARNING:openml.datasets.functions:Failed to download parquet, fallback on ARFF.
+  [150/3500] ✓ open_payments                  | class | baseline=0.9255 orc=0.9519 (+2.8%) | win_rate=92% avg_imp=22.8% | 26/hr
+  [151/3500] · covertype                      | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=91% avg_imp=22.8% | 26/hr
+  [152/3500] · TestDatasetOfLocations         | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=90% avg_imp=22.8% | 26/hr
+  [155/3500] ✓ Test_Dataset                   | class | baseline=0.5825 orc=0.6175 (+6.0%) | win_rate=91% avg_imp=22.6% | 26/hr
+  [156/3500] ✓ Products                       | class | baseline=0.3978 orc=0.4334 (+9.0%) | win_rate=91% avg_imp=22.5% | 26/hr
+  [159/3500] ✓ MiniBooNE                      | class | baseline=0.9331 orc=0.9408 (+0.8%) | win_rate=91% avg_imp=22.3% | 27/hr
+  [160/3500] ✓ MiniBooNE                      | class | baseline=0.9331 orc=0.9429 (+1.0%) | win_rate=91% avg_imp=22.2% | 26/hr
+  [161/3500] ✓ MiniBooNE                      | class | baseline=0.9331 orc=0.9464 (+1.4%) | win_rate=91% avg_imp=22.0% | 26/hr
+  [162/3500] ✓ MiniBooNE                      | class | baseline=0.9331 orc=0.9429 (+1.0%) | win_rate=91% avg_imp=21.8% | 25/hr
+  [163/3500] ✓ MiniBooNE                      | class | baseline=0.9331 orc=0.9434 (+1.1%) | win_rate=91% avg_imp=21.6% | 25/hr
+  [164/3500] ✓ kick                           | class | baseline=0.8923 orc=0.9061 (+1.6%) | win_rate=91% avg_imp=21.5% | 25/hr
+  [165/3500] ✓ wave_energy                    | regre | baseline=2776890666.9926 orc=5268.2691 (+100.0%) | win_rate=91% avg_imp=22.1% | 25/hr
+  [166/3500] ✓ jigsaw-multilingual-toxic-comm | class | baseline=0.7902 orc=0.7938 (+0.5%) | win_rate=91% avg_imp=21.9% | 25/hr
+  [167/3500] ✓ Diabetes130US                  | class | baseline=0.9121 orc=0.9172 (+0.6%) | win_rate=91% avg_imp=21.8% | 25/hr
+  [168/3500] ✓ Diabetes130US                  | class | baseline=0.5944 orc=0.6133 (+3.2%) | win_rate=91% avg_imp=21.6% | 25/hr
+  [170/3500] ✓ Traffic_violations             | class | baseline=0.7921 orc=0.8017 (+1.2%) | win_rate=91% avg_imp=21.5% | 25/hr
+  [171/3500] ✓ Stylized_Meta_Album_SPT_STY_Ex | class | baseline=0.9999 orc=1.0000 (+0.0%) | win_rate=91% avg_imp=21.3% | 25/hr
+  [172/3500] ✓ Cardiovascular-Disease-dataset | class | baseline=0.7360 orc=0.7416 (+0.8%) | win_rate=91% avg_imp=21.1% | 25/hr
+  [176/3500] ✓ video_transcoding              | regre | baseline=18.2196 orc=0.0572 (+99.7%) | win_rate=92% avg_imp=21.7% | 26/hr
+  [180/3500] ✓ kick                           | class | baseline=0.9044 orc=0.9069 (+0.3%) | win_rate=92% avg_imp=21.6% | 26/hr
+  [181/3500] ✓ mobile_churn                   | class | baseline=0.5505 orc=0.8768 (+59.3%) | win_rate=92% avg_imp=21.9% | 26/hr
+  [185/3500] ✓ internet_firewall              | class | baseline=0.9982 orc=0.9985 (+0.0%) | win_rate=92% avg_imp=21.7% | 26/hr
+  [195/3500] ✓ internet_firewall              | class | baseline=0.9980 orc=0.9986 (+0.1%) | win_rate=92% avg_imp=21.5% | 28/hr
+  [200/3500] · UNSW_NB15                      | class | baseline=nan orc=1.0000 (+0.0%) | win_rate=91% avg_imp=21.5% | 28/hr
+
+==================================================
+  Processed: 200 | Success: 147 | Errors: 53
+  Orcetra wins: 134/147 (91.2%)
+  Avg improvement: 21.53% | Median: 3.74%
+  Elapsed: 7.1h | Rate: 28/hr
+==================================================
+
+  [201/3500] ✓ Otto-Group-Product-Classificat | class | baseline=0.8079 orc=0.8218 (+1.7%) | win_rate=91% avg_imp=21.4% | 28/hr
+  [203/3500] ✓ Medical-Appointment            | class | baseline=0.7488 orc=0.8045 (+7.4%) | win_rate=91% avg_imp=21.3% | 28/hr
+  [209/3500] ✓ dating_profile                 | regre | baseline=54.4362 orc=0.1911 (+99.6%) | win_rate=91% avg_imp=21.8% | 29/hr
+  [211/3500] · BNG(stock)                     | regre | baseline=8.3412 orc=8.4812 (-1.7%) | win_rate=91% avg_imp=21.8% | 29/hr
+  [212/3500] ✓ REASONER                       | class | baseline=0.8650 orc=0.8818 (+1.9%) | win_rate=91% avg_imp=21.7% | 29/hr
+  [213/3500] ✓ REASONER                       | class | baseline=0.8650 orc=0.8779 (+1.5%) | win_rate=91% avg_imp=21.6% | 29/hr
+  [214/3500] ✓ albert                         | class | baseline=0.6589 orc=0.6635 (+0.7%) | win_rate=91% avg_imp=21.4% | 29/hr
+  [215/3500] ✓ jannis                         | class | baseline=0.7855 orc=0.7993 (+1.8%) | win_rate=91% avg_imp=21.3% | 29/hr
+  [216/3500] ✓ jannis                         | class | baseline=0.7855 orc=0.7989 (+1.7%) | win_rate=91% avg_imp=21.1% | 29/hr
+  [217/3500] ✓ jannis                         | class | baseline=0.7855 orc=0.7963 (+1.4%) | win_rate=91% avg_imp=21.0% | 28/hr
+  [218/3500] ✓ jannis                         | class | baseline=0.7855 orc=0.7965 (+1.4%) | win_rate=91% avg_imp=20.9% | 28/hr
+  [219/3500] ✓ jannis                         | class | baseline=0.7855 orc=0.7984 (+1.6%) | win_rate=91% avg_imp=20.7% | 28/hr
+  [220/3500] ✓ jannis                         | class | baseline=0.7855 orc=0.7993 (+1.8%) | win_rate=91% avg_imp=20.6% | 28/hr
+  [221/3500] ✓ jannis                         | class | baseline=0.7855 orc=0.7952 (+1.2%) | win_rate=91% avg_imp=20.5% | 27/hr
+  [222/3500] ✓ jannis                         | class | baseline=0.7855 orc=0.7992 (+1.7%) | win_rate=91% avg_imp=20.3% | 27/hr
+  [224/3500] ✓ BNG(cmc)                       | class | baseline=0.5813 orc=0.5843 (+0.5%) | win_rate=91% avg_imp=20.2% | 27/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [225/3500] · BNG(cmc,nominal,55296)         | class | baseline=0.5272 orc=0.5262 (-0.2%) | win_rate=91% avg_imp=20.2% | 27/hr
+  [227/3500] ✓ UNSW_NB15                      | class | baseline=0.9446 orc=1.0000 (+5.9%) | win_rate=91% avg_imp=20.1% | 28/hr
+  [228/3500] ✓ diamonds                       | regre | baseline=3355006.1694 orc=0.0892 (+100.0%) | win_rate=91% avg_imp=20.6% | 28/hr
+  [229/3500] ✓ diamonds                       | regre | baseline=0.0591 orc=0.0072 (+87.9%) | win_rate=91% avg_imp=21.1% | 28/hr
+  [230/3500] ✓ diamonds                       | regre | baseline=0.1318 orc=0.0533 (+59.6%) | win_rate=91% avg_imp=21.3% | 28/hr
+  [231/3500] ✓ diamonds                       | regre | baseline=301364.7353 orc=0.0898 (+100.0%) | win_rate=91% avg_imp=21.8% | 28/hr
+  [232/3500] ✓ diamonds                       | regre | baseline=0.1318 orc=0.0533 (+59.6%) | win_rate=91% avg_imp=22.1% | 28/hr
+  [233/3500] ✓ diamonds                       | regre | baseline=0.1316 orc=0.0532 (+59.6%) | win_rate=91% avg_imp=22.3% | 28/hr
+  [234/3500] ✓ diamonds                       | regre | baseline=0.0591 orc=0.0071 (+87.9%) | win_rate=91% avg_imp=22.7% | 28/hr
+  [236/3500] ✓ relative_location_of_ct        | regre | baseline=44.4182 orc=0.5916 (+98.7%) | win_rate=91% avg_imp=23.2% | 28/hr
+  [237/3500] ✓ kegg_metabolic_directed        | regre | baseline=0.0007 orc=0.0005 (+28.7%) | win_rate=91% avg_imp=23.3% | 28/hr
+  [240/3500] ✓ hdfail                         | regre | baseline=293762.8473 orc=0.5781 (+100.0%) | win_rate=91% avg_imp=23.7% | 28/hr
+  [241/3500] ✓ seattlecrime6                  | regre | baseline=126101.1128 orc=121873.3797 (+3.4%) | win_rate=91% avg_imp=23.6% | 28/hr
+  [243/3500] ✓ seattlecrime6                  | regre | baseline=144454.8907 orc=142999.5337 (+1.0%) | win_rate=92% avg_imp=23.5% | 28/hr
+  [244/3500] ✓ dataset_credit_risk_file_2     | class | baseline=0.9984 orc=1.0000 (+0.2%) | win_rate=92% avg_imp=23.3% | 28/hr
+  [245/3500] ✓ dataset_credit_risk_file_2     | class | baseline=0.9984 orc=1.0000 (+0.2%) | win_rate=92% avg_imp=23.2% | 28/hr
+  [246/3500] ✓ Credit_Risk_Modeling           | class | baseline=0.9984 orc=1.0000 (+0.2%) | win_rate=92% avg_imp=23.1% | 28/hr
+  [247/3500] ✓ okcupid-stem                   | class | baseline=0.7528 orc=0.7616 (+1.2%) | win_rate=92% avg_imp=22.9% | 28/hr
+  [248/3500] ✓ okcupid-stem                   | class | baseline=0.7528 orc=0.7623 (+1.3%) | win_rate=92% avg_imp=22.8% | 28/hr
+  [250/3500] ✓ dataset_credit_score           | class | baseline=0.7603 orc=0.7663 (+0.8%) | win_rate=92% avg_imp=22.7% | 28/hr
+  [251/3500] · Credit_Score_Classification_do | class | baseline=0.7666 orc=0.7612 (-0.7%) | win_rate=91% avg_imp=22.7% | 28/hr
+  [253/3500] · Credit_Score                   | class | baseline=0.7589 orc=0.7562 (-0.4%) | win_rate=91% avg_imp=22.7% | 28/hr
+  [255/3500] · Credit_Score_Classification_do | class | baseline=0.7666 orc=0.7634 (-0.4%) | win_rate=90% avg_imp=22.7% | 28/hr
+  [265/3500] ✓ sarcos                         | regre | baseline=24.9497 orc=6.4034 (+74.3%) | win_rate=90% avg_imp=23.0% | 29/hr
+  [267/3500] ✓ adult-test                     | class | baseline=0.8658 orc=0.8727 (+0.8%) | win_rate=90% avg_imp=22.8% | 29/hr
+  [268/3500] ✓ adult                          | class | baseline=0.8659 orc=0.8727 (+0.8%) | win_rate=90% avg_imp=22.7% | 29/hr
+  [269/3500] ✓ adult                          | class | baseline=0.8560 orc=0.8595 (+0.4%) | win_rate=91% avg_imp=22.6% | 29/hr
+  [271/3500] ✓ adult                          | class | baseline=0.8663 orc=0.8718 (+0.6%) | win_rate=91% avg_imp=22.4% | 29/hr
+  [274/3500] · Stylized_Meta_Album_TEX_DTD_ST | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=90% avg_imp=22.4% | 30/hr
+  [276/3500] ✓ NASA_PHM2008_1                 | regre | baseline=1720.5940 orc=1638.8430 (+4.8%) | win_rate=90% avg_imp=22.3% | 30/hr
+  [277/3500] ✓ NASA_PHM2008                   | regre | baseline=1734.4724 orc=1658.7166 (+4.4%) | win_rate=90% avg_imp=22.2% | 30/hr
+  [278/3500] ✓ tamilnadu-electricity          | class | baseline=0.0602 orc=0.0618 (+2.6%) | win_rate=90% avg_imp=22.1% | 30/hr
+  [279/3500] ✓ physiochemical_protein         | regre | baseline=12.4151 orc=11.2984 (+9.0%) | win_rate=90% avg_imp=22.1% | 30/hr
+  [281/3500] ✓ physiochemical_protein         | regre | baseline=12.3204 orc=11.4651 (+6.9%) | win_rate=90% avg_imp=22.0% | 30/hr
+  [282/3500] ✓ physicochemical-protein-UCI    | regre | baseline=12.3204 orc=11.4651 (+6.9%) | win_rate=90% avg_imp=21.9% | 30/hr
+  [283/3500] ✓ Food_Delivery_Time             | regre | baseline=58.3271 orc=54.5951 (+6.4%) | win_rate=90% avg_imp=21.8% | 30/hr
+  [284/3500] ✓ go_emotions                    | regre | baseline=105.8336 orc=103.9993 (+1.7%) | win_rate=90% avg_imp=21.7% | 30/hr
+  [285/3500] ✓ Bank_marketing_data_set_UCI    | class | baseline=0.7419 orc=0.9081 (+22.4%) | win_rate=91% avg_imp=21.7% | 30/hr
+  [286/3500] ✓ bank-marketing                 | class | baseline=0.9048 orc=0.9058 (+0.1%) | win_rate=91% avg_imp=21.6% | 30/hr
+  [287/3500] ✓ bank-marketing                 | class | baseline=0.8931 orc=0.8954 (+0.3%) | win_rate=91% avg_imp=21.5% | 30/hr
+  [288/3500] · meta_stream_intervals.arff     | class | baseline=0.9943 orc=0.9941 (-0.0%) | win_rate=90% avg_imp=21.5% | 28/hr
+WARNING:openml.datasets.functions:Could not download file from https://data.openml.org/datasets/0004/40598/dataset_40598.pq: Object at 'https://data.openml.org/datasets/0004/40598/dataset_40598.pq' does not exist.
+WARNING:openml.datasets.functions:Failed to download parquet, fallback on ARFF.
+  [289/3500] ✓ Give-Me-Some-Credit-Sampled    | class | baseline=0.9360 orc=0.9388 (+0.3%) | win_rate=90% avg_imp=21.3% | 28/hr
+  [290/3500] ✓ Loan_Status                    | class | baseline=0.9237 orc=0.9377 (+1.5%) | win_rate=90% avg_imp=21.2% | 28/hr
+  [291/3500] ✓ Loan_Approval_Status_Classific | class | baseline=0.9237 orc=0.9372 (+1.5%) | win_rate=90% avg_imp=21.1% | 29/hr
+  [292/3500] ✓ Loan_Approval_Status           | class | baseline=0.9237 orc=0.9366 (+1.4%) | win_rate=90% avg_imp=21.0% | 29/hr
+  [293/3500] ✓ Give-Me-Some-Credit-Sampled-Pr | class | baseline=0.9360 orc=0.9381 (+0.2%) | win_rate=90% avg_imp=20.9% | 29/hr
+  [294/3500] ✓ Loan_Status                    | class | baseline=0.9237 orc=0.9366 (+1.4%) | win_rate=90% avg_imp=20.8% | 29/hr
+  [295/3500] ✓ Loan_Approval_Status_Classific | class | baseline=0.9246 orc=0.9358 (+1.2%) | win_rate=91% avg_imp=20.7% | 29/hr
+  [296/3500] ✓ jungle_chess_2pcs_endgame_comp | class | baseline=0.8639 orc=0.9996 (+15.7%) | win_rate=91% avg_imp=20.7% | 29/hr
+  [299/3500] ✓ sarcos                         | regre | baseline=54.0825 orc=7.9307 (+85.3%) | win_rate=91% avg_imp=21.0% | 29/hr
+  [300/3500] · UCC                            | regre | baseline=0.0048 orc=0.0049 (-2.5%) | win_rate=90% avg_imp=21.0% | 29/hr
+
+==================================================
+  Processed: 300 | Success: 214 | Errors: 86
+  Orcetra wins: 193/214 (90.2%)
+  Avg improvement: 21.02% | Median: 2.85%
+  Elapsed: 10.3h | Rate: 29/hr
+==================================================
+
+  [301/3500] · UCC                            | regre | baseline=0.0045 orc=0.0047 (-3.6%) | win_rate=90% avg_imp=21.0% | 29/hr
+  [304/3500] ✓ EDA-Home-Mortgage-NY-Sampled   | class | baseline=0.8166 orc=0.8195 (+0.4%) | win_rate=90% avg_imp=20.9% | 29/hr
+  [305/3500] ✓ EDA-Home-Mortgage-NY-Sampled-D | class | baseline=0.8378 orc=0.8468 (+1.1%) | win_rate=90% avg_imp=20.8% | 29/hr
+  [306/3500] ✓ FOREX_chfjpy-hour-High         | class | baseline=0.5302 orc=0.6948 (+31.0%) | win_rate=90% avg_imp=20.9% | 29/hr
+  [307/3500] ✓ FOREX_gbpusd-hour-High         | class | baseline=0.5095 orc=0.6747 (+32.4%) | win_rate=90% avg_imp=20.9% | 29/hr
+  [308/3500] ✓ FOREX_eurnzd-hour-High         | class | baseline=0.5407 orc=0.7064 (+30.7%) | win_rate=90% avg_imp=21.0% | 29/hr
+  [309/3500] ✓ FOREX_nzdusd-hour-High         | class | baseline=0.5361 orc=0.7028 (+31.1%) | win_rate=90% avg_imp=21.0% | 29/hr
+  [310/3500] ✓ FOREX_chfsgd-hour-Close        | class | baseline=0.5094 orc=0.5295 (+3.9%) | win_rate=90% avg_imp=20.9% | 29/hr
+  [311/3500] ✓ FOREX_audusd-hour-Close        | class | baseline=0.4997 orc=0.5122 (+2.5%) | win_rate=90% avg_imp=20.8% | 29/hr
+  [312/3500] ✓ FOREX_eurdkk-hour-Close        | class | baseline=0.4924 orc=0.5578 (+13.3%) | win_rate=90% avg_imp=20.8% | 29/hr
+  [313/3500] ✓ FOREX_usdcad-hour-High         | class | baseline=0.5111 orc=0.6827 (+33.6%) | win_rate=90% avg_imp=20.9% | 29/hr
+  [314/3500] ✓ FOREX_eurnzd-hour-Close        | class | baseline=0.4983 orc=0.5145 (+3.3%) | win_rate=90% avg_imp=20.8% | 29/hr
+  [315/3500] ✓ FOREX_eurjpy-hour-Close        | class | baseline=0.5029 orc=0.5230 (+4.0%) | win_rate=90% avg_imp=20.7% | 29/hr
+  [316/3500] ✓ FOREX_eurcad-hour-Close        | class | baseline=0.5022 orc=0.5296 (+5.5%) | win_rate=90% avg_imp=20.6% | 29/hr
+  [317/3500] ✓ FOREX_eursgd-hour-High         | class | baseline=0.5062 orc=0.6916 (+36.6%) | win_rate=90% avg_imp=20.7% | 29/hr
+  [318/3500] ✓ FOREX_eursek-hour-Close        | class | baseline=0.5006 orc=0.5307 (+6.0%) | win_rate=90% avg_imp=20.6% | 29/hr
+  [319/3500] ✓ FOREX_audnzd-hour-Close        | class | baseline=0.4946 orc=0.5247 (+6.1%) | win_rate=90% avg_imp=20.6% | 29/hr
+  [320/3500] ✓ FOREX_audchf-hour-Close        | class | baseline=0.4996 orc=0.5228 (+4.6%) | win_rate=91% avg_imp=20.5% | 30/hr
+  [321/3500] ✓ FOREX_eurjpy-hour-High         | class | baseline=0.5235 orc=0.6931 (+32.4%) | win_rate=91% avg_imp=20.5% | 30/hr
+  [322/3500] ✓ FOREX_eurchf-hour-Close        | class | baseline=0.4943 orc=0.5254 (+6.3%) | win_rate=91% avg_imp=20.5% | 30/hr
+  [323/3500] ✓ FOREX_eurtry-hour-High         | class | baseline=0.5076 orc=0.6193 (+22.0%) | win_rate=91% avg_imp=20.5% | 30/hr
+  [324/3500] ✓ FOREX_audchf-hour-High         | class | baseline=0.5165 orc=0.6915 (+33.9%) | win_rate=91% avg_imp=20.6% | 30/hr
+  [325/3500] ✓ FOREX_eurcad-hour-High         | class | baseline=0.5454 orc=0.7046 (+29.2%) | win_rate=91% avg_imp=20.6% | 30/hr
+  [326/3500] ✓ FOREX_usdjpy-hour-Close        | class | baseline=0.4958 orc=0.5124 (+3.3%) | win_rate=91% avg_imp=20.5% | 30/hr
+  [327/3500] ✓ FOREX_audjpy-hour-High         | class | baseline=0.5384 orc=0.7215 (+34.0%) | win_rate=91% avg_imp=20.6% | 30/hr
+  [328/3500] ✓ FOREX_cadchf-hour-High         | class | baseline=0.5439 orc=0.6917 (+27.2%) | win_rate=91% avg_imp=20.6% | 30/hr
+  [329/3500] ✓ FOREX_eurrub-hour-High         | class | baseline=0.4441 orc=0.7318 (+64.8%) | win_rate=91% avg_imp=20.8% | 30/hr
+  [330/3500] ✓ FOREX_usdcad-hour-Close        | class | baseline=0.5063 orc=0.5192 (+2.5%) | win_rate=91% avg_imp=20.7% | 30/hr
+  [331/3500] ✓ FOREX_eurpln-hour-Close        | class | baseline=0.5046 orc=0.5354 (+6.1%) | win_rate=91% avg_imp=20.7% | 30/hr
+  [332/3500] ✓ FOREX_eurhuf-hour-Close        | class | baseline=0.4849 orc=0.6170 (+27.2%) | win_rate=91% avg_imp=20.7% | 30/hr
+  [333/3500] ✓ FOREX_eurhkd-hour-High         | class | baseline=0.4901 orc=0.6750 (+37.7%) | win_rate=91% avg_imp=20.8% | 30/hr
+  [334/3500] ✓ FOREX_eurgbp-hour-High         | class | baseline=0.5014 orc=0.6957 (+38.7%) | win_rate=91% avg_imp=20.8% | 30/hr
+  [335/3500] ✓ FOREX_eursgd-hour-Close        | class | baseline=0.5016 orc=0.5229 (+4.2%) | win_rate=91% avg_imp=20.8% | 30/hr
+  [336/3500] ✓ FOREX_audsgd-hour-Close        | class | baseline=0.5015 orc=0.5177 (+3.2%) | win_rate=91% avg_imp=20.7% | 30/hr
+  [337/3500] ✓ FOREX_audjpy-hour-Close        | class | baseline=0.5025 orc=0.5174 (+3.0%) | win_rate=91% avg_imp=20.6% | 30/hr
+  [338/3500] ✓ FOREX_eurusd-hour-High         | class | baseline=0.4952 orc=0.6701 (+35.3%) | win_rate=91% avg_imp=20.7% | 30/hr
+  [339/3500] ✓ FOREX_gbpusd-hour-Close        | class | baseline=0.5016 orc=0.5185 (+3.4%) | win_rate=91% avg_imp=20.6% | 30/hr
+  [340/3500] ✓ FOREX_audcad-hour-High         | class | baseline=0.5739 orc=0.7053 (+22.9%) | win_rate=91% avg_imp=20.6% | 30/hr
+  [341/3500] ✓ FOREX_eurhkd-hour-Close        | class | baseline=0.4974 orc=0.5190 (+4.3%) | win_rate=91% avg_imp=20.5% | 30/hr
+  [342/3500] ✓ FOREX_usdchf-hour-Close        | class | baseline=0.5004 orc=0.5279 (+5.5%) | win_rate=91% avg_imp=20.5% | 30/hr
+  [343/3500] ✓ FOREX_eurpln-hour-High         | class | baseline=0.5464 orc=0.6722 (+23.0%) | win_rate=91% avg_imp=20.5% | 30/hr
+  [344/3500] ✓ FOREX_cadjpy-hour-Close        | class | baseline=0.4959 orc=0.5195 (+4.8%) | win_rate=91% avg_imp=20.4% | 30/hr
+  [345/3500] ✓ FOREX_eurnok-hour-High         | class | baseline=0.5334 orc=0.6699 (+25.6%) | win_rate=91% avg_imp=20.4% | 30/hr
+  [346/3500] ✓ FOREX_eurtry-hour-Close        | class | baseline=0.4982 orc=0.5237 (+5.1%) | win_rate=91% avg_imp=20.4% | 30/hr
+  [347/3500] ✓ FOREX_eursek-hour-High         | class | baseline=0.5038 orc=0.6730 (+33.6%) | win_rate=92% avg_imp=20.4% | 30/hr
+  [348/3500] ✓ FOREX_usdchf-hour-High         | class | baseline=0.5272 orc=0.7055 (+33.8%) | win_rate=92% avg_imp=20.5% | 30/hr
+  [349/3500] ✓ FOREX_nzdusd-hour-Close        | class | baseline=0.4935 orc=0.5200 (+5.4%) | win_rate=92% avg_imp=20.4% | 30/hr
+  [350/3500] ✓ FOREX_cadjpy-hour-High         | class | baseline=0.5386 orc=0.7055 (+31.0%) | win_rate=92% avg_imp=20.5% | 30/hr
+  [351/3500] ✓ FOREX_eurhuf-hour-High         | class | baseline=0.4764 orc=0.6671 (+40.0%) | win_rate=92% avg_imp=20.6% | 31/hr
+  [352/3500] ✓ FOREX_audcad-hour-Close        | class | baseline=0.4967 orc=0.5318 (+7.1%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [353/3500] ✓ FOREX_euraud-hour-Close        | class | baseline=0.5011 orc=0.5165 (+3.1%) | win_rate=92% avg_imp=20.4% | 31/hr
+  [354/3500] ✓ FOREX_chfsgd-hour-High         | class | baseline=0.5438 orc=0.6934 (+27.5%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [355/3500] ✓ FOREX_chfjpy-hour-Close        | class | baseline=0.5015 orc=0.5250 (+4.7%) | win_rate=92% avg_imp=20.4% | 31/hr
+  [356/3500] ✓ FOREX_audsgd-hour-High         | class | baseline=0.5171 orc=0.6779 (+31.1%) | win_rate=92% avg_imp=20.4% | 31/hr
+  [357/3500] ✓ FOREX_audnzd-hour-High         | class | baseline=0.5338 orc=0.6991 (+31.0%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [358/3500] ✓ FOREX_eurrub-hour-Close        | class | baseline=0.4632 orc=0.6948 (+50.0%) | win_rate=92% avg_imp=20.6% | 31/hr
+  [359/3500] ✓ FOREX_eurusd-hour-Close        | class | baseline=0.4967 orc=0.5196 (+4.6%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [360/3500] ✓ FOREX_eurnok-hour-Close        | class | baseline=0.5024 orc=0.5166 (+2.8%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [361/3500] ✓ FOREX_eurdkk-hour-High         | class | baseline=0.5009 orc=0.6578 (+31.3%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [362/3500] ✓ FOREX_eurgbp-hour-Close        | class | baseline=0.4949 orc=0.5200 (+5.1%) | win_rate=92% avg_imp=20.4% | 31/hr
+  [363/3500] ✓ FOREX_usdjpy-hour-High         | class | baseline=0.4938 orc=0.6564 (+32.9%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [364/3500] ✓ FOREX_usddkk-hour-High         | class | baseline=0.5094 orc=0.6794 (+33.4%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [365/3500] ✓ FOREX_usddkk-hour-Close        | class | baseline=0.5006 orc=0.5207 (+4.0%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [366/3500] ✓ FOREX_audusd-hour-High         | class | baseline=0.5080 orc=0.6567 (+29.3%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [367/3500] ✓ FOREX_eurchf-hour-High         | class | baseline=0.4912 orc=0.6646 (+35.3%) | win_rate=92% avg_imp=20.6% | 31/hr
+  [368/3500] ✓ FOREX_cadchf-hour-Close        | class | baseline=0.5036 orc=0.5331 (+5.9%) | win_rate=92% avg_imp=20.5% | 31/hr
+  [369/3500] ✓ FOREX_euraud-hour-High         | class | baseline=0.5264 orc=0.6869 (+30.5%) | win_rate=92% avg_imp=20.6% | 31/hr
+  [375/3500] · Stylized_Meta_Album_PLT_DOC_ST | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=92% avg_imp=20.6% | 31/hr
+  [377/3500] ✓ beijing_pm                     | regre | baseline=4716.3784 orc=1374.1668 (+70.9%) | win_rate=92% avg_imp=20.7% | 32/hr
+  [384/3500] · Dynamically-Generated-Hate-Spe | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=92% avg_imp=20.7% | 32/hr
+  [385/3500] · Dynamically-Generated-Hate-Spe | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=91% avg_imp=20.7% | 32/hr
+  [387/3500] ✓ 2dplanes                       | class | baseline=0.9309 orc=0.9348 (+0.4%) | win_rate=91% avg_imp=20.7% | 32/hr
+  [388/3500] · 2dplanes                       | regre | baseline=1.0017 orc=1.0045 (-0.3%) | win_rate=91% avg_imp=20.7% | 32/hr
+  [390/3500] ✓ mv                             | regre | baseline=0.0043 orc=0.0008 (+81.3%) | win_rate=91% avg_imp=20.9% | 33/hr
+  [391/3500] ✓ mv                             | class | baseline=0.9970 orc=0.9983 (+0.1%) | win_rate=91% avg_imp=20.8% | 33/hr
+  [392/3500] ✓ fried                          | regre | baseline=1.5757 orc=1.0985 (+30.3%) | win_rate=91% avg_imp=20.9% | 33/hr
+  [393/3500] ✓ fried                          | class | baseline=0.9190 orc=0.9343 (+1.7%) | win_rate=91% avg_imp=20.8% | 33/hr
+  [395/3500] · cybersecurity_attacks          | regre | baseline=834.8787 orc=835.2946 (-0.0%) | win_rate=91% avg_imp=20.8% | 33/hr
+  [396/3500] ✓ cybersecurity_attacks          | regre | baseline=835.1376 orc=835.0629 (+0.0%) | win_rate=91% avg_imp=20.7% | 33/hr
+  [398/3500] ✓ Click_prediction_small         | class | baseline=0.8350 orc=0.8398 (+0.6%) | win_rate=91% avg_imp=20.6% | 33/hr
+  [399/3500] ✓ Click_prediction_small         | class | baseline=0.8341 orc=0.8390 (+0.6%) | win_rate=91% avg_imp=20.6% | 33/hr
+  [400/3500] ✓ Click_prediction_small         | class | baseline=0.8350 orc=0.8389 (+0.5%) | win_rate=91% avg_imp=20.5% | 33/hr
+
+==================================================
+  Processed: 400 | Success: 296 | Errors: 104
+  Orcetra wins: 269/296 (90.9%)
+  Avg improvement: 20.48% | Median: 4.76%
+  Elapsed: 12.1h | Rate: 33/hr
+==================================================
+
+  [401/3500] ✓ Click_prediction_small         | class | baseline=0.8341 orc=0.8382 (+0.5%) | win_rate=91% avg_imp=20.4% | 33/hr
+  [402/3500] · click_prediction_small         | class | baseline=0.8334 orc=0.8330 (-0.1%) | win_rate=91% avg_imp=20.4% | 33/hr
+  [403/3500] ✓ OnlineNewsPopularity           | regre | baseline=0.7657 orc=0.0944 (+87.7%) | win_rate=91% avg_imp=20.7% | 33/hr
+  [404/3500] ✓ OnlineNewsPopularity           | regre | baseline=141887956.6520 orc=1.0428 (+100.0%) | win_rate=91% avg_imp=20.9% | 33/hr
+  [405/3500] ✓ OnlineNewsPopularity           | regre | baseline=0.7657 orc=0.0946 (+87.6%) | win_rate=91% avg_imp=21.2% | 33/hr
+  [406/3500] ✓ BNG(tic-tac-toe)               | class | baseline=0.7829 orc=0.8155 (+4.2%) | win_rate=91% avg_imp=21.1% | 33/hr
+  [407/3500] ✓ BNG(breast-w)                  | class | baseline=0.9864 orc=0.9886 (+0.2%) | win_rate=91% avg_imp=21.1% | 33/hr
+  [411/3500] ✓ electricity                    | class | baseline=0.4955 orc=0.8984 (+81.3%) | win_rate=91% avg_imp=21.3% | 33/hr
+  [412/3500] ✓ electricity                    | class | baseline=0.5077 orc=0.9337 (+83.9%) | win_rate=91% avg_imp=21.5% | 33/hr
+  [413/3500] ✓ electricity                    | class | baseline=0.4957 orc=0.8998 (+81.5%) | win_rate=91% avg_imp=21.7% | 33/hr
+  [414/3500] ✓ electricity                    | class | baseline=0.4955 orc=0.9157 (+84.8%) | win_rate=91% avg_imp=21.9% | 33/hr
+  [415/3500] ✓ electricity                    | class | baseline=0.4957 orc=0.9093 (+83.4%) | win_rate=91% avg_imp=22.2% | 33/hr
+  [416/3500] ✓ electricity                    | class | baseline=0.5077 orc=0.9331 (+83.8%) | win_rate=91% avg_imp=22.4% | 33/hr
+  [417/3500] ✓ electricity                    | class | baseline=0.5077 orc=0.9262 (+82.4%) | win_rate=91% avg_imp=22.6% | 34/hr
+  [418/3500] ✓ electricity                    | class | baseline=0.4957 orc=0.9214 (+85.9%) | win_rate=91% avg_imp=22.8% | 34/hr
+  [419/3500] ✓ electricity                    | class | baseline=0.4957 orc=0.8914 (+79.8%) | win_rate=91% avg_imp=23.0% | 34/hr
+  [420/3500] ✓ electricity                    | class | baseline=0.4957 orc=0.8898 (+79.5%) | win_rate=91% avg_imp=23.2% | 34/hr
+  [421/3500] ✓ electricity                    | class | baseline=0.4957 orc=0.8898 (+79.5%) | win_rate=91% avg_imp=23.4% | 34/hr
+  [422/3500] ✓ electricity                    | class | baseline=0.4957 orc=0.8984 (+81.2%) | win_rate=91% avg_imp=23.6% | 34/hr
+  [423/3500] ✓ electricity                    | class | baseline=0.4955 orc=0.9131 (+84.3%) | win_rate=91% avg_imp=23.8% | 34/hr
+  [425/3500] ✓ electricity_prices_ICON        | regre | baseline=664.0422 orc=418.4431 (+37.0%) | win_rate=91% avg_imp=23.9% | 34/hr
+  [426/3500] ✓ california_house_price         | regre | baseline=0.0002 orc=0.0002 (+9.0%) | win_rate=91% avg_imp=23.8% | 34/hr
+  [427/3500] ✓ IoT_Agriculture_2024           | regre | baseline=47.0190 orc=19.6731 (+58.2%) | win_rate=91% avg_imp=23.9% | 34/hr
+  [433/3500] ✓ NewFuelCar                     | regre | baseline=0.1679 orc=0.0669 (+60.2%) | win_rate=91% avg_imp=24.1% | 34/hr
+  [436/3500] ✓ PriceRunner                    | class | baseline=0.9882 orc=1.0000 (+1.2%) | win_rate=91% avg_imp=24.0% | 34/hr
+  [437/3500] ✓ Customer_Churn_Classification_ | class | baseline=0.8644 orc=0.8664 (+0.2%) | win_rate=91% avg_imp=23.9% | 35/hr
+  [439/3500] ✓ nomao                          | class | baseline=0.9687 orc=0.9736 (+0.5%) | win_rate=91% avg_imp=23.8% | 35/hr
+  [440/3500] ✓ Employee-Turnover-at-TECHCO    | class | baseline=0.9802 orc=0.9845 (+0.4%) | win_rate=91% avg_imp=23.7% | 35/hr
+  [447/3500] ✓ Interest_Rate                  | class | baseline=0.5324 orc=0.5447 (+2.3%) | win_rate=91% avg_imp=23.7% | 35/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [448/3500] ✓ Credit_Score_Classification_do | class | baseline=0.5283 orc=0.5416 (+2.5%) | win_rate=91% avg_imp=23.6% | 35/hr
+  [449/3500] · Credit_Score_Classification_do | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=91% avg_imp=23.6% | 35/hr
+  [450/3500] ✓ Credit_Score_Classification_do | class | baseline=0.5283 orc=0.5416 (+2.5%) | win_rate=91% avg_imp=23.5% | 35/hr
+  [451/3500] ✓ amazon_employee_access         | class | baseline=0.9472 orc=0.9516 (+0.5%) | win_rate=91% avg_imp=23.5% | 35/hr
+  [452/3500] · Amazon_employee_access         | class | baseline=0.9484 orc=0.9469 (-0.2%) | win_rate=91% avg_imp=23.5% | 35/hr
+  [455/3500] ✓ adult-census                   | class | baseline=0.8646 orc=0.8807 (+1.9%) | win_rate=91% avg_imp=23.4% | 36/hr
+  [465/3500] ✓ rl                             | class | baseline=0.9082 orc=0.9226 (+1.6%) | win_rate=91% avg_imp=23.3% | 36/hr
+  [467/3500] · BNG(lowbwt)                    | regre | baseline=205291.1319 orc=206818.2469 (-0.7%) | win_rate=91% avg_imp=23.3% | 36/hr
+  [468/3500] ✓ Sberbank_Russian_Housing_Marke | regre | baseline=8039842505127.1514 orc=0.4628 (+100.0%) | win_rate=91% avg_imp=23.6% | 36/hr
+  [469/3500] ✓ Sberbank_Russian_Housing_Marke | regre | baseline=7961188820424.4707 orc=0.4605 (+100.0%) | win_rate=91% avg_imp=23.8% | 36/hr
+  [472/3500] ✓ Stylized_Meta_Album_PLT_NET_Ex | class | baseline=0.0511 orc=0.0618 (+21.0%) | win_rate=91% avg_imp=23.8% | 36/hr
+  [473/3500] ✓ dataset_default_of_credit_card | class | baseline=0.8202 orc=0.8230 (+0.3%) | win_rate=91% avg_imp=23.7% | 36/hr
+  [475/3500] ✓ default-of-credit-card-clients | class | baseline=0.8208 orc=0.8230 (+0.3%) | win_rate=91% avg_imp=23.6% | 36/hr
+  [476/3500] ✓ Stylized_Meta_Album_INS2_Exten | class | baseline=0.1407 orc=0.1503 (+6.9%) | win_rate=91% avg_imp=23.6% | 36/hr
+  [477/3500] ✓ dataset_default_of_credit_card | class | baseline=0.8202 orc=0.8230 (+0.3%) | win_rate=91% avg_imp=23.5% | 36/hr
+  [478/3500] ✓ default-of-credit-card-clients | class | baseline=0.8208 orc=0.8230 (+0.3%) | win_rate=91% avg_imp=23.4% | 36/hr
+  [479/3500] ✓ credit_card_clients_default    | class | baseline=0.8211 orc=0.8250 (+0.5%) | win_rate=91% avg_imp=23.4% | 36/hr
+  [480/3500] · Advanced_IoT_Dataset           | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=91% avg_imp=23.4% | 36/hr
+  [481/3500] · Advanced_IoT_Dataset           | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=90% avg_imp=23.4% | 36/hr
+  [483/3500] ✓ default-of-credit-card-clients | class | baseline=0.8202 orc=0.8220 (+0.2%) | win_rate=90% avg_imp=23.3% | 36/hr
+  [485/3500] ✓ default-of-credit-card-clients | class | baseline=0.8208 orc=0.8223 (+0.2%) | win_rate=90% avg_imp=23.2% | 36/hr
+  [487/3500] ✓ funpedia                       | class | baseline=0.8124 orc=0.8429 (+3.7%) | win_rate=90% avg_imp=23.2% | 36/hr
+  [493/3500] · volcanoes-c1                   | class | baseline=0.9751 orc=0.9740 (-0.1%) | win_rate=90% avg_imp=23.2% | 37/hr
+  [494/3500] ✓ Credit_Card_Fraud_Classificati | class | baseline=0.9994 orc=0.9995 (+0.0%) | win_rate=90% avg_imp=23.1% | 37/hr
+  [495/3500] ✓ Credit_Card_Fraud              | class | baseline=0.9993 orc=0.9996 (+0.0%) | win_rate=90% avg_imp=23.0% | 37/hr
+
+==================================================
+  Processed: 500 | Success: 350 | Errors: 150
+  Orcetra wins: 316/350 (90.3%)
+  Avg improvement: 23.01% | Median: 4.87%
+  Elapsed: 13.4h | Rate: 37/hr
+==================================================
+
+  [501/3500] ✓ Meta_Album_MD_5_BIS_Mini       | regre | baseline=0.0718 orc=0.0000 (+100.0%) | win_rate=90% avg_imp=23.3% | 37/hr
+  [503/3500] ✓ CPS1988                        | regre | baseline=155921.3137 orc=0.5269 (+100.0%) | win_rate=90% avg_imp=23.5% | 37/hr
+  [504/3500] ✓ cps88wages                     | regre | baseline=155921.3137 orc=0.5277 (+100.0%) | win_rate=90% avg_imp=23.7% | 37/hr
+  [505/3500] ✓ Meta_Album_MD_6_Mini           | regre | baseline=0.4317 orc=0.0002 (+99.9%) | win_rate=90% avg_imp=24.0% | 37/hr
+  [506/3500] ✓ King-rook-vs-King              | class | baseline=0.1528 orc=0.8719 (+470.7%) | win_rate=90% avg_imp=25.4% | 37/hr
+  [507/3500] ✓ kropt                          | class | baseline=0.1528 orc=0.8585 (+462.0%) | win_rate=90% avg_imp=26.7% | 37/hr
+  [508/3500] ✓ kr-vs-k                        | class | baseline=0.1546 orc=0.9050 (+485.6%) | win_rate=90% avg_imp=28.1% | 37/hr
+  [509/3500] · student_depression_dataset     | class | baseline=0.8475 orc=0.8402 (-0.9%) | win_rate=90% avg_imp=28.1% | 37/hr
+  [510/3500] · student_depression_dataset     | class | baseline=0.8412 orc=0.8387 (-0.3%) | win_rate=90% avg_imp=28.1% | 38/hr
+  [511/3500] · Stylized_Meta_Album_MED_LF_STY | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=90% avg_imp=28.1% | 38/hr
+  [512/3500] · dataset_china                  | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=89% avg_imp=28.1% | 38/hr
+  [513/3500] · dataset_china                  | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=89% avg_imp=28.1% | 38/hr
+  [514/3500] · dataset_china                  | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=89% avg_imp=28.1% | 38/hr
+  [515/3500] · credit_risk_china              | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=89% avg_imp=28.1% | 38/hr
+  [516/3500] · credit_risk_china              | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=88% avg_imp=28.1% | 38/hr
+  [517/3500] ✓ delays_zurich_transport        | regre | baseline=11812.3376 orc=10429.8462 (+11.7%) | win_rate=89% avg_imp=28.1% | 38/hr
+  [519/3500] ✓ CodeXGLUE                      | class | baseline=0.5998 orc=0.7011 (+16.9%) | win_rate=89% avg_imp=28.1% | 38/hr
+  [520/3500] ✓ airlines                       | class | baseline=0.6460 orc=0.6518 (+0.9%) | win_rate=89% avg_imp=28.0% | 38/hr
+  [521/3500] ✓ okcupid_stem                   | class | baseline=0.7448 orc=0.7466 (+0.2%) | win_rate=89% avg_imp=27.9% | 38/hr
+  [527/3500] · child                          | regre | baseline=5.7053 orc=5.8748 (-3.0%) | win_rate=88% avg_imp=27.9% | 38/hr
+  [530/3500] ✓ Loan_Status                    | class | baseline=0.9066 orc=0.9330 (+2.9%) | win_rate=88% avg_imp=27.8% | 38/hr
+  [532/3500] · UNSW_NB15                      | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=88% avg_imp=27.8% | 39/hr
+  [534/3500] ✓ hate-speech-and-offensive-lang | class | baseline=0.2860 orc=0.7755 (+171.1%) | win_rate=88% avg_imp=28.2% | 39/hr
+  [535/3500] ✓ BitcoinHeist_Ransomware        | class | baseline=0.8556 orc=0.8646 (+1.0%) | win_rate=88% avg_imp=28.2% | 39/hr
+  [536/3500] ✓ fps_benchmark                  | regre | baseline=1337.7633 orc=0.0142 (+100.0%) | win_rate=88% avg_imp=28.4% | 39/hr
+  [537/3500] ✓ news_popularity2               | regre | baseline=0.8495 orc=0.1030 (+87.9%) | win_rate=88% avg_imp=28.6% | 39/hr
+  [541/3500] ✓ Insurance                      | class | baseline=0.7573 orc=0.7580 (+0.1%) | win_rate=88% avg_imp=28.5% | 39/hr
+  [548/3500] ✓ house_16H                      | regre | baseline=0.3213 orc=0.3169 (+1.3%) | win_rate=88% avg_imp=28.4% | 40/hr
+  [549/3500] ✓ house_16H                      | regre | baseline=0.3213 orc=0.3169 (+1.3%) | win_rate=88% avg_imp=28.3% | 40/hr
+  [550/3500] ✓ house_16H                      | class | baseline=0.8918 orc=0.9004 (+1.0%) | win_rate=88% avg_imp=28.2% | 40/hr
+  [551/3500] ✓ house_8L                       | class | baseline=0.8918 orc=0.8997 (+0.9%) | win_rate=88% avg_imp=28.2% | 40/hr
+  [552/3500] ✓ house_16H                      | regre | baseline=0.3213 orc=0.3179 (+1.0%) | win_rate=88% avg_imp=28.1% | 40/hr
+  [553/3500] ✓ house_8L                       | regre | baseline=881324753.2951 orc=772684449.7087 (+12.3%) | win_rate=89% avg_imp=28.0% | 40/hr
+  [554/3500] ✓ house_16H                      | regre | baseline=0.3213 orc=0.3179 (+1.0%) | win_rate=89% avg_imp=27.9% | 40/hr
+  [555/3500] ✓ ae_price_prediction            | regre | baseline=1.5340 orc=0.0542 (+96.5%) | win_rate=89% avg_imp=28.1% | 40/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [556/3500] ✓ health_insurance               | regre | baseline=209.6494 orc=208.6288 (+0.5%) | win_rate=89% avg_imp=28.1% | 40/hr
+  [558/3500] ✓ timing-attack-dataset-20-micro | class | baseline=0.1262 orc=0.2310 (+83.0%) | win_rate=89% avg_imp=28.2% | 40/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [559/3500] ✓ timing-attack-dataset-10-micro | class | baseline=0.1509 orc=0.2298 (+52.3%) | win_rate=89% avg_imp=28.3% | 40/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [560/3500] ✓ timing-attack-dataset-10-micro | class | baseline=0.1115 orc=0.2265 (+103.1%) | win_rate=89% avg_imp=28.5% | 39/hr
+  [561/3500] ✓ Stylized_Meta_Album_AWA_Extend | class | baseline=0.9975 orc=0.9995 (+0.2%) | win_rate=89% avg_imp=28.4% | 39/hr
+  [562/3500] · UNSW_NB15                      | class | baseline=nan orc=1.0000 (+0.0%) | win_rate=88% avg_imp=28.4% | 39/hr
+  [565/3500] ✓ house_sales_reduced            | regre | baseline=16853886532.3105 orc=0.1677 (+100.0%) | win_rate=89% avg_imp=28.6% | 40/hr
+  [566/3500] ✓ house_sales                    | regre | baseline=0.0325 orc=0.0277 (+14.8%) | win_rate=89% avg_imp=28.6% | 40/hr
+  [567/3500] ✓ house_sales                    | regre | baseline=0.0325 orc=0.0279 (+14.0%) | win_rate=89% avg_imp=28.6% | 40/hr
+  [568/3500] ✓ house_sales                    | regre | baseline=0.0341 orc=0.0308 (+9.7%) | win_rate=89% avg_imp=28.5% | 40/hr
+  [569/3500] ✓ house_sales                    | regre | baseline=16373661774.0133 orc=0.1643 (+100.0%) | win_rate=89% avg_imp=28.7% | 40/hr
+  [571/3500] ✓ house_sales                    | regre | baseline=0.0340 orc=0.0310 (+8.8%) | win_rate=89% avg_imp=28.7% | 40/hr
+  [572/3500] ✓ house_sales                    | regre | baseline=0.0341 orc=0.0304 (+11.0%) | win_rate=89% avg_imp=28.6% | 40/hr
+  [573/3500] ✓ kings_county                   | regre | baseline=16826437211.5577 orc=0.1626 (+100.0%) | win_rate=89% avg_imp=28.8% | 40/hr
+  [574/3500] ✓ superconduct                   | regre | baseline=177.9548 orc=76.8187 (+56.8%) | win_rate=89% avg_imp=28.9% | 40/hr
+  [575/3500] ✓ superconductivity              | regre | baseline=177.9548 orc=76.9158 (+56.8%) | win_rate=89% avg_imp=29.0% | 40/hr
+  [576/3500] ✓ superconduct                   | regre | baseline=178.5482 orc=76.4201 (+57.2%) | win_rate=89% avg_imp=29.0% | 40/hr
+  [577/3500] ✓ superconduct                   | regre | baseline=178.5482 orc=76.4201 (+57.2%) | win_rate=89% avg_imp=29.1% | 40/hr
+  [578/3500] · superconductivity              | regre | baseline=88.3326 orc=92.1470 (-4.3%) | win_rate=89% avg_imp=29.1% | 40/hr
+  [579/3500] ✓ superconduct                   | regre | baseline=178.5482 orc=76.4201 (+57.2%) | win_rate=89% avg_imp=29.2% | 40/hr
+  [584/3500] ✓ law-school-admission-bianry    | class | baseline=0.7291 orc=0.7329 (+0.5%) | win_rate=89% avg_imp=29.1% | 40/hr
+  [585/3500] · law-school-admission-bianry    | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=88% avg_imp=29.1% | 40/hr
+  [586/3500] · law-school-admission-bianry    | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=88% avg_imp=29.1% | 40/hr
+  [588/3500] ✓ houses                         | regre | baseline=0.1011 orc=0.0474 (+53.1%) | win_rate=88% avg_imp=29.2% | 40/hr
+  [589/3500] ✓ california                     | regre | baseline=0.0366 orc=0.0179 (+50.9%) | win_rate=88% avg_imp=29.2% | 40/hr
+  [590/3500] ✓ california                     | regre | baseline=0.0366 orc=0.0176 (+51.9%) | win_rate=88% avg_imp=29.3% | 40/hr
+  [591/3500] ✓ california                     | regre | baseline=0.0366 orc=0.0169 (+53.6%) | win_rate=88% avg_imp=29.4% | 40/hr
+  [592/3500] ✓ california_housing             | regre | baseline=4912849338.7326 orc=2036054265.9489 (+58.6%) | win_rate=88% avg_imp=29.5% | 40/hr
+  [593/3500] ✓ houses                         | regre | baseline=0.1011 orc=0.0494 (+51.2%) | win_rate=88% avg_imp=29.5% | 40/hr
+  [595/3500] ✓ houses                         | regre | baseline=4781698091.3927 orc=2089364634.0028 (+56.3%) | win_rate=88% avg_imp=29.6% | 40/hr
+  [596/3500] ✓ houses                         | regre | baseline=0.1011 orc=0.0494 (+51.2%) | win_rate=88% avg_imp=29.6% | 40/hr
+  [597/3500] ✓ houses                         | regre | baseline=0.1011 orc=0.0487 (+51.8%) | win_rate=88% avg_imp=29.7% | 40/hr
+  [599/3500] ✓ California-Housing-Classificat | class | baseline=0.7609 orc=0.9070 (+19.2%) | win_rate=89% avg_imp=29.7% | 41/hr
+  [600/3500] ✓ houses                         | regre | baseline=0.0524 orc=0.0432 (+17.4%) | win_rate=89% avg_imp=29.6% | 41/hr
+
+==================================================
+  Processed: 600 | Success: 419 | Errors: 181
+  Orcetra wins: 371/419 (88.5%)
+  Avg improvement: 29.64% | Median: 6.02%
+  Elapsed: 14.8h | Rate: 41/hr
+==================================================
+
+  [601/3500] ✓ california_housing             | regre | baseline=4780122851.5592 orc=2094445066.7256 (+56.2%) | win_rate=89% avg_imp=29.7% | 41/hr
+  [602/3500] ✓ houses                         | class | baseline=0.9284 orc=0.9869 (+6.3%) | win_rate=89% avg_imp=29.6% | 41/hr
+  [603/3500] ✓ california                     | class | baseline=0.7715 orc=0.9108 (+18.1%) | win_rate=89% avg_imp=29.6% | 41/hr
+  [604/3500] ✓ california                     | class | baseline=0.7715 orc=0.9099 (+17.9%) | win_rate=89% avg_imp=29.6% | 41/hr
+  [605/3500] ✓ california                     | class | baseline=0.7715 orc=0.9103 (+18.0%) | win_rate=89% avg_imp=29.6% | 41/hr
+  [606/3500] ✓ california                     | class | baseline=0.7715 orc=0.9084 (+17.7%) | win_rate=89% avg_imp=29.5% | 41/hr
+  [608/3500] ✓ news_channel                   | class | baseline=0.5162 orc=0.5334 (+3.3%) | win_rate=89% avg_imp=29.5% | 41/hr
+  [609/3500] ✓ news_channel                   | class | baseline=0.5162 orc=0.5317 (+3.0%) | win_rate=89% avg_imp=29.4% | 41/hr
+  [614/3500] ✓ letter-challenge-unlabeled.arf | class | baseline=0.4979 orc=0.5135 (+3.1%) | win_rate=89% avg_imp=29.3% | 41/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [618/3500] ✓ microaggregation2              | class | baseline=0.4648 orc=0.6328 (+36.1%) | win_rate=89% avg_imp=29.3% | 41/hr
+  [620/3500] ✓ letter                         | class | baseline=0.9958 orc=0.9980 (+0.2%) | win_rate=89% avg_imp=29.3% | 41/hr
+  [622/3500] ✓ Toxicity_detection_context     | class | baseline=0.9819 orc=0.9908 (+0.9%) | win_rate=89% avg_imp=29.2% | 41/hr
+  [623/3500] ✓ timing-attack-dataset-30-micro | class | baseline=0.1031 orc=0.1303 (+26.4%) | win_rate=89% avg_imp=29.2% | 41/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [624/3500] ✓ timing-attack-dataset-10-micro | class | baseline=0.0902 orc=0.1133 (+25.6%) | win_rate=89% avg_imp=29.2% | 41/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [625/3500] ✓ timing-attack-dataset-35-micro | class | baseline=0.0987 orc=0.1248 (+26.4%) | win_rate=89% avg_imp=29.2% | 41/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [626/3500] ✓ timing-attack-dataset-20-micro | class | baseline=0.0911 orc=0.1210 (+32.8%) | win_rate=89% avg_imp=29.2% | 41/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [627/3500] ✓ timing-attack-dataset-15-micro | class | baseline=0.0891 orc=0.1118 (+25.5%) | win_rate=89% avg_imp=29.2% | 41/hr
+  [628/3500] ✓ timing-attack-dataset-10-micro | class | baseline=0.0874 orc=0.1043 (+19.3%) | win_rate=89% avg_imp=29.1% | 40/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [629/3500] ✓ timing-attack-dataset-30-micro | class | baseline=0.1049 orc=0.1243 (+18.4%) | win_rate=89% avg_imp=29.1% | 40/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [630/3500] ✓ timing-attack-dataset-20-micro | class | baseline=0.0964 orc=0.1253 (+29.9%) | win_rate=89% avg_imp=29.1% | 40/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [631/3500] ✓ timing-attack-dataset-20-micro | class | baseline=0.0894 orc=0.1165 (+30.3%) | win_rate=89% avg_imp=29.1% | 40/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [632/3500] ✓ timing-attack-dataset-10-micro | class | baseline=0.0885 orc=0.1100 (+24.4%) | win_rate=89% avg_imp=29.1% | 39/hr
+  [633/3500] ✓ timing-attack-dataset-25-micro | class | baseline=0.1082 orc=0.1240 (+14.6%) | win_rate=89% avg_imp=29.1% | 39/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [634/3500] ✓ timing-attack-dataset-15-micro | class | baseline=0.0887 orc=0.1128 (+27.1%) | win_rate=89% avg_imp=29.1% | 39/hr
+  [635/3500] ✓ timing-attack-dataset-10-micro | class | baseline=0.0829 orc=0.1045 (+26.0%) | win_rate=89% avg_imp=29.1% | 39/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [636/3500] ✓ timing-attack-dataset-25-micro | class | baseline=0.0973 orc=0.1195 (+22.8%) | win_rate=89% avg_imp=29.0% | 39/hr
+  [637/3500] ✓ timing-attack-dataset-15-micro | class | baseline=0.0894 orc=0.1135 (+27.0%) | win_rate=89% avg_imp=29.0% | 39/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [638/3500] ✓ timing-attack-dataset-35-micro | class | baseline=0.0910 orc=0.1338 (+47.0%) | win_rate=89% avg_imp=29.1% | 39/hr
+  [639/3500] ✓ timing-attack-dataset-25-micro | class | baseline=0.0928 orc=0.1228 (+32.3%) | win_rate=89% avg_imp=29.1% | 39/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [640/3500] ✓ timing-attack-dataset-25-micro | class | baseline=0.0975 orc=0.1285 (+31.8%) | win_rate=89% avg_imp=29.1% | 38/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [641/3500] ✓ timing-attack-dataset-15-micro | class | baseline=0.0867 orc=0.1100 (+26.9%) | win_rate=89% avg_imp=29.1% | 38/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [642/3500] ✓ timing-attack-dataset-15-micro | class | baseline=0.0905 orc=0.1103 (+21.9%) | win_rate=89% avg_imp=29.1% | 38/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [643/3500] ✓ timing-attack-dataset-35-micro | class | baseline=0.1025 orc=0.1303 (+27.0%) | win_rate=89% avg_imp=29.1% | 38/hr
+  [644/3500] ✓ timing-attack-dataset-30-micro | class | baseline=0.1048 orc=0.1265 (+20.7%) | win_rate=89% avg_imp=29.0% | 38/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [645/3500] ✓ timing-attack-dataset-30-micro | class | baseline=0.0908 orc=0.1248 (+37.4%) | win_rate=89% avg_imp=29.1% | 37/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [646/3500] ✓ timing-attack-dataset-20-micro | class | baseline=0.0956 orc=0.1220 (+27.6%) | win_rate=89% avg_imp=29.1% | 37/hr
+  [647/3500] ✓ timing-attack-dataset-30-micro | class | baseline=0.0990 orc=0.1231 (+24.3%) | win_rate=89% avg_imp=29.0% | 37/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [648/3500] ✓ timing-attack-dataset-35-micro | class | baseline=0.1028 orc=0.1361 (+32.4%) | win_rate=89% avg_imp=29.1% | 37/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [649/3500] ✓ timing-attack-dataset-30-micro | class | baseline=0.1025 orc=0.1278 (+24.7%) | win_rate=90% avg_imp=29.0% | 37/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [650/3500] ✓ timing-attack-dataset-35-micro | class | baseline=0.1065 orc=0.1253 (+17.7%) | win_rate=90% avg_imp=29.0% | 37/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [651/3500] ✓ timing-attack-dataset-25-micro | class | baseline=0.0981 orc=0.1218 (+24.2%) | win_rate=90% avg_imp=29.0% | 37/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [652/3500] ✓ timing-attack-dataset-25-micro | class | baseline=0.1025 orc=0.1233 (+20.3%) | win_rate=90% avg_imp=29.0% | 36/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [653/3500] ✓ timing-attack-dataset-20-micro | class | baseline=0.0957 orc=0.1133 (+18.4%) | win_rate=90% avg_imp=29.0% | 36/hr
+  [654/3500] ✓ timing-attack-dataset-35-micro | class | baseline=0.1086 orc=0.1251 (+15.2%) | win_rate=90% avg_imp=28.9% | 36/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [655/3500] ✓ timing-attack-dataset-15-micro | class | baseline=0.0865 orc=0.1146 (+32.4%) | win_rate=90% avg_imp=28.9% | 36/hr
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+WARNING:openml.datasets.functions:Could not download file from https://data.openml.org/datasets/0004/46973/dataset_46973.pq: Object at 'https://data.openml.org/datasets/0004/46973/dataset_46973.pq' does not exist.
+WARNING:openml.datasets.functions:Failed to download parquet, fallback on ARFF.
+  [656/3500] ✓ appliances_energy_prediction   | regre | baseline=25040.2634 orc=0.3646 (+100.0%) | win_rate=90% avg_imp=29.1% | 36/hr
+  [657/3500] ✓ fifa                           | regre | baseline=270837183.0162 orc=0.8001 (+100.0%) | win_rate=90% avg_imp=29.3% | 36/hr
+WARNING:openml.datasets.functions:Could not download file from https://data.openml.org/datasets/0004/46974/dataset_46974.pq: Object at 'https://data.openml.org/datasets/0004/46974/dataset_46974.pq' does not exist.
+WARNING:openml.datasets.functions:Failed to download parquet, fallback on ARFF.
+WARNING:openml.datasets.functions:Could not download file from https://data.openml.org/datasets/0004/46972/dataset_46972.pq: Object at 'https://data.openml.org/datasets/0004/46972/dataset_46972.pq' does not exist.
+WARNING:openml.datasets.functions:Failed to download parquet, fallback on ARFF.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+[LightGBM] [Fatal] Do not support special JSON characters in feature name.
+  [658/3500] ✓ fifa                           | regre | baseline=53560592.3807 orc=0.5503 (+100.0%) | win_rate=90% avg_imp=29.4% | 36/hr
+  [659/3500] ✓ fifa                           | regre | baseline=55034102.9305 orc=0.6007 (+100.0%) | win_rate=90% avg_imp=29.6% | 36/hr
+  [660/3500] ✓ fifa                           | regre | baseline=53560592.3807 orc=0.5504 (+100.0%) | win_rate=90% avg_imp=29.8% | 36/hr
+  [661/3500] ✓ fifa                           | regre | baseline=55839376.3817 orc=0.5707 (+100.0%) | win_rate=90% avg_imp=29.9% | 36/hr
+  [662/3500] ✓ fifa                           | regre | baseline=282300202.5772 orc=0.7597 (+100.0%) | win_rate=90% avg_imp=30.1% | 36/hr
+  [663/3500] · HR_Analytics_Job_Change_of_Dat | class | baseline=0.7939 orc=0.7936 (-0.0%) | win_rate=90% avg_imp=30.1% | 36/hr
+  [665/3500] ✓ MagicTelescope                 | class | baseline=0.8812 orc=0.8885 (+0.8%) | win_rate=90% avg_imp=30.0% | 36/hr
+  [666/3500] · women_clothing_review          | class | baseline=0.6347 orc=0.6307 (-0.6%) | win_rate=89% avg_imp=30.0% | 36/hr
+  [667/3500] · women_clothing_review          | class | baseline=0.6318 orc=0.6299 (-0.3%) | win_rate=89% avg_imp=30.0% | 36/hr
+  [668/3500] · Stylized_Meta_Album_RSICB_Exte | class | baseline=0.9990 orc=0.9987 (-0.0%) | win_rate=89% avg_imp=30.0% | 36/hr
+  [670/3500] · melbourne_airbnb               | class | baseline=1.0000 orc=1.0000 (+0.0%) | win_rate=89% avg_imp=30.0% | 36/hr
+/home/guilinzhang/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 26 leaked semlock objects to clean up at shutdown
+  warnings.warn(
+/home/guilinzhang/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 1344 leaked folder objects to clean up at shutdown
+  warnings.warn(

@@ -1,0 +1,160 @@
+{
+  "timestamp": "2026-03-13T18:56:30.743556+00:00",
+  "days_before": 7,
+  "n_events": 15,
+  "avg_brier": 0.10649333333333333,
+  "avg_market_brier": 0.09364353333333335,
+  "beat_rate": 0.06666666666666667,
+  "events": [
+    {
+      "question": "Will Donald Trump win the 2024 US Presidential Election?",
+      "actual": 1.0,
+      "market": 0.6605,
+      "prediction": 0.55,
+      "brier_pred": 0.20249999999999996,
+      "brier_mkt": 0.11526025000000002,
+      "beat": false,
+      "time": 1.6993203163146973
+    },
+    {
+      "question": "Will Kamala Harris win the 2024 US Presidential Election?",
+      "actual": 0.0,
+      "market": 0.3455,
+      "prediction": 0.35,
+      "brier_pred": 0.12249999999999998,
+      "brier_mkt": 0.11937024999999998,
+      "beat": false,
+      "time": 1.8060383796691895
+    },
+    {
+      "question": "Will Donald Trump be inaugurated?",
+      "actual": 1.0,
+      "market": 0.99,
+      "prediction": 0.99,
+      "brier_pred": 0.00010000000000000018,
+      "brier_mkt": 0.00010000000000000018,
+      "beat": false,
+      "time": 1.6543493270874023
+    },
+    {
+      "question": "Will Nicolae Ciuc\u0103 win the 2024 Romanian Presidential election?",
+      "actual": 0.0,
+      "market": 0.01,
+      "prediction": 0.05,
+      "brier_pred": 0.0025000000000000005,
+      "brier_mkt": 0.0001,
+      "beat": false,
+      "time": 1.655822992324829
+    },
+    {
+      "question": "Will Zelenskyy wear a suit before July?",
+      "actual": 0.0,
+      "market": 0.033,
+      "prediction": 0.1,
+      "brier_pred": 0.010000000000000002,
+      "brier_mkt": 0.0010890000000000001,
+      "beat": false,
+      "time": 2.1446011066436768
+    },
+    {
+      "question": "Will any other Republican Politician win the 2024 US Presidential Election?",
+      "actual": 0.0,
+      "market": 0.01,
+      "prediction": 0.05,
+      "brier_pred": 0.0025000000000000005,
+      "brier_mkt": 0.0001,
+      "beat": false,
+      "time": 2.1439905166625977
+    },
+    {
+      "question": "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
+      "actual": 0.0,
+      "market": 0.01,
+      "prediction": 0.05,
+      "brier_pred": 0.0025000000000000005,
+      "brier_mkt": 0.0001,
+      "beat": false,
+      "time": 1.8551859855651855
+    },
+    {
+      "question": "Fed increases interest rates by 25+ bps after January 2026 meeting?",
+      "actual": 0.0,
+      "market": 0.01,
+      "prediction": 0.05,
+      "brier_pred": 0.0025000000000000005,
+      "brier_mkt": 0.0001,
+      "beat": false,
+      "time": 1.8380427360534668
+    },
+    {
+      "question": "Kamala Harris wins the popular vote?",
+      "actual": 0.0,
+      "market": 0.5825,
+      "prediction": 0.58,
+      "brier_pred": 0.3364,
+      "brier_mkt": 0.33930625000000003,
+      "beat": true,
+      "time": 1.8390474319458008
+    },
+    {
+      "question": "Fed decreases interest rates by 50+ bps after December 2025 meeting?",
+      "actual": 0.0,
+      "market": 0.01,
+      "prediction": 0.02,
+      "brier_pred": 0.0004,
+      "brier_mkt": 0.0001,
+      "beat": false,
+      "time": 1.7900824546813965
+    },
+    {
+      "question": "US government shutdown Saturday?",
+      "actual": 1.0,
+      "market": 0.095,
+      "prediction": 0.05,
+      "brier_pred": 0.9025,
+      "brier_mkt": 0.819025,
+      "beat": false,
+      "time": 2.0552878379821777
+    },
+    {
+      "question": "Will Michelle Obama win the 2024 US Presidential Election?",
+      "actual": 0.0,
+      "market": 0.01,
+      "prediction": 0.02,
+      "brier_pred": 0.0004,
+      "brier_mkt": 0.0001,
+      "beat": false,
+      "time": 2.1971378326416016
+    },
+    {
+      "question": "Will Zohran Mamdani win the 2025 NYC mayoral election?",
+      "actual": 1.0,
+      "market": 0.9015,
+      "prediction": 0.9,
+      "brier_pred": 0.009999999999999995,
+      "brier_mkt": 0.009702250000000006,
+      "beat": false,
+      "time": 1.9425902366638184
+    },
+    {
+      "question": "Will Robert F. Kennedy Jr. win the 2024 US Presidential Election?",
+      "actual": 0.0,
+      "market": 0.01,
+      "prediction": 0.01,
+      "brier_pred": 0.0001,
+      "brier_mkt": 0.0001,
+      "beat": false,
+      "time": 2.5585052967071533
+    },
+    {
+      "question": "Fed increases interest rates by 25+ bps after November 2024 meeting?",
+      "actual": 0.0,
+      "market": 0.01,
+      "prediction": 0.05,
+      "brier_pred": 0.0025000000000000005,
+      "brier_mkt": 0.0001,
+      "beat": false,
+      "time": 1.9452259540557861
+    }
+  ]
+}

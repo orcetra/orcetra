@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-03-13T19:03:39.502612+00:00",
+  "baseline_brier": 0.09364353333333333,
+  "final_brier": 0.09344861666666666,
+  "market_brier": 0.09364353333333332,
+  "rounds": 20,
+  "improvements": [
+    {
+      "round": 20,
+      "brier": 0.09344861666666666,
+      "change": "Add a keyword-based adjustment for mid-range market predictions using a simple s"
+    }
+  ],
+  "best_code": "def predict(title, description, market_price, volume):\n    \"\"\"Predict probability based on available signals.\"\"\"\n    p = market_price  # Start from market consensus\n    \n    # Confidence-based adjustment: extreme markets are usually right\n    if market_price > 0.90 or market_price < 0.10:\n        # Trust the market on obvious calls\n        p = market_price\n    elif market_price > 0.70:\n        # Slight contrarian: markets slightly overconfident on likely events\n        p = market_price - 0.02\n    elif market_price < 0.30:\n        p = market_price + 0.02\n    else:\n        # Middle range: look for keywords that signal direction\n        keywords = [\"yes\", \"win\", \"approve\", \"pass\", \"up\", \"increase\"]\n        keyword_count = sum(1 for keyword in keywords if keyword.lower() in title.lower() or keyword.lower() in description.lower())\n        if keyword_count > 0:\n            p = market_price + 0.05\n        keywords_no = [\"no\", \"lose\", \"reject\", \"fail\", \"down\", \"decrease\"]\n        keyword_count_no = sum(1 for keyword in keywords_no if keyword.lower() in title.lower() or keyword.lower() in description.lower())\n        if keyword_count_no > 0:\n            p = market_price - 0.05\n        p = max(0.01, min(0.99, p))\n    \n    # Volume signal: high volume = more informed market\n    if volume > 100_000_000:  # >$100M volume\n        # Very liquid market, trust it more\n        p = market_price * 0.95 + p * 0.05\n    \n    c = 0.6\n    if market_price > 0.90 or market_price < 0.10:\n        c = 0.8\n    elif volume > 100_000_000:\n        c = 0.7\n\n    return {\n        \"probability\": p,\n        \"confidence\": c,\n        \"reasoning\": f\"Market-informed prediction. Market={market_price:.2f}, Volume=${volume/1e6:.0f}M\"\n    }\n"
+}
