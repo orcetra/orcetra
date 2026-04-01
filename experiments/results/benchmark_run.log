@@ -1,9 +1,0 @@
-Fetching OpenML dataset catalog...
-  Curated datasets: 127
-  Total selected: 3500 (94 curated + 3406 popular)
-
-Datasets to process: 3500 (of 3500 total)
-/home/guilinzhang/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 26 leaked semlock objects to clean up at shutdown
-  warnings.warn(
-/home/guilinzhang/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 3 leaked folder objects to clean up at shutdown
-  warnings.warn(
