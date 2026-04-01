@@ -88,12 +88,6 @@ src/orcetra/
 - [ ] Meta-learning knowledge base ([#8](https://github.com/orcetra/orcetra/issues/8))
 - [ ] GitHub Actions CI ([#18](https://github.com/orcetra/orcetra/issues/18))
 
-## Paper
-
-> Orcetra: Calibration-Aware Automated Prediction via Self-Improving Research Loops
->
-> Target: ICML 2026 Workshop
-
 ## Contributing
 
 PRs welcome. Main branch is protected — open a PR and request review.
