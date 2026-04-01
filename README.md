@@ -29,6 +29,10 @@ print(result["best_model"], result["best_score"])
 
 **513 OpenML datasets, 60-second budget, CPU only.**
 
+<p align="center">
+  <img src="assets/benchmark_chart.svg" alt="Benchmark win rates" width="600"/>
+</p>
+
 | | Orcetra | AutoGluon | FLAML | Tie |
 |---|---|---|---|---|
 | **Overall (513)** | **57.1%** | 21.6% | 10.9% | 10.3% |
@@ -50,7 +54,9 @@ print(result["best_model"], result["best_score"])
 4. Result     → Best model + score + improvement over baseline
 ```
 
-**Why it's fast:** Calibration-based warm start + meta-search space (searches what works for similar data, not the full space) + optimized for short budgets (30-60s).
+**Why it's fast:** Every benchmark run teaches Orcetra where to look next. Instead of searching the full model space from scratch, it uses learned priors — which model families win, which hyperparameter ranges matter, which strategies to skip — to converge in seconds where traditional AutoML needs minutes.
+
+Think of it as the difference between AlphaGo (learning from human games) and brute-force search: same compute budget, radically different efficiency. The more datasets Orcetra sees, the sharper its search becomes.
 
 ## Optional Extras
 
@@ -86,6 +92,7 @@ src/orcetra/
 - [ ] Top-3 ensemble ([#11](https://github.com/orcetra/orcetra/issues/11))
 - [ ] Feature engineering module ([#1](https://github.com/orcetra/orcetra/issues/1))
 - [ ] Meta-learning knowledge base ([#8](https://github.com/orcetra/orcetra/issues/8))
+- [ ] Adaptive search priors from benchmark history
 - [ ] GitHub Actions CI ([#18](https://github.com/orcetra/orcetra/issues/18))
 
 ## Contributing
