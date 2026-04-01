@@ -1,21 +1,21 @@
 {
   "summary": {
-    "total_predictions": 29573,
-    "resolved": 3479,
-    "pending": 26094,
-    "beat_rate": 0.6892785283127335,
-    "avg_orcetra_brier": 0.21463774073009484,
-    "avg_market_brier": 0.22458358723771196,
-    "last_updated": "2026-03-31T18:00:35.879112+00:00",
+    "total_predictions": 29951,
+    "resolved": 3567,
+    "pending": 26384,
+    "beat_rate": 0.687973086627418,
+    "avg_orcetra_brier": 0.21401014858424447,
+    "avg_market_brier": 0.22379161760583122,
+    "last_updated": "2026-04-01T00:00:12.071479+00:00",
     "crypto_binary_excluded": 417
   },
   "by_tag": {
     "sports": {
-      "total": 2835,
-      "beat": 1900,
-      "rate": 0.6701940035273368,
-      "avg_our_brier": 0.22369382716049382,
-      "avg_mkt_brier": 0.23355097001763667
+      "total": 2880,
+      "beat": 1920,
+      "rate": 0.6666666666666666,
+      "avg_our_brier": 0.22418944444444447,
+      "avg_mkt_brier": 0.23376947916666665
     },
     "golf": {
       "total": 191,
@@ -25,18 +25,18 @@
       "avg_mkt_brier": 0.2223109947643979
     },
     "economy": {
-      "total": 52,
-      "beat": 35,
-      "rate": 0.6730769230769231,
-      "avg_our_brier": 0.18799423076923077,
-      "avg_mkt_brier": 0.1866865384615385
+      "total": 57,
+      "beat": 39,
+      "rate": 0.6842105263157895,
+      "avg_our_brier": 0.18806491228070174,
+      "avg_mkt_brier": 0.18860701754385967
     },
     "politics": {
-      "total": 383,
-      "beat": 282,
-      "rate": 0.7362924281984334,
-      "avg_our_brier": 0.16629086161879894,
-      "avg_mkt_brier": 0.1682524804177546
+      "total": 421,
+      "beat": 314,
+      "rate": 0.7458432304038005,
+      "avg_our_brier": 0.16128574821852734,
+      "avg_mkt_brier": 0.16436365795724467
     },
     "commodities": {
       "total": 15,
@@ -1569,6 +1569,30 @@
       "reasoning": ""
     },
     {
+      "q": "Will Ted Cruz post 40-59 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.172,
+      "market": 0.25,
+      "actual": 0.0,
+      "our_brier": 0.0296,
+      "mkt_brier": 0.0625,
+      "beat": true,
+      "spread": 0.078,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 30 be between 2,800,000 and 3,",
+      "tag": "economy",
+      "orcetra": 0.172,
+      "market": 0.25,
+      "actual": 0.0,
+      "our_brier": 0.0296,
+      "mkt_brier": 0.0625,
+      "beat": true,
+      "spread": 0.078,
+      "reasoning": "Market price: 0.25. Calibration-corrected market: 0.120. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.250 \u2192 0.172. Final: 0.172 (confidence: 0.5)"
+    },
+    {
       "q": "Will the number of US flights delayed on March 26 be between 4,500 and 5,000?",
       "tag": "politics",
       "orcetra": 0.1715,
@@ -1627,6 +1651,18 @@
       "beat": true,
       "spread": 0.0756,
       "reasoning": ""
+    },
+    {
+      "q": "Will the number of US flights delayed on March 27 be between 3,000 and 3,500?",
+      "tag": "politics",
+      "orcetra": 0.1694,
+      "market": 0.245,
+      "actual": 0.0,
+      "our_brier": 0.0287,
+      "mkt_brier": 0.06,
+      "beat": true,
+      "spread": 0.0756,
+      "reasoning": "Market price: 0.24. Calibration-corrected market: 0.119. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.245 \u2192 0.169. Final: 0.169 (confidence: 0.5)"
     },
     {
       "q": "Trungelliti vs. Kolar: Set 1 Games O/U 10.5",
@@ -1941,6 +1977,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will the number of US flights delayed on March 27 be between 4,000 and 4,500?",
+      "tag": "politics",
+      "orcetra": 0.1818,
+      "market": 0.255,
+      "actual": 0.0,
+      "our_brier": 0.0331,
+      "mkt_brier": 0.065,
+      "beat": true,
+      "spread": 0.0732,
+      "reasoning": "Market price: 0.26. Calibration-corrected market: 0.133. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.255 \u2192 0.182. Final: 0.182 (confidence: 0.5)"
+    },
+    {
       "q": "Will Donald Trump post 80-99 Truth Social posts from March 10 to March 17, 2026?",
       "tag": "politics",
       "orcetra": 0.165,
@@ -1985,6 +2033,18 @@
       "our_brier": 0.6986,
       "mkt_brier": 0.5852,
       "beat": false,
+      "spread": 0.0708,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 180-199 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1642,
+      "market": 0.235,
+      "actual": 0.0,
+      "our_brier": 0.027,
+      "mkt_brier": 0.0552,
+      "beat": true,
       "spread": 0.0708,
       "reasoning": ""
     },
@@ -2537,6 +2597,42 @@
       "our_brier": 0.6535,
       "mkt_brier": 0.5476,
       "beat": false,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 140-159 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1916,
+      "market": 0.26,
+      "actual": 0.0,
+      "our_brier": 0.0367,
+      "mkt_brier": 0.0676,
+      "beat": true,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 200+ posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1616,
+      "market": 0.23,
+      "actual": 0.0,
+      "our_brier": 0.0261,
+      "mkt_brier": 0.0529,
+      "beat": true,
+      "spread": 0.0684,
+      "reasoning": ""
+    },
+    {
+      "q": "Will CZ post 80-99 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1916,
+      "market": 0.26,
+      "actual": 0.0,
+      "our_brier": 0.0367,
+      "mkt_brier": 0.0676,
+      "beat": true,
       "spread": 0.0684,
       "reasoning": ""
     },
@@ -3189,6 +3285,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will CZ post 180-199 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.159,
+      "market": 0.225,
+      "actual": 0.0,
+      "our_brier": 0.0253,
+      "mkt_brier": 0.0506,
+      "beat": true,
+      "spread": 0.066,
+      "reasoning": ""
+    },
+    {
       "q": "Will Brian Harman finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.41,
@@ -3703,6 +3811,30 @@
       "beat": true,
       "spread": 0.0636,
       "reasoning": ""
+    },
+    {
+      "q": "Will the number of US flights delayed on March 27 be between 3,500 and 4,000?",
+      "tag": "politics",
+      "orcetra": 0.2014,
+      "market": 0.265,
+      "actual": 0.0,
+      "our_brier": 0.0406,
+      "mkt_brier": 0.0702,
+      "beat": true,
+      "spread": 0.0636,
+      "reasoning": "Market price: 0.27. Calibration-corrected market: 0.159. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.265 \u2192 0.201. Final: 0.201 (confidence: 0.5)"
+    },
+    {
+      "q": "Will the number of US flights delayed on March 27 be between 4,500 and 5,000?",
+      "tag": "politics",
+      "orcetra": 0.2014,
+      "market": 0.265,
+      "actual": 0.0,
+      "our_brier": 0.0406,
+      "mkt_brier": 0.0702,
+      "beat": true,
+      "spread": 0.0636,
+      "reasoning": "Market price: 0.27. Calibration-corrected market: 0.159. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.265 \u2192 0.201. Final: 0.201 (confidence: 0.5)"
     },
     {
       "q": "Trungelliti vs. Kolar: Match O/U 22.5",
@@ -10161,6 +10293,162 @@
       "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
     },
     {
+      "q": "Map Handicap: HERO.A (-1.5) vs MINLATE (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Counter-Strike: AaB Esport vs Falcons Force (BO1) - Parken Challenger Championsh",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map Handicap: ICE (-1.5) vs BASEMENT BOYS (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 1: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 2: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Map 3: Odd/Even Total Kills?",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Set 1 Winner: Aguilar vs Schwaerzler",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.3136,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
+      "q": "Aguilar vs. Schwaerzler: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.44,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.1936,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.06,
+      "reasoning": "Market price: 0.50. Sports question detected \u2192 using calibrated market only: 0.500 \u2192 0.440. Final: 0.440 (confidence: 0.4)"
+    },
+    {
       "q": "Jubb vs. Mrva: Match O/U 21.5",
       "tag": "sports",
       "orcetra": 0.446,
@@ -13365,6 +13653,126 @@
       "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
     },
     {
+      "q": "Set 1 Winner: Buse vs Berrettini",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Buse vs. Berrettini: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Buse vs. Berrettini: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Buse vs. Berrettini: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Buse vs. Berrettini: Match O/U 22.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Buse vs. Berrettini: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Buse vs. Berrettini: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Ignacio Buse vs. Matteo Berrettini: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Set Handicap: Aguilar (-1.5) vs Schwaerzler (+1.5)",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 1.0,
+      "our_brier": 0.3069,
+      "mkt_brier": 0.245,
+      "beat": false,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
+      "q": "Aguilar vs. Schwaerzler: Set 1 Games O/U 9.5",
+      "tag": "sports",
+      "orcetra": 0.446,
+      "market": 0.505,
+      "actual": 0.0,
+      "our_brier": 0.1989,
+      "mkt_brier": 0.255,
+      "beat": true,
+      "spread": 0.059,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.505 \u2192 0.446. Final: 0.446 (confidence: 0.4)"
+    },
+    {
       "q": "Game 2: Any Player Rampage?",
       "tag": "sports",
       "orcetra": 0.1512,
@@ -13576,6 +13984,66 @@
       "actual": 0.0,
       "our_brier": 0.0229,
       "mkt_brier": 0.0441,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 160-179 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.2112,
+      "market": 0.27,
+      "actual": 0.0,
+      "our_brier": 0.0446,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Will CZ post 100-119 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.2112,
+      "market": 0.27,
+      "actual": 0.0,
+      "our_brier": 0.0446,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Will CZ post 120-139 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.2112,
+      "market": 0.27,
+      "actual": 0.0,
+      "our_brier": 0.0446,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Will CZ post 140-159 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.2112,
+      "market": 0.27,
+      "actual": 0.0,
+      "our_brier": 0.0446,
+      "mkt_brier": 0.0729,
+      "beat": true,
+      "spread": 0.0588,
+      "reasoning": ""
+    },
+    {
+      "q": "Will CZ post 160-179 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.2112,
+      "market": 0.27,
+      "actual": 0.0,
+      "our_brier": 0.0446,
+      "mkt_brier": 0.0729,
       "beat": true,
       "spread": 0.0588,
       "reasoning": ""
@@ -14515,6 +14983,18 @@
       "beat": true,
       "spread": 0.058,
       "reasoning": ""
+    },
+    {
+      "q": "Games Total: O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.452,
+      "market": 0.51,
+      "actual": 1.0,
+      "our_brier": 0.3003,
+      "mkt_brier": 0.2401,
+      "beat": false,
+      "spread": 0.058,
+      "reasoning": "Market price: 0.51. Sports question detected \u2192 using calibrated market only: 0.510 \u2192 0.452. Final: 0.452 (confidence: 0.4)"
     },
     {
       "q": "Games Total: O/U 2.5",
@@ -15669,6 +16149,66 @@
       "reasoning": ""
     },
     {
+      "q": "Aguilar vs. Schwaerzler: Set 1 Games O/U 8.5",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.520 \u2192 0.464. Final: 0.464 (confidence: 0.4)"
+    },
+    {
+      "q": "Daniel Merida Aguilar vs. Joel Schwaerzler: Total Sets O/U 2.5",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.520 \u2192 0.464. Final: 0.464 (confidence: 0.4)"
+    },
+    {
+      "q": "Aguilar vs. Schwaerzler: Match O/U 21.5",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.520 \u2192 0.464. Final: 0.464 (confidence: 0.4)"
+    },
+    {
+      "q": "Aguilar vs. Schwaerzler: Set 1 Games O/U 10.5",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.520 \u2192 0.464. Final: 0.464 (confidence: 0.4)"
+    },
+    {
+      "q": "Aguilar vs. Schwaerzler: Match O/U 23.5",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.52,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.2704,
+      "beat": true,
+      "spread": 0.056,
+      "reasoning": "Market price: 0.52. Sports question detected \u2192 using calibrated market only: 0.520 \u2192 0.464. Final: 0.464 (confidence: 0.4)"
+    },
+    {
       "q": "Will Rasmus Hojgaard finish in the Top 10 at the 2026 THE PLAYERS Championship?",
       "tag": "golf",
       "orcetra": 0.38,
@@ -16421,6 +16961,30 @@
       "our_brier": 0.6068,
       "mkt_brier": 0.5256,
       "beat": false,
+      "spread": 0.054,
+      "reasoning": ""
+    },
+    {
+      "q": "Will CZ post 60-79 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.221,
+      "market": 0.275,
+      "actual": 0.0,
+      "our_brier": 0.0488,
+      "mkt_brier": 0.0756,
+      "beat": true,
+      "spread": 0.054,
+      "reasoning": ""
+    },
+    {
+      "q": "Will CZ post 200+ posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.146,
+      "market": 0.2,
+      "actual": 0.0,
+      "our_brier": 0.0213,
+      "mkt_brier": 0.04,
+      "beat": true,
       "spread": 0.054,
       "reasoning": ""
     },
@@ -19581,6 +20145,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will CZ post 20-39 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.4472,
+      "market": 0.485,
+      "actual": 0.0,
+      "our_brier": 0.2,
+      "mkt_brier": 0.2352,
+      "beat": true,
+      "spread": 0.0378,
+      "reasoning": ""
+    },
+    {
       "q": "Will Elon Musk post 220-239 tweets from March 13 to March 20, 2026?",
       "tag": "politics",
       "orcetra": 0.1281,
@@ -19817,6 +20393,78 @@
       "our_brier": 0.2994,
       "mkt_brier": 0.2601,
       "beat": false,
+      "spread": 0.0372,
+      "reasoning": "Market price: 0.49. Calibration-corrected market: 0.428. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.490 \u2192 0.453. Final: 0.453 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Elon Musk post 240-259 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1278,
+      "market": 0.165,
+      "actual": 0.0,
+      "our_brier": 0.0163,
+      "mkt_brier": 0.0272,
+      "beat": true,
+      "spread": 0.0372,
+      "reasoning": "Market price: 0.17. Calibration-corrected market: 0.103. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.165 \u2192 0.128. Final: 0.128 (confidence: 0.5)"
+    },
+    {
+      "q": "Will Elon Musk post 260-279 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1278,
+      "market": 0.165,
+      "actual": 0.0,
+      "our_brier": 0.0163,
+      "mkt_brier": 0.0272,
+      "beat": true,
+      "spread": 0.0372,
+      "reasoning": "Market price: 0.17. Calibration-corrected market: 0.103. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.165 \u2192 0.128. Final: 0.128 (confidence: 0.5)"
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 30 be between 2,400,000 and 2,",
+      "tag": "economy",
+      "orcetra": 0.4528,
+      "market": 0.49,
+      "actual": 1.0,
+      "our_brier": 0.2994,
+      "mkt_brier": 0.2601,
+      "beat": false,
+      "spread": 0.0372,
+      "reasoning": "Market price: 0.49. Calibration-corrected market: 0.428. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.490 \u2192 0.453. Final: 0.453 (confidence: 0.5)"
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 30 be less than 2,200,000?",
+      "tag": "economy",
+      "orcetra": 0.4528,
+      "market": 0.49,
+      "actual": 0.0,
+      "our_brier": 0.205,
+      "mkt_brier": 0.2401,
+      "beat": true,
+      "spread": 0.0372,
+      "reasoning": "Market price: 0.49. Calibration-corrected market: 0.428. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.490 \u2192 0.453. Final: 0.453 (confidence: 0.5)"
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 30 be between 2,200,000 and 2,",
+      "tag": "economy",
+      "orcetra": 0.4528,
+      "market": 0.49,
+      "actual": 0.0,
+      "our_brier": 0.205,
+      "mkt_brier": 0.2401,
+      "beat": true,
+      "spread": 0.0372,
+      "reasoning": "Market price: 0.49. Calibration-corrected market: 0.428. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.490 \u2192 0.453. Final: 0.453 (confidence: 0.5)"
+    },
+    {
+      "q": "Will the total number of TSA passengers for March 30 be between 2,600,000 and 2,",
+      "tag": "economy",
+      "orcetra": 0.4528,
+      "market": 0.49,
+      "actual": 0.0,
+      "our_brier": 0.205,
+      "mkt_brier": 0.2401,
+      "beat": true,
       "spread": 0.0372,
       "reasoning": "Market price: 0.49. Calibration-corrected market: 0.428. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.490 \u2192 0.453. Final: 0.453 (confidence: 0.5)"
     },
@@ -21341,6 +21989,18 @@
       "our_brier": 0.2101,
       "mkt_brier": 0.245,
       "beat": true,
+      "spread": 0.0366,
+      "reasoning": "Market price: 0.49. Calibration-corrected market: 0.434. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.495 \u2192 0.458. Final: 0.458 (confidence: 0.5)"
+    },
+    {
+      "q": "Grand Prix Hassan II: Ignacio Buse vs Matteo Berrettini",
+      "tag": "sports",
+      "orcetra": 0.4584,
+      "market": 0.495,
+      "actual": 1.0,
+      "our_brier": 0.2933,
+      "mkt_brier": 0.255,
+      "beat": false,
       "spread": 0.0366,
       "reasoning": "Market price: 0.49. Calibration-corrected market: 0.434. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.495 \u2192 0.458. Final: 0.458 (confidence: 0.5)"
     },
@@ -26757,6 +27417,138 @@
       "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
     },
     {
+      "q": "Counter-Strike: MINLATE vs HEROIC Academy (BO3) - European Pro League Series 6 G",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Counter-Strike: MINLATE vs HEROIC Academy - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Counter-Strike: MINLATE vs HEROIC Academy - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 2: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 3: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 1: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 2: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Map 3: Odd/Even Total Rounds?",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 1.0,
+      "our_brier": 0.2873,
+      "mkt_brier": 0.25,
+      "beat": false,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
+      "q": "Counter-Strike: Inner Circle Esports vs BASEMENT BOYS - Map 2 Winner",
+      "tag": "sports",
+      "orcetra": 0.464,
+      "market": 0.5,
+      "actual": 0.0,
+      "our_brier": 0.2153,
+      "mkt_brier": 0.25,
+      "beat": true,
+      "spread": 0.036,
+      "reasoning": "Market price: 0.50. Calibration-corrected market: 0.440. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.500 \u2192 0.464. Final: 0.464 (confidence: 0.5)"
+    },
+    {
       "q": "Will the total number of TSA passengers for March 28 be less than 2,600,000?",
       "tag": "economy",
       "orcetra": 0.4662,
@@ -31965,6 +32757,18 @@
       "reasoning": ""
     },
     {
+      "q": "Counter-Strike: Inner Circle Esports vs BASEMENT BOYS - Map 1 Winner",
+      "tag": "sports",
+      "orcetra": 0.5144,
+      "market": 0.545,
+      "actual": 1.0,
+      "our_brier": 0.2358,
+      "mkt_brier": 0.207,
+      "beat": false,
+      "spread": 0.0306,
+      "reasoning": "Market price: 0.55. Calibration-corrected market: 0.494. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.545 \u2192 0.514. Final: 0.514 (confidence: 0.5)"
+    },
+    {
       "q": "Map Handicap: NEM (-1.5) vs ex-Zero Tenacity (+1.5)",
       "tag": "sports",
       "orcetra": 0.38,
@@ -32529,6 +33333,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will the number of US flights delayed on March 27 be less than 3,000?",
+      "tag": "politics",
+      "orcetra": 0.398,
+      "market": 0.425,
+      "actual": 0.0,
+      "our_brier": 0.1584,
+      "mkt_brier": 0.1806,
+      "beat": true,
+      "spread": 0.027,
+      "reasoning": "Market price: 0.42. Calibration-corrected market: 0.380. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.425 \u2192 0.398. Final: 0.398 (confidence: 0.5)"
+    },
+    {
       "q": "Gold (GC) Up or Down on March 20?",
       "tag": "commodities",
       "orcetra": 0.4382,
@@ -32829,6 +33645,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Ted Cruz post 120-139 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.2798,
+      "market": 0.305,
+      "actual": 0.0,
+      "our_brier": 0.0783,
+      "mkt_brier": 0.093,
+      "beat": true,
+      "spread": 0.0252,
+      "reasoning": ""
+    },
+    {
       "q": "Marco Trungelliti vs. Zdenek Kolar: Total Sets O/U 2.5",
       "tag": "sports",
       "orcetra": 0.38,
@@ -33045,6 +33873,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post 220-239 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.1098,
+      "market": 0.134,
+      "actual": 1.0,
+      "our_brier": 0.7925,
+      "mkt_brier": 0.75,
+      "beat": false,
+      "spread": 0.0242,
+      "reasoning": "Market price: 0.13. Calibration-corrected market: 0.094. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.134 \u2192 0.110. Final: 0.110 (confidence: 0.5)"
+    },
+    {
       "q": "Crude Oil (CL) Up or Down on March 18?",
       "tag": "commodities",
       "orcetra": 0.476,
@@ -33142,6 +33982,18 @@
     },
     {
       "q": "Split: Mili Poljicak vs Kimmer Coppejans",
+      "tag": "sports",
+      "orcetra": 0.396,
+      "market": 0.42,
+      "actual": 1.0,
+      "our_brier": 0.3648,
+      "mkt_brier": 0.3364,
+      "beat": false,
+      "spread": 0.024,
+      "reasoning": "Market price: 0.42. Calibration-corrected market: 0.380. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.420 \u2192 0.396. Final: 0.396 (confidence: 0.5)"
+    },
+    {
+      "q": "Counter-Strike: Inner Circle Esports vs BASEMENT BOYS (BO3) - DraculaN Playoffs",
       "tag": "sports",
       "orcetra": 0.396,
       "market": 0.42,
@@ -34030,6 +34882,18 @@
     },
     {
       "q": "Will Trump post \"Illinois\" on Truth Social this week?",
+      "tag": "politics",
+      "orcetra": 0.2896,
+      "market": 0.31,
+      "actual": 0.0,
+      "our_brier": 0.0839,
+      "mkt_brier": 0.0961,
+      "beat": true,
+      "spread": 0.0204,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 60-79 posts from March 24 to March 31, 2026?",
       "tag": "politics",
       "orcetra": 0.2896,
       "market": 0.31,
@@ -35107,6 +35971,54 @@
       "beat": true,
       "spread": 0.0174,
       "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 300-319 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0976,
+      "market": 0.115,
+      "actual": 0.0,
+      "our_brier": 0.0095,
+      "mkt_brier": 0.0132,
+      "beat": true,
+      "spread": 0.0174,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 280-299 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0976,
+      "market": 0.115,
+      "actual": 0.0,
+      "our_brier": 0.0095,
+      "mkt_brier": 0.0132,
+      "beat": true,
+      "spread": 0.0174,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 320-339 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0976,
+      "market": 0.115,
+      "actual": 0.0,
+      "our_brier": 0.0095,
+      "mkt_brier": 0.0132,
+      "beat": true,
+      "spread": 0.0174,
+      "reasoning": ""
+    },
+    {
+      "q": "Miyazaki: Omar Jasika vs Li Tu",
+      "tag": "sports",
+      "orcetra": 0.5626,
+      "market": 0.58,
+      "actual": 1.0,
+      "our_brier": 0.1913,
+      "mkt_brier": 0.1764,
+      "beat": false,
+      "spread": 0.0174,
+      "reasoning": "Market price: 0.58. Calibration-corrected market: 0.551. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.580 \u2192 0.563. Final: 0.563 (confidence: 0.5)"
     },
     {
       "q": "Will the total number of TSA passengers for March 16 - March 22 be greater than ",
@@ -36225,6 +37137,18 @@
       "reasoning": "Market price: 0.36. Sports question detected \u2192 using calibrated market only: 0.365 \u2192 0.380. Final: 0.380 (confidence: 0.4)"
     },
     {
+      "q": "Will the number of US flights delayed on March 27 be between 5,000 and 5,500?",
+      "tag": "politics",
+      "orcetra": 0.37,
+      "market": 0.355,
+      "actual": 0.0,
+      "our_brier": 0.1369,
+      "mkt_brier": 0.126,
+      "beat": false,
+      "spread": 0.015,
+      "reasoning": "Market price: 0.35. Calibration-corrected market: 0.380. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.355 \u2192 0.370. Final: 0.370 (confidence: 0.5)"
+    },
+    {
       "q": "Asuncion: Adolfo Vallejo vs Carlos Maria Zarate",
       "tag": "sports",
       "orcetra": 0.9197,
@@ -36585,6 +37509,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post 340-359 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0912,
+      "market": 0.105,
+      "actual": 0.0,
+      "our_brier": 0.0083,
+      "mkt_brier": 0.011,
+      "beat": true,
+      "spread": 0.0138,
+      "reasoning": ""
+    },
+    {
       "q": "Miami Open: Arthur Fils vs Darwin Blanch",
       "tag": "sports",
       "orcetra": 0.8385,
@@ -36667,6 +37603,18 @@
       "beat": false,
       "spread": 0.0132,
       "reasoning": ""
+    },
+    {
+      "q": "Will the number of US flights delayed on March 27 be between 5,500 and 6,000?",
+      "tag": "politics",
+      "orcetra": 0.3582,
+      "market": 0.345,
+      "actual": 0.0,
+      "our_brier": 0.1283,
+      "mkt_brier": 0.119,
+      "beat": false,
+      "spread": 0.0132,
+      "reasoning": "Market price: 0.34. Calibration-corrected market: 0.367. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.345 \u2192 0.358. Final: 0.358 (confidence: 0.5)"
     },
     {
       "q": "Map 1: Odd/Even Total Kills?",
@@ -37221,6 +38169,30 @@
       "reasoning": ""
     },
     {
+      "q": "Will Ted Cruz post 80-99 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.372,
+      "market": 0.36,
+      "actual": 0.0,
+      "our_brier": 0.1384,
+      "mkt_brier": 0.1296,
+      "beat": false,
+      "spread": 0.012,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Ted Cruz post 100-119 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.372,
+      "market": 0.36,
+      "actual": 1.0,
+      "our_brier": 0.3944,
+      "mkt_brier": 0.4096,
+      "beat": true,
+      "spread": 0.012,
+      "reasoning": ""
+    },
+    {
       "q": "Will Powell say \"Gold\" or \"Oil\" during March press conference?",
       "tag": "economy",
       "orcetra": 0.8668,
@@ -37759,6 +38731,30 @@
       "beat": false,
       "spread": 0.0102,
       "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 360-379 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0848,
+      "market": 0.095,
+      "actual": 0.0,
+      "our_brier": 0.0072,
+      "mkt_brier": 0.009,
+      "beat": true,
+      "spread": 0.0102,
+      "reasoning": ""
+    },
+    {
+      "q": "Bucharest Open, Qualification: Daniel Merida Aguilar vs Joel Schwaerzler",
+      "tag": "sports",
+      "orcetra": 0.6752,
+      "market": 0.665,
+      "actual": 1.0,
+      "our_brier": 0.1055,
+      "mkt_brier": 0.1122,
+      "beat": true,
+      "spread": 0.0102,
+      "reasoning": "Market price: 0.67. Calibration-corrected market: 0.682. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.665 \u2192 0.675. Final: 0.675 (confidence: 0.5)"
     },
     {
       "q": "Game Handicap: Z10 (-1.5) vs Team Lynx (+1.5)",
@@ -38937,6 +39933,30 @@
       "reasoning": ""
     },
     {
+      "q": "Will CZ post 40-59 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.3484,
+      "market": 0.34,
+      "actual": 0.0,
+      "our_brier": 0.1214,
+      "mkt_brier": 0.1156,
+      "beat": false,
+      "spread": 0.0084,
+      "reasoning": ""
+    },
+    {
+      "q": "Will the number of US flights delayed on March 27 be greater than 6,000?",
+      "tag": "politics",
+      "orcetra": 0.3484,
+      "market": 0.34,
+      "actual": 1.0,
+      "our_brier": 0.4246,
+      "mkt_brier": 0.4356,
+      "beat": true,
+      "spread": 0.0084,
+      "reasoning": "Market price: 0.34. Calibration-corrected market: 0.354. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.340 \u2192 0.348. Final: 0.348 (confidence: 0.5)"
+    },
+    {
       "q": "Exact Score: Racing Club de Lens 2 - 1 Angers SCO?",
       "tag": "sports",
       "orcetra": 0.0813,
@@ -39425,6 +40445,18 @@
       "our_brier": 0.0061,
       "mkt_brier": 0.0072,
       "beat": true,
+      "spread": 0.0066,
+      "reasoning": ""
+    },
+    {
+      "q": "Will CZ post 0-19 posts from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0784,
+      "market": 0.085,
+      "actual": 1.0,
+      "our_brier": 0.8493,
+      "mkt_brier": 0.8372,
+      "beat": false,
       "spread": 0.0066,
       "reasoning": ""
     },
@@ -40089,6 +41121,18 @@
       "reasoning": ""
     },
     {
+      "q": "Will Elon Musk post 200-219 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0758,
+      "market": 0.081,
+      "actual": 0.0,
+      "our_brier": 0.0057,
+      "mkt_brier": 0.0066,
+      "beat": true,
+      "spread": 0.0052,
+      "reasoning": "Market price: 0.08. Calibration-corrected market: 0.072. Non-sports, no price data \u2192 blend 60% cal_market + 40% model: 0.081 \u2192 0.076. Final: 0.076 (confidence: 0.5)"
+    },
+    {
       "q": "Paul Jubb vs. Maxim Mrva: Total Sets O/U 2.5",
       "tag": "sports",
       "orcetra": 0.38,
@@ -40444,6 +41488,18 @@
       "actual": 1.0,
       "our_brier": 0.0813,
       "mkt_brier": 0.0841,
+      "beat": true,
+      "spread": 0.0048,
+      "reasoning": ""
+    },
+    {
+      "q": "Will Elon Musk post 380-399 tweets from March 24 to March 31, 2026?",
+      "tag": "politics",
+      "orcetra": 0.0752,
+      "market": 0.08,
+      "actual": 0.0,
+      "our_brier": 0.0057,
+      "mkt_brier": 0.0064,
       "beat": true,
       "spread": 0.0048,
       "reasoning": ""
