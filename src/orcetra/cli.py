@@ -42,15 +42,15 @@ def predict(data_path, target, budget, metric, output):
     console.print(f"  Time: {result['elapsed']:.1f}s")
 
 @main.command()
-@click.argument("benchmark_name", default="polymarket")
+@click.argument("benchmark_name", default="openml")
 def benchmark(benchmark_name):
     """Run a built-in benchmark.
-    
-    Example: orcetra benchmark polymarket
+
+    Example: orcetra benchmark openml
     """
     console.print(f"[bold]Running benchmark: {benchmark_name}[/bold]")
-    if benchmark_name == "polymarket":
-        from .benchmarks.polymarket.runner import run_benchmark
+    if benchmark_name == "openml":
+        from .benchmarks.openml.runner import run_benchmark
         run_benchmark()
     else:
         console.print(f"[red]Unknown benchmark: {benchmark_name}[/red]")

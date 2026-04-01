@@ -11,8 +11,8 @@ def calibration_correct(predicted: float, cal_curve: List[Tuple[float, float]] =
     """
     Apply calibration correction based on learned bias curve.
     
-    Default curve learned from 177 resolved Polymarket predictions:
-    Markets systematically overprice events in the 20-50% range.
+    Default curve learned from historical prediction data:
+    Models systematically overprice events in the 20-50% range.
     """
     if cal_curve is None:
         cal_curve = [
