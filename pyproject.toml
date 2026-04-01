@@ -5,12 +5,24 @@ build-backend = "hatchling.build"
 [project]
 name = "orcetra"
 version = "0.1.0"
-description = "AI-powered automated prediction engine. Give it data, it finds the best forecast."
+description = "AutoML prediction engine — give it data, it finds the best model. Wins 57% on 513 OpenML datasets vs AutoGluon and FLAML."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [
-    {name = "Orcetra Team"},
+    {name = "Orcetra Team", email = "orcetra@gmail.com"},
+]
+keywords = ["automl", "machine-learning", "prediction", "automated-ml", "scikit-learn"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
     "click>=8.0",
@@ -23,10 +35,29 @@ dependencies = [
 [project.optional-dependencies]
 llm = ["groq", "openai"]
 xgboost = ["xgboost>=2.0"]
-all = ["orcetra[llm,xgboost]"]
+poly = ["httpx", "pydantic>=2.0"]
+all = ["orcetra[llm,xgboost,poly]"]
+
+[project.urls]
+Homepage = "https://orcetra.ai"
+Repository = "https://github.com/orcetra/orcetra"
+Dashboard = "https://orcetra.ai/dashboard.html"
 
 [project.scripts]
 orcetra = "orcetra.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/orcetra"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "results/",
+    "experiments/",
+    "video/",
+    "site/",
+    "dashboard/",
+    "catboost_*/",
+    "_deprecated_*/",
+    "*.log",
+    ".env",
+]
