@@ -11,6 +11,8 @@ def load_results():
     """Load and deduplicate results from all multi_framework JSONL files."""
     by_id = {}
     for f in sorted(RESULTS_DIR.glob("multi_framework_*.jsonl")):
+        if "regression_only_orcetra_improved" not in str(f):
+            continue
         for line in open(f):
             try:
                 r = json.loads(line)

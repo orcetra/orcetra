@@ -372,8 +372,11 @@ def main():
         for line in open(f):
             try:
                 r = json.loads(line)
-                if r.get("status") == "success":
+                # regression retest
+                if r.get("task_type") != "regression":
                     done_ids.add(r["dataset_id"])
+                # if r.get("status") == "success":
+                #    done_ids.add(r["dataset_id"])
             except:
                 pass
     datasets = [d for d in datasets if d["dataset_id"] not in done_ids]
