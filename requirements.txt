@@ -1,4 +1,0 @@
-httpx
-pydantic
-rich
-groq
