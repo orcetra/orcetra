@@ -126,10 +126,12 @@ def run_prediction(
     best_score = None
     best_model = None
     baseline_best_score = None
-    
+    all_baseline_scores = []  # (name, score) for ensemble building
+
     for model_name, model_fn in baselines.items():
         try:
             score = model_fn(data_info, metric_fn)
+            all_baseline_scores.append((model_name, score))
             is_better = (
                 best_score is None
                 or (metric_fn.direction == "minimize" and score < best_score)
@@ -142,8 +144,39 @@ def run_prediction(
             console.print(f"  {model_name}: {score:.4f} {'⭐' if is_better else ''}")
         except Exception as e:
             console.print(f"  {model_name}: [red]failed ({e})[/red]")
-    
+
     console.print(f"\n[bold yellow]Best baseline: {best_model} = {best_score:.4f}[/bold yellow]")
+
+    # Step 3b: Try weighted ensemble of top-3 baselines
+    if len(all_baseline_scores) >= 2:
+        console.print("\n[bold]Step 2b:[/bold] Trying weighted ensemble of top models...")
+        from ..models.ensemble import build_ensemble
+
+        reverse = metric_fn.direction == "maximize"
+        sorted_baselines = sorted(all_baseline_scores, key=lambda x: x[1], reverse=reverse)
+        top_k = sorted_baselines[:3]
+        top_names = [f"{n} ({s:.4f})" for n, s in top_k]
+        console.print(f"  Top-3: {', '.join(top_names)}")
+
+        try:
+            ens_score, ens_desc = build_ensemble(
+                top_k, data_info, metric_fn, data_info["task_type"]
+            )
+            if ens_score is not None:
+                is_better = (
+                    (metric_fn.direction == "minimize" and ens_score < best_score)
+                    or (metric_fn.direction == "maximize" and ens_score > best_score)
+                )
+                if is_better:
+                    best_score = ens_score
+                    best_model = ens_desc
+                    console.print(f"  [bold green]🎯 {ens_desc}: {ens_score:.4f} — beats best single model![/bold green]")
+                else:
+                    console.print(f"  {ens_desc}: {ens_score:.4f} (no improvement over best single)")
+            else:
+                console.print(f"  [yellow]Ensemble skipped: {ens_desc}[/yellow]")
+        except Exception as e:
+            console.print(f"  [red]Ensemble failed: {e}[/red]")
     
     # Step 4: AutoResearch loop — parallel batches with strategy cache
     console.print(f"\n[bold]Step 3:[/bold] AutoResearch loop (budget: {budget}, {parallel}x parallel)...")

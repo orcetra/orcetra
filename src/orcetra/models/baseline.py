@@ -24,21 +24,30 @@ except ImportError:
     _HAS_LGBM = False
 
 
-def _safe_fit_predict(model, data_info, metric_fn, needs_scaling=False):
-    """Fit model and return metric score. Handles scaling if needed."""
+def _safe_fit_predict(model, data_info, metric_fn, needs_scaling=False, return_model=False):
+    """Fit model and return metric score. Handles scaling if needed.
+
+    If return_model=True, returns (score, fitted_model, scaler_or_None) so
+    the caller can reuse the fitted model for ensemble building.
+    """
     X_train = data_info["X_train"]
     X_test = data_info["X_test"]
-    
+    scaler = None
+
     if needs_scaling:
         scaler = StandardScaler()
         X_train = scaler.fit_transform(X_train)
         X_test = scaler.transform(X_test)
-    
+
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         model.fit(X_train, data_info["y_train"])
         preds = model.predict(X_test)
-    return metric_fn.compute(data_info["y_test"], preds)
+    score = metric_fn.compute(data_info["y_test"], preds)
+
+    if return_model:
+        return score, model, scaler
+    return score
 
 
 # ── Regression baselines ──────────────────────────────────────────────
