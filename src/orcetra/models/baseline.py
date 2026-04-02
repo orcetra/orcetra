@@ -23,6 +23,12 @@ try:
 except ImportError:
     _HAS_LGBM = False
 
+try:
+    from catboost import CatBoostRegressor, CatBoostClassifier
+    _HAS_CATBOOST = True
+except ImportError:
+    _HAS_CATBOOST = False
+
 
 def _safe_fit_predict(model, data_info, metric_fn, needs_scaling=False):
     """Fit model and return metric score. Handles scaling if needed."""
@@ -83,6 +89,13 @@ def lgbm_regression(data_info, metric_fn):
         LGBMRegressor(n_estimators=100, random_state=42, verbosity=-1, n_jobs=-1),
         data_info, metric_fn)
 
+def catboost_regression(data_info, metric_fn):
+    if not _HAS_CATBOOST:
+        raise ImportError("catboost not installed")
+    return _safe_fit_predict(
+        CatBoostRegressor(iterations=100, random_state=42, verbose=False),
+        data_info, metric_fn)
+
 
 # ── Classification baselines ──────────────────────────────────────────
 
@@ -124,4 +137,11 @@ def lgbm_classification(data_info, metric_fn):
         raise ImportError("lightgbm not installed")
     return _safe_fit_predict(
         LGBMClassifier(n_estimators=100, random_state=42, verbosity=-1, n_jobs=-1),
+        data_info, metric_fn)
+
+def catboost_classification(data_info, metric_fn):
+    if not _HAS_CATBOOST:
+        raise ImportError("catboost not installed")
+    return _safe_fit_predict(
+        CatBoostClassifier(iterations=100, random_state=42, verbose=False),
         data_info, metric_fn)

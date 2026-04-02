@@ -35,7 +35,8 @@ dependencies = [
 [project.optional-dependencies]
 llm = ["groq", "openai"]
 xgboost = ["xgboost>=2.0"]
-all = ["orcetra[llm,xgboost]"]
+catboost = ["catboost>=1.2"]
+all = ["orcetra[llm,xgboost,catboost]"]
 
 [project.urls]
 Homepage = "https://orcetra.ai"
