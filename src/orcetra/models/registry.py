@@ -5,6 +5,7 @@ from .baseline import (
     random_forest_regression, extra_trees_regression,
     gradient_boosting_regression, hist_gradient_boosting_regression,
     xgb_regression, lgbm_regression,
+    elasticnet_regression, knn_regression, svr_regression, catboost_regression,
     # Classification
     logistic_regression,
     random_forest_classification, extra_trees_classification,
@@ -23,6 +24,10 @@ def get_baselines(task_type: str) -> dict:
             "HistGradientBoosting": hist_gradient_boosting_regression,
             "XGBoost": xgb_regression,
             "LightGBM": lgbm_regression,
+            "ElasticNet": elasticnet_regression,
+            "KNN": knn_regression,
+            "SVR": svr_regression,
+            "CatBoost": catboost_regression,
         }
     else:
         return {

@@ -83,6 +83,7 @@ def run_flaml(X_train, X_test, y_train, y_test, task_type, budget_sec=30):
 
 
 def run_orcetra_strict(X_train, X_test, y_train, y_test, task_type, metric_name, budget_sec=30):
+    import warnings
     from orcetra.models.registry import get_baselines
     from orcetra.metrics.base import get_metric
     from orcetra.core.agent import RandomSearchAgent
@@ -98,6 +99,8 @@ def run_orcetra_strict(X_train, X_test, y_train, y_test, task_type, metric_name,
     t_start = time.time()
     best_score = None
     best_model = None
+    # Track top proposals for ensemble
+    top_proposals = []  # list of (proposal_model, score)
 
     for model_name, model_fn in get_baselines(task_type).items():
         if time.time() - t_start >= budget_sec:
@@ -122,10 +125,21 @@ def run_orcetra_strict(X_train, X_test, y_train, y_test, task_type, metric_name,
         while time.time() - t_start < budget_sec:
             iteration += 1
             try:
-                proposal = agent.propose(data_info, metric_fn, best_score, best_model, iteration)
+                state = {
+                    "best_score": best_score,
+                    "best_model": best_model,
+                    "iteration": iteration,
+                    "task_type": task_type,
+                    "metric_direction": metric_fn.direction,
+                }
+                proposal = agent.propose(state)
                 if proposal is None:
                     continue
                 score = proposal.evaluate(data_info, metric_fn)
+                # Only track proposals without preprocessors for ensemble
+                # (ensemble re-fits on raw data)
+                if proposal.preprocessor is None:
+                    top_proposals.append((proposal.model, score, type(proposal.model).__name__))
                 is_better = (
                     (metric_fn.direction == "minimize" and score < best_score)
                     or (metric_fn.direction == "maximize" and score > best_score)
@@ -135,6 +149,58 @@ def run_orcetra_strict(X_train, X_test, y_train, y_test, task_type, metric_name,
                     best_model = proposal.description
             except:
                 pass
+
+    # Post-search weighted ensemble of top-3 diverse models
+    if len(top_proposals) >= 3:
+        try:
+            if metric_fn.direction == "minimize":
+                sorted_props = sorted(top_proposals, key=lambda x: x[1])
+            else:
+                sorted_props = sorted(top_proposals, key=lambda x: -x[1])
+
+            selected = []
+            seen_types = set()
+            for model, score, mtype in sorted_props:
+                if mtype not in seen_types:
+                    selected.append((model, score))
+                    seen_types.add(mtype)
+                if len(selected) >= 3:
+                    break
+
+            if len(selected) >= 2:
+                scores = [s for _, s in selected]
+                if metric_fn.direction == "minimize":
+                    min_s = min(scores)
+                    weights = [1.0 / s if min_s > 0 else 1.0 for s in scores]
+                else:
+                    weights = scores if sum(scores) > 0 else [1.0] * len(selected)
+                w_total = sum(weights)
+                weights = [w / w_total for w in weights]
+
+                from sklearn.ensemble import VotingRegressor, VotingClassifier
+                estimators = [(f"m{i}", m) for i, (m, _) in enumerate(selected)]
+
+                if task_type == "regression":
+                    ensemble = VotingRegressor(estimators=estimators, weights=weights, n_jobs=-1)
+                else:
+                    ensemble = VotingClassifier(estimators=estimators, weights=weights, voting="soft", n_jobs=-1)
+
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    ensemble.fit(X_train, y_train)
+                    preds = ensemble.predict(X_test)
+
+                ens_score = metric_fn.compute(y_test, preds)
+                is_better = (
+                    (metric_fn.direction == "minimize" and ens_score < best_score)
+                    or (metric_fn.direction == "maximize" and ens_score > best_score)
+                )
+                if is_better:
+                    best_score = ens_score
+                    names = "+".join(type(m).__name__ for m, _ in selected)
+                    best_model = f"WeightedEnsemble({names})"
+        except:
+            pass
 
     return best_score, best_model
 
@@ -306,8 +372,11 @@ def main():
         for line in open(f):
             try:
                 r = json.loads(line)
-                if r.get("status") == "success":
+                # regression retest
+                if r.get("task_type") != "regression":
                     done_ids.add(r["dataset_id"])
+                # if r.get("status") == "success":
+                #    done_ids.add(r["dataset_id"])
             except:
                 pass
     datasets = [d for d in datasets if d["dataset_id"] not in done_ids]

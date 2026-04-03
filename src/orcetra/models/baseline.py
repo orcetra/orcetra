@@ -1,13 +1,15 @@
 """Standard baseline models — expanded pool for competitive AutoML."""
 import warnings
 import numpy as np
-from sklearn.linear_model import LinearRegression, LogisticRegression, Ridge, SGDClassifier
+from sklearn.linear_model import LinearRegression, LogisticRegression, Ridge, SGDClassifier, ElasticNet
 from sklearn.ensemble import (
     RandomForestRegressor, RandomForestClassifier,
     GradientBoostingRegressor, GradientBoostingClassifier,
     ExtraTreesRegressor, ExtraTreesClassifier,
     HistGradientBoostingRegressor, HistGradientBoostingClassifier,
 )
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.svm import SVR
 from sklearn.preprocessing import StandardScaler
 
 # Optional: XGBoost / LightGBM
@@ -22,6 +24,12 @@ try:
     _HAS_LGBM = True
 except ImportError:
     _HAS_LGBM = False
+
+try:
+    from catboost import CatBoostRegressor, CatBoostClassifier
+    _HAS_CATBOOST = True
+except ImportError:
+    _HAS_CATBOOST = False
 
 
 def _safe_fit_predict(model, data_info, metric_fn, needs_scaling=False):
@@ -44,7 +52,7 @@ def _safe_fit_predict(model, data_info, metric_fn, needs_scaling=False):
 # ── Regression baselines ──────────────────────────────────────────────
 
 def linear_regression(data_info, metric_fn):
-    return _safe_fit_predict(LinearRegression(), data_info, metric_fn)
+    return _safe_fit_predict(LinearRegression(), data_info, metric_fn, needs_scaling=True)
 
 def ridge_regression(data_info, metric_fn):
     return _safe_fit_predict(Ridge(alpha=1.0, random_state=42), data_info, metric_fn, needs_scaling=True)
@@ -81,6 +89,28 @@ def lgbm_regression(data_info, metric_fn):
         raise ImportError("lightgbm not installed")
     return _safe_fit_predict(
         LGBMRegressor(n_estimators=100, random_state=42, verbosity=-1, n_jobs=-1),
+        data_info, metric_fn)
+
+def elasticnet_regression(data_info, metric_fn):
+    return _safe_fit_predict(
+        ElasticNet(alpha=1.0, l1_ratio=0.5, random_state=42, max_iter=2000),
+        data_info, metric_fn, needs_scaling=True)
+
+def knn_regression(data_info, metric_fn):
+    return _safe_fit_predict(
+        KNeighborsRegressor(n_neighbors=5, n_jobs=-1),
+        data_info, metric_fn, needs_scaling=True)
+
+def svr_regression(data_info, metric_fn):
+    return _safe_fit_predict(
+        SVR(C=1.0, kernel='rbf'),
+        data_info, metric_fn, needs_scaling=True)
+
+def catboost_regression(data_info, metric_fn):
+    if not _HAS_CATBOOST:
+        raise ImportError("catboost not installed")
+    return _safe_fit_predict(
+        CatBoostRegressor(iterations=200, random_seed=42, verbose=0),
         data_info, metric_fn)
 
 
