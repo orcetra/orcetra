@@ -15,13 +15,13 @@ pip install orcetra
 ## Quick Start
 
 ```bash
-orcetra predict housing.csv --target price --budget 60s
+orcetra predict you_data.csv --target target_column --budget 60s
 ```
 
 ```python
 from orcetra.core.loop import run_prediction
 
-result = run_prediction("housing.csv", target="price", budget="60s")
+result = run_prediction("you_data.csv", target="target_column", budget="60s")
 print(result["best_model"], result["best_score"])
 ```
 
