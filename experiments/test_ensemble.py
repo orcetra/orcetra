@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Smoke test for weighted ensemble."""
 import numpy as np
-from orcetra.core.loop import StrategyCache, _try_weighted_ensemble
+from orcetra.core.loop import StrategyCache
+from orcetra.models.ensemble import try_ensemble
 from orcetra.core.agent import Proposal
 from orcetra.metrics.base import get_metric
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, ExtraTreesRegressor
@@ -31,7 +32,7 @@ for model, name in models:
     print(f"  {name}: MSE={score:.4f}")
 
 console = Console()
-result = _try_weighted_ensemble(cache, data_info, metric_fn, 999, console)
+result = try_ensemble(cache, data_info, metric_fn, console)
 if result:
     print(f"  Ensemble: MSE={result[0]:.4f} -- {result[1]}")
 else:
